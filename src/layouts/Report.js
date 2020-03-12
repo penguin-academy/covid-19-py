@@ -1,46 +1,108 @@
-import React, { useState, useReducer, useContext } from 'react'
-import PersonaInfoForm from '../components/Reports/PersonalInfoForm';
-import SymptomsForm from '../components/Reports/SymptomsForm';
+import React, { useReducer, useCallback } from 'react'
 import Container from 'react-bootstrap/Container'
-import { Formik } from 'formik';
+import firebase from 'firebase/app'
+import 'firebase/firestore';
+import Input from '../components/Input';
 
 const INITIAL_STATE = {
-  email: null,
-  phoneNumber: null,
-  firstName: null,
-  lastName: null,
-  documentType: null,
-  nationality: null,
-  dob: null,
-  sex: null,
-  region: null,
-  city: null,
-  neighborhood: null,
-  hasFever: null,
-  hasCough: null,
-  hasTroubleBreathing: null,
-  hasThroatPain: null,
-  dateOfSymptomStart: null,
-  hasTraveledInLast14Days: null,
-  cityTheyTraveledTo: null,
-  countryTheyTraveledTo: null,
-  dateOfReturn: null,
-  returnType: null,
-  hadContactInLast14Days: null,
-  dateOfLastContact: null,
-  relationWithContact: null
+  inputValues: {
+    email: '',
+    phoneNumber: '',
+    firstName: '',
+    lastName: '',
+    documentType: '',
+    nationality: '',
+    dob: '',
+    sex: '',
+    region: '',
+    city: '',
+    neighborhood: '',
+    hasFever: '',
+    hasCough: '',
+    hasTroubleBreathing: '',
+    hasThroatPain: '',
+    dateOfSymptomStart: '',
+    hasTraveledInLast14Days: '',
+    cityTheyTraveledTo: '',
+    countryTheyTraveledTo: '',
+    dateOfReturn: '',
+    returnType: '',
+    hadContactInLast14Days: '',
+    dateOfLastContact: '',
+    relationWithContact: ''
+  },
+  inputValidities: {
+    email: false,
+    phoneNumber: false,
+    firstName: true,
+    lastName: true,
+    documentType: true,
+    nationality: true,
+    dob: true,
+    sex: true,
+    region: true,
+    city: true,
+    neighborhood: true,
+
+  },
+  formIsValid: false
 }
 
+const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
+
+const formReducer = (state, action) => {
+  if (action.type === FORM_INPUT_UPDATE) {
+    const updatedValues = {
+      ...state.inputValues,
+      [action.input]: action.value
+    };
+    const updatedValidities = {
+      ...state.inputValidities,
+      [action.input]: action.isValid
+    };
+    let updatedFormIsValid = true;
+    for (const key in updatedValidities) {
+      updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
+    }
+    return {
+      formIsValid: updatedFormIsValid,
+      inputValidities: updatedValidities,
+      inputValues: updatedValues
+    };
+  }
+  return state;
+};
+
+
+
+const ReportContext = React.createContext()
+
+export const useReportContext = () => React.useContext(ReportContext)
+
 const Report = () => {
+  const [formState, dispatchFormState] = useReducer(formReducer, INITIAL_STATE)
+
+  const inputChangeHandler = useCallback(
+    (inputIdentifier, inputValue, inputValidity) => {
+      dispatchFormState({
+        type: FORM_INPUT_UPDATE,
+        value: inputValue,
+        isValid: inputValidity,
+        input: inputIdentifier
+      });
+    },
+    [dispatchFormState]
+  );
+
 
 
   return (
-    <Container style={{ paddingTop: '20px' }}>
-      <Formik>
+    <ReportContext.Provider value={{ formState, onInputChange: inputChangeHandler }}>
+      <Container style={{ paddingTop: '20px' }}>
+        <Input id="email" />
 
-      </Formik>
-
-    </Container >
+      </Container >
+    </ReportContext.Provider>
   )
 }
 
