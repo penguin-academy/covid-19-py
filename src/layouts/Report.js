@@ -36,9 +36,7 @@ const Report = () => {
 
   return (
     <Container style={{ paddingTop: '20px' }}>
-      <Formik>
-
-      </Formik>
+      <PersonaInfoForm></PersonaInfoForm>
 
     </Container >
   )

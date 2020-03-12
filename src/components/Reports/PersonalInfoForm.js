@@ -5,40 +5,128 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
 const PersonalInfoForm = () => {
+    
   return (
-    <div>
-      <Card bg='light'>
-        <Card.Header>Contacto (Requerimos uno)</Card.Header>
-        <Card.Body>
-          <Form>
-            <Form.Row>
-              <Col>
-                <Form.Group controlId='formBasicEmail'>
-                  <Form.Label>Correo Electronico</Form.Label>
-                  <Form.Control type='email' />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group controlId='formBasicPassword'>
-                  <Form.Label>Numero Telefonico</Form.Label>
-                  <Form.Control type='text' />
-                </Form.Group>
-              </Col>
-            </Form.Row>
-          </Form>
-        </Card.Body>
-      </Card>
+    <div className="container">
+      <div className="col-md-10 offset-md-1">
+        <div className="row">
+          <form action="" className="col-md-12">
+            <div className="indicator-group">
+              <div className="indicator">1</div>
+              <div className="indicator">2</div>
+              <div className="indicator">3</div>
+            </div>
+            <div className="page col-md-12">
+              <h2>Información de Contacto</h2>
+              <div className="form-group">
+                <input type="email" className="form-control" placeholder="Correo Electrónico"/>
+              </div>
+              <div className="form-group">
+                <input type="text" className="form-control" placeholder="Número de Teléfono"/>
+              </div>
+              <button type="submit" className="btn btn-primary">Siguente</button>
+            </div>
+            <div className="page col-md-12">
+              <h2>Información Personal</h2>
+              <div className="row">
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}
-      >
-        <Button style={{ margin: "20px" }} variant='outline-info'>
-          Continuar
-        </Button>
+                <div className="col-md-6">
+
+                  <div className="form-group">
+                    <input type="text" className="form-control" placeholder="Nombre y Apellido"/>
+                  </div>
+                  <div className="form-group">
+                    <select type="text" className="form-control" placeholder="Tipo de Documernto">
+                      <option value="">Seleccione un tipo de documento</option>
+                      <option value="">Cedula de Identidad</option>
+                      <option value="">Pasaporte</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <input type="number" className="form-control" placeholder="Nro. de Documento"/>
+                  </div>
+                  <div className="form-group">
+                    <input type="text" className="form-control" placeholder="Nacionalidad"/>
+                  </div>
+                  <div className="form-group">
+                    <input type="date" className="form-control" placeholder="Fecha de Nacimiento"/>
+                  </div>
+                </div>
+                <div className="col-md-6">
+
+                  <div className="form-group">
+                    <select type="text" className="form-control" placeholder="Sexo">
+                      <option value="">Seleccione su sexo</option>
+                      <option value="">Masculino</option>
+                      <option value="">Femenino</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <select type="text" className="form-control" placeholder="Departamento">
+                      <option value="">Seleccione su Departamento</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <select type="text" className="form-control" placeholder="Ciudad">
+                      <option value="">Seleccione su Ciudad</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <select type="text" className="form-control" placeholder="Barrio">
+                      <option value="">Seleccione su Barrio</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" className="btn btn-primary">Siguente</button>
+
+            </div>
+            <div className="page col-md-12">
+              <h2>Información Sintomática</h2>
+              <div className="row">
+
+                <div className="col-md-6">
+                  <div className="form-group">
+                    <label for="" className="control-label">Sintomas</label> <br/>
+                    <input type="checkbox"/> Fiebre <br/>
+                    <input type="checkbox"/> Tos  <br/>
+                    <input type="checkbox"/> Dificultad para respirar <br/>
+                    <input type="checkbox"/> Dolor de garganta <br/>
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="form-group">
+                    <input type="checkbox"/> ¿Viajó en los ultimos 14 días? <br/>
+                  </div>
+                  <div className="collapse-field-group">
+                    <input type="text" placeholder="Ciudad y País donde viajo" className="form-control"/>
+                    <input type="date" placeholder="Fecha de Regreso" className="form-control"/>
+                    <select type="text" className="form-control">
+                      <option value="">Seleccione la vía</option>
+                      <option value="">Aereo</option>
+                      <option value="">Terrestre</option>
+                      <option value="">Marítimo</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <input type="checkbox"/> ¿Tuvo contacto con un infectado? <br/>
+                  </div>
+                  <div className="collapse-field-group">
+                    <input type="date" placeholder="Fecha de Ultimo contacto" className="form-control"/>
+                    <select type="text" className="form-control">
+                      <option value="">Seleccione la relación con el infectado</option>
+                      <option value="">Familiar</option>
+                      <option value="">Trabajo</option>
+                      <option value="">Asistencia Médica</option>
+                      <option value="">Otro</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" className="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
