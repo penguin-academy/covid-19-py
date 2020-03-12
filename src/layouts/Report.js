@@ -95,12 +95,11 @@ const Report = () => {
   );
 
 
-
   return (
     <ReportContext.Provider value={{ formState, onInputChange: inputChangeHandler }}>
       <Container style={{ paddingTop: '20px' }}>
         <Input id="email" />
-
+        <PersonaInfoForm></PersonaInfoForm>
       </Container >
     </ReportContext.Provider>
   )
