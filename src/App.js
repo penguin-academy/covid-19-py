@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+
+
+
+import Home from './layouts/Home';
+import NavigationBar from './layouts/NavigationBar';
+import Report from './layouts/Report';
+
+
+import firebase from 'firebase/app';
+import firebaseConfig from './constants/firebaseConfig';
+
+
+firebase.initializeApp(firebaseConfig);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <NavigationBar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/report" exact component={Report} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
