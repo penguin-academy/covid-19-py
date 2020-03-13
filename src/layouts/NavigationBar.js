@@ -11,7 +11,7 @@ const NavigationBar = () => {
               <div className="col-4">
                 <h4>
                   CoronaVirus
-                  <br /> Auto Report
+                  <br /> Auto Reporte
                 </h4>
               </div>
               <div className="col-8 text-right">
