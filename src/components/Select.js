@@ -1,10 +1,10 @@
-import React, { useReducer, useEffect } from 'react'
+import React from 'react'
 import { useReportContext } from '../layouts/Report';
 
 
 
 const Select = (props) => {
-  const { options } = props;
+  const { options, id } = props;
 
 
 
@@ -13,7 +13,9 @@ const Select = (props) => {
 
 
   const handleChange = (e) => {
-    console.log(e);
+
+
+    onInputChange(id, e.target.value, true)
 
   }
 

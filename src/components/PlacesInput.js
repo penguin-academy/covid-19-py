@@ -33,6 +33,7 @@ const PlacesInput = props => {
     touched: false
   });
 
+
   const [gps, setGps] = useState(null);
 
   const handleSelect = address => {
@@ -54,9 +55,9 @@ const PlacesInput = props => {
 
   useEffect(() => {
     if (inputState.touched) {
-      onAddressChange(inputState.value, gps);
+      onAddressChange(props.id, inputState.value, gps);
     }
-  }, [inputState, onAddressChange, gps]);
+  }, [props.id, inputState, onAddressChange, gps]);
 
   const textChangeHandler = text => {
     const numberRegex = /^(0|[1-9]\d*)$/;
@@ -92,22 +93,26 @@ const PlacesInput = props => {
       onChange={textChangeHandler}
       searchOptions={props.options}
       onSelect={handleSelect}
+
     >
       {props => {
         const {
           getInputProps,
           suggestions,
           getSuggestionItemProps,
-          loading
+          loading,
+          placeholder
         } = props;
+
+
 
         return (
           <div>
             <input
               className='form-control'
               style={{ width: "100%" }}
-              placeholder='Direccion'
-              required
+              placeholder={placeholder}
+
               onBlur={lostFocusHandler}
               {...getInputProps()}
             />

@@ -1,32 +1,28 @@
 import React from "react";
 import Input from "../Input";
-import Select from "../Select";
 import IDInput from "../IDInput";
-import DateInput from '../DateInput';
+import IDDateInput from "../IDDateInput";
+import DateInput from "../DateInput";
+import Checkbox from "../Checkbox";
+import Select from '../Select'
+import { useReportContext } from '../../layouts/Report'
 
 import "./style/PersonalInfoForm.scss";
 import PlacesInput from "../PlacesInput";
 
 const PersonalInfoForm = () => {
+  const { onSubmitForm } = useReportContext();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmitForm()
+  }
+
   return (
     <div className='container'>
       <div className='col-md-10 offset-md-1'>
         <div className='row'>
-          <form action='' className='col-md-12'>
-            <div className='indicator-group'>
-              <div className='row'>
-                <div className='indicator active'>
-                  <span>1</span>
-                </div>
-                <div className='indicator active'>
-                  <span>2</span>
-                </div>
-                <div className='indicator active'>
-                  <span>3</span>
-                </div>
-              </div>
-              <div className='clearfix'></div>
-            </div>
+          <form action='' className='col-md-12' onSubmit={handleSubmit}>
             <div className='page active col-md-12'>
               <h2>Información de Contacto</h2>
               <hr />
@@ -37,12 +33,14 @@ const PersonalInfoForm = () => {
                 className='form-control'
                 placeholder='Cedula'
               />
-              <DateInput />
-              <PlacesInput />
-
-              <button type='submit' className='btn btn-primary'>
-                Siguente
-              </button>
+              <IDDateInput />
+              <PlacesInput id='home' placeholder='Direccion' />
+              <Input
+                id='phoneNumber'
+                type='number'
+                placeholder='Numero de Telefono'
+                className='form-control'
+              />
             </div>
 
             <div className='page active col-md-12'>
@@ -52,72 +50,67 @@ const PersonalInfoForm = () => {
                 <div className='col-md-6'>
                   <div className='form-group'>
                     <h4>Síntomas</h4> <br />
-                    <input type='checkbox' /> &nbsp; Fiebre <br />
+                    <Checkbox id='hasFever' label='Fiebre' />
                     <br />
-                    <input type='checkbox' /> &nbsp; Tos <br />
+                    <Checkbox id='hasCough' label='Tos' />
                     <br />
-                    <input type='checkbox' /> &nbsp; Dificultad para respirar{" "}
+                    <Checkbox
+                      id='hasTroubleBreathing'
+                      label='Dificultad al respirar'
+                    />
                     <br />
+                    <Checkbox id='hasThroatPain' label='Dolor de garganta' />
                     <br />
-                    <input type='checkbox' /> &nbsp; Dolor de garganta <br />
-                    <br />
+                    <DateInput id='dateOfSymptomStart' />
                   </div>
                 </div>
                 <div className='col-md-6'>
                   <div className='form-group'>
                     <br />
                     <br />
-                    <input type='checkbox' /> &nbsp;{" "}
-                    <b>¿Viajó en los ultimos 14 días?</b> <br />
+
+                    <Checkbox
+                      id='hasTraveledInLast14Days'
+                      label='Viajo en los ultimos 14 dias?'
+                    />
                     <br />
+                    <PlacesInput
+                      placeholder='Ciudad'
+                      id='cities'
+                      options={{ types: ["(cities)"] }}
+                    />
+                    <DateInput id='dateOfReturn' />
                   </div>
                   <div className='collapse-field-group'>
-                    <div className='form-group'>
-                      <input
-                        type='text'
-                        placeholder='Ciudad y País donde viajo'
-                        className='form-control'
-                      />
-                    </div>
-                    <div className='form-group'>
-                      <input
-                        type='date'
-                        placeholder='Fecha de Regreso'
-                        className='form-control'
-                      />
-                    </div>
-                    <div className='form-group'>
-                      <select type='text' className='form-control'>
-                        <option value=''>Seleccione la vía</option>
-                        <option value=''>Aereo</option>
-                        <option value=''>Terrestre</option>
-                        <option value=''>Marítimo</option>
-                      </select>
-                    </div>
+                    <Select id="returnType" options={[
+                      { value: '', label: 'Seleccione la via' },
+                      { value: 'air', label: 'Aerea' },
+                      { value: 'land', label: 'Terrestre' },
+                      { value: 'water', label: 'Fluvial' },
+                    ]
+                    } />
+
                   </div>
                   <div className='form-group'>
-                    <input type='checkbox' /> &nbsp;{" "}
-                    <b>¿Tuvo contacto con un infectado?</b> <br />
-                    <br />
+                    <Checkbox
+                      id='hadContactInLast14Days'
+                      label='Tuvo Contacto en los ultimos 14 dias?'
+                    />
                   </div>
                   <div className='collapse-field-group'>
                     <div className='form-group'>
-                      <input
-                        type='date'
-                        placeholder='Fecha de Ultimo contacto'
-                        className='form-control'
-                      />
+                      <DateInput id='dateOfLastContact' />
                     </div>
                     <div className='form-group'>
-                      <select type='text' className='form-control'>
-                        <option value=''>
-                          Seleccione la relación con el infectado
-                        </option>
-                        <option value=''>Familiar</option>
-                        <option value=''>Trabajo</option>
-                        <option value=''>Asistencia Médica</option>
-                        <option value=''>Otro</option>
-                      </select>
+                      <Select id="relationWithContact" options={[
+                        { value: '', label: 'Relacion ' },
+                        { value: 'family', label: 'Familiar' },
+                        { value: 'work', label: 'Trabajo' },
+                        { value: 'medical', label: 'Asistencia Medica' },
+                        { value: 'other', label: 'Otro' },
+                      ]
+                      } />
+
                     </div>
                   </div>
                 </div>
