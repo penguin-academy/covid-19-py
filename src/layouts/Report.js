@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 import Input from '../components/Input';
+import PersonalInfoForm from '../components/Reports/PersonalInfoForm';
 
 const INITIAL_STATE = {
   inputValues: {
@@ -99,7 +100,7 @@ const Report = () => {
     <ReportContext.Provider value={{ formState, onInputChange: inputChangeHandler }}>
       <Container style={{ paddingTop: '20px' }}>
         <Input id="email" />
-        <PersonaInfoForm></PersonaInfoForm>
+        <PersonalInfoForm></PersonalInfoForm>
       </Container >
     </ReportContext.Provider>
   )
