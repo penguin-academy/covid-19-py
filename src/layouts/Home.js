@@ -14,7 +14,7 @@ const Home = ({ history }) => {
             data-overlay={2}
           >
             <div className="background-image-holder">
-              <img alt="background" src="img/landing-23.jpg" />
+              <img alt="background" src={'./img/header.jpg'} />
             </div>
             <div className="container">
               <div className="row">
