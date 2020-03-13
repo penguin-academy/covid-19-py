@@ -3,14 +3,15 @@ import Container from 'react-bootstrap/Container'
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 import Input from '../components/Input';
+import PersonaInfoForm from '../components/Reports/PersonalInfoForm'
 
 const INITIAL_STATE = {
   inputValues: {
     email: '',
     phoneNumber: '',
-    firstName: '',
-    lastName: '',
+    name: '',
     documentType: '',
+    document: '',
     nationality: '',
     dob: '',
     sex: '',
@@ -34,8 +35,7 @@ const INITIAL_STATE = {
   inputValidities: {
     email: false,
     phoneNumber: false,
-    firstName: true,
-    lastName: true,
+    name: true,
     documentType: true,
     nationality: true,
     dob: true,
@@ -98,7 +98,6 @@ const Report = () => {
   return (
     <ReportContext.Provider value={{ formState, onInputChange: inputChangeHandler }}>
       <Container style={{ paddingTop: '20px' }}>
-        <Input id="email" />
         <PersonaInfoForm></PersonaInfoForm>
       </Container >
     </ReportContext.Provider>

@@ -36,7 +36,7 @@ const Input = (props) => {
 
   useEffect(() => {
     if (inputState.touched) {
-      console.log('hello');
+
 
       onInputChange(props.id, inputState.value, inputState.isValid);
     }
@@ -77,8 +77,8 @@ const Input = (props) => {
   };
 
   return (
-    <div>
-      <input value={inputState.value} onChange={textChangeHandler} onBlur={lostFocusHandler} />
+    <div className="form-group">
+      <input value={inputState.value} onChange={textChangeHandler} onBlur={lostFocusHandler} {...props} />
     </div>
   )
 }
