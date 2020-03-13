@@ -26,7 +26,7 @@ const Home = ({ history }) => {
                     digital storefront.
                   </p>
                   <button
-                    className="btn btn--primary type--uppercase"
+                    className="btn--primary btn-lg"
                     onClick={onGoToReportPage}
                   >
                     <span className="btn__text">Autoreportarse</span>
