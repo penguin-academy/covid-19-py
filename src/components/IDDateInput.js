@@ -81,6 +81,7 @@ const IDDateInput = props => {
 
   return (
     <div className='form-group'>
+      <label>Fecha de Nacimiento</label>
       <input
         type='date'
         className='form-control'

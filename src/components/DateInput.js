@@ -69,6 +69,7 @@ const DateInput = props => {
 
   return (
     <div className='form-group'>
+      <label>{props.label}</label>
       <input
         type='date'
         className='form-control'

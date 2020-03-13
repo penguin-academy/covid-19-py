@@ -108,6 +108,7 @@ const PlacesInput = props => {
 
         return (
           <div>
+
             <input
               className='form-control'
               style={{ width: "100%" }}

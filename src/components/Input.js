@@ -78,6 +78,7 @@ const Input = (props) => {
 
   return (
     <div className="form-group">
+      <label>{props.label}</label>
       <input value={inputState.value} onChange={textChangeHandler} onBlur={lostFocusHandler} {...props} />
     </div>
   )

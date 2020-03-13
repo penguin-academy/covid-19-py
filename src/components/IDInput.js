@@ -75,19 +75,21 @@ const IDInput = (props) => {
     setError(null)
     const cedula = inputState.value.replace(/\s/g, "")
 
+    if (cedula) {
 
-    fetch(`https://postulacion.juventud.gov.py/api/sii/identificaciones/${cedula}`)
-      .then(res => res.json())
-      .then(data => {
-        let { obtenerPersonaPorNroCedulaResponse: res } = data
-        if (res) {
+      fetch(`https://postulacion.juventud.gov.py/api/sii/identificaciones/${cedula}`)
+        .then(res => res.json())
+        .then(data => {
+          let { obtenerPersonaPorNroCedulaResponse: res } = data
+          if (res) {
 
-          throw new Error('La Cedula no es valida')
+            throw new Error('La Cedula no es valida')
 
-        }
-        onIdChange(data)
-      })
-      .catch(err => setError(err.message))
+          }
+          onIdChange(data)
+        })
+        .catch(err => setError(err.message))
+    }
 
 
     // dispatch({ type: INPUT_BLUR });
@@ -95,6 +97,7 @@ const IDInput = (props) => {
 
   return (
     <div className="form-group">
+      <label>{props.label}</label>
       <input value={inputState.value} onChange={textChangeHandler} onBlur={lostFocusHandler} {...props} />
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>

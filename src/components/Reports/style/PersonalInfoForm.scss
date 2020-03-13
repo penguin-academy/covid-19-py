@@ -60,8 +60,8 @@
     margin-top: 50px;
     position: relative;
     opacity: 0;
-    visibility: hidden;
-    transition: visibility 0s, opacity 0.5s linear;
+    display: none;
+    transition: display 0s, opacity 0.5s linear;
     .form-group {
         margin-top: 30px;
     }
@@ -69,12 +69,18 @@
         margin-top: 50px;
     }
     &.active {
-        visibility: visible;
+        display: block;
         opacity: 1;
     }
     hr {
         margin-top: 30px;
         margin-bottom: 40px;
+    }
+}
+.collapse-field-group{
+    display: none;
+    &.active{
+        display: block;
     }
 }
 @keyframes paginado {
