@@ -1,7 +1,4 @@
 import React from 'react'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import { Link } from 'react-router-dom'
 
 const NavigationBar = () => {
   return (
@@ -12,17 +9,16 @@ const NavigationBar = () => {
             <div className="row">
               <div className="col-3 col-md-2">
                 <a href="index.html">
-                  {' '}
                   <img
                     className="logo logo-dark"
                     alt="logo"
                     src="img/logo-dark.png"
-                  />{' '}
+                  />
                   <img
                     className="logo logo-light"
                     alt="logo"
                     src="img/logo-light.png"
-                  />{' '}
+                  />
                 </a>
               </div>
               <div className="col-9 col-md-10 text-right">
@@ -31,8 +27,7 @@ const NavigationBar = () => {
                   className="hamburger-toggle"
                   data-toggle-class="#menu1;hidden-xs hidden-sm"
                 >
-                  {' '}
-                  <i className="icon icon--sm stack-interface stack-menu" />{' '}
+                  <i className="icon icon--sm stack-interface stack-menu" />
                 </a>
               </div>
             </div>
@@ -47,17 +42,16 @@ const NavigationBar = () => {
               <div className="col-lg-1 col-md-2 hidden-xs">
                 <div className="bar__module">
                   <a href="index.html">
-                    {' '}
                     <img
                       className="logo logo-dark"
                       alt="logo"
                       src="img/logo-dark.png"
-                    />{' '}
+                    />
                     <img
                       className="logo logo-light"
                       alt="logo"
                       src="img/logo-light.png"
-                    />{' '}
+                    />
                   </a>
                 </div>
               </div>
@@ -65,11 +59,9 @@ const NavigationBar = () => {
                 <div className="bar__module">
                   <ul className="menu-horizontal text-left">
                     <li>
-                      {' '}
-                      <a href="#">Single Link</a>{' '}
+                      <a href="#">Single Link</a>
                     </li>
                     <li className="dropdown">
-                      {' '}
                       <span className="dropdown__trigger">Dropdown Slim</span>
                       <div className="dropdown__container">
                         <div className="container">
@@ -77,8 +69,7 @@ const NavigationBar = () => {
                             <div className="dropdown__content col-lg-2">
                               <ul className="menu-vertical">
                                 <li>
-                                  {' '}
-                                  <a href="#">Single Link</a>{' '}
+                                  <a href="#">Single Link</a>
                                 </li>
                               </ul>
                             </div>
@@ -87,7 +78,6 @@ const NavigationBar = () => {
                       </div>
                     </li>
                     <li className="dropdown">
-                      {' '}
                       <span className="dropdown__trigger">Dropdown Wide</span>
                       <div className="dropdown__container">
                         <div className="container">
@@ -97,8 +87,7 @@ const NavigationBar = () => {
                                 <h5>Menu Title</h5>
                                 <ul className="menu-vertical">
                                   <li>
-                                    {' '}
-                                    <a href="#">Single Link</a>{' '}
+                                    <a href="#">Single Link</a>
                                   </li>
                                 </ul>
                               </div>
@@ -106,8 +95,7 @@ const NavigationBar = () => {
                                 <h5>Menu Title</h5>
                                 <ul className="menu-vertical">
                                   <li>
-                                    {' '}
-                                    <a href="#">Single Link</a>{' '}
+                                    <a href="#">Single Link</a>
                                   </li>
                                 </ul>
                               </div>
@@ -115,8 +103,7 @@ const NavigationBar = () => {
                                 <h5>Menu Title</h5>
                                 <ul className="menu-vertical">
                                   <li>
-                                    {' '}
-                                    <a href="#">Single Link</a>{' '}
+                                    <a href="#">Single Link</a>
                                   </li>
                                 </ul>
                               </div>
@@ -124,8 +111,7 @@ const NavigationBar = () => {
                                 <h5>Menu Title</h5>
                                 <ul className="menu-vertical">
                                   <li>
-                                    {' '}
-                                    <a href="#">Single Link</a>{' '}
+                                    <a href="#">Single Link</a>
                                   </li>
                                 </ul>
                               </div>
@@ -141,15 +127,13 @@ const NavigationBar = () => {
                     className="btn btn--sm type--uppercase"
                     href="#customise-template"
                   >
-                    {' '}
-                    <span className="btn__text">Try Builder</span>{' '}
+                    <span className="btn__text">Try Builder</span>
                   </a>
                   <a
                     className="btn btn--sm btn--primary type--uppercase"
                     href="#purchase-template"
                   >
-                    {' '}
-                    <span className="btn__text">Buy Now</span>{' '}
+                    <span className="btn__text">Buy Now</span>
                   </a>
                 </div>
               </div>
