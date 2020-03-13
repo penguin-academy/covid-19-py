@@ -11,19 +11,22 @@ const Home = ({ history }) => {
         <div className="main-container">
           <section
             className="cover cover-features imagebg space--lg"
-            data-overlay={2}
+            data-overlay={4}
           >
-            <div className="background-image-holder">
-              <img alt="background" src="img/landing-23.jpg" />
+            <div
+              className="background-image-holder"
+              style={{ backgroundImage: 'url(./img/header.jpg)', opacity: 1 }}
+            >
+              <img alt="background" src={'./img/header.jpg'} />
             </div>
             <div className="container">
               <div className="row">
                 <div className="col-md-9 col-lg-7">
-                  <h1> Build stylish, lean sites with Stack </h1>
+                  <h1> CoronaVirus Auto Reporte en Paraguay </h1>
                   <p className="lead">
-                    Stack offers a clean and contemporary look to suit a range
-                    of purposes from corporate, tech startup, marketing site to
-                    digital storefront.
+                    Si sospecha que está infectado por el virus que causa el
+                    COVID-19, por favor notifique al DGVS clickando en el botón
+                    Autoreporte
                   </p>
                   <button
                     className="btn--primary btn-lg"
@@ -34,37 +37,28 @@ const Home = ({ history }) => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-3">
                   <div className="feature feature-2 boxed boxed--border bg--white">
-                    <i className="icon icon-Clock-Back color--primary" />
-                    <div className="feature__body">
-                      <p>
-                        Save time with a multitude of styled components designed
-                        to showcase your content
-                      </p>
-                    </div>
+                    <h1 style={{ marginBottom: 5 }}>6</h1>
+                    <h4 style={{ display: 'inline' }}>Casos confirmados</h4>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-3">
                   <div className="feature feature-2 boxed boxed--border bg--white">
-                    <i className="icon icon-Duplicate-Window color--primary" />
-                    <div className="feature__body">
-                      <p>
-                        Construct mockups or production-ready pages in-browser
-                        with Variant Page Builder
-                      </p>
-                    </div>
+                    <h1 style={{ marginBottom: 5 }}>17</h1>
+                    <h4 style={{ display: 'inline' }}>Casos sospechosos</h4>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-3">
                   <div className="feature feature-2 boxed boxed--border bg--white">
-                    <i className="icon icon-Life-Jacket color--primary" />
-                    <div className="feature__body">
-                      <p>
-                        Take comfort in 6 months included support with a
-                        dedicated support forum
-                      </p>
-                    </div>
+                    <h1 style={{ marginBottom: 5 }}>6</h1>
+                    <h4 style={{ display: 'inline' }}>Casos descartados</h4>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="feature feature-2 boxed boxed--border bg--white">
+                    <h1 style={{ marginBottom: 5 }}>125</h1>
+                    <h4 style={{ display: 'inline' }}>En vigilancia</h4>
                   </div>
                 </div>
               </div>
@@ -79,129 +73,15 @@ const Home = ({ history }) => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-5 col-md-7">
-                  <h2>Stack is design-driven</h2>
+                  <h2>Acerca de este sitio</h2>
                   <p className="lead">
-                    Stack offers a clean and contemporary to suit a range of
-                    purposes from corporate, tech startup, marketing site to
-                    digital storefront. Elements have been designed to showcase
-                    content in a diverse yet consistent manner.
+                    El DGVS-MSPyBS está vigilando de cerca los brotes de la
+                    enfermedad respiratoria causada por un nuevo coronavirus que
+                    se identificó por primera vez en Wuhan, en la provincia de
+                    Hubei, en China. Esta es una situación emergente que está
+                    cambiando rápidamente y el MSPyBS continuará brindando
+                    información actualizada a medida que esté disponible.
                   </p>
-                  <p className="lead">
-                    Multiple font and colour scheme options mean that
-                    dramatically altering the look of your site is just clicks
-                    away — Customizing your site in the included Variant Page
-                    Builder makes experimenting with styles and content
-                    arrangements dead simple.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div className="container">
-              <div className="masonry">
-                <div className="masonry__container row masonry--active">
-                  <div className="col-md-4 masonry__item">
-                    <div className="card card-2 text-center">
-                      <div className="card__top">
-                        <a href="#">
-                          <img alt="Image" src="img/landing-8.jpg" />
-                        </a>
-                      </div>
-                      <div className="card__body">
-                        <h4>Photography 101</h4>
-                        <span className="type--fade">
-                          Understanding the fundamentals
-                        </span>
-                        <p>
-                          Construct mockups or production-ready pages in-browser
-                          with Variant Page Builder
-                        </p>
-                      </div>
-                      <div className="card__bottom text-center">
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Explore</span>
-                          <a href="#">
-                            <i className="material-icons">flip_to_front</i>
-                          </a>
-                        </div>
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Save</span>
-                          <a href="#">
-                            <i className="material-icons">favorite_border</i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4 masonry__item">
-                    <div className="card card-2 text-center">
-                      <div className="card__top">
-                        <span className="label">New</span>
-                        <a href="#">
-                          <img alt="Image" src="img/landing-14.jpg" />
-                        </a>
-                      </div>
-                      <div className="card__body">
-                        <h4>Kiln Fired Pottery</h4>
-                        <span className="type--fade">
-                          Video Tutorial Series
-                        </span>
-                        <p>
-                          Construct mockups or production-ready pages in-browser
-                          with Variant Page Builder
-                        </p>
-                      </div>
-                      <div className="card__bottom text-center">
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Explore</span>
-                          <a href="#">
-                            <i className="material-icons">flip_to_front</i>
-                          </a>
-                        </div>
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Save</span>
-                          <a href="#">
-                            <i className="material-icons">favorite_border</i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4 masonry__item">
-                    <div className="card card-2 text-center">
-                      <div className="card__top">
-                        <span className="label">New</span>
-                        <a href="#">
-                          <img alt="Image" src="img/landing-14.jpg" />
-                        </a>
-                      </div>
-                      <div className="card__body">
-                        <h4>Kiln Fired Pottery</h4>
-                        <span className="type--fade">
-                          Video Tutorial Series
-                        </span>
-                        <p>
-                          Construct mockups or production-ready pages in-browser
-                          with Variant Page Builder
-                        </p>
-                      </div>
-                      <div className="card__bottom text-center">
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Explore</span>
-                          <a href="#">
-                            <i className="material-icons">flip_to_front</i>
-                          </a>
-                        </div>
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Save</span>
-                          <a href="#">
-                            <i className="material-icons">favorite_border</i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
