@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavigationBar = () => {
   return (
@@ -38,7 +39,7 @@ const NavigationBar = () => {
                 <div className="bar__module">
                   <ul className="menu-horizontal text-left">
                     <li>
-                      <a href="#">Single Link</a>
+                      <Link to="/report">Autoreportarse</Link>
                     </li>
                   </ul>
                 </div>
