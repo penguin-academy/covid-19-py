@@ -1,12 +1,11 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
+import Input from '../Input';
+import Select from '../Select';
+
 import './style/PersonalInfoForm.scss';
 
 const PersonalInfoForm = () => {
-    
+
   return (
     <div className="container">
       <div className="col-md-10 offset-md-1">
@@ -18,7 +17,7 @@ const PersonalInfoForm = () => {
                   <span>1</span>
                 </div>
                 <div className="indicator active">
-                  <span>2</span> 
+                  <span>2</span>
                 </div>
                 <div className="indicator active">
                   <span>3</span>
@@ -26,27 +25,20 @@ const PersonalInfoForm = () => {
               </div>
               <div className="clearfix"></div>
             </div>
-            <div className="page col-md-12">
+            <div className="page active col-md-12">
               <h2>Información de Contacto</h2>
-              <hr></hr>
-              <div className="form-group">
-                <input type="email" className="form-control" placeholder="Correo Electrónico"/>
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Número de Teléfono"/>
-              </div>
+              <hr />
+              <Input id="email" type="email" className="form-control" placeholder="Correo Electrónico" />
+              <Input id="phoneNumber" type="text" className="form-control" placeholder="Número de Teléfono" />
+
               <button type="submit" className="btn btn-primary">Siguente</button>
             </div>
             <div className="page col-md-12 active">
               <h2>Información Personal</h2>
               <hr></hr>
               <div className="row">
-
                 <div className="col-md-6">
-
-                  <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Nombre y Apellido"/>
-                  </div>
+                  <Input id="name" type="text" className="form-control" placeholder="Nombre y Apellido" />
                   <div className="form-group">
                     <select type="text" className="form-control" placeholder="Tipo de Documernto">
                       <option value="">Seleccione un tipo de documento</option>
@@ -55,17 +47,16 @@ const PersonalInfoForm = () => {
                     </select>
                   </div>
                   <div className="form-group">
-                    <input type="number" className="form-control" placeholder="Nro. de Documento"/>
+                    <input type="number" className="form-control" placeholder="Nro. de Documento" />
                   </div>
                   <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Nacionalidad"/>
+                    <input type="text" className="form-control" placeholder="Nacionalidad" />
                   </div>
                   <div className="form-group">
-                    <input type="date" className="form-control" placeholder="Fecha de Nacimiento"/>
+                    <input type="date" className="form-control" placeholder="Fecha de Nacimiento" />
                   </div>
                 </div>
                 <div className="col-md-6">
-
                   <div className="form-group">
                     <select type="text" className="form-control" placeholder="Sexo">
                       <option value="">Seleccione su sexo</option>
@@ -73,6 +64,11 @@ const PersonalInfoForm = () => {
                       <option value="">Femenino</option>
                     </select>
                   </div>
+                  <Select options={[
+                    { value: '', label: 'Selecione un sexo' },
+                    { value: 'male', label: 'Hombre' },
+                    { value: 'female', label: 'Mujer' }
+                  ]} />
                   <div className="form-group">
                     <select type="text" className="form-control" placeholder="Departamento">
                       <option value="">Seleccione su Departamento</option>
@@ -93,32 +89,32 @@ const PersonalInfoForm = () => {
               <button type="submit" className="btn btn-primary">Siguente</button>
 
             </div>
-            <div className="page col-md-12">
+            <div className="page active col-md-12">
               <h2>Información Sintomática</h2>
               <hr></hr>
               <div className="row">
 
                 <div className="col-md-6">
                   <div className="form-group">
-                    <h4>Síntomas</h4> <br/>
-                    <input type="checkbox"/> &nbsp; Fiebre <br/><br/>
-                    <input type="checkbox"/> &nbsp; Tos  <br/><br/>
-                    <input type="checkbox"/> &nbsp; Dificultad para respirar <br/><br/>
-                    <input type="checkbox"/> &nbsp; Dolor de garganta <br/><br/>
+                    <h4>Síntomas</h4> <br />
+                    <input type="checkbox" /> &nbsp; Fiebre <br /><br />
+                    <input type="checkbox" /> &nbsp; Tos  <br /><br />
+                    <input type="checkbox" /> &nbsp; Dificultad para respirar <br /><br />
+                    <input type="checkbox" /> &nbsp; Dolor de garganta <br /><br />
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="form-group">
-                    <br/>
-                    <br/>
-                    <input type="checkbox"/> &nbsp; <b>¿Viajó en los ultimos 14 días?</b> <br/><br/>
+                    <br />
+                    <br />
+                    <input type="checkbox" /> &nbsp; <b>¿Viajó en los ultimos 14 días?</b> <br /><br />
                   </div>
                   <div className="collapse-field-group">
                     <div className="form-group">
-                      <input type="text" placeholder="Ciudad y País donde viajo" className="form-control"/>
+                      <input type="text" placeholder="Ciudad y País donde viajo" className="form-control" />
                     </div>
                     <div className="form-group">
-                      <input type="date" placeholder="Fecha de Regreso" className="form-control"/>
+                      <input type="date" placeholder="Fecha de Regreso" className="form-control" />
                     </div>
                     <div className="form-group">
                       <select type="text" className="form-control">
@@ -130,11 +126,11 @@ const PersonalInfoForm = () => {
                     </div>
                   </div>
                   <div className="form-group">
-                    <input type="checkbox"/> &nbsp; <b>¿Tuvo contacto con un infectado?</b> <br/><br/>
+                    <input type="checkbox" /> &nbsp; <b>¿Tuvo contacto con un infectado?</b> <br /><br />
                   </div>
                   <div className="collapse-field-group">
                     <div className="form-group">
-                      <input type="date" placeholder="Fecha de Ultimo contacto" className="form-control"/>
+                      <input type="date" placeholder="Fecha de Ultimo contacto" className="form-control" />
                     </div>
                     <div className="form-group">
                       <select type="text" className="form-control">
