@@ -21,7 +21,7 @@ const Select = (props) => {
 
   return (
     <div className="form-group">
-      <select type="text" className="form-control" placeholder="Tipo de Documernto" onChange={handleChange} >
+      <select type="text" className="form-control" placeholder="Tipo de Documento" onChange={handleChange} >
         {options.map(option => (<option key={option.value} value={option.value}> {option.label}</option>))}
       </select>
     </div>

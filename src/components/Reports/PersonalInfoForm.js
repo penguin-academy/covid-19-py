@@ -25,7 +25,7 @@ const PersonalInfoForm = () => {
               </div>
               <div className="clearfix"></div>
             </div>
-            <div className="page col-md-12">
+            <div className="page active col-md-12">
               <h2>Información de Contacto</h2>
               <hr />
               <Input id="email" type="email" className="form-control" placeholder="Correo Electrónico" />
@@ -89,7 +89,7 @@ const PersonalInfoForm = () => {
               <button type="submit" className="btn btn-primary">Siguente</button>
 
             </div>
-            <div className="page col-md-12">
+            <div className="page active col-md-12">
               <h2>Información Sintomática</h2>
               <hr></hr>
               <div className="row">

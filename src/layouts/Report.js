@@ -2,12 +2,7 @@ import React, { useReducer, useCallback } from 'react'
 import Container from 'react-bootstrap/Container'
 import firebase from 'firebase/app'
 import 'firebase/firestore';
-import Input from '../components/Input';
-<<<<<<< HEAD
-import PersonaInfoForm from '../components/Reports/PersonalInfoForm'
-=======
 import PersonalInfoForm from '../components/Reports/PersonalInfoForm';
->>>>>>> f306f170f86b82d6473e8d60916f02735e7fd87b
 
 const INITIAL_STATE = {
   inputValues: {
@@ -102,12 +97,10 @@ const Report = () => {
   return (
     <ReportContext.Provider value={{ formState, onInputChange: inputChangeHandler }}>
       <Container style={{ paddingTop: '20px' }}>
-<<<<<<< HEAD
-        <PersonaInfoForm></PersonaInfoForm>
-=======
-        <Input id="email" />
+
+
+
         <PersonalInfoForm></PersonalInfoForm>
->>>>>>> f306f170f86b82d6473e8d60916f02735e7fd87b
       </Container >
     </ReportContext.Provider>
   )
