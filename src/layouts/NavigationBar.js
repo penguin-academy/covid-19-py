@@ -33,7 +33,7 @@ const NavigationBar = () => {
           <div className="container">
             <div className="row">
               <div className="col-lg-3 col-md-3 hidden-xs">
-                <h4>CoronaVirus Auto Report</h4>
+                <h4 style={{ color: 'white' }}>CoronaVirus Auto Report</h4>
               </div>
               <div className="col-lg-9 col-md-9 text-right text-left-xs text-left-sm">
                 <div className="bar__module">
