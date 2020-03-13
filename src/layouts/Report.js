@@ -15,39 +15,40 @@ const INITIAL_STATE = {
     dob: "",
     sex: "",
     address: "",
-    coords: "",
-    hasFever: "",
-    hasCough: "",
-    hasTroubleBreathing: "",
-    hasThroatPain: "",
+    coords: null,
+    hasFever: false,
+    hasCough: false,
+    hasTroubleBreathing: false,
+    hasThroatPain: false,
     dateOfSymptomStart: "",
-    hasTraveledInLast14Days: "",
+    hasTraveledInLast14Days: false,
     cityTheyTraveledTo: "",
-    countryTheyTraveledTo: "",
+    cityCoords: null,
     dateOfReturn: "",
     returnType: "",
-    hadContactInLast14Days: "",
+    hadContactInLast14Days: false,
     dateOfLastContact: "",
     relationWithContact: ""
   },
-  inputValidities: {
-    email: false,
-    phoneNumber: false,
-    name: true,
-    documentType: true,
-    nationality: true,
-    dob: true,
-    sex: true,
-    region: true,
-    city: true,
-    neighborhood: true
-  },
-  formIsValid: false
+  // inputValidities: {
+  //   email: false,
+  //   phoneNumber: false,
+  //   name: true,
+  //   documentType: true,
+  //   nationality: true,
+  //   dob: true,
+  //   sex: true,
+  //   region: true,
+  //   city: true,
+  //   neighborhood: true
+  // },
+  // formIsValid: false
 };
 
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 const REPORT_ID_UPDATE = "REPORT_ID_UPDATE";
 const ADDRESS_UPDATE = "ADDRESS_UPDATE";
+const CHECKBOX_UPDATE = 'CHECKBOX_UPDATE';
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -56,17 +57,17 @@ const formReducer = (state, action) => {
         ...state.inputValues,
         [action.input]: action.value
       };
-      const updatedValidities = {
-        ...state.inputValidities,
-        [action.input]: action.isValid
-      };
-      let updatedFormIsValid = true;
-      for (const key in updatedValidities) {
-        updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
-      }
+      // const updatedValidities = {
+      //   ...state.inputValidities,
+      //   [action.input]: action.isValid
+      // };
+      // let updatedFormIsValid = true;
+      // for (const key in updatedValidities) {
+      //   updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
+      // }
       return {
-        formIsValid: updatedFormIsValid,
-        inputValidities: updatedValidities,
+        // formIsValid: updatedFormIsValid,
+        // inputValidities: updatedValidities,
         inputValues: updatedValues
       };
     }
@@ -85,14 +86,36 @@ const formReducer = (state, action) => {
         }
       };
     case ADDRESS_UPDATE:
+      const label = action.id
+      if (label === 'home') {
+        return {
+          ...state,
+          inputValues: {
+            ...state.inputValues,
+            address: action.address,
+            coords: action.coords
+          }
+        };
+      } else {
+        return {
+          ...state,
+          inputValues: {
+            ...state.inputValues,
+            cityTheyTraveledTo: action.address,
+            cityCoords: action.coords
+          }
+        };
+      }
+
+    case CHECKBOX_UPDATE:
+
       return {
         ...state,
         inputValues: {
           ...state.inputValues,
-          address: action.address,
-          coords: action.coords
+          [action.input]: action.value
         }
-      };
+      }
     default:
       return state;
   }
@@ -128,15 +151,36 @@ const Report = () => {
   );
 
   const addressChangeHandler = useCallback(
-    (address, coords) => {
+    (id, address, coords) => {
       dispatchFormState({
         type: ADDRESS_UPDATE,
         address,
-        coords
+        coords,
+        id
       });
     },
     [dispatchFormState]
   );
+
+  const checkboxChangeHandler = useCallback(
+    (inputIdentifier, inputValue) => {
+      dispatchFormState({
+        type: CHECKBOX_UPDATE,
+        input: inputIdentifier,
+        value: inputValue
+      })
+    },
+    [dispatchFormState]
+  )
+
+  const postForm = async () => {
+    try {
+      await firebase.firestore().collection('self-reports').add(formState.inputValues)
+      console.log(formState)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <ReportContext.Provider
@@ -144,7 +188,9 @@ const Report = () => {
         formState,
         onInputChange: inputChangeHandler,
         onIdChange: idResponseHandler,
-        onAddressChange: addressChangeHandler
+        onAddressChange: addressChangeHandler,
+        onCheckboxChange: checkboxChangeHandler,
+        onSubmitForm: postForm
       }}
     >
       <Container style={{ paddingTop: "20px" }}>

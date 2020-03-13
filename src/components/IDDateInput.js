@@ -22,7 +22,7 @@ const inputReducer = (state, action) => {
   }
 };
 
-const DateInput = props => {
+const IDDateInput = props => {
   const [inputState, dispatch] = useReducer(inputReducer, {
     value: "",
     isValid: false,
@@ -64,7 +64,19 @@ const DateInput = props => {
   };
 
   const lostFocusHandler = () => {
-    dispatch({ type: INPUT_BLUR })
+    setError(null);
+    let dobDate = new Date(formState.inputValues.dob);
+    let userDate = new Date(inputState.value);
+    dobDate = `${dobDate.getFullYear()}-${dobDate.getMonth() +
+      1}-${dobDate.getUTCDate()}`;
+    userDate = `${userDate.getFullYear()}-${userDate.getMonth() +
+      1}-${userDate.getUTCDate()}`;
+    if (!(dobDate === userDate)) {
+      setError("La informacion no coincide");
+      console.log(error);
+
+      return;
+    }
   };
 
   return (
@@ -81,4 +93,4 @@ const DateInput = props => {
   );
 };
 
-export default DateInput;
+export default IDDateInput;
