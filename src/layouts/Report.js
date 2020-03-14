@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import PersonalInfoForm from '../components/Reports/PersonalInfoForm'
+import { useHistory } from 'react-router-dom'
 
 const INITIAL_STATE = {
   inputValues: {
@@ -34,7 +35,10 @@ const INITIAL_STATE = {
   inputValidities: {
     phoneNumber: false
   },
-  formIsValid: false
+  formIsValid: false,
+  errors: {
+    submit: null
+  }
 }
 
 const FORM_INPUT_UPDATE = 'FORM_INPUT_UPDATE'
@@ -44,6 +48,7 @@ const ADDRESS_UPDATE = 'ADDRESS_UPDATE'
 const CHECKBOX_UPDATE = 'CHECKBOX_UPDATE'
 const DOB_ID_SUCCESS = 'DOB_ID_SUCCESS'
 const DOB_ID_ERROR = 'DOB_ID_ERROR'
+const SUBMISSION_FAILED = 'SUBMISSION_FAILED'
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -61,6 +66,7 @@ const formReducer = (state, action) => {
         updatedFormIsValid = updatedFormIsValid && updatedValidities[key]
       }
       return {
+        ...state,
         formIsValid: updatedFormIsValid,
         inputValidities: updatedValidities,
         inputValues: updatedValues
@@ -145,6 +151,16 @@ const formReducer = (state, action) => {
           [action.input]: action.value
         }
       }
+
+    case SUBMISSION_FAILED:
+      return {
+        ...state,
+        errors: {
+          ...state.errors,
+          submit:
+            'Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros.'
+        }
+      }
     default:
       return state
   }
@@ -155,6 +171,8 @@ const ReportContext = React.createContext()
 export const useReportContext = () => React.useContext(ReportContext)
 
 const Report = () => {
+  const history = useHistory()
+
   const [formState, dispatchFormState] = useReducer(formReducer, INITIAL_STATE)
 
   const inputChangeHandler = useCallback(
@@ -226,8 +244,10 @@ const Report = () => {
         .firestore()
         .collection('self-reports')
         .add(formState.inputValues)
+      history.push('/success')
     } catch (error) {
       console.log(error)
+      dispatchFormState({ type: SUBMISSION_FAILED, error: error.message })
     }
   }
 
