@@ -5,7 +5,7 @@ const Stats = () => {
   return (
     <div className="row justify-content-center">
       <div className="col-6 col-lg-3 mb-5">
-        <a className="card z-1 lift" href="#!">
+        <div className="card z-1 lift">
           <h2
             className="page-header-title"
             style={{ color: '#e81500', textAlign: 'center' }}
@@ -15,10 +15,10 @@ const Stats = () => {
           <div className="card-body text-center py-3">
             <h6 className="card-title mb-0">Casos confirmados</h6>
           </div>
-        </a>
+        </div>
       </div>
       <div className="col-6 col-lg-3 mb-5">
-        <a className="card z-1 lift" href="#!">
+        <div className="card z-1 lift">
           <h2
             className="page-header-title"
             style={{ color: '#f4a100', textAlign: 'center' }}
@@ -28,10 +28,10 @@ const Stats = () => {
           <div className="card-body text-center py-3">
             <h6 className="card-title mb-0">Casos sospechosos</h6>
           </div>
-        </a>
+        </div>
       </div>
       <div className="col-6 col-lg-3 mb-5">
-        <a className="card z-1 lift" href="#!">
+        <div className="card z-1 lift">
           <h2
             className="page-header-title"
             style={{ color: '#00ac69', textAlign: 'center' }}
@@ -41,10 +41,10 @@ const Stats = () => {
           <div className="card-body text-center py-3">
             <h6 className="card-title mb-0">Casos descartados</h6>
           </div>
-        </a>
+        </div>
       </div>
       <div className="col-6 col-lg-3 mb-5">
-        <a className="card z-1 lift" href="#!">
+        <div className="card z-1 lift">
           <h2
             className="page-header-title"
             style={{ color: 'black', textAlign: 'center' }}
@@ -54,7 +54,7 @@ const Stats = () => {
           <div className="card-body text-center py-3">
             <h6 className="card-title mb-0">En vigilancia</h6>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   )
@@ -64,17 +64,21 @@ const Home = ({ history }) => {
   return (
     <div>
       <header className="page-header page-header-dark bg-gradient-primary-to-secondary">
-        <div className="page-header-content pt-10">
+        <div className="page-header-content">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-6" data-aos="fade-up">
                 <h1 className="page-header-title">
                   CoronaVirus Auto Reporte en Paraguay
                 </h1>
+                <p className="page-header-text">
+                  El DGVS-MSPyBS está vigilando de cerca los brotes de la
+                  enfermedad respiratoria causadas por el COVID-19.
+                </p>
                 <p className="page-header-text mb-5">
                   Si sospecha que está infectado por el virus que causa el
-                  COVID-19, por favor notifique al DGVS clickando en el botón
-                  Autoreporte
+                  COVID-19, por favor notifique al DGVS clickando en el botón de
+                  autoreporte.
                 </p>
                 <Link
                   className="btn btn-teal btn-marketing rounded-pill lift lift-sm"
@@ -116,30 +120,33 @@ const Home = ({ history }) => {
               <div className="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
                 <i data-feather="layers"></i>
               </div>
-              <h3>Built for developers</h3>
+
+              <h3>Pasos para prevenir la enfermedad</h3>
               <p className="mb-0">
-                Our customizable, block-based build system makes creating your
-                next project fast and easy!
+                La mejor forma de prevenir la enfermedad es evitar ser expuesto
+                al COVID-19.
               </p>
             </div>
             <div className="col-lg-4 mb-5 mb-lg-0">
               <div className="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
                 <i data-feather="smartphone"></i>
               </div>
-              <h3>Modern responsive design</h3>
+              <h3>Qué hacer si estás enfermo</h3>
               <p className="mb-0">
-                Featuring carefully crafted, mobile-first components, your end
-                product will function beautifully on any device!
+                Si está enfermo con COVID-19 o sospecha que está infectado, tome
+                medidas para ayudar a prevenir la propagación de la enfermedad.
               </p>
             </div>
             <div className="col-lg-4">
               <div className="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
                 <i data-feather="code"></i>
               </div>
-              <h3>Complete documentation</h3>
+              <h3>
+                Mantenga el trabajo, las escuelas y las comunidades seguras
+              </h3>
               <p className="mb-0">
-                All of the layouts, page sections, components, and utilities are
-                fully covered in this products docs.
+                Protéjase a sí mismo y a su comunidad de contraer y difundir
+                COVID-19.
               </p>
             </div>
           </div>

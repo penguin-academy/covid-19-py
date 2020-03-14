@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu } from 'react-feather'
+import './styles/NavigationBar.scss'
 
 const NavigationBar = () => {
+  const [show, setShow] = useState(false)
   return (
     <nav className="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
       <div className="container">
@@ -17,13 +19,17 @@ const NavigationBar = () => {
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={() => setShow(!show)}
         >
           <Menu />
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className={`collapse navbar-collapse ${show ? 'show' : ''}`}
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav ml-auto mr-lg-5">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/" onClick={() => setShow(false)}>
                 Home
               </Link>
             </li>
@@ -31,6 +37,7 @@ const NavigationBar = () => {
           <Link
             className="btn-primary btn rounded-pill px-4 ml-lg-4"
             to="/report"
+            onClick={() => setShow(false)}
           >
             Autoreportarse
             <i className="fas fa-arrow-right ml-1" />
