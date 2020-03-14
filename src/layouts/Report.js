@@ -1,51 +1,49 @@
-import React, { useReducer, useCallback } from "react";
-import Container from "react-bootstrap/Container";
-import firebase from "firebase/app";
-import "firebase/firestore";
-import PersonalInfoForm from "../components/Reports/PersonalInfoForm";
+import React, { useReducer, useCallback } from 'react'
+import Container from 'react-bootstrap/Container'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+import PersonalInfoForm from '../components/Reports/PersonalInfoForm'
 
 const INITIAL_STATE = {
   inputValues: {
-    phoneNumber: "",
-    firstName: "",
-    lastName: "",
-    document: "",
-    nationality: "",
-    dob: "",
+    phoneNumber: '',
+    firstName: '',
+    lastName: '',
+    document: '',
+    nationality: '',
+    dob: '',
     dobCheck: '',
-    sex: "",
-    address: "",
+    sex: '',
+    address: '',
     coords: null,
     hasFever: false,
     hasCough: false,
     hasMucus: false,
     hasTroubleBreathing: false,
     hasThroatPain: false,
-    dateOfSymptomStart: "",
+    dateOfSymptomStart: '',
     hasTraveledInLast14Days: false,
-    cityTheyTraveledTo: "",
+    cityTheyTraveledTo: '',
     cityCoords: null,
-    dateOfReturn: "",
-    returnType: "",
+    dateOfReturn: '',
+    returnType: '',
     hadContactInLast14Days: false,
-    dateOfLastContact: "",
-    relationWithContact: ""
+    dateOfLastContact: '',
+    relationWithContact: ''
   },
   inputValidities: {
-    phoneNumber: false,
-
-
+    phoneNumber: false
   },
   formIsValid: false
-};
+}
 
-const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
-const REPORT_ID_UPDATE = "REPORT_ID_UPDATE";
+const FORM_INPUT_UPDATE = 'FORM_INPUT_UPDATE'
+const REPORT_ID_UPDATE = 'REPORT_ID_UPDATE'
 const REPORT_ID_UPDATE_ERROR = 'REPORT_ID_UPDATE_ERROR'
-const ADDRESS_UPDATE = "ADDRESS_UPDATE";
-const CHECKBOX_UPDATE = 'CHECKBOX_UPDATE';
-const DOB_ID_SUCCESS = 'DOB_ID_SUCCESS';
-const DOB_ID_ERROR = 'DOB_ID_ERROR';
+const ADDRESS_UPDATE = 'ADDRESS_UPDATE'
+const CHECKBOX_UPDATE = 'CHECKBOX_UPDATE'
+const DOB_ID_SUCCESS = 'DOB_ID_SUCCESS'
+const DOB_ID_ERROR = 'DOB_ID_ERROR'
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -53,24 +51,24 @@ const formReducer = (state, action) => {
       const updatedValues = {
         ...state.inputValues,
         [action.input]: action.value
-      };
+      }
       const updatedValidities = {
         ...state.inputValidities,
         [action.input]: action.isValid
-      };
-      let updatedFormIsValid = true;
+      }
+      let updatedFormIsValid = true
       for (const key in updatedValidities) {
-        updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
+        updatedFormIsValid = updatedFormIsValid && updatedValidities[key]
       }
       return {
         formIsValid: updatedFormIsValid,
         inputValidities: updatedValidities,
         inputValues: updatedValues
-      };
+      }
     }
 
     case REPORT_ID_UPDATE:
-      let userInfo = action.data;
+      let userInfo = action.data
       return {
         ...state,
         inputValues: {
@@ -86,20 +84,19 @@ const formReducer = (state, action) => {
         formIsValid: true
       }
     case REPORT_ID_UPDATE_ERROR:
-
       return {
         ...state,
         inputValues: {
           ...state.inputValues,
-          document: "",
-          firstName: "",
-          lastName: "",
-          dob: "",
-          nationality: "",
-          sex: ""
+          document: '',
+          firstName: '',
+          lastName: '',
+          dob: '',
+          nationality: '',
+          sex: ''
         },
         formIsValid: false
-      };
+      }
     case DOB_ID_SUCCESS:
       return {
         ...state,
@@ -114,7 +111,7 @@ const formReducer = (state, action) => {
         ...state,
         inputValues: {
           ...state.inputValues,
-          dobCheck: ""
+          dobCheck: ''
         },
         formIsValid: false
       }
@@ -128,7 +125,7 @@ const formReducer = (state, action) => {
             address: action.address,
             coords: action.coords
           }
-        };
+        }
       } else {
         return {
           ...state,
@@ -137,11 +134,10 @@ const formReducer = (state, action) => {
             cityTheyTraveledTo: action.address,
             cityCoords: action.coords
           }
-        };
+        }
       }
 
     case CHECKBOX_UPDATE:
-
       return {
         ...state,
         inputValues: {
@@ -150,16 +146,16 @@ const formReducer = (state, action) => {
         }
       }
     default:
-      return state;
+      return state
   }
-};
+}
 
-const ReportContext = React.createContext();
+const ReportContext = React.createContext()
 
-export const useReportContext = () => React.useContext(ReportContext);
+export const useReportContext = () => React.useContext(ReportContext)
 
 const Report = () => {
-  const [formState, dispatchFormState] = useReducer(formReducer, INITIAL_STATE);
+  const [formState, dispatchFormState] = useReducer(formReducer, INITIAL_STATE)
 
   const inputChangeHandler = useCallback(
     (inputIdentifier, inputValue, inputValidity) => {
@@ -168,29 +164,26 @@ const Report = () => {
         value: inputValue,
         isValid: inputValidity,
         input: inputIdentifier
-      });
+      })
     },
     [dispatchFormState]
-  );
+  )
 
   const idResponseHandler = useCallback(
     userData => {
       dispatchFormState({
         type: REPORT_ID_UPDATE,
         data: userData
-      });
+      })
     },
     [dispatchFormState]
-  );
+  )
 
   const idResponseErrorHandler = useCallback(() => {
     dispatchFormState({
       type: REPORT_ID_UPDATE_ERROR
     })
-  },
-    [dispatchFormState]
-
-  )
+  }, [dispatchFormState])
 
   const addressChangeHandler = useCallback(
     (id, address, coords) => {
@@ -199,10 +192,10 @@ const Report = () => {
         address,
         coords,
         id
-      });
+      })
     },
     [dispatchFormState]
-  );
+  )
 
   const checkboxChangeHandler = useCallback(
     (inputIdentifier, inputValue) => {
@@ -215,26 +208,24 @@ const Report = () => {
     [dispatchFormState]
   )
 
-  const dobError = useCallback(
-    () => {
-      dispatchFormState({
-        type: DOB_ID_ERROR
-      })
-    }, [dispatchFormState]
-  )
+  const dobError = useCallback(() => {
+    dispatchFormState({
+      type: DOB_ID_ERROR
+    })
+  }, [dispatchFormState])
 
-  const dobIdSuccess = useCallback(
-    () => {
-      dispatchFormState({
-        type: DOB_ID_SUCCESS
-      })
-    }, [dispatchFormState]
-  )
+  const dobIdSuccess = useCallback(() => {
+    dispatchFormState({
+      type: DOB_ID_SUCCESS
+    })
+  }, [dispatchFormState])
 
   const postForm = async () => {
     try {
-      await firebase.firestore().collection('self-reports').add(formState.inputValues)
-
+      await firebase
+        .firestore()
+        .collection('self-reports')
+        .add(formState.inputValues)
     } catch (error) {
       console.log(error)
     }
@@ -254,11 +245,18 @@ const Report = () => {
         onSubmitForm: postForm
       }}
     >
-      <Container style={{ paddingTop: "20px" }}>
-        <PersonalInfoForm></PersonalInfoForm>
-      </Container>
+      <header
+        className="page-header page-header-light bg-white"
+        style={{ paddingTop: '2rem' }}
+      >
+        <div className="page-header-content">
+          <div className="container">
+            <PersonalInfoForm></PersonalInfoForm>
+          </div>
+        </div>
+      </header>
     </ReportContext.Provider>
-  );
-};
+  )
+}
 
-export default Report;
+export default Report
