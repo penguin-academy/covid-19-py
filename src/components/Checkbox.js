@@ -4,8 +4,6 @@ import { useReportContext } from '../layouts/Report';
 const Checkbox = ({ id, label }) => {
   const [checked, setChecked] = useState(false)
 
-
-
   const { onCheckboxChange } = useReportContext()
 
   const handleChange = () => {
@@ -14,10 +12,9 @@ const Checkbox = ({ id, label }) => {
     setChecked(newValue)
   }
 
-
   return (
-    <div>
-      <input type='checkbox' onChange={handleChange} checked={checked} /> &nbsp; {label} <br />
+    <div onClick={handleChange}>
+      <input type='checkbox' checked={checked} name={id} /> &nbsp; {label} <br />
     </div>
   )
 }

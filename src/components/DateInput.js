@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
 import { useReportContext } from "../layouts/Report";
 
 const INPUT_CHANGE = "INPUT_CHANGE";
@@ -28,9 +28,9 @@ const DateInput = props => {
     isValid: false,
     touched: false
   });
-  const [error, setError] = useState(null);
 
-  const { onInputChange, onIdChange, formState } = useReportContext();
+
+  const { onInputChange } = useReportContext();
 
   useEffect(() => {
     if (inputState.touched) {
@@ -40,26 +40,10 @@ const DateInput = props => {
 
   const textChangeHandler = textVal => {
     const text = textVal.target.value;
-    const numberRegex = /^(0|[1-9]\d*)$/;
     let isValid = true;
     if (props.required && text.trim().length === 0) {
       isValid = false;
     }
-
-    if (!numberRegex.test(text.toLowerCase())) {
-      isValid = false;
-    }
-
-    if (props.min != null && +text < props.min) {
-      isValid = false;
-    }
-    if (props.max != null && +text > props.max) {
-      isValid = false;
-    }
-    if (props.minLength != null && text.length < props.minLength) {
-      isValid = false;
-    }
-
     dispatch({ type: INPUT_CHANGE, value: text, isValid: isValid });
   };
 
@@ -77,7 +61,7 @@ const DateInput = props => {
         onChange={textChangeHandler}
         onBlur={lostFocusHandler}
       />
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {!inputState.isValid && inputState.touched && <p style={{ color: "red" }}>{props.errorMessage}</p>}
     </div>
   );
 };

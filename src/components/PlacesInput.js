@@ -60,25 +60,12 @@ const PlacesInput = props => {
   }, [props.id, inputState, onAddressChange, gps]);
 
   const textChangeHandler = text => {
-    const numberRegex = /^(0|[1-9]\d*)$/;
+
     let isValid = true;
     if (props.required && text.trim().length === 0) {
       isValid = false;
     }
 
-    if (!numberRegex.test(text.toLowerCase())) {
-      isValid = false;
-    }
-
-    if (props.min != null && +text < props.min) {
-      isValid = false;
-    }
-    if (props.max != null && +text > props.max) {
-      isValid = false;
-    }
-    if (props.minLength != null && text.length < props.minLength) {
-      isValid = false;
-    }
 
     dispatch({ type: INPUT_CHANGE, value: text, isValid: isValid });
   };
@@ -101,7 +88,8 @@ const PlacesInput = props => {
           suggestions,
           getSuggestionItemProps,
           loading,
-          placeholder
+          placeholder,
+
         } = props;
 
 
@@ -117,6 +105,7 @@ const PlacesInput = props => {
               onBlur={lostFocusHandler}
               {...getInputProps()}
             />
+            {!inputState.isValid && inputState.touched && <p style={{ color: "red" }}>{props.errorMessage}</p>}
             <div>
               {loading && <div>Loading...</div>}
               {suggestions.map(suggestion => {

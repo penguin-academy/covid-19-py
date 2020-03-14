@@ -30,7 +30,7 @@ const Input = (props) => {
   });
 
 
-  const { onInputChange, formState } = useReportContext();
+  const { onInputChange, } = useReportContext();
 
 
 
@@ -45,7 +45,7 @@ const Input = (props) => {
   const textChangeHandler = textVal => {
     const text = textVal.target.value;
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const numberRegex = /^(0|[1-9]\d*)$/;
+
     let isValid = true;
     if (props.required && text.trim().length === 0) {
       isValid = false;
@@ -53,16 +53,7 @@ const Input = (props) => {
     if (props.email && !emailRegex.test(text.toLowerCase())) {
       isValid = false;
     }
-    if (props.isHeight && !numberRegex.test(text.toLowerCase())) {
-      isValid = false;
-    }
 
-    if (props.min != null && +text < props.min) {
-      isValid = false;
-    }
-    if (props.max != null && +text > props.max) {
-      isValid = false;
-    }
     if (props.minLength != null && text.length < props.minLength) {
       isValid = false;
     }
@@ -80,6 +71,7 @@ const Input = (props) => {
     <div className="form-group">
       <label>{props.label}</label>
       <input value={inputState.value} onChange={textChangeHandler} onBlur={lostFocusHandler} {...props} />
+      {!inputState.isValid && inputState.touched && <p style={{ color: "red" }}>{props.errormessage}</p>}
     </div>
   )
 }
