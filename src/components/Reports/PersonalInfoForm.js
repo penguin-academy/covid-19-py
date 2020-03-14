@@ -296,6 +296,14 @@ const PersonalInfoForm = () => {
                 >
                   Volver Atras
                 </button>
+
+                {formState.errors.submit ? (
+                  <div className="alert alert-danger" role="alert">
+                    {formState.errors.submit}
+                  </div>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
           </div>
