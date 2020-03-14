@@ -1,213 +1,152 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+const Stats = () => {
+  return (
+    <div className="row justify-content-center">
+      <div className="col-md-6 col-lg-4 col-xl-3 mb-5">
+        <a className="card lift" href="#!">
+          <h2
+            className="page-header-title"
+            style={{ color: 'black', textAlign: 'center' }}
+          >
+            7
+          </h2>
+          <div className="card-body text-center py-3">
+            <h6 className="card-title mb-0">Casos confirmados</h6>
+          </div>
+        </a>
+      </div>
+      <div className="col-md-6 col-lg-4 col-xl-3 mb-5">
+        <a className="card lift" href="#!">
+          <h2
+            className="page-header-title"
+            style={{ color: 'black', textAlign: 'center' }}
+          >
+            17
+          </h2>
+          <div className="card-body text-center py-3">
+            <h6 className="card-title mb-0">Casos sospechosos</h6>
+          </div>
+        </a>
+      </div>
+      <div className="col-md-6 col-lg-4 col-xl-3 mb-5">
+        <a className="card lift" href="#!">
+          <h2
+            className="page-header-title"
+            style={{ color: 'black', textAlign: 'center' }}
+          >
+            6
+          </h2>
+          <div className="card-body text-center py-3">
+            <h6 className="card-title mb-0">Casos descartados</h6>
+          </div>
+        </a>
+      </div>
+      <div className="col-md-6 col-lg-4 col-xl-3 mb-5">
+        <a className="card lift" href="#!">
+          <h2
+            className="page-header-title"
+            style={{ color: 'black', textAlign: 'center' }}
+          >
+            125
+          </h2>
+          <div className="card-body text-center py-3">
+            <h6 className="card-title mb-0">En vigilancia</h6>
+          </div>
+        </a>
+      </div>
+    </div>
+  )
+}
 
 const Home = ({ history }) => {
-  const onGoToReportPage = () => {
-    history.push('report')
-  }
-
   return (
     <div>
-      <div>
-        <div className="main-container">
-          <section
-            className="cover cover-features imagebg space--lg"
-            data-overlay={2}
-          >
-            <div className="background-image-holder">
-              <img alt="background" src="img/landing-23.jpg" />
-            </div>
-            <div className="container">
-              <div className="row">
-                <div className="col-md-9 col-lg-7">
-                  <h1> Build stylish, lean sites with Stack </h1>
-                  <p className="lead">
-                    Stack offers a clean and contemporary look to suit a range
-                    of purposes from corporate, tech startup, marketing site to
-                    digital storefront.
-                  </p>
-                  <button
-                    className="btn btn--primary type--uppercase"
-                    onClick={onGoToReportPage}
-                  >
-                    <span className="btn__text">Autoreportarse</span>
-                  </button>
-                </div>
+      <header className="page-header page-header-dark bg-gradient-primary-to-secondary">
+        <div className="page-header-content pt-10">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-lg-6" data-aos="fade-up">
+                <h1 className="page-header-title">
+                  CoronaVirus Auto Reporte en Paraguay
+                </h1>
+                <p className="page-header-text mb-5">
+                  Si sospecha que está infectado por el virus que causa el
+                  COVID-19, por favor notifique al DGVS clickando en el botón
+                  Autoreporte
+                </p>
+                <Link
+                  className="btn btn-teal btn-marketing rounded-pill lift lift-sm"
+                  to="/report"
+                >
+                  Autoreportarse<i className="fas fa-arrow-right ml-1"></i>
+                </Link>
               </div>
-              <div className="row">
-                <div className="col-md-4">
-                  <div className="feature feature-2 boxed boxed--border bg--white">
-                    <i className="icon icon-Clock-Back color--primary" />
-                    <div className="feature__body">
-                      <p>
-                        Save time with a multitude of styled components designed
-                        to showcase your content
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="feature feature-2 boxed boxed--border bg--white">
-                    <i className="icon icon-Duplicate-Window color--primary" />
-                    <div className="feature__body">
-                      <p>
-                        Construct mockups or production-ready pages in-browser
-                        with Variant Page Builder
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="feature feature-2 boxed boxed--border bg--white">
-                    <i className="icon icon-Life-Jacket color--primary" />
-                    <div className="feature__body">
-                      <p>
-                        Take comfort in 6 months included support with a
-                        dedicated support forum
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div
+                className="col-lg-6 d-none d-lg-block"
+                data-aos="fade-up"
+                data-aos-delay="50"
+              >
+                <img
+                  className="img-fluid"
+                  src="assets/img/drawkit/color/drawkit-content-man-color.svg"
+                />
               </div>
             </div>
-          </section>
-          <section className="imageblock switchable feature-large">
-            <div className="imageblock__content col-lg-6 col-md-4 pos-right">
-              <div className="background-image-holder">
-                <img alt="image" src="img/education-5.jpg" />
-              </div>
-            </div>
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-5 col-md-7">
-                  <h2>Stack is design-driven</h2>
-                  <p className="lead">
-                    Stack offers a clean and contemporary to suit a range of
-                    purposes from corporate, tech startup, marketing site to
-                    digital storefront. Elements have been designed to showcase
-                    content in a diverse yet consistent manner.
-                  </p>
-                  <p className="lead">
-                    Multiple font and colour scheme options mean that
-                    dramatically altering the look of your site is just clicks
-                    away — Customizing your site in the included Variant Page
-                    Builder makes experimenting with styles and content
-                    arrangements dead simple.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div className="container">
-              <div className="masonry">
-                <div className="masonry__container row masonry--active">
-                  <div className="col-md-4 masonry__item">
-                    <div className="card card-2 text-center">
-                      <div className="card__top">
-                        <a href="#">
-                          <img alt="Image" src="img/landing-8.jpg" />
-                        </a>
-                      </div>
-                      <div className="card__body">
-                        <h4>Photography 101</h4>
-                        <span className="type--fade">
-                          Understanding the fundamentals
-                        </span>
-                        <p>
-                          Construct mockups or production-ready pages in-browser
-                          with Variant Page Builder
-                        </p>
-                      </div>
-                      <div className="card__bottom text-center">
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Explore</span>
-                          <a href="#">
-                            <i className="material-icons">flip_to_front</i>
-                          </a>
-                        </div>
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Save</span>
-                          <a href="#">
-                            <i className="material-icons">favorite_border</i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4 masonry__item">
-                    <div className="card card-2 text-center">
-                      <div className="card__top">
-                        <span className="label">New</span>
-                        <a href="#">
-                          <img alt="Image" src="img/landing-14.jpg" />
-                        </a>
-                      </div>
-                      <div className="card__body">
-                        <h4>Kiln Fired Pottery</h4>
-                        <span className="type--fade">
-                          Video Tutorial Series
-                        </span>
-                        <p>
-                          Construct mockups or production-ready pages in-browser
-                          with Variant Page Builder
-                        </p>
-                      </div>
-                      <div className="card__bottom text-center">
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Explore</span>
-                          <a href="#">
-                            <i className="material-icons">flip_to_front</i>
-                          </a>
-                        </div>
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Save</span>
-                          <a href="#">
-                            <i className="material-icons">favorite_border</i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4 masonry__item">
-                    <div className="card card-2 text-center">
-                      <div className="card__top">
-                        <span className="label">New</span>
-                        <a href="#">
-                          <img alt="Image" src="img/landing-14.jpg" />
-                        </a>
-                      </div>
-                      <div className="card__body">
-                        <h4>Kiln Fired Pottery</h4>
-                        <span className="type--fade">
-                          Video Tutorial Series
-                        </span>
-                        <p>
-                          Construct mockups or production-ready pages in-browser
-                          with Variant Page Builder
-                        </p>
-                      </div>
-                      <div className="card__bottom text-center">
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Explore</span>
-                          <a href="#">
-                            <i className="material-icons">flip_to_front</i>
-                          </a>
-                        </div>
-                        <div className="card__action">
-                          <span className="h6 type--uppercase">Save</span>
-                          <a href="#">
-                            <i className="material-icons">favorite_border</i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            <Stats />
+          </div>
         </div>
-      </div>
+        <div className="svg-border-rounded text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 144.54 17.34"
+            preserveAspectRatio="none"
+            fill="currentColor"
+          >
+            <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+          </svg>
+        </div>
+      </header>
+
+      <section className="bg-white py-10">
+        <div className="container">
+          <div className="row text-center">
+            <div className="col-lg-4 mb-5 mb-lg-0">
+              <div className="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
+                <i data-feather="layers"></i>
+              </div>
+              <h3>Built for developers</h3>
+              <p className="mb-0">
+                Our customizable, block-based build system makes creating your
+                next project fast and easy!
+              </p>
+            </div>
+            <div className="col-lg-4 mb-5 mb-lg-0">
+              <div className="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
+                <i data-feather="smartphone"></i>
+              </div>
+              <h3>Modern responsive design</h3>
+              <p className="mb-0">
+                Featuring carefully crafted, mobile-first components, your end
+                product will function beautifully on any device!
+              </p>
+            </div>
+            <div className="col-lg-4">
+              <div className="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4">
+                <i data-feather="code"></i>
+              </div>
+              <h3>Complete documentation</h3>
+              <p className="mb-0">
+                All of the layouts, page sections, components, and utilities are
+                fully covered in this products docs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr className="m-0" />
     </div>
   )
 }
