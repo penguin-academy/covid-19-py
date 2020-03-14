@@ -1,54 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Menu } from 'react-feather'
 
 const NavigationBar = () => {
   return (
-    <div className="nav-container">
-      <div>
-        <div className="bar bar--sm visible-xs">
-          <div className="container">
-            <div className="row">
-              <div className="col-4">
-                <h4>
-                  CoronaVirus
-                  <br /> Auto Reporte
-                </h4>
-              </div>
-              <div className="col-8 text-right">
-                <a
-                  href="#"
-                  className="hamburger-toggle"
-                  data-toggle-class="#menu1;hidden-xs hidden-sm"
-                >
-                  <i className="icon icon--sm stack-interface stack-menu" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <nav
-          id="menu1"
-          className="bar bar-1 hidden-xs bar--absolute bar--transparent"
+    <nav className="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
+      <div className="container">
+        <Link className="navbar-brand text-primary" to="/">
+          CovPY Auto Reporte
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-3 col-md-3 hidden-xs">
-                <h4 style={{ color: 'white' }}>CoronaVirus Auto Reporte</h4>
-              </div>
-              <div className="col-lg-9 col-md-9 text-right text-left-xs text-left-sm">
-                <div className="bar__module">
-                  <ul className="menu-horizontal text-left">
-                    <li>
-                      <Link to="/report">Autoreportarse</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
+          <Menu />
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ml-auto mr-lg-5">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+          </ul>
+          <Link
+            className="btn-primary btn rounded-pill px-4 ml-lg-4"
+            to="/report"
+          >
+            Autoreportarse
+            <i className="fas fa-arrow-right ml-1" />
+          </Link>
+        </div>
       </div>
-    </div>
+    </nav>
   )
 }
 

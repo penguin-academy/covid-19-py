@@ -1,35 +1,35 @@
-import React, { useReducer, useCallback } from "react";
-import Container from "react-bootstrap/Container";
-import firebase from "firebase/app";
-import "firebase/firestore";
-import PersonalInfoForm from "../components/Reports/PersonalInfoForm";
+import React, { useReducer, useCallback } from 'react'
+import Container from 'react-bootstrap/Container'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+import PersonalInfoForm from '../components/Reports/PersonalInfoForm'
 
 const INITIAL_STATE = {
   inputValues: {
-    phoneNumber: "",
-    firstName: "",
-    lastName: "",
-    documentType: "",
-    document: "",
-    nationality: "",
-    dob: "",
-    sex: "",
-    address: "",
+    phoneNumber: '',
+    firstName: '',
+    lastName: '',
+    documentType: '',
+    document: '',
+    nationality: '',
+    dob: '',
+    sex: '',
+    address: '',
     coords: null,
     hasFever: false,
     hasCough: false,
     hasTroubleBreathing: false,
     hasThroatPain: false,
-    dateOfSymptomStart: "",
+    dateOfSymptomStart: '',
     hasTraveledInLast14Days: false,
-    cityTheyTraveledTo: "",
+    cityTheyTraveledTo: '',
     cityCoords: null,
-    dateOfReturn: "",
-    returnType: "",
+    dateOfReturn: '',
+    returnType: '',
     hadContactInLast14Days: false,
-    dateOfLastContact: "",
-    relationWithContact: ""
-  },
+    dateOfLastContact: '',
+    relationWithContact: ''
+  }
   // inputValidities: {
   //   email: false,
   //   phoneNumber: false,
@@ -43,12 +43,12 @@ const INITIAL_STATE = {
   //   neighborhood: true
   // },
   // formIsValid: false
-};
+}
 
-const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
-const REPORT_ID_UPDATE = "REPORT_ID_UPDATE";
-const ADDRESS_UPDATE = "ADDRESS_UPDATE";
-const CHECKBOX_UPDATE = 'CHECKBOX_UPDATE';
+const FORM_INPUT_UPDATE = 'FORM_INPUT_UPDATE'
+const REPORT_ID_UPDATE = 'REPORT_ID_UPDATE'
+const ADDRESS_UPDATE = 'ADDRESS_UPDATE'
+const CHECKBOX_UPDATE = 'CHECKBOX_UPDATE'
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -56,7 +56,7 @@ const formReducer = (state, action) => {
       const updatedValues = {
         ...state.inputValues,
         [action.input]: action.value
-      };
+      }
       // const updatedValidities = {
       //   ...state.inputValidities,
       //   [action.input]: action.isValid
@@ -69,10 +69,10 @@ const formReducer = (state, action) => {
         // formIsValid: updatedFormIsValid,
         // inputValidities: updatedValidities,
         inputValues: updatedValues
-      };
+      }
     }
     case REPORT_ID_UPDATE:
-      let userInfo = action.data;
+      let userInfo = action.data
       return {
         ...state,
         inputValues: {
@@ -84,7 +84,7 @@ const formReducer = (state, action) => {
           nationality: userInfo.nacionalidadBean,
           sex: userInfo.sexo
         }
-      };
+      }
     case ADDRESS_UPDATE:
       const label = action.id
       if (label === 'home') {
@@ -95,7 +95,7 @@ const formReducer = (state, action) => {
             address: action.address,
             coords: action.coords
           }
-        };
+        }
       } else {
         return {
           ...state,
@@ -104,11 +104,10 @@ const formReducer = (state, action) => {
             cityTheyTraveledTo: action.address,
             cityCoords: action.coords
           }
-        };
+        }
       }
 
     case CHECKBOX_UPDATE:
-
       return {
         ...state,
         inputValues: {
@@ -117,16 +116,16 @@ const formReducer = (state, action) => {
         }
       }
     default:
-      return state;
+      return state
   }
-};
+}
 
-const ReportContext = React.createContext();
+const ReportContext = React.createContext()
 
-export const useReportContext = () => React.useContext(ReportContext);
+export const useReportContext = () => React.useContext(ReportContext)
 
 const Report = () => {
-  const [formState, dispatchFormState] = useReducer(formReducer, INITIAL_STATE);
+  const [formState, dispatchFormState] = useReducer(formReducer, INITIAL_STATE)
 
   const inputChangeHandler = useCallback(
     (inputIdentifier, inputValue, inputValidity) => {
@@ -135,20 +134,20 @@ const Report = () => {
         value: inputValue,
         isValid: inputValidity,
         input: inputIdentifier
-      });
+      })
     },
     [dispatchFormState]
-  );
+  )
 
   const idResponseHandler = useCallback(
     userData => {
       dispatchFormState({
         type: REPORT_ID_UPDATE,
         data: userData
-      });
+      })
     },
     [dispatchFormState]
-  );
+  )
 
   const addressChangeHandler = useCallback(
     (id, address, coords) => {
@@ -157,10 +156,10 @@ const Report = () => {
         address,
         coords,
         id
-      });
+      })
     },
     [dispatchFormState]
-  );
+  )
 
   const checkboxChangeHandler = useCallback(
     (inputIdentifier, inputValue) => {
@@ -175,7 +174,10 @@ const Report = () => {
 
   const postForm = async () => {
     try {
-      await firebase.firestore().collection('self-reports').add(formState.inputValues)
+      await firebase
+        .firestore()
+        .collection('self-reports')
+        .add(formState.inputValues)
       console.log(formState)
     } catch (error) {
       console.log(error)
@@ -193,11 +195,11 @@ const Report = () => {
         onSubmitForm: postForm
       }}
     >
-      <Container style={{ paddingTop: "20px" }}>
+      <Container style={{ paddingTop: 20, paddingBottom: 20 }}>
         <PersonalInfoForm></PersonalInfoForm>
       </Container>
     </ReportContext.Provider>
-  );
-};
+  )
+}
 
-export default Report;
+export default Report
