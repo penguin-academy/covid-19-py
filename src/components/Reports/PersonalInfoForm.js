@@ -13,9 +13,13 @@ import PlacesInput from '../PlacesInput'
 const PersonalInfoForm = () => {
   const [activeIndex, setActiveIndex] = useState(0)
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const { onSubmitForm, formState } = useReportContext()
 
   const handleSubmit = e => {
+    setIsLoading(true)
+
     e.preventDefault()
     onSubmitForm()
   }
@@ -281,13 +285,29 @@ const PersonalInfoForm = () => {
             </div>
             <div className="row justify-content-center">
               <div className="col-4">
-                <button
-                  disabled={!formState.formIsValid}
-                  type="submit"
-                  className="btn btn-primary btn-block btn-marketing rounded-pill"
-                >
-                  Enviar
-                </button>
+                {isLoading ? (
+                  <button
+                    className="btn btn-primary btn-block btn-marketing rounded-pill"
+                    type="submit"
+                    disabled
+                  >
+                    <span
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                      style={{ paddingRight: 10 }}
+                    ></span>
+                    Loading...
+                  </button>
+                ) : (
+                  <button
+                    disabled={!formState.formIsValid}
+                    type="submit"
+                    className="btn btn-primary btn-block btn-marketing rounded-pill"
+                  >
+                    Enviar
+                  </button>
+                )}
 
                 <button
                   style={{ marginRight: '10px' }}
@@ -296,6 +316,14 @@ const PersonalInfoForm = () => {
                 >
                   Volver Atras
                 </button>
+
+                {formState.errors.submit ? (
+                  <div className="alert alert-danger" role="alert">
+                    {formState.errors.submit}
+                  </div>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
           </div>
