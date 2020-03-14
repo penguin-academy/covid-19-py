@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import './styles/Home.scss'
 const Stats = () => {
   return (
     <div className="row justify-content-center">
-      <div className="col-md-6 col-lg-4 col-xl-3 mb-5">
-        <a className="card lift" href="#!">
+      <div className="col-6 col-lg-3 mb-5">
+        <a className="card z-1 lift" href="#!">
           <h2
             className="page-header-title"
-            style={{ color: 'black', textAlign: 'center' }}
+            style={{ color: '#e81500', textAlign: 'center' }}
           >
             7
           </h2>
@@ -17,11 +17,11 @@ const Stats = () => {
           </div>
         </a>
       </div>
-      <div className="col-md-6 col-lg-4 col-xl-3 mb-5">
-        <a className="card lift" href="#!">
+      <div className="col-6 col-lg-3 mb-5">
+        <a className="card z-1 lift" href="#!">
           <h2
             className="page-header-title"
-            style={{ color: 'black', textAlign: 'center' }}
+            style={{ color: '#f4a100', textAlign: 'center' }}
           >
             17
           </h2>
@@ -30,11 +30,11 @@ const Stats = () => {
           </div>
         </a>
       </div>
-      <div className="col-md-6 col-lg-4 col-xl-3 mb-5">
-        <a className="card lift" href="#!">
+      <div className="col-6 col-lg-3 mb-5">
+        <a className="card z-1 lift" href="#!">
           <h2
             className="page-header-title"
-            style={{ color: 'black', textAlign: 'center' }}
+            style={{ color: '#00ac69', textAlign: 'center' }}
           >
             6
           </h2>
@@ -43,8 +43,8 @@ const Stats = () => {
           </div>
         </a>
       </div>
-      <div className="col-md-6 col-lg-4 col-xl-3 mb-5">
-        <a className="card lift" href="#!">
+      <div className="col-6 col-lg-3 mb-5">
+        <a className="card z-1 lift" href="#!">
           <h2
             className="page-header-title"
             style={{ color: 'black', textAlign: 'center' }}
