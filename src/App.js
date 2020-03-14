@@ -6,6 +6,7 @@ import NavigationBar from './layouts/NavigationBar'
 import Footer from './layouts/Footer'
 import Report from './layouts/Report'
 import Success from './layouts/Success'
+import Legal from './layouts/Legal'
 
 import firebase from 'firebase/app'
 import firebaseConfig from './constants/firebaseConfig'
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/report" exact component={Report} />
           <Route path="/success" exact component={Success} />
+          <Route path="/legal" exact component={Legal} />
         </Switch>
         <Footer />
       </BrowserRouter>

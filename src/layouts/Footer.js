@@ -31,14 +31,13 @@ const Footer = () => {
             Copyright © CovPY 2020 - made with
             <img
               src="/img/heart.svg"
+              alt="Heart"
               style={{ padding: '0 10px', maxWidth: 45 }}
             />
             in Paraguay
           </div>
           <div className="col-md-6 text-md-right small">
-            <a href="/">Privacy Policy</a>
-            &nbsp;·&nbsp;
-            <a href="/">Terms &amp; Conditions</a>
+            <Link to="/legal">Privacy · Terms &amp; Conditions</Link>
           </div>
         </div>
       </div>

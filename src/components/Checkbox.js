@@ -2,27 +2,30 @@ import React, { useState } from 'react'
 import { useReportContext } from '../layouts/Report'
 
 const Checkbox = props => {
-  const { id, label, name } = props
+  const { label, name } = props
   const [checked, setChecked] = useState(false)
 
   const { onCheckboxChange } = useReportContext()
 
   const handleChange = () => {
     let newValue = !checked
-    onCheckboxChange(id, newValue)
+    onCheckboxChange(name, newValue)
     setChecked(newValue)
   }
 
   return (
-    <div onClick={handleChange} style={{ cursor: 'pointer' }}>
+    <div>
       <input
         type="checkbox"
         checked={checked}
+        onChange={handleChange}
         id={name}
         {...props}
         style={{ cursor: 'pointer' }}
       />
-      <label style={{ paddingLeft: 10, cursor: 'pointer' }}>{label}</label>
+      <label style={{ paddingLeft: 10 }} htmlFor={name}>
+        {label}
+      </label>
     </div>
   )
 }
