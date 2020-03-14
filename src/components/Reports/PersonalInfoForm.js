@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
 import Input from '../Input'
 import IDInput from '../IDInput'
 import IDDateInput from '../IDDateInput'
@@ -98,6 +100,12 @@ const PersonalInfoForm = () => {
                 >
                   Continuar
                 </button>
+                <p className="page-header-text text-center small mb-0 mt-4">
+                  By continuing, you agree to our&nbsp;
+                  <Link to="/legal" target="_blank">
+                    terms of service
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
@@ -200,7 +208,7 @@ const PersonalInfoForm = () => {
                   <DateInput
                     required
                     className="form-control form-control-solid rounded-pill"
-                    errorMessage="Debes proveer una fecha de inicio de sintomas"
+                    errormessage="Debes proveer una fecha de inicio de sintomas"
                     label="Inicio de Sintomas"
                     id="dateOfSymptomStart"
                   />
@@ -209,7 +217,7 @@ const PersonalInfoForm = () => {
               <div className="col-lg-7">
                 <div className="form-group">
                   <Checkbox
-                    id="hasTraveledInLast14Days"
+                    name="hasTraveledInLast14Days"
                     label="Viajo en los ultimos 14 dias?"
                   />
                   <div
@@ -248,7 +256,7 @@ const PersonalInfoForm = () => {
                 </div>
                 <div className="form-group">
                   <Checkbox
-                    id="hadContactInLast14Days"
+                    name="hadContactInLast14Days"
                     label="Tuvo Contacto en los ultimos 14 dias?"
                   />
                 </div>

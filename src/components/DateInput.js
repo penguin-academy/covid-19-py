@@ -61,7 +61,7 @@ const DateInput = props => {
         {...props}
       />
       {!inputState.isValid && inputState.touched && (
-        <p style={{ color: 'red' }}>{props.errorMessage}</p>
+        <p style={{ color: 'red' }}>{props.errormessage}</p>
       )}
     </div>
   )
