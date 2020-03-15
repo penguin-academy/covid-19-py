@@ -39,7 +39,7 @@ const NavigationBar = () => {
             to="/report"
             onClick={() => setShow(false)}
           >
-            Autoreportarse
+            Reportar
             <i className="fas fa-arrow-right ml-1" />
           </Link>
         </div>

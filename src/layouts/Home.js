@@ -69,7 +69,7 @@ const Home = ({ history }) => {
             <div className="row align-items-center">
               <div className="col-lg-6" data-aos="fade-up">
                 <h1 className="page-header-title">
-                  CoronaVirus Auto Reporte en Paraguay
+                  Auto Reporte de Coronavirus en Paraguay
                 </h1>
                 <p className="page-header-text">
                   El DGVS-MSPyBS está vigilando de cerca los brotes de la
@@ -84,7 +84,7 @@ const Home = ({ history }) => {
                   className="btn btn-teal btn-marketing rounded-pill lift lift-sm"
                   to="/report"
                 >
-                  Autoreportarse<i className="fas fa-arrow-right ml-1"></i>
+                  Reportar<i className="fas fa-arrow-right ml-1"></i>
                 </Link>
               </div>
               <div
