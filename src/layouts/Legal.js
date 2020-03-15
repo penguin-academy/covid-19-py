@@ -1,9 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Lottie } from '@crello/react-lottie'
-import * as checkData from '../lottie/check.json'
+import React from "react";
 
-const Legal = ({ history }) => {
+const Legal = () => {
   return (
     <section className="bg-white py-10">
       <div className="container">
@@ -98,7 +95,7 @@ const Legal = ({ history }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Legal
+export default Legal;
