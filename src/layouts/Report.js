@@ -239,10 +239,15 @@ const Report = () => {
 
   const postForm = async () => {
     try {
+      const form = {
+        ...formState.inputValues,
+        reportDate: firebase.firestore.Timestamp.now()
+      };
+
       await firebase
         .firestore()
         .collection("self-reports")
-        .add(formState.inputValues);
+        .add(form);
       history.push("/success");
     } catch (error) {
       console.log(error);
