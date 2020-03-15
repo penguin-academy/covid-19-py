@@ -142,7 +142,7 @@ const PersonalInfoForm = () => {
                   label="Numero de Telefono"
                   id="phoneNumber"
                   type="number"
-                  placeholder="021xxxxxx o 09xxxxxxxx"
+                  placeholder="09xxxxxxxx"
                   className="form-control form-control-solid rounded-pill"
                   required
                   errormessage="Debes ingresar un numero de telefono"
