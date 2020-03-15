@@ -1,8 +1,8 @@
 import React from 'react'
 import StoryRouter from 'storybook-react-router'
 import HomeTag from '../layouts/Home'
-import NavigationBarTag from '../layouts/NavigationBar'
-import FooterTag from '../layouts/Footer'
+import NavigationBarTag from '../components/NavigationBar'
+import FooterTag from '../components/Footer'
 
 export default {
   title: 'Pages',

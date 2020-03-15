@@ -11,158 +11,87 @@ const Container100 = styled.div`
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #9053c7;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: #329ef7;
+  background: linear-gradient(-220deg, #329ef7, #4158d0);
 `
 const Wrap100 = styled.div`
   width: 960px;
   background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 130px 0px;
-  @media (max-width: 768px) {
-    padding: 100px 0px;
-  }
-`
-
-/* 
-  & > li:first-child .bubble:before,
-  & > li:first-child .bubble:after {
-    width: 50%;
-    margin-left: 50%;
-  }
-  & > li:last-child .bubble:before,
-  & > li:last-child .bubble:after {
-    width: 50%;
-    margin-right: 50%;
-  }
-*/
-const StepIndicator = styled.ul`
-  margin: 0;
-  padding: 0;
-  font-size: 80%;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-  display: flex;
-  width: 100%;
-  position: relative;
-  & > li {
-    list-style: none;
-    text-align: center;
-    width: auto;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    text-overflow: ellipsis;
-    color: #bbb;
-    display: block;
-    flex: 1;
-  }
-  & > li:hover {
-    color: #6f6f6f;
-  }
-  & > li .bubble {
-    border-radius: 1000px;
-    width: 50px;
-    height: 50px;
-    background-color: #bbb;
-    display: block;
-    margin: 0 auto 0.5em auto;
-  }
-  & > li .bubble:before,
-  & > li .bubble:after {
-    display: block;
-    position: absolute;
-    top: 24px;
-    width: 100%;
-    height: 2px;
-    content: '';
-    background-color: #bbb;
-  }
-  & > li .bubble:before {
-    left: 0;
-  }
-  & > li .bubble:after {
-    right: 0;
-  }
-
-  & > li.completed {
-    color: #24c1e8;
-  }
-  & > li.completed .bubble {
-    background-color: #24c1e8;
-    color: #24c1e8;
-  }
-  & > li.completed .bubble:before,
-  & > li.completed .bubble:after {
-    background-color: #24c1e8;
-  }
-  & > li a:hover .bubble {
-    background-color: #1d9ab9;
-    color: #1d9ab9;
-  }
-  & > li a:hover .bubble:before,
-  & > li a:hover .bubble:after {
-    background-color: #1d9ab9;
-  }
-
-  @media (max-width: 400px) {
-    & {
-      font-size: 60%;
-    }
-    & > li .bubble {
-      width: 22px;
-      height: 22px;
-    }
-    & > li .bubble:before,
-    & > li .bubble:after {
-      top: 10px;
-    }
-  }
+  border-radius: 5px;
 `
 
 const Form = () => {
   return (
-    <Container100>
-      <Wrap100>
-        <StepIndicator>
-          <li className="completed">
-            <a href="/">
-              <span className="bubble" />
-              Step 1
-            </a>
-          </li>
-          <li className="completed">
-            <a href="/">
-              <span className="bubble" />
-              Step 2
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <span className="bubble" />
-              Step 3
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <span className="bubble" />
-              Step 4
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <span className="bubble" />
-              Step 5
-            </a>
-          </li>
-        </StepIndicator>
-      </Wrap100>
-    </Container100>
+    <section
+      className="fdb-block"
+      style={{
+        backgroundImage:
+          'url(https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs/hero/red.svg)',
+        padding: '5rem 0'
+      }}
+    >
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 text-center">
+            <div className="fdb-box">
+              <div className="row">
+                <div className="col-12 col-md-6 m-md-auto d-none d-lg-block ml-lg-0 col-lg-5">
+                  <img
+                    alt="image"
+                    className="img-fluid"
+                    src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs/draws/group-chat.svg"
+                  />
+                </div>
+                <div className="col-12 col-md-10 col-lg-6 mt-4 mt-lg-0 ml-auto mr-auto ml-lg-auto text-left">
+                  <div className="row">
+                    <div className="col">
+                      <h1>Subscribe</h1>
+                      <p className="lead">
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row mt-4">
+                    <div className="col">
+                      <div className="input-group">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Enter your email address"
+                        />
+                        <div className="input-group-append">
+                          <button className="btn btn-primary" type="button">
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col">
+                      <p className="h4">
+                        * Leave your email address to be notified first.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
+  // return (
+  //   <Container100 className="page-wrapper">
+  //     <Wrap100 className="card">
+  //       <div className="card-body">
+  //         <h1 className="card-title">Card title</h1>
+  //       </div>
+  //     </Wrap100>
+  //   </Container100>
+  // )
 }
 
 export default Form
