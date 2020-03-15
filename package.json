@@ -19,6 +19,7 @@
     "react-places-autocomplete": "^7.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "styled-components": "^5.0.1",
     "yarn": "^1.22.4"
   },
   "scripts": {
@@ -47,8 +48,10 @@
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",
+    "@storybook/addon-viewport": "^5.3.17",
     "@storybook/addons": "^5.3.17",
     "@storybook/preset-create-react-app": "^2.0.0",
-    "@storybook/react": "^5.3.17"
+    "@storybook/react": "^5.3.17",
+    "storybook-react-router": "^1.0.8"
   }
 }
