@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './styles/Home.scss'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./styles/Home.scss";
 const Stats = () => {
   return (
     <div className="row justify-content-center">
@@ -8,7 +8,7 @@ const Stats = () => {
         <div className="card z-1 lift">
           <h2
             className="page-header-title"
-            style={{ color: '#e81500', textAlign: 'center' }}
+            style={{ color: "#e81500", textAlign: "center" }}
           >
             7
           </h2>
@@ -21,7 +21,7 @@ const Stats = () => {
         <div className="card z-1 lift">
           <h2
             className="page-header-title"
-            style={{ color: '#f4a100', textAlign: 'center' }}
+            style={{ color: "#f4a100", textAlign: "center" }}
           >
             17
           </h2>
@@ -34,7 +34,7 @@ const Stats = () => {
         <div className="card z-1 lift">
           <h2
             className="page-header-title"
-            style={{ color: '#00ac69', textAlign: 'center' }}
+            style={{ color: "#00ac69", textAlign: "center" }}
           >
             6
           </h2>
@@ -47,7 +47,7 @@ const Stats = () => {
         <div className="card z-1 lift">
           <h2
             className="page-header-title"
-            style={{ color: 'black', textAlign: 'center' }}
+            style={{ color: "black", textAlign: "center" }}
           >
             125
           </h2>
@@ -57,8 +57,8 @@ const Stats = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Home = ({ history }) => {
   return (
@@ -95,6 +95,7 @@ const Home = ({ history }) => {
                 <img
                   className="img-fluid"
                   src="assets/img/drawkit/color/drawkit-content-man-color.svg"
+                  alt="Person filling out form"
                 />
               </div>
             </div>
@@ -155,7 +156,7 @@ const Home = ({ history }) => {
 
       <hr className="m-0" />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
