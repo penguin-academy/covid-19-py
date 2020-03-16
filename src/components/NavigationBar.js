@@ -13,6 +13,10 @@ const Nav = styled.nav`
 const NavLink = styled(Link)`
   font-size: 1.2rem;
   font-weight: bold;
+  color: #bf215b !important;
+  &.text-primary:hover {
+    color: #9c1b4a !important;
+  }
 `
 
 const NavigationBar = () => {
@@ -23,6 +27,10 @@ const NavigationBar = () => {
         <Nav className="navbar navbar-expand-md no-gutters">
           <div className="col-2 text-left">
             <NavLink className="navbar-brand text-primary" to="/">
+              <img
+                src="/img/care.svg"
+                style={{ width: 40, paddingRight: 15 }}
+              />
               CovPY Auto Reporte
             </NavLink>
           </div>

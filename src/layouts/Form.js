@@ -1,7 +1,11 @@
 import React, { useState, useReducer } from 'react'
-import Question from '../components/SelectQuestion'
-
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
+import firebase from 'firebase/app'
+
+import 'firebase/firestore'
+
+import Question from '../components/SelectQuestion'
 
 const Container100 = styled.div`
   width: 100%;
@@ -20,7 +24,7 @@ const Wrap100 = styled.div`
   border-radius: 5px;
 `
 
-const Form = () => {
+const Form = ({ filledState = {} }) => {
   const sequence = [
     'generalHealth',
     'gender',
@@ -48,9 +52,13 @@ const Form = () => {
     },
     {
       generalHealth: { show: true, answer: '' },
-      ...createDefaultStates(sequence.slice(1), { show: false, answer: '' })
+      ...createDefaultStates(sequence.slice(1), { show: false, answer: '' }),
+      ...filledState
     }
   )
+
+  // For Stoybook
+  // if (filledState) setStatus({ ...status, ...filledState })
 
   const [errors, setErrors] = useState(createDefaultStates(sequence, false))
 
@@ -94,6 +102,21 @@ const Form = () => {
 
     if (!errorPresent) {
       console.log('Submit')
+      postForm()
+    }
+  }
+  const history = useHistory()
+
+  const postForm = async () => {
+    try {
+      await firebase
+        .firestore()
+        .collection('self-reports')
+        .add(status)
+      history.push('/success')
+    } catch (error) {
+      console.log(error)
+      // dispatchFormState({ type: SUBMISSION_FAILED, error: error.message })
     }
   }
 
@@ -101,8 +124,7 @@ const Form = () => {
     <section
       className="fdb-block"
       style={{
-        backgroundImage:
-          'url(https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs/hero/red.svg)',
+        backgroundImage: 'url(/img/red.svg)',
         padding: '5rem 0'
       }}
     >

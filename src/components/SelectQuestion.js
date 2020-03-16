@@ -8,7 +8,7 @@ const Component = ({ title, subTitle, options, onChange, value, error }) => {
   const customStyles = {
     control: (base, { selectProps }) => {
       const boxShadow = selectProps.error
-        ? { boxShadow: '0 0 0 2px #d43f21' }
+        ? { boxShadow: '0 0 0 2px #bf215b' }
         : {}
       return {
         ...base,

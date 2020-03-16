@@ -57,22 +57,22 @@ const Footer = () => {
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts.
             </p>
-            <img src="/hippa.png" style={{ maxHeight: 80 }} />
+            <img src="/img/hippa.png" style={{ maxHeight: 80 }} />
             <img
-              src="/privacyshield.png"
+              src="/img/privacyshield.png"
               style={{ maxHeight: 60, paddingLeft: 20 }}
             />
           </div>
         </div>
         <div className="row mt-5">
           <div className="col text-center">
-            © CovPY 2020 - made with
+            © CovPY 2020 - Hecho con
             <img
               src="/img/heart.svg"
               alt="Heart"
               style={{ padding: '0 10px', maxWidth: 45 }}
             />
-            in Paraguay
+            en Paraguay
           </div>
         </div>
       </div>
@@ -88,13 +88,13 @@ export const FooterSmall = () => {
           <div className="col">
             <p>
               {' '}
-              © CovPY 2020 - made with
+              © CovPY 2020 - Hecho con
               <img
                 src="/img/heart.svg"
                 alt="Heart"
                 style={{ padding: '0 10px', maxWidth: 45 }}
               />
-              in Paraguay
+              en Paraguay
             </p>
           </div>
         </div>
