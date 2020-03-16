@@ -1,6 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created as an initiative by Penguin Academy to build technology to smoothen the peak impact of the COVID-19 pandemic on the Paraguayan Health System.
+
+This project is an auto reporting system, allowing anyone to access it and report their symptoms and gat a quick feedback what steps to take next as well as allowing to generate data on the situation.
+
+## Demo and Contributing
+
+As we received many requests for collaboration, we decided to clean up and open source this repository. It is entierly built on open source technology and can be a starting point to build an application for your country or specific target group.
+
+We also welcome contributions! Please get in touch with us or check the open issues (or open an issue) if there are non available.
+
+### Demo
+
+A demo is available [here](https://covpy.netlify.com/). And the visual documentation (Storybook) is available [here](https://covpy-book.netlify.com/).
+
+### Development
+
+This project uses [Storybook](https://storybook.js.org/). So you can run `yarn storybook` to start a storybook development server and enjoy the comfort to develop components and visually test them.
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
