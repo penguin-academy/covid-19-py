@@ -28,20 +28,24 @@ const Success = ({ history }) => {
               </p>
               <div className="row mt-5">
                 <div className="col-12 col-sm-6">
-                  <Progress value={30} style="success" />
                   <h3>
                     <strong>No es probable que tengas el virus</strong>
                   </h3>
-                  <p className="lead"></p>
+                  <Progress value={30} style="warning" />
+                  <p className="lead">
+                    Sin embargo, sus síntomas podrían deberse al nuevo
+                    coronavirus, ya que el virus está presente actualmente en
+                    Paraguay.
+                  </p>
                 </div>
                 <div className="col-12 col-sm-6 pt-3 pt-sm-0">
-                  <Progress value={60} style="danger" />
                   <h3>
                     <strong>
                       Como usted es parte de un grupo con riesgo de
                       complicaciones
                     </strong>
                   </h3>
+                  <Progress value={60} style="danger" />
                   <p className="lead">
                     Le recomendamos que se ponga en contacto, primero por
                     teléfono, con su médico o un centro de salud y considere el
@@ -97,7 +101,7 @@ const Success = ({ history }) => {
 
 const ProgressBar = styled.div`
   width: 20px;
-  min-height: 100%;
+  min-height: 75%;
   display: flex;
   align-items: flex-end;
   margin-right: 20px;

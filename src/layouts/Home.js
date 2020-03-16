@@ -179,18 +179,14 @@ const Home = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
-            <h2>Auto Reporte de Coronavirus en Paraguay</h2>
+            <h2>¿Tenés síntomas? Decinos cuáles y te ayudamos</h2>
             <p className="lead">
-              El DGVS-MSPyBS está vigilando de cerca los brotes de la enfermedad
-              respiratoria causadas por el COVID-19.
-            </p>
-            <p>
-              Si sospecha que está infectado por el virus que causa el COVID-19,
-              por favor notifique al DGVS clickando en el botón de autoreporte.
+              ¿Fiebre? ¿Tos Seca? ¿Dificultad para respirar? ¿Otro síntoma?
+              Completá el formulario.
             </p>
             <p className="mt-4">
               <CTALink className="btn btn-secondary" to="/report">
-                Reportar<i className="fas fa-arrow-right ml-1"></i>
+                Revisar mis síntomas<i className="fas fa-arrow-right ml-1"></i>
               </CTALink>
             </p>
 
