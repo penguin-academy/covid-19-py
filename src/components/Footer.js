@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="row align-items-top text-center text-md-left">
           <div className="col-12 col-sm-6 col-md-4">
-            <h3>
+            {/* <h3>
               <strong>Country A</strong>
             </h3>
             <p>
@@ -18,7 +18,7 @@ const Footer = () => {
             <p>+44 827 312 5002</p>
             <p>
               <a href="https://www.froala.com">countrya@amazing.com</a>
-            </p>
+            </p> */}
           </div>
           <div className="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-lg-left">
             <h3>
@@ -51,11 +51,12 @@ const Footer = () => {
 
           <div className="col-12 col-md-4 mt-5 mt-md-0 text-md-left">
             <h3>
-              <strong>About Us</strong>
+              <strong>Sobre nosotros</strong>
             </h3>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+              Somos un grupo de personas y empresas comprometidas con el
+              Paraguay construyendo tecnología para suavizar el impacto máximo
+              de la pandemia en el sistema de salud paraguayo.
             </p>
             <img src="/img/hippa.png" style={{ maxHeight: 80 }} />
             <img
