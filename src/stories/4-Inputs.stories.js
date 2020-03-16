@@ -17,7 +17,10 @@ export const SelectQuestion = () => {
   return (
     <div style={{ maxWidth: 250, margin: 15 }}>
       <SelectQuestionTag
-        options={options}
+        options={[
+          { value: 'yes', label: 'Sí' },
+          { value: 'no', label: 'No' }
+        ]}
         isSearchable={false}
         value={selected}
         onChange={({ value }) => setSelected(value)}
