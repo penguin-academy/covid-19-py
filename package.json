@@ -19,13 +19,17 @@
     "react-places-autocomplete": "^7.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-select": "^3.0.8",
+    "styled-components": "^5.0.1",
     "yarn": "^1.22.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,5 +45,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/addon-viewport": "^5.3.17",
+    "@storybook/addons": "^5.3.17",
+    "@storybook/preset-create-react-app": "^2.0.0",
+    "@storybook/react": "^5.3.17",
+    "storybook-react-router": "^1.0.8"
   }
 }

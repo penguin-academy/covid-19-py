@@ -1,62 +1,62 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import Input from '../Input'
-import IDInput from '../IDInput'
-import IDDateInput from '../IDDateInput'
-import DateInput from '../DateInput'
-import Checkbox from '../Checkbox'
-import Select from '../Select'
-import { useReportContext } from '../../layouts/Report'
+import Input from "../Input";
+import IDInput from "../IDInput";
+import IDDateInput from "../IDDateInput";
+import DateInput from "../DateInput";
+import Checkbox from "../Checkbox";
+import Select from "../Select";
+import { useReportContext } from "../../layouts/Report";
 
-import './style/PersonalInfoForm.scss'
-import PlacesInput from '../PlacesInput'
+import "./style/PersonalInfoForm.scss";
+import PlacesInput from "../PlacesInput";
 
 const PersonalInfoForm = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { onSubmitForm, formState } = useReportContext()
+  const { onSubmitForm, formState } = useReportContext();
 
   const handleSubmit = e => {
-    setIsLoading(true)
+    setIsLoading(true);
 
-    e.preventDefault()
-    onSubmitForm()
-  }
+    e.preventDefault();
+    onSubmitForm();
+  };
 
   const onGoToSymptomsPage = e => {
-    e.preventDefault()
-    setActiveIndex(2)
-  }
+    e.preventDefault();
+    setActiveIndex(2);
+  };
 
   const onGoToSecondPage = e => {
-    e.preventDefault()
-    setActiveIndex(1)
-  }
+    e.preventDefault();
+    setActiveIndex(1);
+  };
 
   const onGoBackToSecondPage = e => {
-    e.preventDefault()
-    setActiveIndex(1)
-  }
+    e.preventDefault();
+    setActiveIndex(1);
+  };
 
   const onGoBackToInfoPage = e => {
-    e.preventDefault()
-    setActiveIndex(0)
-  }
+    e.preventDefault();
+    setActiveIndex(0);
+  };
 
   return (
     <div>
-      <div className="indicator-group" style={{ marginBottom: '4rem' }}>
+      <div className="indicator-group" style={{ marginBottom: "4rem" }}>
         <div className="row">
-          <div className={`indicator ${activeIndex === 0 ? 'active' : ''}`}>
+          <div className={`indicator ${activeIndex === 0 ? "active" : ""}`}>
             <span>1</span>
           </div>
-          <div className={`indicator ${activeIndex === 1 ? 'active' : ''}`}>
+          <div className={`indicator ${activeIndex === 1 ? "active" : ""}`}>
             <span>2</span>
           </div>
-          <div className={`indicator ${activeIndex === 2 ? 'active' : ''}`}>
+          <div className={`indicator ${activeIndex === 2 ? "active" : ""}`}>
             <span>3</span>
           </div>
         </div>
@@ -67,7 +67,7 @@ const PersonalInfoForm = () => {
         {/* Page 1 */}
         <div
           className={`row align-items-center page ${
-            activeIndex === 0 ? 'active' : ''
+            activeIndex === 0 ? "active" : ""
           }`}
         >
           <div className="col-lg-7">
@@ -113,6 +113,7 @@ const PersonalInfoForm = () => {
             <img
               className="img-fluid"
               src="assets/img/drawkit/color/drawkit-user-mobile-color.svg"
+              alt="Person filling out form."
             />
           </div>
         </div>
@@ -120,7 +121,7 @@ const PersonalInfoForm = () => {
         {/* Page 2 */}
         <div
           className={`row align-items-center page ${
-            activeIndex === 1 ? 'active' : ''
+            activeIndex === 1 ? "active" : ""
           }`}
         >
           <div className="col-lg-7">
@@ -142,7 +143,7 @@ const PersonalInfoForm = () => {
                   label="Numero de Telefono"
                   id="phoneNumber"
                   type="number"
-                  placeholder="021xxxxxx o 09xxxxxxxx"
+                  placeholder="09xxxxxxxx"
                   className="form-control form-control-solid rounded-pill"
                   required
                   errormessage="Debes ingresar un numero de telefono"
@@ -162,7 +163,7 @@ const PersonalInfoForm = () => {
                 </button>
 
                 <button
-                  style={{ marginRight: '10px' }}
+                  style={{ marginRight: "10px" }}
                   onClick={onGoBackToInfoPage}
                   className="btn btn-block btn-marketing rounded-pill"
                 >
@@ -175,13 +176,14 @@ const PersonalInfoForm = () => {
             <img
               className="img-fluid"
               src="assets/img/drawkit/color/drawkit-user-mobile-color.svg"
+              alt="Person filling out form"
             />
           </div>
         </div>
         {/* Page 3 */}
         <div
           className={`row align-items-center page ${
-            activeIndex === 2 ? 'active' : ''
+            activeIndex === 2 ? "active" : ""
           }`}
         >
           <div className="col-lg-12">
@@ -223,8 +225,8 @@ const PersonalInfoForm = () => {
                   <div
                     className={`collapse-field-group card ${
                       formState.inputValues.hasTraveledInLast14Days
-                        ? 'active'
-                        : ''
+                        ? "active"
+                        : ""
                     }`}
                     style={{ marginLeft: 25 }}
                   >
@@ -234,7 +236,7 @@ const PersonalInfoForm = () => {
                         label="Ciudad donde estuvo"
                         className="form-control form-control-solid rounded-pill"
                         id="cities"
-                        options={{ types: ['(cities)'] }}
+                        options={{ types: ["(cities)"] }}
                       />
                       <DateInput
                         label="Fecha de Retorno"
@@ -245,10 +247,10 @@ const PersonalInfoForm = () => {
                         label="Seleccione la via"
                         id="returnType"
                         options={[
-                          { value: '', label: 'Seleccione la via' },
-                          { value: 'air', label: 'Aerea' },
-                          { value: 'land', label: 'Terrestre' },
-                          { value: 'water', label: 'Fluvial' }
+                          { value: "", label: "Seleccione la via" },
+                          { value: "air", label: "Aerea" },
+                          { value: "land", label: "Terrestre" },
+                          { value: "water", label: "Fluvial" }
                         ]}
                       />
                     </div>
@@ -262,7 +264,7 @@ const PersonalInfoForm = () => {
                 </div>
                 <div
                   className={`collapse-field-group card ${
-                    formState.inputValues.hadContactInLast14Days ? 'active' : ''
+                    formState.inputValues.hadContactInLast14Days ? "active" : ""
                   }`}
                   style={{ marginLeft: 25 }}
                 >
@@ -279,11 +281,11 @@ const PersonalInfoForm = () => {
                         label="Relacion"
                         id="relationWithContact"
                         options={[
-                          { value: '', label: 'Relacion ' },
-                          { value: 'family', label: 'Familiar' },
-                          { value: 'work', label: 'Trabajo' },
-                          { value: 'medical', label: 'Asistencia Medica' },
-                          { value: 'other', label: 'Otro' }
+                          { value: "", label: "Relacion " },
+                          { value: "family", label: "Familiar" },
+                          { value: "work", label: "Trabajo" },
+                          { value: "medical", label: "Asistencia Medica" },
+                          { value: "other", label: "Otro" }
                         ]}
                       />
                     </div>
@@ -318,7 +320,7 @@ const PersonalInfoForm = () => {
                 )}
 
                 <button
-                  style={{ marginRight: '10px' }}
+                  style={{ marginRight: "10px" }}
                   onClick={onGoBackToSecondPage}
                   className="btn btn-block btn-marketing rounded-pill"
                 >
@@ -330,7 +332,7 @@ const PersonalInfoForm = () => {
                     {formState.errors.submit}
                   </div>
                 ) : (
-                  ''
+                  ""
                 )}
               </div>
             </div>
@@ -338,7 +340,7 @@ const PersonalInfoForm = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default PersonalInfoForm
+export default PersonalInfoForm;
