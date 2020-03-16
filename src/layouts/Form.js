@@ -61,6 +61,8 @@ const Form = ({ filledState = {} }) => {
   // if (filledState) setStatus({ ...status, ...filledState })
 
   const [errors, setErrors] = useState(createDefaultStates(sequence, false))
+  const [disabledButton, setDisabledButton] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   const nextQuestion = (q, hide) => {
     const defaultState = { show: false, answer: '' }
@@ -89,6 +91,7 @@ const Form = ({ filledState = {} }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
+    setDisabledButton(true)
 
     const newErrors = errors
     let errorPresent = false
@@ -103,6 +106,8 @@ const Form = ({ filledState = {} }) => {
     if (!errorPresent) {
       console.log('Submit')
       postForm()
+    } else {
+      setDisabledButton(false)
     }
   }
   const history = useHistory()
@@ -117,9 +122,12 @@ const Form = ({ filledState = {} }) => {
         .firestore()
         .collection('self-reports')
         .add(form)
+      setDisabledButton(false)
       history.push('/success')
     } catch (error) {
       console.log(error)
+      setDisabledButton(false)
+      setSubmitError(true)
       // dispatchFormState({ type: SUBMISSION_FAILED, error: error.message })
     }
   }
@@ -345,9 +353,28 @@ const Form = ({ filledState = {} }) => {
                   </>
                 )}
                 <hr className="mb-5 mt-5" />
-                <button className="btn btn-primary" type="submit">
+                <button
+                  className="btn btn-primary"
+                  type="submit"
+                  disabled={disabledButton}
+                >
+                  {disabledButton && (
+                    <span
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                      style={{ paddingRight: 10 }}
+                    ></span>
+                  )}
                   Envía
                 </button>
+                {submitError && (
+                  <p>
+                    Se ha producido un error. Sus entradas no se han guardado.
+                    Por favor, inténtelo de nuevo o póngase en contacto con
+                    nosotros.
+                  </p>
+                )}
               </form>
             </div>
           </div>
