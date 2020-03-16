@@ -57,6 +57,11 @@ const Footer = () => {
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts.
             </p>
+            <img src="/hippa.png" style={{ maxHeight: 80 }} />
+            <img
+              src="/privacyshield.png"
+              style={{ maxHeight: 60, paddingLeft: 20 }}
+            />
           </div>
         </div>
         <div className="row mt-5">
