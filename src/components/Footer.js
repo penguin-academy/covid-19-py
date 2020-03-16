@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           <div className="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-lg-left">
             <h3>
-              <strong>Follow Us & Contribute</strong>
+              <strong>Seguinos y contribuye</strong>
             </h3>
             <p className="lead">
               <a
