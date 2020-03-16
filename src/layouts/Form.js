@@ -109,10 +109,14 @@ const Form = ({ filledState = {} }) => {
 
   const postForm = async () => {
     try {
+      const form = {
+        ...status,
+        reportDate: firebase.firestore.Timestamp.now()
+      }
       await firebase
         .firestore()
         .collection('self-reports')
-        .add(status)
+        .add(form)
       history.push('/success')
     } catch (error) {
       console.log(error)
