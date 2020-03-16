@@ -6,7 +6,10 @@ This project is an auto reporting system, allowing anyone to access it and repor
 
 As we received many requests for collaboration, we decided to clean up and open source this repository. It is entierly built on open source technology and can be a starting point to build an application for your country or specific target group.
 
-We also welcome contributions! Please get in touch with us or check the open issues (or open an issue) if there are non available.
+### Contibution Guidelines
+We welcome contributions! Please check the open issues to see what is needed at the moment. If those issues are not specified well or there is nothing you can work on, contact us or open an issue to see if there is something else available you can work on.
+
+Check our [Contribution Guide](./CONTRIBUTING.md) for instructions on how to contribute to the project.
 
 ### Demo
 
@@ -15,6 +18,7 @@ A demo is available [here](https://covpy.netlify.com/). And the visual documenta
 ### Development
 
 This project uses [Storybook](https://storybook.js.org/). So you can run `yarn storybook` to start a storybook development server and enjoy the comfort to develop components and visually test them.
+
 
 ## Available Scripts
 
