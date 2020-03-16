@@ -4,10 +4,6 @@ import FormTag from '../layouts/Form'
 import NavigationBarTag from '../components/NavigationBar'
 import { FooterSmall } from '../components/Footer'
 
-import firebase from 'firebase/app'
-import firebaseConfig from '../constants/firebaseConfig'
-
-firebase.initializeApp(firebaseConfig)
 
 export default {
   title: 'Forms',
