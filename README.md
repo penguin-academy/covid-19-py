@@ -1,21 +1,23 @@
 This project was created as an initiative by Penguin Academy to build technology to smoothen the peak impact of the COVID-19 pandemic on the Paraguayan Health System.
 
+🐧🇵🇾🦠
+
 This project is an auto reporting system, allowing anyone to access it and report their symptoms and gat a quick feedback what steps to take next as well as allowing to generate data on the situation.
 
 ## Demo and Contributing
 
 As we received many requests for collaboration, we decided to clean up and open source this repository. It is entierly built on open source technology and can be a starting point to build an application for your country or specific target group.
 
-### Contibution Guidelines
+### Contibution Guidelines ♥️
 We welcome contributions! Please check the open issues to see what is needed at the moment. If those issues are not specified well or there is nothing you can work on, contact us or open an issue to see if there is something else available you can work on.
 
 Check our [Contribution Guide](./CONTRIBUTING.md) for instructions on how to contribute to the project.
 
-### Demo
+### Demo 👀
 
 A demo is available [here](https://covpy.netlify.com/). And the visual documentation (Storybook) is available [here](https://covpy-book.netlify.com/).
 
-### Development
+### Development 👩‍💻
 
 This project uses [Storybook](https://storybook.js.org/). So you can run `yarn storybook` to start a storybook development server and enjoy the comfort to develop components and visually test them.
 
@@ -45,3 +47,9 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 There are further scripts and documentation [available here](create-react-app.md)
+
+## Deployment 🦸‍♀️
+
+You can use [netlify](https://netlify.com/) to host the web app and setup a continous building process from the master branch.
+You will have to add the environment variables for your Firebase Backend in netlify!
+👉Also make sure to secure the Firebase Backend as it is open to anyone to read the data in there per default! 
