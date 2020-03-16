@@ -59,7 +59,7 @@ const NavigationBar = () => {
                   to="/"
                   onClick={() => setShow(false)}
                 >
-                  Home
+                  Inicio
                 </Link>
               </li>
             </ul>
