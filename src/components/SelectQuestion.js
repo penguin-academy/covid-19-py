@@ -33,6 +33,7 @@ const Component = ({ title, subTitle, options, onChange, value, error }) => {
           value={selectedValue}
           styles={customStyles}
           error={error}
+          placeholder="Seleccionar ..."
         />
         {error && (
           <div className="invalid-feedback" style={{ display: 'block' }}>

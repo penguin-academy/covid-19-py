@@ -226,7 +226,7 @@ const Form = ({ filledState = {} }) => {
                     <hr className="mb-5 mt-5" />
                     <Question
                       title="¿Tienen síntomas respiratorios como tos o dificultades respiratorias?"
-                      subTitle="Un resfriado no es suficiente."
+                      subTitle="Una nariz chorreante no es suficiente."
                       options={[
                         { value: 'yes', label: 'Sí' },
                         { value: 'no', label: 'No' }
