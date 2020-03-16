@@ -3,6 +3,7 @@ import StoryRouter from 'storybook-react-router'
 import HomeTag from '../layouts/Home'
 import NavigationBarTag from '../components/NavigationBar'
 import FooterTag from '../components/Footer'
+import SuccessTag from '../layouts/Success'
 
 export default {
   title: 'Pages',
@@ -19,3 +20,4 @@ export const Home_Page = () => (
     <FooterTag />
   </>
 )
+export const Success = () => <SuccessTag />

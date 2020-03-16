@@ -19,6 +19,7 @@
     "react-places-autocomplete": "^7.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-select": "^3.0.8",
     "styled-components": "^5.0.1",
     "yarn": "^1.22.4"
   },
