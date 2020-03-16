@@ -11,6 +11,8 @@ const CTALink = styled(Link)`
     padding-left: 5px;
     transition: all 0.5s ease;
   }
+  background-color: #bf215b;
+  border-color: #bf215b;
 `
 
 const Stats = () => {
@@ -208,11 +210,7 @@ const Home = () => {
             </div> */}
           </div>
           <div className="col-12 col-md-8 col-lg-6 m-auto mr-lg-0 ml-lg-auto pt-5 pt-lg-0 d-lg-block d-none">
-            <img
-              alt="image"
-              className="img-fluid"
-              src="assets/img/drawkit/color/drawkit-content-man-color.svg"
-            />
+            <img alt="image" className="img-fluid" src="/img/hero.png" />
           </div>
         </div>
       </div>
