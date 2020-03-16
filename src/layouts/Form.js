@@ -64,6 +64,7 @@ const Form = ({ filledState = {} }) => {
   const [disabledButton, setDisabledButton] = useState(false)
   const [submitError, setSubmitError] = useState(false)
 
+
   const nextQuestion = (q, hide) => {
     const defaultState = { show: false, answer: '' }
     const i = sequence.indexOf(q)
@@ -93,6 +94,7 @@ const Form = ({ filledState = {} }) => {
     e.preventDefault()
     setDisabledButton(true)
 
+
     const newErrors = errors
     let errorPresent = false
     Object.entries(status).map(([key, value]) => {
@@ -108,6 +110,7 @@ const Form = ({ filledState = {} }) => {
       postForm()
     } else {
       setDisabledButton(false)
+
     }
   }
   const history = useHistory()
@@ -128,6 +131,7 @@ const Form = ({ filledState = {} }) => {
       console.log(error)
       setDisabledButton(false)
       setSubmitError(true)
+
       // dispatchFormState({ type: SUBMISSION_FAILED, error: error.message })
     }
   }
@@ -375,6 +379,7 @@ const Form = ({ filledState = {} }) => {
                     nosotros.
                   </p>
                 )}
+
               </form>
             </div>
           </div>
