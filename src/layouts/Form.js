@@ -331,21 +331,4 @@ const Form = () => {
   )
 }
 
-// to copy
-const x = status => {
-  return (
-    status['breath'].show && (
-      <>
-        <hr className="mb-5 mt-5" />
-        <Question
-          title="¿Tienen síntomas respiratorios como tos o dificultades respiratorias?"
-          options={''}
-          value={status.gender.answer}
-          onChange={''}
-        />
-      </>
-    )
-  )
-}
-
 export default Form
