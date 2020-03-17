@@ -7,9 +7,8 @@ import 'firebase/firestore'
 import Question from '../components/SelectQuestion'
 import FormBox from '../components/FormBox'
 
-const Form = ({ filledState = {}, onFinish }) => {
+const Form = ({ filledState = {}, setFormState, form }) => {
   const sequence = [
-    'generalHealth',
     'gender',
     'pregnant',
     'age',
@@ -34,7 +33,7 @@ const Form = ({ filledState = {}, onFinish }) => {
       return { ...state, ...newState }
     },
     {
-      generalHealth: { show: true, answer: '' },
+      [sequence[0]]: { show: true, answer: '' },
       ...createDefaultStates(sequence.slice(1), { show: false, answer: '' }),
       ...filledState
     }
@@ -97,15 +96,15 @@ const Form = ({ filledState = {}, onFinish }) => {
 
   const postForm = async () => {
     try {
-      const form = {
+      const firestoreDocument = {
         ...status,
         reportDate: firebase.firestore.Timestamp.now()
       }
       await firebase
         .firestore()
         .collection('self-reports')
-        .add(form)
-      onFinish(status)
+        .add(firestoreDocument)
+      setFormState({ ...form, ...status })
       setDisabledButton(false)
       history.push('/success')
     } catch (error) {
@@ -118,42 +117,23 @@ const Form = ({ filledState = {}, onFinish }) => {
   return (
     <FormBox>
       <form onSubmit={handleSubmit}>
-        <Question
-          title="¿Cómo está su salud en general en este momento?"
-          options={[
-            { value: 'good', label: 'Buena' },
-            { value: 'bad', label: 'Mala' },
-            {
-              value: 'testing',
-              label: 'Sólo estoy probando la aplicación'
-            }
-          ]}
-          onChange={({ value }) => {
-            handleQuestion('generalHealth', value, 'gender')
-          }}
-          value={status.generalHealth.answer}
-          error={errors.generalHealth}
-        />
-        {status['gender'].show && (
-          <>
-            <hr className="mb-5 mt-5" />
-            <Question
-              title="¿Qué sexo tiene?"
-              options={[
-                { value: 'male', label: 'Hombre' },
-                { value: 'female', label: 'Mujer' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('gender', value, () => {
-                  if (value === 'female') nextQuestion('pregnant')
-                  else nextQuestion('age', 'pregnant')
-                })
-              }}
-              value={status.gender.answer}
-              error={errors.gender}
-            />
-          </>
-        )}
+        <>
+          <Question
+            title="¿Cuál es su sexo?"
+            options={[
+              { value: 'male', label: 'Hombre' },
+              { value: 'female', label: 'Mujer' }
+            ]}
+            onChange={({ value }) => {
+              handleQuestion('gender', value, () => {
+                if (value === 'female') nextQuestion('pregnant')
+                else nextQuestion('age', 'pregnant')
+              })
+            }}
+            value={status.gender.answer}
+            error={errors.gender}
+          />
+        </>
         {status['pregnant'].show && (
           <>
             <hr className="mb-5 mt-5" />
@@ -175,7 +155,7 @@ const Form = ({ filledState = {}, onFinish }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Cuántos años tienes?"
+              title="¿Cuántos años tenés?"
               options={Array.from(Array(100)).map((_, i) => {
                 return {
                   value: i,
@@ -194,8 +174,8 @@ const Form = ({ filledState = {}, onFinish }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Tienen síntomas respiratorios como tos o dificultades respiratorias?"
-              subTitle="Una nariz chorreante no es suficiente."
+              title="¿Tenés síntomas respiratorios como tos o dolor de garganta?"
+              subTitle="Si solo te chorrea la nariz, indicá NO."
               options={[
                 { value: 'yes', label: 'Sí' },
                 { value: 'no', label: 'No' }
@@ -212,8 +192,7 @@ const Form = ({ filledState = {}, onFinish }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Tienes fiebre?"
-              subTitle="Temperatura de 38°C o más."
+              title="En las últimas 24 horas, ¿Tuviste fiebre de 38°C o más?"
               options={[
                 { value: 'yes', label: 'Sí' },
                 { value: 'no', label: 'No' }
@@ -286,7 +265,7 @@ const Form = ({ filledState = {}, onFinish }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="En el curso de su trabajo sin equipo de protección, ¿ha tenido contacto directo con uno en el caso confirmado?"
+              title="En el curso de tu trabajo sin equipo de protección, ¿tuviste contacto directo con uno en el caso confirmado?"
               options={[
                 { value: 'yes', label: 'Sí' },
                 { value: 'no', label: 'No' }
@@ -303,7 +282,7 @@ const Form = ({ filledState = {}, onFinish }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Hay algún caso confirmado en su entorno cercano (familia o personas del mismo hogar)?"
+              title="En los últimos 15 días, ¿tuviste contacto con un algún caso confirmado en su entorno cercano (familia o personas del mismo hogar)?"
               options={[
                 { value: 'yes', label: 'Sí' },
                 { value: 'no', label: 'No' }

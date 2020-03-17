@@ -1,5 +1,6 @@
 import React from 'react'
 import StoryRouter from 'storybook-react-router'
+import StartTag from '../layouts/Start'
 import FormTag from '../layouts/Form'
 import NavigationBarTag from '../components/NavigationBar'
 import { FooterSmall } from '../components/Footer'
@@ -23,6 +24,15 @@ const filledState = {
   familyExposure: { answer: 'yes', show: true }
 }
 
+export const Start = () => <StartTag setFormState={console.log} />
+
+export const Start_Page = () => (
+  <>
+    <NavigationBarTag />
+    <StartTag setFormState={console.log} />
+    <FooterSmall />
+  </>
+)
 export const Form = () => <FormTag />
 export const Form_Page = () => (
   <>

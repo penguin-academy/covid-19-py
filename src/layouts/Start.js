@@ -1,11 +1,15 @@
 import React, { useState, useReducer } from 'react'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-import styled from 'styled-components'
 
 import FormBox from '../components/FormBox'
 
-const Start = ({}) => {
+const Start = ({ setFormState }) => {
+  const history = useHistory()
+  const clickHandler = feeling => {
+    setFormState({ generalHealth: feeling })
+    history.push('/report')
+  }
   return (
     <FormBox>
       <section className="fdb-block">
@@ -18,49 +22,51 @@ const Start = ({}) => {
                 No provee una asesoría médica. No la uses para reemplazar a una
                 consulta, diagnóstico o tratamiento con un profesional.
               </p>
+              <p>
+                Al continuar, usted está de acuerdo con nuestros &nbsp;
+                <Link to="/legal" target="_blank">
+                  términos de servicio
+                </Link>
+              </p>
               <hr className="mb-5 mt-5" />
+              <h3 className="pb-4">
+                En general, ¿Cómo te sentís en este momento?
+              </h3>
               <p className="mt-5 mt-sm-4">
-                <h3 className="pb-4">
-                  ¿Cómo está su salud en general en este momento?
-                </h3>
-                <a
+                <button
                   className="btn btn-lg btn-success"
-                  href="https://www.froala.com"
+                  onClick={() => clickHandler('good')}
                 >
                   <i
                     className="fas fa-smile-beam"
                     style={{ paddingRight: 10 }}
                   />
-                  Buena
-                </a>
+                  Bien
+                </button>
 
-                <a
+                <button
                   className="btn btn-lg btn-danger ml-5"
-                  href="https://www.froala.com"
+                  onClick={() => clickHandler('bad')}
                 >
                   <i
                     className="fas fa-frown-open"
                     style={{ paddingRight: 10 }}
                   />
-                  Mala
-                </a>
+                  Mal
+                </button>
               </p>
             </div>
           </div>
           <div className="text-center">
-            <a className="btn btn-link ml-4" href="https://www.froala.com">
-              I'm just testing
-            </a>
+            <button
+              className="btn btn-link ml-4"
+              onClick={() => clickHandler('testing')}
+            >
+              Sólo estoy probando la aplicación
+            </button>
           </div>
           <div className="row pt-5 pb-3">
-            <div className="col-12 text-center">
-              <p>
-                By continuing, you agree to our&nbsp;
-                <Link to="/legal" target="_blank">
-                  terms of service
-                </Link>
-              </p>
-            </div>
+            <div className="col-12 text-center"></div>
           </div>
         </div>
       </section>
