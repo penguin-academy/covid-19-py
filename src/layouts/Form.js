@@ -309,7 +309,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
               style={{ paddingRight: 10 }}
             ></span>
           )}
-          Envía
+          Enviar
         </button>
         {submitError && (
           <p style={{ color: 'red', padding: 5 }}>
