@@ -31,7 +31,7 @@ const Footer = () => {
                 <i className="fab fa-github" aria-hidden="true" />
               </a>
               <a
-                href="mailto:hello@penguin.academy"
+                href="mailto:hola@autoreporte.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-2"
