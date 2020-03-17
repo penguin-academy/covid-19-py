@@ -57,11 +57,11 @@ You will have to add the environment variables for your Firebase Backend in netl
 
 ### Funding 💸
 
-You may provide financial support for this project by donating.  Get in contact with us! Thank you for your support!
+You may provide financial support for this project by donating. [Get in touch](mailto:hello@penguin.academy) with us! Thank you for your support!
 
 ### About 🐧
 
-`CocPy` is developed and maintained by [Penguin Academy](https://penguin.academy), UCOM, the Project Lab, and other organizations as well as many [amazing contributors](https://github.com/penguin-academy/covid-19-py/graphs/contributors) ❤️. If you're interested in learning more about what Penguin ACademy can do for your company, please [get in touch](mailto:hello@penguin.academy)!
+`CovPy` is developed and maintained by [Penguin Academy](https://penguin.academy), UCOM, the Project Lab, and other organizations as well as many [amazing contributors](https://github.com/penguin-academy/covid-19-py/graphs/contributors) ❤️. If you're interested in learning more about what Penguin ACademy can do for your company, please [get in touch](mailto:hello@penguin.academy)!
 
 ### License
 
