@@ -21,13 +21,16 @@ const Home = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
-            <h2>¿Tenés síntomas? Decinos cuáles y te ayudamos</h2>
+            <h2>
+              Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas? Decinos
+              cuáles y te ayudamos
+            </h2>
             <p className="lead">
               ¿Fiebre? ¿Tos Seca? ¿Dificultad para respirar? ¿Otro síntoma?
               Completá el formulario.
             </p>
             <p className="mt-4">
-              <CTALink className="btn btn-secondary" to="/report">
+              <CTALink className="btn btn-secondary" to="/start">
                 Revisar mis síntomas<i className="fas fa-arrow-right ml-1"></i>
               </CTALink>
             </p>
