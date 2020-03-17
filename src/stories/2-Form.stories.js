@@ -4,7 +4,6 @@ import FormTag from '../layouts/Form'
 import NavigationBarTag from '../components/NavigationBar'
 import { FooterSmall } from '../components/Footer'
 
-
 export default {
   title: 'Forms',
   decorators: [StoryRouter()]
@@ -23,6 +22,7 @@ const filledState = {
   professionalExposure: { answer: 'yes', show: true },
   familyExposure: { answer: 'yes', show: true }
 }
+
 export const Form = () => <FormTag />
 export const Form_Page = () => (
   <>
@@ -35,7 +35,7 @@ export const Form_Page = () => (
 export const Form_Page_Filled = () => (
   <>
     <NavigationBarTag />
-    <FormTag filledState={filledState} />
+    <FormTag filledState={filledState} onFinish={console.log} />
     <FooterSmall />
   </>
 )

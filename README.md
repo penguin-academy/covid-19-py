@@ -1,4 +1,8 @@
+# CovPY Auto Reporte
+
 This project was created as an initiative by Penguin Academy to build technology to smoothen the peak impact of the COVID-19 pandemic on the Paraguayan Health System.
+
+🐧🇵🇾🦠
 
 This project is an auto reporting system, allowing anyone to access it and report their symptoms and gat a quick feedback what steps to take next as well as allowing to generate data on the situation.
 
@@ -6,15 +10,19 @@ This project is an auto reporting system, allowing anyone to access it and repor
 
 As we received many requests for collaboration, we decided to clean up and open source this repository. It is entierly built on open source technology and can be a starting point to build an application for your country or specific target group.
 
-We also welcome contributions! Please get in touch with us or check the open issues (or open an issue) if there are non available.
+### Contibution Guidelines ♥️
+We welcome contributions! Please check the open issues to see what is needed at the moment. If those issues are not specified well or there is nothing you can work on, contact us or open an issue to see if there is something else available you can work on.
 
-### Demo
+Check our [Contribution Guide](./CONTRIBUTING.md) for instructions on how to contribute to the project.
+
+### Demo 👀
 
 A demo is available [here](https://covpy.netlify.com/). And the visual documentation (Storybook) is available [here](https://covpy-book.netlify.com/).
 
-### Development
+### Development 👩‍💻
 
 This project uses [Storybook](https://storybook.js.org/). So you can run `yarn storybook` to start a storybook development server and enjoy the comfort to develop components and visually test them.
+
 
 ## Available Scripts
 
@@ -30,11 +38,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `yarn build`
 
 Builds the app for production to the `build` folder.<br />
@@ -45,42 +48,26 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+There are further scripts and documentation [available here](create-react-app.md)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Deployment 🦸‍♀️
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can use [netlify](https://netlify.com/) to host the web app and setup a continous building process from the master branch.
+You will have to add the environment variables for your Firebase Backend in netlify!
+👉Also make sure to secure the Firebase Backend as it is open to anyone to read the data in there per default! 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Other
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This project uses [Froala Design Blocks](https://github.com/froala/design-blocks) an open source design framework with blocks  based on the Bootstrap Library. They are the building blocks for beautiful websites. We converted the components to react and you can find them under [/src/templates] and in [Storybook](https://covpy-book.netlify.com/?path=/story/template--ctas)
 
-## Learn More
+### Funding 💸
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You may provide financial support for this project by donating. [Get in touch](mailto:hello@penguin.academy) with us! Thank you for your support!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### About 🐧
 
-### Code Splitting
+`CovPy` is developed and maintained by [Penguin Academy](https://penguin.academy), [UCOM](http://www.ucom.edu.py/), [Facultad Politécnica UNA](https://www.pol.una.py/), [the Project Lab](https://www.theproductlab.co/), [Web Paraguay](https://webparaguay.com/), [Okimo](http://optometry.okimo.co/), and other organizations as well as many [amazing contributors](https://github.com/penguin-academy/covid-19-py/graphs/contributors) ❤️. If you're interested in learning more about what Penguin ACademy can do for your company, please [get in touch](mailto:hello@penguin.academy)!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### License
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+CovPY is [LGPL licensed](./LICENSE).

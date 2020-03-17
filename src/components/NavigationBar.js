@@ -2,14 +2,6 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const Nav = styled.nav`
-  @media (max-width: 767px) {
-    border-bottom-color: #0061f2;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-  }
-`
-
 const NavLink = styled(Link)`
   font-size: 1.2rem;
   font-weight: bold;
@@ -24,11 +16,12 @@ const NavigationBar = () => {
   return (
     <header>
       <div className="container">
-        <Nav className="navbar navbar-expand-md no-gutters">
+        <nav className="navbar navbar-expand-md no-gutters">
           <div className="col-2 text-left">
             <NavLink className="navbar-brand text-primary" to="/">
               <img
                 src="/img/care.svg"
+                alt="Logo CovPY Auto Reporte"
                 style={{ width: 40, paddingRight: 15 }}
               />
               CovPY Auto Reporte
@@ -64,7 +57,7 @@ const NavigationBar = () => {
               </li>
             </ul>
           </div>
-        </Nav>
+        </nav>
       </div>
     </header>
   )
