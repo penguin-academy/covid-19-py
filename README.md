@@ -66,7 +66,7 @@ You may provide financial support for this project by donating. [Get in touch](m
 
 ### About 🐧
 
-`CovPy` is developed and maintained by [Penguin Academy](https://penguin.academy), UCOM, the Project Lab, and other organizations as well as many [amazing contributors](https://github.com/penguin-academy/covid-19-py/graphs/contributors) ❤️. If you're interested in learning more about what Penguin ACademy can do for your company, please [get in touch](mailto:hello@penguin.academy)!
+`CovPy` is developed and maintained by [Penguin Academy](https://penguin.academy), [UCOM](http://www.ucom.edu.py/), [the Project Lab](https://www.theproductlab.co/), and other organizations as well as many [amazing contributors](https://github.com/penguin-academy/covid-19-py/graphs/contributors) ❤️. If you're interested in learning more about what Penguin ACademy can do for your company, please [get in touch](mailto:hello@penguin.academy)!
 
 ### License
 
