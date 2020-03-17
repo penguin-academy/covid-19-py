@@ -1,3 +1,5 @@
+# CovPY Auto Reporte
+
 This project was created as an initiative by Penguin Academy to build technology to smoothen the peak impact of the COVID-19 pandemic on the Paraguayan Health System.
 
 🐧🇵🇾🦠
@@ -54,6 +56,9 @@ You can use [netlify](https://netlify.com/) to host the web app and setup a cont
 You will have to add the environment variables for your Firebase Backend in netlify!
 👉Also make sure to secure the Firebase Backend as it is open to anyone to read the data in there per default! 
 
+## Other
+
+This project uses [Froala Design Blocks](https://github.com/froala/design-blocks) an open source design framework with blocks  based on the Bootstrap Library. They are the building blocks for beautiful websites. We converted the components to react and you can find them under [/src/templates] and in [Storybook](https://covpy-book.netlify.com/?path=/story/template--ctas)
 
 ### Funding 💸
 
