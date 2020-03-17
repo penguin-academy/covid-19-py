@@ -227,8 +227,8 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Pertenece a un grupo de riesgo?"
-              subTitle="Mayores de 65 años, hipertensión, diabetes, enfermedades cardiovasculares, enfermedades pulmonares crónicas, inmunosupresión como resultado de una enfermedad o tratamiento, cáncer."
+              title="¿Pertenecés a un grupo de riesgo?"
+              subTitle="Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
               options={[
                 { value: 'yes', label: 'Sí' },
                 { value: 'no', label: 'No' }
@@ -245,7 +245,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Es usted un profesional de la salud y tiene contacto con pacientes o residentes de asilos?"
+              title="¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
               options={[
                 { value: 'yes', label: 'Sí' },
                 { value: 'no', label: 'No' }
