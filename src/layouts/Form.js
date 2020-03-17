@@ -209,7 +209,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Tienes alguno de estos signos?"
+              title="¿Tenés alguno de estos signos?"
               subTitle="Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
               options={[
                 { value: 'yes', label: 'Sí' },
