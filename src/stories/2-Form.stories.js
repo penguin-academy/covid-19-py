@@ -2,6 +2,7 @@ import React from 'react'
 import StoryRouter from 'storybook-react-router'
 import StartTag from '../layouts/Start'
 import FormTag from '../layouts/Form'
+import PersonTag from '../layouts/Person'
 import NavigationBarTag from '../components/NavigationBar'
 import { FooterSmall } from '../components/Footer'
 
@@ -46,6 +47,15 @@ export const FormPageFilled = () => (
   <>
     <NavigationBarTag />
     <FormTag filledState={filledState} setFormState={console.log} />
+    <FooterSmall />
+  </>
+)
+
+export const Person = () => <PersonTag />
+export const PersonPage = () => (
+  <>
+    <NavigationBarTag />
+    <PersonTag />
     <FooterSmall />
   </>
 )

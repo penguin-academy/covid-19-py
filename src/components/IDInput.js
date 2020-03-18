@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from 'react'
-import { useReportContext } from '../layouts/Report'
+// import { useReportContext } from '../layouts/Report'
 
 const INPUT_CHANGE = 'INPUT_CHANGE'
 
@@ -22,7 +22,7 @@ const IDInput = props => {
     isValid: false
   })
   const [error, setError] = useState(null)
-  const { onIdChange, onIdChangeError } = useReportContext()
+  // const { onIdChange, onIdChangeError } = useReportContext()
 
   const textChangeHandler = textVal => {
     const text = textVal.target.value
@@ -37,7 +37,7 @@ const IDInput = props => {
     setError(null)
     if (!inputState.value) {
       setError('Debes ingresar una cedula')
-      onIdChangeError()
+      // onIdChangeError()
       return
     }
     const cedula = inputState.value.replace(/\s/g, '')
@@ -50,10 +50,10 @@ const IDInput = props => {
         .then(data => {
           let { obtenerPersonaPorNroCedulaResponse: res } = data
           if (res) {
-            onIdChangeError()
+            // onIdChangeError()
             throw new Error('La Cedula no es valida')
           }
-          onIdChange(data)
+          // onIdChange(data)
         })
         .catch(err => setError(err.message))
     }

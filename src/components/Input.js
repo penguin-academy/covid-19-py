@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from 'react'
-import { useReportContext } from '../layouts/Report'
+// import { useReportContext } from '../layouts/Report'
 
 const INPUT_CHANGE = 'INPUT_CHANGE'
 const INPUT_BLUR = 'INPUT_BLUR'
@@ -29,13 +29,13 @@ const Input = props => {
     touched: false
   })
 
-  const { onInputChange } = useReportContext()
+  // const { onInputChange } = useReportContext()
 
-  useEffect(() => {
-    if (inputState.touched) {
-      onInputChange(props.id, inputState.value, inputState.isValid)
-    }
-  }, [inputState, onInputChange, props.id])
+  // useEffect(() => {
+  //   if (inputState.touched) {
+  //     onInputChange(props.id, inputState.value, inputState.isValid)
+  //   }
+  // }, [inputState, onInputChange, props.id])
 
   const textChangeHandler = textVal => {
     const text = textVal.target.value
