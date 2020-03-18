@@ -17,7 +17,7 @@ const CTALink = styled(Link)`
 
 const Home = () => {
   return (
-    <section className="fdb-block">
+    <header className="fdb-block">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
@@ -55,7 +55,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section>
+    </header>
   )
 }
 
