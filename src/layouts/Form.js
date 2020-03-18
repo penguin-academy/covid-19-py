@@ -1,6 +1,7 @@
-import React, { useState, useReducer } from 'react'
+import React, { useState, useReducer, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import firebase from 'firebase/app'
+import { scroller, Element } from "react-scroll"
 
 import 'firebase/firestore'
 
@@ -45,6 +46,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
   const [errors, setErrors] = useState(createDefaultStates(sequence, false))
   const [disabledButton, setDisabledButton] = useState(false)
   const [submitError, setSubmitError] = useState(false)
+  const [nextQuestionName, setNextQuestionName] = useState(sequence[0]);
 
   const nextQuestion = (q, hide) => {
     const defaultState = { show: false, answer: '' }
@@ -58,6 +60,9 @@ const Form = ({ filledState = {}, setFormState, form }) => {
       ...valuesToReset,
       [q]: { show: true, answer: '' }
     })
+
+    setNextQuestionName(q);
+
   }
 
   const handleQuestion = (q, value, cbOrNextQ) => {
@@ -69,6 +74,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
     if (cbOrNextQ == null) return
     else if (typeof cbOrNextQ === 'function') cbOrNextQ()
     else nextQuestion(cbOrNextQ)
+
   }
 
   const handleSubmit = e => {
@@ -114,189 +120,219 @@ const Form = ({ filledState = {}, setFormState, form }) => {
     }
   }
 
+  useEffect(() => {
+    console.log("nextQuestionName", nextQuestionName)
+    scroller.scrollTo(nextQuestionName, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: -50, // Scrolls to element - 50 pixels
+    });
+  }, [nextQuestionName])
+
   return (
     <FormBox>
       <form onSubmit={handleSubmit}>
         <>
-          <Question
-            title="¿Cuál es su sexo?"
-            options={[
-              { value: 'male', label: 'Hombre' },
-              { value: 'female', label: 'Mujer' }
-            ]}
-            onChange={({ value }) => {
-              handleQuestion('gender', value, () => {
-                if (value === 'female') nextQuestion('pregnant')
-                else nextQuestion('age', 'pregnant')
-              })
-            }}
-            value={status.gender.answer}
-            error={errors.gender}
-          />
+          <Element name="gender">
+            <Question
+              title="¿Cuál es su sexo?"
+              options={[
+                { value: 'male', label: 'Hombre' },
+                { value: 'female', label: 'Mujer' }
+              ]}
+              onChange={({ value }) => {
+                handleQuestion('gender', value, () => {
+                  if (value === 'female') nextQuestion('pregnant');
+                  else nextQuestion('age', 'pregnant')
+                })
+              }}
+              value={status.gender.answer}
+              error={errors.gender}
+            />
+          </Element>
         </>
         {status['pregnant'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="¿Estás embarazada?"
-              options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('pregnant', value, 'age')
-              }}
-              value={status.pregnant.answer}
-              error={errors.pregnant}
-            />
+            <Element name="pregnant">
+              <Question
+                title="¿Estás embarazada?"
+                options={[
+                  { value: 'yes', label: 'Sí' },
+                  { value: 'no', label: 'No' }
+                ]}
+                onChange={({ value }) => {
+                  handleQuestion('pregnant', value, 'age')
+                }}
+                value={status.pregnant.answer}
+                error={errors.pregnant}
+              />
+            </Element>
           </>
         )}
         {status['age'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="¿Cuántos años tenés?"
-              options={Array.from(Array(100)).map((_, i) => {
-                return {
-                  value: i,
-                  label: i + (i > 1 ? ' años' : ' año')
-                }
-              })}
-              onChange={({ value }) => {
-                handleQuestion('age', value, 'breath')
-              }}
-              value={status.age.answer}
-              error={errors.age}
-            />
+            <Element name="age">
+              <Question
+                title="¿Cuántos años tenés?"
+                options={Array.from(Array(100)).map((_, i) => {
+                  return {
+                    value: i,
+                    label: i + (i > 1 ? ' años' : ' año')
+                  }
+                })}
+                onChange={({ value }) => {
+                  handleQuestion('age', value, 'breath')
+                }}
+                value={status.age.answer}
+                error={errors.age}
+              />
+            </Element>
           </>
         )}
         {status['breath'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="¿Tenés síntomas respiratorios como tos o dolor de garganta?"
-              subTitle="Si solo te chorrea la nariz, indicá NO."
-              options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('breath', value, 'fever')
-              }}
-              value={status.breath.answer}
-              error={errors.breath}
-            />
+            <Element name="breath">
+              <Question
+                title="¿Tenés síntomas respiratorios como tos o dolor de garganta?"
+                subTitle="Si solo te chorrea la nariz, indicá NO."
+                options={[
+                  { value: 'yes', label: 'Sí' },
+                  { value: 'no', label: 'No' }
+                ]}
+                onChange={({ value }) => {
+                  handleQuestion('breath', value, 'fever')
+                }}
+                value={status.breath.answer}
+                error={errors.breath}
+              />
+            </Element>
           </>
         )}
         {status['fever'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="En las últimas 24 horas, ¿Tuviste fiebre de 38°C o más?"
-              options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('fever', value, () => {
-                  if (value === 'yes' && status.breath.answer === 'yes')
-                    nextQuestion('alarmSigns')
-                  else nextQuestion('riskGroup', 'alarmSigns')
-                })
-              }}
-              value={status.fever.answer}
-              error={errors.fever}
-            />
+            <Element name="fever">
+              <Question
+                title="En las últimas 24 horas, ¿Tuviste fiebre de 38°C o más?"
+                options={[
+                  { value: 'yes', label: 'Sí' },
+                  { value: 'no', label: 'No' }
+                ]}
+                onChange={({ value }) => {
+                  handleQuestion('fever', value, () => {
+                    if (value === 'yes' && status.breath.answer === 'yes')
+                      nextQuestion('alarmSigns')
+                    else nextQuestion('riskGroup', 'alarmSigns')
+                  })
+                }}
+                value={status.fever.answer}
+                error={errors.fever}
+              />
+            </Element>
           </>
         )}
         {status['alarmSigns'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="¿Tenés alguno de estos signos?"
-              subTitle="Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
-              options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('alarmSigns', value, 'riskGroup')
-              }}
-              value={status.alarmSigns.answer}
-              error={errors.alarmSigns}
-            />
+            <Element name="alarmSigns">
+              <Question
+                title="¿Tenés alguno de estos signos?"
+                subTitle="Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
+                options={[
+                  { value: 'yes', label: 'Sí' },
+                  { value: 'no', label: 'No' }
+                ]}
+                onChange={({ value }) => {
+                  handleQuestion('alarmSigns', value, 'riskGroup')
+                }}
+                value={status.alarmSigns.answer}
+                error={errors.alarmSigns}
+              />
+            </Element>
           </>
         )}
         {status['riskGroup'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="¿Pertenecés a un grupo de riesgo?"
-              subTitle="Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
-              options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('riskGroup', value, 'healthProfessional')
-              }}
-              value={status.riskGroup.answer}
-              error={errors.riskGroup}
-            />
+            <Element name="riskGroup">
+              <Question
+                title="¿Pertenecés a un grupo de riesgo?"
+                subTitle="Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
+                options={[
+                  { value: 'yes', label: 'Sí' },
+                  { value: 'no', label: 'No' }
+                ]}
+                onChange={({ value }) => {
+                  handleQuestion('riskGroup', value, 'healthProfessional')
+                }}
+                value={status.riskGroup.answer}
+                error={errors.riskGroup}
+              />
+            </Element>
           </>
         )}
         {status['healthProfessional'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
-              options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('healthProfessional', value, () => {
-                  if (value === 'yes') nextQuestion('professionalExposure')
-                  else nextQuestion('familyExposure', 'professionalExposure')
-                })
-              }}
-              value={status.healthProfessional.answer}
-              error={errors.healthProfessional}
-            />
+            <Element name="healthProfessional">
+              <Question
+                title="¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
+                options={[
+                  { value: 'yes', label: 'Sí' },
+                  { value: 'no', label: 'No' }
+                ]}
+                onChange={({ value }) => {
+                  handleQuestion('healthProfessional', value, () => {
+                    if (value === 'yes') nextQuestion('professionalExposure')
+                    else nextQuestion('familyExposure', 'professionalExposure')
+                  })
+                }}
+                value={status.healthProfessional.answer}
+                error={errors.healthProfessional}
+              />
+            </Element>
           </>
         )}
         {status['professionalExposure'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="En el curso de tu trabajo sin equipo de protección, ¿tuviste contacto directo con uno en el caso confirmado?"
-              options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('professionalExposure', value, 'familyExposure')
-              }}
-              value={status.professionalExposure.answer}
-              error={errors.professionalExposure}
-            />
+            <Element name="professionalExposure">
+              <Question
+                title="En el curso de tu trabajo sin equipo de protección, ¿tuviste contacto directo con uno en el caso confirmado?"
+                options={[
+                  { value: 'yes', label: 'Sí' },
+                  { value: 'no', label: 'No' }
+                ]}
+                onChange={({ value }) => {
+                  handleQuestion('professionalExposure', value, 'familyExposure')
+                }}
+                value={status.professionalExposure.answer}
+                error={errors.professionalExposure}
+              />
+            </Element>
           </>
         )}
         {status['familyExposure'].show && (
           <>
             <hr className="mb-5 mt-5" />
-            <Question
-              title="En los últimos 15 días, ¿tuviste contacto con un algún caso confirmado en su entorno cercano (familia o personas del mismo hogar)?"
-              options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
-              ]}
-              onChange={({ value }) => {
-                handleQuestion('familyExposure', value)
-              }}
-              value={status.familyExposure.answer}
-              error={errors.familyExposure}
-            />
+            <Element name="familyExposure">
+              <Question
+                title="En los últimos 15 días, ¿tuviste contacto con un algún caso confirmado en su entorno cercano (familia o personas del mismo hogar)?"
+                options={[
+                  { value: 'yes', label: 'Sí' },
+                  { value: 'no', label: 'No' }
+                ]}
+                onChange={({ value }) => {
+                  handleQuestion('familyExposure', value)
+                }}
+                value={status.familyExposure.answer}
+                error={errors.familyExposure}
+              />
+            </Element>
           </>
         )}
         <hr className="mb-5 mt-5" />
