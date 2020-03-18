@@ -35,20 +35,16 @@ const Home = () => {
               </CTALink>
             </p>
 
-            {/* <div className="row pt-4 pt-xl-5">
-              <div className="col-12 col-md-5">
-                <h4>
-                  <strong>Feature One</strong>
-                </h4>
-                <p>A small river named Duden flows</p>
-              </div>
-              <div className="col-12 col-md-5 m-auto pt-3 pt-md-0">
-                <h4>
-                  <strong>Feature Two</strong>
-                </h4>
-                <p>Separated they live in Bookmarksgrove</p>
-              </div>
-            </div> */}
+            <div className="alert alert-danger" role="alert">
+              <h4 className="alert-heading">Versión de Prueba</h4>
+              <p>
+                Esta no es la versión oficial de la app. Esta app se encuentra
+                en <strong>modo de prueba</strong> para ajustar los últimos
+                detalles. Apenas esté lista, todos los colaboradores lo
+                estaremos lanzando por nuestros canales oficiales. ¡Muchas
+                gracias por ayudar a hacerla mejor!
+              </p>
+            </div>
           </div>
           <div className="col-12 col-md-8 col-lg-6 m-auto mr-lg-0 ml-lg-auto pt-5 pt-lg-0 d-lg-block d-none">
             <img alt="Hero Graphic" className="img-fluid" src="/img/hero.png" />
