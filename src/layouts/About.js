@@ -72,7 +72,7 @@ const Legal = () => {
               </p>
               <p className="lead">
                 CovPy es desarrollado y mantenido por Penguin Academy, UCOM, la
-                Facultad Politécnica UNA, the Project Lab, Web Paraguay, Okimo,
+                Facultad Politécnica UNA, the Product Lab, Web Paraguay, Okimo,
                 y otras organizaciones así como muchos otros contribuyentes
                 asombrosos ❤️.
               </p>
