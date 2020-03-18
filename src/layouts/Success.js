@@ -30,7 +30,7 @@ const Success = ({ form }) => {
       'Signos de alarma, llame al 911 inmediatamente y pida ayuda. Si está en condiciones vaya al hospital para atención médica inmediata.',
     alarmTitle: 'Busque atención médica inmediatamente.',
     symptoms:
-      '¿Fiebre y Dificultades Respiratorias? Usted tiene síntomas y puede ser contagioso. Aislate e informa a tu entorno para que tomen las precauciones necesarias. Por favor llama al 154 para informar que cuentas con estos síntomas.',
+      '¿Fiebre y Dificultades Respiratorias? Tenés síntomas y puede ser contagioso. Aislate e informa a tu entorno para que tomen las precauciones necesarias. Por favor llamá al 154 para informar que contás con estos síntomas.',
     symptomsTitle: '',
     exposure:
       'Estuviste expuesto/a o tuviste contacto con un caso confirmado de COVID19, el protocolo recomendado es que te aisles por 7 a 14 días.',
