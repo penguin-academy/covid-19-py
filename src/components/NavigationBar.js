@@ -11,6 +11,12 @@ const NavLink = styled(Link)`
   }
 `
 
+const TitleHide = styled.span`
+  @media (max-width: 375px) {
+    display: none;
+  }
+`
+
 const NavigationBar = () => {
   const [show, setShow] = useState(false)
   return (
@@ -24,7 +30,7 @@ const NavigationBar = () => {
                 alt="Logo CovPY Auto Reporte"
                 style={{ width: 40, paddingRight: 15 }}
               />
-              CovPY Auto Reporte
+              CovPY <TitleHide>Auto Reporte</TitleHide>
               <span className="badge badge-secondary ml-3">beta</span>
             </NavLink>
           </div>
