@@ -55,6 +55,34 @@ const NavigationBar = () => {
                   Inicio
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/start"
+                  onClick={() => setShow(false)}
+                >
+                  Autoreporte
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/quizz"
+                  onClick={() => setShow(false)}
+                >
+                  Quizz
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/about"
+                  onClick={() => setShow(false)}
+                >
+                  Quiénes somos
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>

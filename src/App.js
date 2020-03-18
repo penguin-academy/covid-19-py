@@ -14,6 +14,8 @@ import Start from './layouts/Start'
 import Form from './layouts/Form'
 import Success from './layouts/Success'
 import Legal from './layouts/Legal'
+import About from './layouts/About'
+import Quizz from './layouts/Quizz'
 
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
@@ -27,7 +29,6 @@ function App() {
     if (!obj) return true
     else return Object.keys(obj).length === 0 && obj.constructor === Object
   }
-  console.log(form)
 
   return (
     <div className="App">
@@ -55,6 +56,8 @@ function App() {
             </Route>
 
             <Route path="/legal" exact component={Legal} />
+            <Route path="/about" exact component={About} />
+            <Route path="/quizz" exact component={Quizz} />
           </Switch>
           <Footer />
         </ScrollToTop>
