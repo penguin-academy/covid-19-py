@@ -1,18 +1,18 @@
 # CovPY Auto Reporte
 
-This project was created as an initiative by Penguin Academy to build technology to smoothen the peak impact of the COVID-19 pandemic on the Paraguayan Health System.
+This project was created as an initiative by Penguin Academy to build technology that smooths the peak impact of the COVID-19 pandemic on the Paraguayan Health System.
 
 🐧🇵🇾🦠
 
-This project is an auto reporting system, allowing anyone to access it and report their symptoms and gat a quick feedback what steps to take next as well as allowing to generate data on the situation.
+This project is an auto reporting system, allowing anyone to access it and report their symptoms and get a quick feedback on what steps to take next as well as allowing to generate data on the situation.
 
 ## Demo and Contributing
 
-As we received many requests for collaboration, we decided to clean up and open source this repository. It is entierly built on open source technology and can be a starting point to build an application for your country or specific target group.
+As we received many requests for collaboration, we decided to clean up and open source this repository. It is entirely built on open source technology and can be a starting point to build an application for your country or specific target group.
 
 ### Contibution Guidelines ♥️
 
-We welcome contributions! Please check the open issues to see what is needed at the moment. If those issues are not specified well or there is nothing you can work on, contact us or open an issue to see if there is something else available you can work on.
+We welcome contributions! Please check the open issues to see what is needed at the moment. If those issues are not well specified  or there is nothing you can work on, contact us or open an issue to see if there is something else available you can work on.
 
 Check our [Contribution Guide](./CONTRIBUTING.md) for instructions on how to contribute to the project.
 
@@ -60,7 +60,7 @@ You may provide financial support for this project by donating. [Get in touch](m
 
 ### About 🐧
 
-`CovPy` is developed and maintained by [Penguin Academy](https://penguin.academy), [UCOM](http://www.ucom.edu.py/), [Facultad Politécnica UNA](https://www.pol.una.py/), [the Product Lab](https://www.theproductlab.co/), [Web Paraguay](https://webparaguay.com/), [Okimo](http://optometry.okimo.co/), and other organizations as well as many [amazing contributors](https://github.com/penguin-academy/covid-19-py/graphs/contributors) ❤️. If you're interested in learning more about what Penguin ACademy can do for your company, please [get in touch](mailto:hello@penguin.academy)!
+`CovPy` is developed and maintained by [Penguin Academy](https://penguin.academy), [UCOM](http://www.ucom.edu.py/), [the Product Lab](https://www.theproductlab.co/), [Web Paraguay](https://webparaguay.com/), [Okimo](http://optometry.okimo.co/), and other organizations as well as many [amazing contributors](https://github.com/penguin-academy/covid-19-py/graphs/contributors) ❤️. If you're interested in learning more about what Penguin ACademy can do for your company, please [get in touch](mailto:hello@penguin.academy)!
 
 ### License
 

@@ -34,6 +34,17 @@ const Home = () => {
                 Revisar mis síntomas<i className="fas fa-arrow-right ml-1"></i>
               </CTALink>
             </p>
+
+            <div className="alert alert-danger" role="alert">
+              <h4 className="alert-heading">Versión de Prueba</h4>
+              <p>
+                Esta no es la versión oficial de la app. Esta app se encuentra
+                en <strong>modo de prueba</strong> para ajustar los últimos
+                detalles. Apenas esté lista, todos los colaboradores lo
+                estaremos lanzando por nuestros canales oficiales. ¡Muchas
+                gracias por ayudar a hacerla mejor!
+              </p>
+            </div>
           </div>
           <div className="col-12 col-md-8 col-lg-6 m-auto mr-lg-0 ml-lg-auto pt-5 pt-lg-0 d-lg-block d-none">
             <img alt="Hero Graphic" className="img-fluid" src="/img/hero.png" />
