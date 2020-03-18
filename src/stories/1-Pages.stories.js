@@ -7,6 +7,7 @@ import NavigationBarTag from '../components/NavigationBar'
 import FooterTag from '../components/Footer'
 import SuccessTag from '../layouts/Success'
 import LegalTag from '../layouts/Legal'
+import AboutTag from '../layouts/About'
 
 export default {
   title: 'Pages',
@@ -83,3 +84,4 @@ export const SuccessPage = () => {
 }
 
 export const Legal = () => <LegalTag />
+export const About = () => <AboutTag />

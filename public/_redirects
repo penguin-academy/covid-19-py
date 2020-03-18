@@ -1,1 +1,4 @@
 /*    /index.html   200
+
+# Redirect default Netlify subdomain to primary domain
+https://covpy.netlify.com/* https://autoreporte.org/:splat 301!

@@ -666,12 +666,4 @@ const Legal = () => {
   )
 }
 
-const x = () => (
-  <>
-    <hr className="my-5" />
-    <h2 className="mb-3">TITLE</h2>
-    <p>COPY</p>
-  </>
-)
-
 export default Legal
