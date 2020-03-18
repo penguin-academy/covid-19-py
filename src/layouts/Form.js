@@ -114,6 +114,8 @@ const Form = ({ filledState = {}, setFormState, form }) => {
     }
   }
 
+  const ageRange = ["0-13", "13-18", "18-40", "40-65", "65-100"];  
+
   return (
     <FormBox>
       <form onSubmit={handleSubmit}>
@@ -155,11 +157,11 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Cuántos años tenés?"
-              options={Array.from(Array(100)).map((_, i) => {
+              title="¿Cuál es tu rango de edad?"
+              options={ageRange.map( (element) => {
                 return {
-                  value: i,
-                  label: i + (i > 1 ? ' años' : ' año')
+                  value: element,
+                  label: element + ' años'
                 }
               })}
               onChange={({ value }) => {
