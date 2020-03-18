@@ -16,7 +16,7 @@ const NavigationBar = () => {
   return (
     <header>
       <div className="container">
-        <nav className="navbar navbar-expand-md no-gutters">
+        <nav className="navbar navbar-expand-lg no-gutters">
           <div className="col-2 text-left">
             <NavLink className="navbar-brand text-primary" to="/">
               <img
@@ -25,6 +25,7 @@ const NavigationBar = () => {
                 style={{ width: 40, paddingRight: 15 }}
               />
               CovPY Auto Reporte
+              <span className="badge badge-secondary ml-3">beta</span>
             </NavLink>
           </div>
           <button
