@@ -198,7 +198,14 @@ const Form = ({ filledState = {}, setFormState, form }) => {
                 { value: 'no', label: 'No' }
               ]}
               onChange={({ value }) => {
-                handleQuestion('fever', value, 'alarmSigns')
+                handleQuestion('fever', value, () => {
+                  if (value === "no" &&
+                     status.breath.answer === "no")
+                    nextQuestion("riskGroup", "alarmSigns")
+                  else
+                    nextQuestion("alarmSigns")
+
+                })
               }}
               value={status.fever.answer}
               error={errors.fever}
