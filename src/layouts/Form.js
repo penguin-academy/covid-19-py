@@ -121,7 +121,6 @@ const Form = ({ filledState = {}, setFormState, form }) => {
   }
 
   useEffect(() => {
-    console.log("nextQuestionName", nextQuestionName)
     scroller.scrollTo(nextQuestionName, {
       duration: 1500,
       delay: 100,
