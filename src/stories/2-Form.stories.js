@@ -26,26 +26,26 @@ const filledState = {
 
 export const Start = () => <StartTag setFormState={console.log} />
 
-export const Start_Page = () => (
+export const StartPage = () => (
   <>
     <NavigationBarTag />
     <StartTag setFormState={console.log} />
     <FooterSmall />
   </>
 )
-export const Form = () => <FormTag />
-export const Form_Page = () => (
+export const Form = () => <FormTag setFormState={console.log} />
+export const FormPage = () => (
   <>
     <NavigationBarTag />
-    <FormTag />
+    <FormTag setFormState={console.log} />
     <FooterSmall />
   </>
 )
 
-export const Form_Page_Filled = () => (
+export const FormPageFilled = () => (
   <>
     <NavigationBarTag />
-    <FormTag filledState={filledState} onFinish={console.log} />
+    <FormTag filledState={filledState} setFormState={console.log} />
     <FooterSmall />
   </>
 )
