@@ -7,7 +7,7 @@ const Legal = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col col-md-8 text-center">
-              <img alt="image" className="fdb-icon mb-4" src="/img/care.svg" />
+              <img alt="logo" className="fdb-icon mb-4" src="/img/care.svg" />
               <p className="lead">
                 Este proyecto es un sistema de notificación automática, que
                 permite a cualquier persona acceder a él e informar de sus
@@ -29,7 +29,7 @@ const Legal = () => {
           <div className="row align-items-center">
             <div className="col-12 col-md-6 col-lg-5">
               <img
-                alt="image"
+                alt="github"
                 className="fdb-icon"
                 src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs/icons/github.svg"
               />
@@ -52,9 +52,9 @@ const Legal = () => {
             </div>
             <div className="col-10 col-sm-6 m-auto col-md-4 pt-4 pt-md-0">
               <img
-                alt="image"
+                alt="chat"
                 className="img-fluid rounded-0"
-                src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs/draws/chat.svg"
+                src="/img/chat.svg"
               />
             </div>
           </div>
@@ -78,37 +78,37 @@ const Legal = () => {
               </p>
               <div className="mt-5 justify-content-center">
                 <img
-                  alt="image"
+                  alt="penguin academy logo"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/penguin.png"
                 />
                 <img
-                  alt="image"
+                  alt="ucom logo"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/ucom.png"
                 />
                 <img
-                  alt="image"
+                  alt="una logo"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/una.png"
                 />
                 <img
-                  alt="image"
+                  alt="product lab logo"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/productlab.png"
                 />
                 <img
-                  alt="image"
+                  alt="web paraguay logo"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/webparaguay.png"
                 />
                 <img
-                  alt="image"
+                  alt="okimo logo"
                   height={20}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/okimo.png"
