@@ -85,7 +85,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
       <form onSubmit={handleSubmit}>
         <>
           <Question
-            title="¿Cuál es su sexo?"
+            title="¿Cuál es tu sexo?"
             options={[
               { value: 'male', label: 'Hombre' },
               { value: 'female', label: 'Mujer' }
@@ -180,7 +180,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
             <hr className="mb-5 mt-5" />
             <Question
               title="¿Tenés alguno de estos signos?"
-              subTitle="Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
+              subTitle="Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente más de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
               options={[
                 { value: 'yes', label: 'Sí' },
                 { value: 'no', label: 'No' }
