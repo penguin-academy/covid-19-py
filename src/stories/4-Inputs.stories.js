@@ -4,6 +4,7 @@ import ToggleTag from '../components/Toggle'
 import SelectQuestionTag from '../components/SelectQuestion'
 import IDInput from '../components/IDInput'
 import PlacesInput from '../components/PlacesInput'
+import SelectPlace from '../components/SelectPlace'
 
 export default {
   title: 'Inputs'
@@ -47,18 +48,23 @@ export const ID = () => (
 )
 
 export const Places = () => (
-  <div style={{ maxWidth: 350, margin: 30 }}>
-    <PlacesInput
-      id="home"
-      className="form-control form-control-solid rounded-pill"
-      placeholder="Direccion"
-      label="Direccion"
-      errorMessage="Debes ingresar una direccion"
-      required
-      options={{
-        types: ['(regions)'],
-        componentRestrictions: { country: 'py' }
-      }}
-    />
-  </div>
+  <>
+    <div style={{ maxWidth: 350, margin: 30 }}>
+      <PlacesInput
+        id="home"
+        className="form-control form-control-solid rounded-pill"
+        placeholder="Direccion"
+        label="Direccion"
+        errorMessage="Debes ingresar una direccion"
+        required
+        options={{
+          types: ['(regions)'],
+          componentRestrictions: { country: 'py' }
+        }}
+      />
+    </div>
+    <div style={{ maxWidth: 350, margin: 30 }}>
+      <SelectPlace />
+    </div>
+  </>
 )

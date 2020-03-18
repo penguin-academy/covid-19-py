@@ -1,8 +1,4 @@
 import React, { useState, useReducer } from 'react'
-import { useHistory } from 'react-router-dom'
-import firebase from 'firebase/app'
-
-import 'firebase/firestore'
 
 import Question from '../components/SelectQuestion'
 import FormBox from '../components/FormBox'
@@ -39,12 +35,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
     }
   )
 
-  // For Stoybook
-  // if (filledState) setStatus({ ...status, ...filledState })
-
   const [errors, setErrors] = useState(createDefaultStates(sequence, false))
-  const [disabledButton, setDisabledButton] = useState(false)
-  const [submitError, setSubmitError] = useState(false)
 
   const nextQuestion = (q, hide) => {
     const defaultState = { show: false, answer: '' }
@@ -73,7 +64,6 @@ const Form = ({ filledState = {}, setFormState, form }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    setDisabledButton(true)
 
     const newErrors = errors
     let errorPresent = false
@@ -86,31 +76,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
     setErrors({ ...errors, newErrors })
 
     if (!errorPresent) {
-      console.log('Submit')
-      postForm()
-    } else {
-      setDisabledButton(false)
-    }
-  }
-  const history = useHistory()
-
-  const postForm = async () => {
-    try {
-      const firestoreDocument = {
-        ...status,
-        reportDate: firebase.firestore.Timestamp.now()
-      }
-      await firebase
-        .firestore()
-        .collection('self-reports')
-        .add(firestoreDocument)
-      setFormState({ ...form, ...status })
-      setDisabledButton(false)
-      history.push('/success')
-    } catch (error) {
-      console.log(error)
-      setDisabledButton(false)
-      setSubmitError(true)
+      setFormState({ ...form, ...status, progress: 2 })
     }
   }
 
@@ -300,27 +266,9 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           </>
         )}
         <hr className="mb-5 mt-5" />
-        <button
-          className="btn btn-primary"
-          type="submit"
-          disabled={disabledButton}
-        >
-          {disabledButton && (
-            <span
-              className="spinner-border spinner-border-sm"
-              role="status"
-              aria-hidden="true"
-              style={{ paddingRight: 10 }}
-            ></span>
-          )}
+        <button className="btn btn-primary" type="submit">
           Enviar
         </button>
-        {submitError && (
-          <p style={{ color: 'red', padding: 5 }}>
-            Se ha producido un error. Sus entradas no se han guardado. Por
-            favor, inténtelo de nuevo o póngase en contacto con nosotros.
-          </p>
-        )}
       </form>
     </FormBox>
   )

@@ -12,17 +12,17 @@ export default {
 }
 
 const filledState = {
-  generalHealth: { show: true, answer: 'good' },
-  gender: { answer: 'female', show: true },
-  pregnant: { answer: 'yes', show: true },
-  age: { answer: 1, show: true },
-  breath: { answer: 'yes', show: true },
-  fever: { answer: 'yes', show: true },
-  alarmSigns: { answer: 'yes', show: true },
-  riskGroup: { answer: 'yes', show: true },
-  healthProfessional: { answer: 'yes', show: true },
-  professionalExposure: { answer: 'yes', show: true },
-  familyExposure: { answer: 'yes', show: true }
+  generalHealth: 'good',
+  gender: { show: true, answer: 'male' },
+  pregnant: { show: false, answer: '' },
+  age: { show: true, answer: 1 },
+  breath: { show: true, answer: 'yes' },
+  fever: { show: true, answer: 'yes' },
+  alarmSigns: { show: true, answer: 'yes' },
+  riskGroup: { show: true, answer: 'yes' },
+  healthProfessional: { show: true, answer: 'yes' },
+  professionalExposure: { show: true, answer: 'no' },
+  familyExposure: { show: true, answer: 'no' }
 }
 
 export const Start = () => <StartTag setFormState={console.log} />
@@ -51,11 +51,32 @@ export const FormPageFilled = () => (
   </>
 )
 
-export const Person = () => <PersonTag />
+export const Person = () => <PersonTag setFormState={console.log} />
+export const PersonFilled = () => {
+  const localFilledState = {
+    serious: { show: true, answer: 'report' },
+    location: {
+      show: true,
+      answer: {
+        value: 'ChIJ9dtpbgeoXZQRyTYZv0Z666w',
+        label: 'Assunção, Paraguay'
+      }
+    },
+    phone: { show: true, answer: '4567898765434567' }
+  }
+  return (
+    <PersonTag
+      form={filledState}
+      filledState={localFilledState}
+      setFormState={console.log}
+    />
+  )
+}
+
 export const PersonPage = () => (
   <>
     <NavigationBarTag />
-    <PersonTag />
+    <PersonTag setFormState={console.log} />
     <FooterSmall />
   </>
 )

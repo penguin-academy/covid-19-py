@@ -1,64 +1,237 @@
-import React from 'react'
+import React, { useState, useReducer } from 'react'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
 
 import FormBox from '../components/FormBox'
-import PlacesInput from '../components/PlacesInput'
-import Input from '../components/Input'
+import Question from '../components/SelectQuestion'
+import SelectPlace from '../components/SelectPlace'
 
-const Person = ({ setFormState }) => {
+const Person = ({ setFormState, filledState = {}, form }) => {
+  const sequence = ['serious', 'location', 'phone']
+  // takes an array of keys returns an object with keys and defaultStates
+  const createDefaultStates = (list, defaultState) =>
+    list.reduce((obj, item) => {
+      obj[item] = defaultState
+      return obj
+    }, {})
+
+  const [status, setStatus] = useReducer(
+    (state, newState) => {
+      return { ...state, ...newState }
+    },
+    {
+      [sequence[0]]: { show: true, answer: '' },
+      ...createDefaultStates(sequence.slice(1), {
+        show: false,
+        answer: ''
+      }),
+      ...filledState
+    }
+  )
+
+  const [errors, setErrors] = useState(createDefaultStates(sequence, false))
+  const [disabledButton, setDisabledButton] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
+
+  const nextQuestion = (q, hide) => {
+    const defaultState = { show: false, answer: '' }
+    const i = sequence.indexOf(q)
+    const valuesToReset = createDefaultStates(sequence.slice(i), defaultState)
+
+    // if present: hide conditional question
+    if (hide) valuesToReset[hide] = defaultState
+
+    setStatus({
+      ...valuesToReset,
+      [q]: { show: true, answer: '' }
+    })
+  }
+
+  const handleQuestion = (q, value, cbOrNextQ) => {
+    if (value === null) return nextQuestion(q)
+    setErrors({ ...errors, [q]: false })
+    setStatus({
+      [q]: { show: true, answer: value }
+    })
+    if (cbOrNextQ == null) return
+    else if (typeof cbOrNextQ === 'function') cbOrNextQ()
+    else nextQuestion(cbOrNextQ)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    setDisabledButton(true)
+
+    const errorPresent = checkErrors()
+    if (!errorPresent) {
+      postForm()
+    } else {
+      setDisabledButton(false)
+    }
+  }
+
+  const postForm = async () => {
+    try {
+      const firestoreDocument = {
+        ...status,
+        reportDate: firebase.firestore.Timestamp.now()
+      }
+      await firebase
+        .firestore()
+        .collection('self-reports')
+        .add(firestoreDocument)
+      setFormState({ ...form, ...status, progress: 3 })
+    } catch (error) {
+      console.log(error)
+      setDisabledButton(false)
+      setSubmitError(true)
+    }
+  }
+
+  const checkErrors = () => {
+    let errorPresent = false
+    const newErrors = errors
+
+    if (status.serious.answer === '') {
+      newErrors.serious = true
+      errorPresent = true
+    } else newErrors.serious = false
+
+    if (status.location.answer === '' && status.location.show === true) {
+      newErrors.location = true
+      errorPresent = true
+    } else newErrors.location = false
+
+    if (!(status.phone.answer === '' || status.phone.answer.length > 8)) {
+      newErrors.phone = true
+      errorPresent = true
+    } else newErrors.phone = false
+
+    setErrors({ ...errors, newErrors })
+
+    return errorPresent
+  }
+
   return (
     <FormBox>
-      <div className="row justify-content-center">
-        <div className="col-12 col-md-8 text-center">
-          <h1>Final Quesion</h1>
-          <p className="lead">
-            Before your results are ready, we have a final question for you.
+      <form onSubmit={handleSubmit}>
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-8 text-center">
+            <h1>Últimas preguntas</h1>
+            <p className="lead">Por favor, lea lo siguiente con atención:</p>
+            <p>
+              Le proporcionamos esta herramienta para ayudarle para que pueda
+              obtener información sobre sus síntomas.
+            </p>
+            <p>
+              ¡Puedes ayudarnos a entender mejor la situación real en Paraguay y
+              a tomar mejores decisiones! Porque tenemos que trabajar juntos con
+              fuerza para luchar contra la epidemia del Corona virus. Por favor,
+              llene la siguiente sección con cuidado.
+            </p>
+            <hr className="mb-5 mt-5" />
+          </div>
+        </div>
+
+        <Question
+          title="¿Ha rellenado todas las preguntas con la verdad?"
+          options={[
+            {
+              value: 'report',
+              label: 'Sí. Esos son mis verdaderos síntomas.'
+            },
+            {
+              value: 'tryout',
+              label: 'No. Sólo estoy probando la aplicación.'
+            }
+          ]}
+          onChange={({ value }) => {
+            handleQuestion('serious', value, 'location')
+          }}
+          value={status.serious.answer}
+          error={errors.serious}
+        />
+
+        {status['location'].show && (
+          <>
+            <hr className="mb-5 mt-5" />
+            <div className="row justify-content-center align-items-center">
+              <div className="col-12 col-lg-6">
+                <p className="lead m-lg-0">¿En qué barrio vives?</p>
+                <p className="m-lg-0">
+                  Por favor, escriba para encontrar su ciudad. Seleccione la
+                  coincidencia más cercana posible.
+                </p>
+              </div>
+              <div className="col-12 col-lg-5">
+                <SelectPlace
+                  onChange={value => {
+                    handleQuestion('location', value, 'phone')
+                  }}
+                  value={status.location.answer}
+                />
+                {errors.location && (
+                  <div
+                    className="invalid-feedback"
+                    style={{ display: 'block' }}
+                  >
+                    Por favor, seleccione una opción.
+                  </div>
+                )}
+              </div>
+            </div>
+          </>
+        )}
+        {status['phone'].show && (
+          <>
+            <hr className="mb-5 mt-5" />
+            <div className="row justify-content-center align-items-center">
+              <div className="col-12 col-lg-6">
+                <p className="lead m-lg-0">Número de teléfono</p>
+                <p className="m-lg-0">
+                  Por favor, use el número de teléfono de la persona para la que
+                  rellenó este formulario.
+                </p>
+              </div>
+              <div className="col-12 col-lg-5">
+                <input
+                  className="form-control"
+                  type="number"
+                  placeholder="09xxxxxxxx"
+                  value={status.phone.answer}
+                  onChange={({ target }) => {
+                    handleQuestion('phone', target.value)
+                  }}
+                  value={status.phone.answer}
+                />
+                {errors.phone && (
+                  <div
+                    className="invalid-feedback"
+                    style={{ display: 'block' }}
+                  >
+                    Debes ingresar un numero de telefono.
+                  </div>
+                )}
+              </div>
+            </div>
+          </>
+        )}
+        <hr className="mb-5 mt-5" />
+        <button
+          className="btn btn-primary"
+          type="submit"
+          disabled={disabledButton}
+        >
+          {disabledButton && <i className="fas fa-spinner fa-pulse mr-3"></i>}
+          Enviar
+        </button>
+        {submitError && (
+          <p style={{ color: 'red', padding: 5 }}>
+            Se ha producido un error. Sus entradas no se han guardado. Por
+            favor, inténtelo de nuevo o póngase en contacto con nosotros.
           </p>
-          <p>
-            We are using this tool to generate data to help forcasting and
-            fighting the Corona Virus Crisis in Paraguay.
-          </p>
-          <p>
-            We want to ask you to add your personal information below as this
-            will give us important information about the real situation!
-          </p>
-          <hr className="mb-5 mt-5" />
-        </div>
-      </div>
-      <div className="row justify-content-center align-items-center">
-        <div className="col-12 col-lg-6">
-          <p className="lead m-lg-0">Question</p>
-          <p className="m-lg-0">Subtitle</p>
-        </div>
-        <div className="col-12 col-lg-5">
-          <PlacesInput
-            id="home"
-            className="form-control form-control-solid rounded-pill"
-            placeholder="Direccion"
-            label="Direccion"
-            errorMessage="Debes ingresar una direccion"
-            required
-          />
-        </div>
-      </div>
-      <hr className="mb-5 mt-5" />
-      <div className="row justify-content-center align-items-center">
-        <div className="col-12 col-lg-6">
-          <p className="lead m-lg-0">Question</p>
-          <p className="m-lg-0">Subtitle</p>
-        </div>
-        <div className="col-12 col-lg-5">
-          <Input
-            label="Numero de Telefono"
-            id="phoneNumber"
-            type="number"
-            placeholder="09xxxxxxxx"
-            className="form-control form-control-solid rounded-pill"
-            required
-            errormessage="Debes ingresar un numero de telefono"
-            minLength={9}
-          />
-        </div>
-      </div>
+        )}
+      </form>
     </FormBox>
   )
 }
