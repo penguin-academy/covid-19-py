@@ -71,7 +71,7 @@ const NavigationBar = () => {
                   to="/quizz"
                   onClick={() => setShow(false)}
                 >
-                  Quizz
+                  Trivia
                 </Link>
               </li>
               <li className="nav-item">
