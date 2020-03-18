@@ -20,7 +20,6 @@ const Justify = styled.div`
 `
 
 const Success = ({ form }) => {
-  console.log(form)
   //
   // TEXT
   //

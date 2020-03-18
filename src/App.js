@@ -16,6 +16,7 @@ import Success from './layouts/Success'
 import Legal from './layouts/Legal'
 import About from './layouts/About'
 import Quizz from './layouts/Quizz'
+import Person from './layouts/Person'
 
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
@@ -23,7 +24,15 @@ import firebaseConfig from '../src/constants/firebaseConfig'
 firebase.initializeApp(firebaseConfig)
 
 function App() {
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState({ progress: 0 })
+  const [formerProgress, setformerProgress] = useState(form.progress)
+
+  useEffect(() => {
+    if (form.progress !== formerProgress) {
+      setformerProgress(form.progress)
+      window.scrollTo(0, 0)
+    }
+  }, [form.progress])
 
   const isEmpty = obj => {
     if (!obj) return true
@@ -37,22 +46,19 @@ function App() {
           <NavigationBar />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/start" exact>
-              <Start setFormState={setForm} />
-            </Route>
             <Route path="/report" exact>
-              {isEmpty(form) ? (
-                <Redirect to="/start" />
-              ) : (
-                <Form setFormState={setForm} form={form} />
-              )}
-            </Route>
-            <Route path="/success" exact>
-              {isEmpty(form) ? (
-                <Redirect to="/start" />
-              ) : (
+              <Protected level={0} current={form.progress}>
+                <Start form={form} setFormState={setForm} />
+              </Protected>
+              <Protected level={1} current={form.progress}>
+                <Form form={form} setFormState={setForm} />
+              </Protected>
+              <Protected level={2} current={form.progress}>
+                <Person form={form} setFormState={setForm} />
+              </Protected>
+              <Protected level={3} current={form.progress}>
                 <Success form={form} />
-              )}
+              </Protected>
             </Route>
 
             <Route path="/legal" exact component={Legal} />
@@ -77,3 +83,6 @@ function ScrollToTop({ children }) {
 }
 
 export default App
+
+const Protected = ({ level, current, children }) =>
+  level === current ? children : ''
