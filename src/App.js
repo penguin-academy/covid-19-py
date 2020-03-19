@@ -30,7 +30,7 @@ i18n
   .init({
     resources: {
       en: {
-        translation: {
+        home: {
           leadTitle: "Coronavirus Self-Reporting in Paraguay. Do you have any symptoms? Tell us about it and we'll help you out.",
           leadSecondary: "Do you have a fever? Dry coughing? Breathing problems? Any other symptoms? Fill out the form.",
           ctaCheckSymptoms: "Check my symptoms",
@@ -40,7 +40,7 @@ i18n
         }
       },
       es: {
-        translation: {
+        home: {
           leadTitle: "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas? Decinos cuáles y te ayudamos",
           leadSecondary: "¿Fiebre? ¿Tos Seca? ¿Dificultad para respirar? ¿Otro síntoma? Completá el formulario.",
           ctaCheckSymptoms: "Revisar mis síntomas",

@@ -20,7 +20,7 @@ const CTALink = styled(Link)`
 `
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('home');
 
   const trialVersion = t('trialVersion')
   return (
@@ -43,7 +43,7 @@ const Home = () => {
             <div className="alert alert-danger" role="alert">
               <h4 className="alert-heading">{t('alertTestTitle')}</h4>
               <p>
-                <Trans i18nKey="alertTestMessage">
+                <Trans i18nKey="home:alertTestMessage">
                   Esta no es la versión oficial de la app. Esta app se encuentra
                 en <strong>{{trialVersion}}</strong> para ajustar los últimos
                 detalles. Apenas esté lista, todos los colaboradores lo
