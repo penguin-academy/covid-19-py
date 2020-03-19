@@ -49,6 +49,14 @@ i18n
           selfReporting: '$t(selfReportingTitle)',
           trivia: 'Trivia',
           aboutUs: 'About us'
+        },
+        footer: {
+          followAndContribute: 'Follow us and contribute',
+          shareText: 'We\'d love hear your thoughts. Don\'t hesitate to share with us your thoughts on how can we improve things',
+          aboutUs: 'About us',
+          aboutUsText: "We are a group of people and companies that are committed to Paraguay. Our goal is to soften the blow caused by the pandemic to the Paraguayan health system by building technologies.",
+          partialMadeWithLove: 'Made with',
+          partialMadeWithLoveInParaguay: 'in Paraguay'
         }
       },
       es: {
@@ -69,6 +77,14 @@ i18n
           selfReporting: '$t(selfReportingTitle)',
           trivia: 'Trivia',
           aboutUs: 'Quiénes somos'
+        },
+        footer: {
+          followAndContribute: 'Seguinos y contribuye',
+          shareText: 'Nos encantaría escuchar su opinión. Por favor, no duden en compartir con nosotros, lo que podemos mejorar',
+          aboutUs: 'Sobre nosotros',
+          aboutUsText: 'Somos un grupo de personas y empresas comprometidas con el Paraguay construyendo tecnología para suavizar el impacto máximo de la pandemia en el sistema de salud paraguayo.',
+          partialMadeWithLove: 'Hecho con',
+          partialMadeWithLoveInParaguay: 'en Paraguay'
         }
       }
     },

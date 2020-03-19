@@ -1,17 +1,18 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
+  const { t } = useTranslation('footer')
   return (
     <footer className="fdb-block footer-large bg-dark">
       <div className="container">
         <div className="row align-items-top text-center text-md-left">
           <div className="col-12 col-md-4 mt-4 mt-md-0 text-lg-left">
             <h3>
-              <strong>Seguinos y contribuye</strong>
+              <strong>{t('followAndContribute')}</strong>
             </h3>
             <p>
-              Nos encantaría escuchar su opinión. Por favor, no duden en
-              compartir con nosotros, lo que podemos mejorar
+              {t('shareText')}
             </p>
             <p className="lead">
               <a
@@ -43,12 +44,10 @@ const Footer = () => {
 
           <div className="col-12 col-md-5 offset-md-2 mt-5 mt-md-0 text-lg-left">
             <h3>
-              <strong>Sobre nosotros</strong>
+              <strong>{t('aboutUs')}</strong>
             </h3>
             <p>
-              Somos un grupo de personas y empresas comprometidas con el
-              Paraguay construyendo tecnología para suavizar el impacto máximo
-              de la pandemia en el sistema de salud paraguayo.
+              {t('aboutUsText')}
             </p>
             <img
               src="/img/hippa.png"
@@ -64,13 +63,13 @@ const Footer = () => {
         </div>
         <div className="row mt-5">
           <div className="col text-center">
-            © CovPY 2020 - Hecho con
+            © CovPY 2020 - {t('partialMadeWithLove')}
             <img
               src="/img/heart.svg"
               alt="Heart"
               style={{ padding: '0 10px', maxWidth: 45 }}
             />
-            en Paraguay
+            {t('partialMadeWithLoveInParaguay')}
           </div>
         </div>
       </div>
