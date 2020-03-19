@@ -9,6 +9,7 @@ import {
 
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 import Home from './layouts/Home'
 import NavigationBar from './components/NavigationBar'
@@ -29,6 +30,7 @@ import firebaseConfig from '../src/constants/firebaseConfig'
 firebase.initializeApp(firebaseConfig)
 
 i18n
+  .use(LanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     defaultNS: 'translation',
@@ -37,7 +39,6 @@ i18n
       en,
       es,
     },
-    lng: "en",
     fallbackLng: "es",
     debug: process.env.NODE_ENV !== 'production',
     interpolation: {
