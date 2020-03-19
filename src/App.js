@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <ScrollToTop>
+        <ScrollToTop formReset={setForm}>
           <NavigationBar />
           <Switch>
             <Route path="/" exact component={Home} />
@@ -72,10 +72,13 @@ function App() {
   )
 }
 
-function ScrollToTop({ children }) {
+function ScrollToTop({ children, formReset }) {
   const history = useHistory()
   useEffect(() => {
-    const unlisten = history.listen(() => window.scrollTo(0, 0))
+    const unlisten = history.listen(() => {
+      formReset({ progress: 0 })
+      window.scrollTo(0, 0)
+    })
     return () => unlisten()
   }, [])
 

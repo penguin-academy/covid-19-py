@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { action } from '@storybook/addon-actions'
 import ToggleTag from '../components/Toggle'
 import SelectQuestionTag from '../components/SelectQuestion'
 import SelectPlace from '../components/SelectPlace'
