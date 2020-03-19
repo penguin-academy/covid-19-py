@@ -17,6 +17,7 @@ import Legal from './layouts/Legal'
 import About from './layouts/About'
 import Quizz from './layouts/Quizz'
 import Person from './layouts/Person'
+import Stats from './layouts/Stats'
 
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
@@ -64,6 +65,7 @@ function App() {
             <Route path="/legal" exact component={Legal} />
             <Route path="/about" exact component={About} />
             <Route path="/quizz" exact component={Quizz} />
+            <Route path="/stats" exact component={Stats} />
           </Switch>
           <Footer />
         </ScrollToTop>
