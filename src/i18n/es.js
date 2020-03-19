@@ -40,5 +40,15 @@ export const es = {
       "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología para suavizar el impacto máximo de la pandemia COVID-19 en el Sistema de Salud de Paraguay.",
     goodCompanyText2:
       "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, la Facultad Politécnica UNA, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
+  },
+  formStart: {
+    "Antes de empezar": "Antes de empezar",
+    formStartText:
+      "Esta herramienta es utilizada meramente con fines informativos. No provee una asesoría médica. No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional.",
+    agreeTOSMessage: "Al continuar, usted está de acuerdo con nuestros <1>términos de servicio</1>.",
+    howDoYouFeel: "En general, ¿Cómo te sentís en este momento?",
+    good: "Bien",
+    bad: "Mal",
+    justTesting: 'Sólo estoy probando la aplicación'
   }
 };
