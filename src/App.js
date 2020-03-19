@@ -28,8 +28,14 @@ firebase.initializeApp(firebaseConfig)
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
+    defaultNS: 'translation',
+    fallbackNS: 'translation',
     resources: {
       en: {
+        translation: {
+          selfReportingTitle: 'Self-Reporting',
+          beta: 'beta'
+        },
         home: {
           leadTitle: "Coronavirus Self-Reporting in Paraguay. Do you have any symptoms? Tell us about it and we'll help you out.",
           leadSecondary: "Do you have a fever? Dry coughing? Breathing problems? Any other symptoms? Fill out the form.",
@@ -37,9 +43,19 @@ i18n
           alertTestTitle: "This is a Test",
           trialVersion: "test version",
           alertTestMessage: "This is not the final version of the app. This app is in the <1>{{trialVersion}}</1> stage while we adjust some final details. As soon as it's ready, all the contributors will be announcing it on the official channels. Thank you all for the support and for helping us improve this app!",
+        },
+        navbar: {
+          home: 'Home',
+          selfReporting: '$t(selfReportingTitle)',
+          trivia: 'Trivia',
+          aboutUs: 'About us'
         }
       },
       es: {
+        translation: {
+          selfReportingTitle: 'Auto Reporte',
+          beta: 'beta'
+        },
         home: {
           leadTitle: "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas? Decinos cuáles y te ayudamos",
           leadSecondary: "¿Fiebre? ¿Tos Seca? ¿Dificultad para respirar? ¿Otro síntoma? Completá el formulario.",
@@ -47,16 +63,22 @@ i18n
           alertTestTitle: "Versión de Prueba",
           trialVersion: "modo de prueba",
           alertTestMessage: "Esta no es la versión oficial de la app. Esta app se encuentra en <1>{{trialVersion}}</1> para ajustar los últimos detalles. Apenas esté lista, todos los colaboradores lo estaremos lanzando por nuestros canales oficiales. ¡Muchas gracias por ayudar a hacerla mejor!",
+        },
+        navbar: {
+          home: 'Inicio',
+          selfReporting: '$t(selfReportingTitle)',
+          trivia: 'Trivia',
+          aboutUs: 'Quiénes somos'
         }
       }
     },
     lng: "en",
-    fallbackLng: "es",
+    // fallbackLng: "es",
     debug: process.env.NODE_ENV !== 'production',
     interpolation: {
       escapeValue: false
     }
-  });
+  })
 
 function App() {
   const [form, setForm] = useState({})
