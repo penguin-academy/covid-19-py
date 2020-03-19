@@ -84,6 +84,15 @@ const NavigationBar = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
+                  to="/stats"
+                  onClick={() => setShow(false)}
+                >
+                  Estadísticas
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
                   to="/about"
                   onClick={() => setShow(false)}
                 >
