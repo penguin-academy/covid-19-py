@@ -10,9 +10,8 @@ export const es = {
       "¿Fiebre? ¿Tos Seca? ¿Dificultad para respirar? ¿Otro síntoma? Completá el formulario.",
     ctaCheckSymptoms: "Revisar mis síntomas",
     alertTestTitle: "Versión de Prueba",
-    trialVersion: "modo de prueba",
     alertTestMessage:
-      "Esta no es la versión oficial de la app. Esta app se encuentra en <1>{{trialVersion}}</1> para ajustar los últimos detalles. Apenas esté lista, todos los colaboradores lo estaremos lanzando por nuestros canales oficiales. ¡Muchas gracias por ayudar a hacerla mejor!"
+      "Esta no es la versión oficial de la app. Esta app se encuentra en <1>modo de prueba</1> para ajustar los últimos detalles. Apenas esté lista, todos los colaboradores lo estaremos lanzando por nuestros canales oficiales. ¡Muchas gracias por ayudar a hacerla mejor!"
   },
   navbar: {
     home: "Inicio",
@@ -27,7 +26,6 @@ export const es = {
     aboutUs: "Sobre nosotros",
     aboutUsText:
       "Somos un grupo de personas y empresas comprometidas con el Paraguay construyendo tecnología para suavizar el impacto máximo de la pandemia en el sistema de salud paraguayo.",
-    partialMadeWithLove: "Hecho con",
-    partialMadeWithLoveInParaguay: "en Paraguay"
+    madeWithLove: "Hecho con<1></1>en Paraguay"
   }
 };

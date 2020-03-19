@@ -22,7 +22,6 @@ const CTALink = styled(Link)`
 const Home = () => {
   const { t } = useTranslation('home');
 
-  const trialVersion = t('trialVersion')
   return (
     <header className="fdb-block">
       <div className="container">
@@ -45,7 +44,7 @@ const Home = () => {
               <p>
                 <Trans i18nKey="home:alertTestMessage">
                   Esta no es la versión oficial de la app. Esta app se encuentra
-                en <strong>{{trialVersion}}</strong> para ajustar los últimos
+                en <strong>modo de prueba</strong> para ajustar los últimos
                 detalles. Apenas esté lista, todos los colaboradores lo
                 estaremos lanzando por nuestros canales oficiales. ¡Muchas
                 gracias por ayudar a hacerla mejor!
