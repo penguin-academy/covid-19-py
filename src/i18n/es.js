@@ -27,5 +27,18 @@ export const es = {
     aboutUsText:
       "Somos un grupo de personas y empresas comprometidas con el Paraguay construyendo tecnología para suavizar el impacto máximo de la pandemia en el sistema de salud paraguayo.",
     madeWithLove: "Hecho con<1></1>en Paraguay"
+  },
+  about: {
+    leadText:
+      "Este proyecto es un sistema de notificación automática, que permite a cualquier persona acceder a él e informar de sus síntomas y obtener una rápida retroalimentación de los pasos a seguir, además de permitir generar datos sobre la situación.",
+    contributeTitle: "Contribuir a CovPy",
+    contributeText:
+      "CovPy es libre y de código abierto. Puedes encontrar el código en GitHub. Las contribuciones son bienvenidas! También puedes simplemente <1>informar de un error</1> o solicitar una característica allí. report a bug or request a feature there.",
+    learnMore: "Aprende más",
+    goodCompanyTitle: "You are in good company",
+    goodCompanyText1:
+      "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología para suavizar el impacto máximo de la pandemia COVID-19 en el Sistema de Salud de Paraguay.",
+    goodCompanyText2:
+      "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, la Facultad Politécnica UNA, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
   }
 };
