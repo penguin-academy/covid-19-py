@@ -22,7 +22,6 @@ const Justify = styled.div`
 
 const Success = ({ form }) => {
   const {t} = useTranslation('formSuccess')
-  console.log(form)
   //
   // TEXT
   //

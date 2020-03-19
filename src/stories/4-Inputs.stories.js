@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ToggleTag from '../components/Toggle'
 import SelectQuestionTag from '../components/SelectQuestion'
+import SelectPlace from '../components/SelectPlace'
 
 export default {
   title: 'Inputs'
@@ -29,3 +30,11 @@ export const SelectQuestion = () => {
     </div>
   )
 }
+
+export const Places = () => (
+  <>
+    <div style={{ maxWidth: 350, margin: 30 }}>
+      <SelectPlace onChange={console.log} />
+    </div>
+  </>
+)

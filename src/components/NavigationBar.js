@@ -25,7 +25,7 @@ const NavigationBar = () => {
     <header>
       <div className="container">
         <nav className="navbar navbar-expand-lg no-gutters">
-          <div className="col-2 text-left">
+          <div className="col-3 text-left">
             <NavLink className="navbar-brand text-primary" to="/">
               <img
                 src="/img/care.svg"
@@ -68,7 +68,7 @@ const NavigationBar = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  to="/start"
+                  to="/report"
                   onClick={() => setShow(false)}
                 >
                   {t('selfReporting')}
@@ -81,6 +81,15 @@ const NavigationBar = () => {
                   onClick={() => setShow(false)}
                 >
                   {t('trivia')}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/stats"
+                  onClick={() => setShow(false)}
+                >
+                  Estadísticas
                 </Link>
               </li>
               <li className="nav-item">

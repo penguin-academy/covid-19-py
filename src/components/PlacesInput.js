@@ -1,5 +1,5 @@
 import React, { useState, useReducer, useEffect } from 'react'
-import { useReportContext } from '../layouts/Report'
+// import { useReportContext } from '../layouts/Report'
 import PlacesAutoComplete, {
   geocodeByAddress,
   getLatLng
@@ -50,13 +50,13 @@ const PlacesInput = props => {
       .catch(error => console.error('Error', error))
   }
 
-  const { onAddressChange } = useReportContext()
+  // const { onAddressChange } = useReportContext()
 
-  useEffect(() => {
-    if (inputState.touched) {
-      onAddressChange(props.id, inputState.value, gps)
-    }
-  }, [props.id, inputState, onAddressChange, gps])
+  // useEffect(() => {
+  //   if (inputState.touched) {
+  //      onAddressChange(props.id, inputState.value, gps)
+  //   }
+  // }, [props.id, inputState, onAddressChange, gps])
 
   const textChangeHandler = text => {
     let isValid = true

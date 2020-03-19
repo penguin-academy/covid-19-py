@@ -23,6 +23,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-select": "^3.0.8",
+    "recharts": "^1.8.5",
     "react-typeform-embed": "^0.2.1",
     "styled-components": "^5.0.1",
     "yarn": "^1.22.4"

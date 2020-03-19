@@ -1,17 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 import { useTranslation, Trans } from 'react-i18next'
-
 import FormBox from '../components/FormBox'
 
-const Start = ({ setFormState }) => {
-  const {t} = useTranslation('formStart')
-  const history = useHistory()
+const Start = ({ setFormState, form }) => {
   const clickHandler = feeling => {
-    setFormState({ generalHealth: feeling })
-    history.push('/report')
+    setFormState({ ...form, generalHealth: feeling, progress: 1 })
   }
+
+  const {t} = useTranslation('formStart')
   return (
     <FormBox>
       <div className="row justify-content-center">
@@ -48,15 +45,6 @@ const Start = ({ setFormState }) => {
             </button>
           </p>
         </div>
-      </div>
-      <div className="text-center">
-        <button
-          className="btn btn-link"
-          style={{ whiteSpace: 'normal' }}
-          onClick={() => clickHandler('testing')}
-        >
-          {t('justTesting')}
-        </button>
       </div>
     </FormBox>
   )

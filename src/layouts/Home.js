@@ -34,7 +34,7 @@ const Home = () => {
               {t('leadSecondary')}
             </p>
             <p className="mt-4">
-              <CTALink className="btn btn-secondary" to="/start">
+              <CTALink className="btn btn-secondary" to="/report">
                 {t('ctaCheckSymptoms')}<i className="fas fa-arrow-right ml-1"></i>
               </CTALink>
             </p>
