@@ -1,14 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 
 import FormBox from '../components/FormBox'
 
-const Start = ({ setFormState }) => {
-  const history = useHistory()
+const Start = ({ setFormState, form }) => {
   const clickHandler = feeling => {
-    setFormState({ generalHealth: feeling })
-    history.push('/report')
+    setFormState({ ...form, generalHealth: feeling, progress: 1 })
   }
   return (
     <FormBox>
@@ -46,15 +43,6 @@ const Start = ({ setFormState }) => {
             </button>
           </p>
         </div>
-      </div>
-      <div className="text-center">
-        <button
-          className="btn btn-link"
-          style={{ whiteSpace: 'normal' }}
-          onClick={() => clickHandler('testing')}
-        >
-          Sólo estoy probando la aplicación
-        </button>
       </div>
     </FormBox>
   )
