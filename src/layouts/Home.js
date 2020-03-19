@@ -30,7 +30,7 @@ const Home = () => {
               Completá el formulario.
             </p>
             <p className="mt-4">
-              <CTALink className="btn btn-secondary" to="/start">
+              <CTALink className="btn btn-secondary" to="/report">
                 Revisar mis síntomas<i className="fas fa-arrow-right ml-1"></i>
               </CTALink>
             </p>
