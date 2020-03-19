@@ -18,7 +18,7 @@ const Start = ({ setFormState }) => {
         <div className="col-12 col-md-8 text-center">
           <h1>{t('Antes de empezar')}</h1>
           <p className="lead">
-            {t('formStartText')}
+            <Trans i18nKey="warnDisclaimer" />
           </p>
           <p>
             <Trans i18nKey="formStart:agreeTOSMessage">
