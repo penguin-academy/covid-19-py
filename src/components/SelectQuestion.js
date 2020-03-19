@@ -1,9 +1,11 @@
 import React from 'react'
 import Select from 'react-select'
+import {useTranslation} from 'react-i18next'
 
 const Component = ({ title, subTitle, options, onChange, value, error }) => {
   let selectedValue = options.find(option => option.value === value)
   if (!selectedValue) selectedValue = null
+  const {t} = useTranslation('SelectQuestion')
 
   const customStyles = {
     control: (base, { selectProps }) => {
@@ -27,17 +29,17 @@ const Component = ({ title, subTitle, options, onChange, value, error }) => {
       </div>
       <div className="col-12 col-lg-5">
         <Select
-          options={[{ value: null, label: '- Seleccione -' }, ...options]}
+          options={[{ value: null, label: `- ${t('default')} -` }, ...options]}
           isSearchable={false}
           onChange={onChange}
           value={selectedValue}
           styles={customStyles}
           error={error}
-          placeholder="Seleccionar ..."
+          placeholder={t('placeholder')}
         />
         {error && (
           <div className="invalid-feedback" style={{ display: 'block' }}>
-            Por favor, seleccione una opción.
+            {t('pleaseChoose')}
           </div>
         )}
         {/* <p>selected value: {JSON.stringify(selectedValue, null, 2)}</p> */}

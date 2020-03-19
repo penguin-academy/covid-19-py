@@ -1,7 +1,9 @@
 export const en = {
   translation: {
     selfReportingTitle: "Self-Reporting",
-    beta: "beta"
+    beta: "beta",
+    yes: "Yes",
+    no: "No"
   },
   home: {
     leadTitle:
@@ -50,5 +52,59 @@ export const en = {
     good: "Well",
     bad: "Sick",
     justTesting: "I'm just testing the application"
+  },
+  form: {
+    gender: {
+      question: "What is your gender?",
+      options: {
+        male: "Male",
+        female: "Female"
+      }
+    },
+    pregnant: {
+      question: "Are you pregnant?"
+    },
+    age: {
+      question: "How old are you?"
+    },
+    breath: {
+      question:
+        "Do you have breathing problems, like dry coughing or sore throat?",
+      subtitle: "If it's only a runny nose, please select NO."
+    },
+    fever: {
+      question:
+        "In the last 24 hours, did you have a fever around 38°C or more?"
+    },
+    alarmSigns: {
+      question: "Do you have any of these symptoms?",
+      subtitle:
+        "Severe breathing difficulties, breathlessness, chest pain, constant fever for more than 72 hours, confusion or drowsiness, intense headache, blurry vision."
+    },
+    riskGroup: {
+      question: "Are you in a high-risk group?",
+      subtitle:
+        "65 years or older, diabetes, hypertension, morbid obesity, cancer, dialyzis, asthma, chronic pulmonary difficulties, heart problems, prolonged use of corticosteroids."
+    },
+    healthProfessional: {
+      question:
+        "Are you a health professional and have be in contact with patients and/or nursing home residents?"
+    },
+    professionalExposure: {
+      question:
+        "Did you have any direct contact with a confirmed case without protective equipment?"
+    },
+    familyExposure: {
+      question:
+        "In the last 15 days, did you have any contact with a confirmed case in a close environment (family and/or household members)?"
+    },
+    submit: "Submit",
+    errorSubmitting:
+      "There was an error. Your answers could not be saved. Please, try again or contact us."
+  },
+  SelectQuestion: {
+    placeholder: "Select...",
+    default: "Select",
+    pleaseChoose: "Please select an option."
   }
 };

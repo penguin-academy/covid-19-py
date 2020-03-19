@@ -1,7 +1,9 @@
 export const es = {
   translation: {
     selfReportingTitle: "Auto Reporte",
-    beta: "beta"
+    beta: "beta",
+    yes: "Sí",
+    no: "No"
   },
   home: {
     leadTitle:
@@ -45,10 +47,62 @@ export const es = {
     "Antes de empezar": "Antes de empezar",
     formStartText:
       "Esta herramienta es utilizada meramente con fines informativos. No provee una asesoría médica. No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional.",
-    agreeTOSMessage: "Al continuar, usted está de acuerdo con nuestros <1>términos de servicio</1>.",
+    agreeTOSMessage:
+      "Al continuar, usted está de acuerdo con nuestros <1>términos de servicio</1>.",
     howDoYouFeel: "En general, ¿Cómo te sentís en este momento?",
     good: "Bien",
     bad: "Mal",
-    justTesting: 'Sólo estoy probando la aplicación'
+    justTesting: "Sólo estoy probando la aplicación"
+  },
+  form: {
+    gender: {
+      question: "¿Cuál es su sexo?",
+      options: {
+        male: "Hombre",
+        female: "Mujer"
+      }
+    },
+    pregnant: {
+      question: "¿Estás embarazada?"
+    },
+    age: {
+      question: "¿Cuántos años tenés?"
+    },
+    breath: {
+      question: "¿Tenés síntomas respiratorios como tos o dolor de garganta?",
+      subtitle: "Si solo te chorrea la nariz, indicá NO."
+    },
+    fever: {
+      question: "En las últimas 24 horas, ¿Tuviste fiebre de 38°C o más?"
+    },
+    alarmSigns: {
+      question: "¿Tenés alguno de estos signos?",
+      subtitle:
+        "Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
+    },
+    riskGroup: {
+      question: "¿Pertenecés a un grupo de riesgo?",
+      subtitle:
+        "Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
+    },
+    healthProfessional: {
+      question:
+        "¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
+    },
+    professionalExposure: {
+      question:
+        "En el curso de tu trabajo sin equipo de protección, ¿tuviste contacto directo con uno en el caso confirmado?"
+    },
+    familyExposure: {
+      question:
+        "En los últimos 15 días, ¿tuviste contacto con un algún caso confirmado en su entorno cercano (familia o personas del mismo hogar)?"
+    },
+    submit: "Enviar",
+    errorSubmitting: "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros."
+  },
+  SelectQuestion: {
+    placeholder: "Seleccionar...",
+    default: "Seleccione",
+    pleaseChoose: "Por favor, seleccione una opción."
   }
 };

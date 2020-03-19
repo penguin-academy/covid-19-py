@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from 'react'
 import { useHistory } from 'react-router-dom'
 import firebase from 'firebase/app'
+import {useTranslation} from 'react-i18next'
 
 import 'firebase/firestore'
 
@@ -114,15 +115,17 @@ const Form = ({ filledState = {}, setFormState, form }) => {
     }
   }
 
+  const {t} = useTranslation('form')
+
   return (
     <FormBox>
       <form onSubmit={handleSubmit}>
         <>
           <Question
-            title="¿Cuál es su sexo?"
+            title={t('gender.question')}
             options={[
-              { value: 'male', label: 'Hombre' },
-              { value: 'female', label: 'Mujer' }
+              { value: 'male', label: t('gender.options.male') },
+              { value: 'female', label: t('gender.options.female') }
             ]}
             onChange={({ value }) => {
               handleQuestion('gender', value, () => {
@@ -138,10 +141,10 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Estás embarazada?"
+              title={t('pregnant.question')}
               options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
                 handleQuestion('pregnant', value, 'age')
@@ -154,8 +157,9 @@ const Form = ({ filledState = {}, setFormState, form }) => {
         {status['age'].show && (
           <>
             <hr className="mb-5 mt-5" />
+            {/* TODO: Pull from age range */}
             <Question
-              title="¿Cuántos años tenés?"
+              title={t('age.question')}
               options={Array.from(Array(100)).map((_, i) => {
                 return {
                   value: i,
@@ -174,11 +178,11 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Tenés síntomas respiratorios como tos o dolor de garganta?"
-              subTitle="Si solo te chorrea la nariz, indicá NO."
+              title={t('breath.question')}
+              subTitle={t('breath.subtitle')}
               options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
                 handleQuestion('breath', value, 'fever')
@@ -192,10 +196,10 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="En las últimas 24 horas, ¿Tuviste fiebre de 38°C o más?"
+              title={t('fever.question')}
               options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
                 handleQuestion('fever', value, () => {
@@ -213,11 +217,11 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Tenés alguno de estos signos?"
-              subTitle="Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
+              title={t('alarmSigns.question')}
+              subTitle={t('alarmSigns.subtitle')}
               options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
                 handleQuestion('alarmSigns', value, 'riskGroup')
@@ -231,11 +235,11 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Pertenecés a un grupo de riesgo?"
-              subTitle="Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
+              title={t('riskGroup.question')}
+              subTitle={t('riskGroup.subtitle')}
               options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
                 handleQuestion('riskGroup', value, 'healthProfessional')
@@ -249,10 +253,10 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
+              title={t('healthProfessional.question')}
               options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
                 handleQuestion('healthProfessional', value, () => {
@@ -269,10 +273,10 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="En el curso de tu trabajo sin equipo de protección, ¿tuviste contacto directo con uno en el caso confirmado?"
+              title={t('professionalExposure.question')}
               options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
                 handleQuestion('professionalExposure', value, 'familyExposure')
@@ -286,10 +290,10 @@ const Form = ({ filledState = {}, setFormState, form }) => {
           <>
             <hr className="mb-5 mt-5" />
             <Question
-              title="En los últimos 15 días, ¿tuviste contacto con un algún caso confirmado en su entorno cercano (familia o personas del mismo hogar)?"
+              title={t('familyExposure.question')}
               options={[
-                { value: 'yes', label: 'Sí' },
-                { value: 'no', label: 'No' }
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
                 handleQuestion('familyExposure', value)
@@ -313,12 +317,11 @@ const Form = ({ filledState = {}, setFormState, form }) => {
               style={{ paddingRight: 10 }}
             ></span>
           )}
-          Enviar
+          {t('submit')}
         </button>
         {submitError && (
           <p style={{ color: 'red', padding: 5 }}>
-            Se ha producido un error. Sus entradas no se han guardado. Por
-            favor, inténtelo de nuevo o póngase en contacto con nosotros.
+            {t('errorSubmitting')}
           </p>
         )}
       </form>
