@@ -34,7 +34,7 @@ export const SelectQuestion = () => {
 export const Places = () => (
   <>
     <div style={{ maxWidth: 350, margin: 30 }}>
-      <SelectPlace />
+      <SelectPlace onChange={console.log} />
     </div>
   </>
 )

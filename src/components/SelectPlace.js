@@ -2,11 +2,15 @@ import React, { useCallback, useRef } from 'react'
 import AsyncSelect from 'react-select/async'
 import { debounce } from 'lodash'
 
-const Component = ({ onChange, value }) => {
+const Component = ({ onChange, value, onCoords }) => {
   const autocomplete = useRef()
+  const geocoder = useRef()
 
   if (!autocomplete.current) {
     autocomplete.current = new window.google.maps.places.AutocompleteService()
+  }
+  if (!geocoder.current) {
+    geocoder.current = new window.google.maps.Geocoder()
   }
 
   function getPlacePredictions(input, callback) {
@@ -28,10 +32,19 @@ const Component = ({ onChange, value }) => {
     )
   }
 
-  const getColorPredictions = (inputValue, callback) => {
-    setTimeout(() => {
-      callback([{ value: 'red', label: 'red' }])
-    }, 1000)
+  const onChangeWithCoords = selected => {
+    onChange(selected)
+
+    if (selected) {
+      function callback(places, status) {
+        onCoords({
+          bounds: places[0].geometry.bounds.toJSON(),
+          location: places[0].geometry.location.toJSON()
+        })
+      }
+
+      geocoder.current.geocode({ placeId: selected.value }, callback)
+    }
   }
 
   const debouncedGetPlacePredictions = useCallback(
@@ -44,7 +57,7 @@ const Component = ({ onChange, value }) => {
       loadOptions={debouncedGetPlacePredictions}
       defaultOptions
       // onInputChange={i => console.log(i)}
-      onChange={onChange}
+      onChange={onChangeWithCoords}
       isClearable={true}
       noOptionsMessage={i =>
         !i.inputValue

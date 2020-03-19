@@ -47,6 +47,8 @@ const Person = ({ setFormState, filledState = {}, form }) => {
     })
   }
 
+  const handleCoords = geocode => setStatus({ geocode })
+
   const handleQuestion = (q, value, cbOrNextQ) => {
     if (value === null) return nextQuestion(q)
     setErrors({ ...errors, [q]: false })
@@ -166,8 +168,10 @@ const Person = ({ setFormState, filledState = {}, form }) => {
               <div className="col-12 col-lg-5">
                 <SelectPlace
                   onChange={value => {
+                    handleCoords('loading or null')
                     handleQuestion('location', value, 'phone')
                   }}
+                  onCoords={handleCoords}
                   value={status.location.answer}
                 />
                 {errors.location && (
