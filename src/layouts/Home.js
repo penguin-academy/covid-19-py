@@ -22,13 +22,16 @@ const Home = () => {
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
             <h2>
-              Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas? Decinos
-              cuáles y te ayudamos
+              Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas de COVID19? 
             </h2>
             <p className="lead">
-              ¿Fiebre? ¿Tos Seca? ¿Dificultad para respirar? ¿Otro síntoma?
-              Completá el formulario.
+              Ayudanos a tener datos estadisticos de la situación real del COVID19 en Paraguay 
+              llenando este formulario si tenes o tuviste sintomas.
             </p>
+            <ul>
+              <li>Tu información personal es opcional, ¡no te preocupes!</li>
+              <li>Mirá los datos estadísticos que ya juntamos <Link to="/stats">aquí</Link></li>
+            </ul>   
             <p className="mt-4">
               <CTALink className="btn btn-secondary" to="/report">
                 Revisar mis síntomas<i className="fas fa-arrow-right ml-1"></i>
