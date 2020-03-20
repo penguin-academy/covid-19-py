@@ -7,6 +7,10 @@ import {
   useHistory
 } from 'react-router-dom'
 
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
+
 import Home from './layouts/Home'
 import NavigationBar from './components/NavigationBar'
 import Footer from './components/Footer'
@@ -19,10 +23,30 @@ import Quizz from './layouts/Quizz'
 import Person from './layouts/Person'
 import Stats from './layouts/Stats'
 
+import { en } from "./i18n/en"
+import { es } from "./i18n/es"
+
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
 
 firebase.initializeApp(firebaseConfig)
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    defaultNS: 'translation',
+    fallbackNS: 'translation',
+    resources: {
+      en,
+      es,
+    },
+    fallbackLng: "es",
+    debug: process.env.NODE_ENV !== 'production',
+    interpolation: {
+      escapeValue: false
+    }
+  })
 
 function App() {
   const [form, setForm] = useState({ progress: 0 })
