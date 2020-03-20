@@ -120,23 +120,21 @@ const Person = ({ setFormState, filledState = {}, form }) => {
         <div className="row justify-content-center">
           <div className="col-12 col-md-8 text-center">
             <h1>Últimas preguntas</h1>
-            <p className="lead">Por favor, lea lo siguiente con atención:</p>
+            <p className="lead">Por favor, leé lo siguiente con atención:</p>
             <p>
-              Le proporcionamos esta herramienta para ayudarle para que pueda
-              obtener información sobre sus síntomas.
+              Te proporcionamos esta herramienta para ayudar a
+              obtener información sobre tus síntomas.
             </p>
             <p>
-              ¡Puedes ayudarnos a entender mejor la situación real en Paraguay y
-              a tomar mejores decisiones! Porque tenemos que trabajar juntos con
-              fuerza para luchar contra la epidemia del Corona virus. Por favor,
-              llene la siguiente sección con cuidado.
+              Al completar este formulario nos estas ayudando a generar datos. Por favor,llená la siguiente sección con cuidado.
+              
             </p>
             <hr className="mb-5 mt-5" />
           </div>
         </div>
 
         <Question
-          title="¿Ha rellenado todas las preguntas con la verdad?"
+          title="¿Contestaste todas las preguntas con tus síntomas verdaderos?"
           options={[
             {
               value: 'report',
@@ -159,10 +157,10 @@ const Person = ({ setFormState, filledState = {}, form }) => {
             <hr className="mb-5 mt-5" />
             <div className="row justify-content-center align-items-center">
               <div className="col-12 col-lg-6">
-                <p className="lead m-lg-0">¿En qué barrio vives?</p>
+                <p className="lead m-lg-0">¿En qué barrio vivís?</p>
                 <p className="m-lg-0">
-                  Por favor, escriba para encontrar su ciudad. Seleccione la
-                  coincidencia más cercana posible.
+                  Por favor, escribí tu ciudad. Si no la encontrás, seleccioná la
+                  opción más cercana.
                 </p>
               </div>
               <div className="col-12 col-lg-5">
@@ -179,7 +177,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
                     className="invalid-feedback"
                     style={{ display: 'block' }}
                   >
-                    Por favor, seleccione una opción.
+                    Por favor, seleccioná una opción.
                   </div>
                 )}
               </div>
