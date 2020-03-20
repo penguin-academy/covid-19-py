@@ -30,7 +30,7 @@ const Home = () => {
             </p>
             <ul>
               <li>Tu información personal es opcional, ¡no te preocupes!</li>
-              <li>Mirá los datos estadísticos que ya juntamos <Link to="/stats">aquí</Link></li>
+              <li>Mirá los datos estadísticos que ya juntamos <Link to="/stats">aquí</Link>.</li>
             </ul>   
             <p className="mt-4">
               <CTALink className="btn btn-secondary" to="/report">
