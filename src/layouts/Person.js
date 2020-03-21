@@ -75,6 +75,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
   const postForm = async () => {
     try {
       const firestoreDocument = {
+        ...form,
         ...status,
         reportDate: firebase.firestore.Timestamp.now()
       }
