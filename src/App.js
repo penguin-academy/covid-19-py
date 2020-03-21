@@ -23,8 +23,8 @@ import Quizz from './layouts/Quizz'
 import Person from './layouts/Person'
 import Stats from './layouts/Stats'
 
-import { en } from './i18n/en'
-import { es } from './i18n/es'
+import en from './i18n/en.json'
+import es from './i18n/es.json'
 
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
