@@ -1,11 +1,11 @@
 import React from 'react'
 import Select from 'react-select'
-import {useTranslation} from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 const Component = ({ title, subTitle, options, onChange, value, error }) => {
   let selectedValue = options.find(option => option.value === value)
   if (!selectedValue) selectedValue = null
-  const {t} = useTranslation('SelectQuestion')
+  const { t } = useTranslation('SelectQuestion')
 
   const customStyles = {
     control: (base, { selectProps }) => {

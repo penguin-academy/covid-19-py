@@ -2,7 +2,7 @@ import React, { useState, useReducer } from 'react'
 
 import Question from '../components/SelectQuestion'
 import FormBox from '../components/FormBox'
-import {useTranslation} from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 const Form = ({ filledState = {}, setFormState, form }) => {
   const sequence = [
@@ -81,7 +81,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
     }
   }
 
-  const {t} = useTranslation('form')
+  const { t } = useTranslation('form')
 
   return (
     <FormBox>

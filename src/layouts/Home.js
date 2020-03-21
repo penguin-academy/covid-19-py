@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next'
 import { Trans } from 'react-i18next'
 
 import styled from 'styled-components'
-
 
 const CTALink = styled(Link)`
   &:hover i {
@@ -20,22 +19,19 @@ const CTALink = styled(Link)`
 `
 
 const Home = () => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('home')
 
   return (
     <header className="fdb-block">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
-            <h2>
-              {t('leadTitle')} 
-            </h2>
-            <p className="lead">
-              {t('leadSecondary')}
-            </p>
+            <h2>{t('leadTitle')}</h2>
+            <p className="lead">{t('leadSecondary')}</p>
             <p className="mt-4">
               <CTALink className="btn btn-secondary" to="/report">
-                {t('ctaCheckSymptoms')}<i className="fas fa-arrow-right ml-1"></i>
+                {t('ctaCheckSymptoms')}
+                <i className="fas fa-arrow-right ml-1"></i>
               </CTALink>
             </p>
 
@@ -44,10 +40,10 @@ const Home = () => {
               <p>
                 <Trans i18nKey="home:alertTestMessage">
                   Esta no es la versión oficial de la app. Esta app se encuentra
-                en <strong>modo de prueba</strong> para ajustar los últimos
-                detalles. Apenas esté lista, todos los colaboradores lo
-                estaremos lanzando por nuestros canales oficiales. ¡Muchas
-                gracias por ayudar a hacerla mejor!
+                  en <strong>modo de prueba</strong> para ajustar los últimos
+                  detalles. Apenas esté lista, todos los colaboradores lo
+                  estaremos lanzando por nuestros canales oficiales. ¡Muchas
+                  gracias por ayudar a hacerla mejor!
                 </Trans>
               </p>
             </div>

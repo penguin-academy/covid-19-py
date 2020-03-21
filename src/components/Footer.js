@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="row align-items-top text-center text-md-left">
           <div className="col-12 col-md-4 mt-4 mt-md-0 text-lg-left">
             <h3>
-              <strong>{t("followAndContribute")}</strong>
+              <strong>{t('followAndContribute')}</strong>
             </h3>
-            <p>{t("shareText")}</p>
+            <p>{t('shareText')}</p>
             <p className="lead">
               <a
                 href="https://twitter.com/penguinstribe"
@@ -43,9 +43,9 @@ const Footer = () => {
 
           <div className="col-12 col-md-5 offset-md-2 mt-5 mt-md-0 text-lg-left">
             <h3>
-              <strong>{t("aboutUs")}</strong>
+              <strong>{t('aboutUs')}</strong>
             </h3>
-            <p>{t("aboutUsText")}</p>
+            <p>{t('aboutUsText')}</p>
             <img
               src="/img/hippa.png"
               alt="Hippa Conform Logo"
@@ -60,13 +60,13 @@ const Footer = () => {
         </div>
         <div className="row mt-5">
           <div className="col text-center">
-            © CovPY 2020 -{" "}
+            © CovPY 2020 -{' '}
             <Trans i18nKey="footer:madeWithLove">
               Hecho con amor
               <img
                 src="/img/heart.svg"
                 alt="Heart"
-                style={{ padding: "0 10px", maxWidth: 45 }}
+                style={{ padding: '0 10px', maxWidth: 45 }}
               />
               en Paraguay
             </Trans>
@@ -74,7 +74,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
+  )
 }
 
 export const FooterSmall = () => {

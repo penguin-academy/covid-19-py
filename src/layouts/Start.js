@@ -8,7 +8,7 @@ const Start = ({ setFormState, form }) => {
     setFormState({ ...form, generalHealth: feeling, progress: 1 })
   }
 
-  const {t} = useTranslation('formStart')
+  const { t } = useTranslation('formStart')
   return (
     <FormBox>
       <div className="row justify-content-center">

@@ -7,9 +7,9 @@ import {
   useHistory
 } from 'react-router-dom'
 
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 
 import Home from './layouts/Home'
 import NavigationBar from './components/NavigationBar'
@@ -23,8 +23,8 @@ import Quizz from './layouts/Quizz'
 import Person from './layouts/Person'
 import Stats from './layouts/Stats'
 
-import { en } from "./i18n/en"
-import { es } from "./i18n/es"
+import { en } from './i18n/en'
+import { es } from './i18n/es'
 
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
@@ -39,9 +39,9 @@ i18n
     fallbackNS: 'translation',
     resources: {
       en,
-      es,
+      es
     },
-    fallbackLng: "es",
+    fallbackLng: 'es',
     debug: process.env.NODE_ENV !== 'production',
     interpolation: {
       escapeValue: false

@@ -2,7 +2,7 @@ import React from 'react'
 import { Lottie } from '@crello/react-lottie'
 import * as checkData from '../lottie/check.json'
 import styled from 'styled-components'
-import {useTranslation, Trans} from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 
 const Header = styled.header`
   padding: 4.5rem 0px;
@@ -21,7 +21,7 @@ const Justify = styled.div`
 `
 
 const Success = ({ form }) => {
-  const {t} = useTranslation('formSuccess')
+  const { t } = useTranslation('formSuccess')
   //
   // TEXT
   //
@@ -51,7 +51,7 @@ const Success = ({ form }) => {
   const isYes = key => {
     try {
       return form[key].answer === 'yes'
-    } catch(e) {
+    } catch (e) {
       return false
     }
   }
@@ -86,7 +86,7 @@ const Success = ({ form }) => {
           <Disclaimer>
             <h2>{t('evaluationResult.title')}</h2>
             <p className="">
-            <Trans i18nKey="warnDisclaimer" />
+              <Trans i18nKey="warnDisclaimer" />
             </p>
           </Disclaimer>
           <div className="row text-left align-items-center">
@@ -149,22 +149,12 @@ const Success = ({ form }) => {
                 </>
               )}
               <h2>{t('tips.title')}</h2>
-              <p>
-                {t('tips.measures')}
-              </p>
+              <p>{t('tips.measures')}</p>
               <ul>
-                <li>
-                  {t('tips.travel')}
-                </li>
-                <li>
-                  {t('tips.distancing')}
-                </li>
-                <li>
-                  {t('tips.publicTransportation')}
-                </li>
-                <li>
-                  {t('tips.mask')}
-                </li>
+                <li>{t('tips.travel')}</li>
+                <li>{t('tips.distancing')}</li>
+                <li>{t('tips.publicTransportation')}</li>
+                <li>{t('tips.mask')}</li>
               </ul>
             </div>
           </div>
