@@ -1,6 +1,6 @@
 # CovPY Auto Reporte
 
-This project was created as an initiative by Penguin Academy to build technology that smooths the peak impact of the COVID-19 pandemic on the Paraguayan Health System. 
+This project was created as an initiative by Penguin Academy to build technology that smooths the peak impact of the COVID-19 pandemic on the Paraguayan Health System.
 
 🐧🇵🇾🦠
 
