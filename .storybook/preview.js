@@ -6,8 +6,8 @@ import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
 import firebaseConfig from '../src/constants/firebaseConfig'
-import { en } from '../src/i18n/en'
-import { es } from '../src/i18n/es'
+import en from '../src/i18n/en.json'
+import es from '../src/i18n/es.json'
 
 firebase.initializeApp(firebaseConfig)
 
