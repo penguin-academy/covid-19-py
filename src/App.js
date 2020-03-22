@@ -23,7 +23,7 @@ import Quizz from './layouts/Quizz'
 import Person from './layouts/Person'
 import Stats from './layouts/Stats'
 
-import en from './i18n/en.json'
+// import en from './i18n/en.json'
 import es from './i18n/es.json'
 
 import firebase from 'firebase/app'
@@ -38,7 +38,7 @@ i18n
     defaultNS: 'translation',
     fallbackNS: 'translation',
     resources: {
-      en,
+      // en,
       es
     },
     fallbackLng: 'es',
