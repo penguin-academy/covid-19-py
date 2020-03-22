@@ -2,6 +2,7 @@ import React from 'react'
 import { Lottie } from '@crello/react-lottie'
 import * as checkData from '../lottie/check.json'
 import styled from 'styled-components'
+import { useTranslation, Trans } from 'react-i18next'
 
 const Header = styled.header`
   padding: 4.5rem 0px;
@@ -20,25 +21,21 @@ const Justify = styled.div`
 `
 
 const Success = ({ form }) => {
+  const { t } = useTranslation('formSuccess')
   //
   // TEXT
   //
 
   const text = {
-    alarm:
-      'Signos de alarma, llame al 911 inmediatamente y pida ayuda. Si está en condiciones vaya al hospital para atención médica inmediata.',
-    alarmTitle: 'Busque atención médica inmediatamente.',
-    symptoms:
-      '¿Fiebre y Dificultades Respiratorias? Tenés síntomas y puede ser contagioso. Aislate e informa a tu entorno para que tomen las precauciones necesarias. Por favor llamá al 154 para informar que contás con estos síntomas.',
+    alarm: t('alarm.message'),
+    alarmTitle: t('alarm.title'),
+    symptoms: t('symptoms.message'),
     symptomsTitle: '',
-    exposure:
-      'Estuviste expuesto/a o tuviste contacto con un caso confirmado de COVID19, el protocolo recomendado es que te aisles por 7 a 14 días.',
+    exposure: t('exposure.message'),
     exposureTitle: '',
-    noSymptoms:
-      'Sin síntomas. En este momento no muestras síntomas de COVID19, sin embargo, existen casos asintomáticos. Lo ideal es que mantengas tus contactos al mínimo y tengas todas las precauciones durante esta etapa de emergencia sanitaria.',
+    noSymptoms: t('noSymptoms.message'),
     noSymptomsTitle: '',
-    medical:
-      'Una mascarilla quirúrgica (tipo II o IIR) está indicada para el personal médico: Examinar a un paciente con tos o fiebre si el cuidador experimenta síntomas respiratorios o generales como fatiga, dolor muscular o dolores de cabeza. Una mascarilla de ultrafiltración (FFP2 3) sólo se requiere para el personal hospitalario expuesto a actividades de alto riesgo.',
+    medical: t('medical.message'),
     medicalTitle: ''
   }
 
@@ -51,7 +48,13 @@ const Success = ({ form }) => {
   // Protect the success route if form is empty
   //
 
-  const isYes = key => form[key].answer === 'yes'
+  const isYes = key => {
+    try {
+      return form[key].answer === 'yes'
+    } catch (e) {
+      return false
+    }
+  }
 
   let exposure = false
   if (isYes('professionalExposure') || isYes('familyExposure')) exposure = true
@@ -81,14 +84,9 @@ const Success = ({ form }) => {
       <Header className="fdb-block">
         <div className="container">
           <Disclaimer>
-            <h2>Los resultados de tu evaluación</h2>
+            <h2>{t('evaluationResult.title')}</h2>
             <p className="">
-              Esta herramienta es utilizada meramente con fines informativos.
-              <br />
-              No provee una asesoría médica.
-              <br />
-              No la uses para reemplazar a una consulta, diagnóstico o
-              tratamiento con un profesional.
+              <Trans i18nKey="warnDisclaimer" />
             </p>
           </Disclaimer>
           <div className="row text-left align-items-center">
@@ -146,39 +144,17 @@ const Success = ({ form }) => {
             <div className="col text-left">
               {msg.medical && (
                 <>
-                  <h2>Consejos para su práctica profesional:</h2>
+                  <h2>{t('workAdvice')}:</h2>
                   <p>{msg.medical}</p>
                 </>
               )}
-              <h2>Consejos generales a seguir en todo momento</h2>
-              <p>
-                Respetar las medidas de higiene. Limitar las visitas a conocidos
-                en el hospital o que residan en residencias de ancianos/cuidados
-                tanto como sea posible. Si no se puede evitar esta visita,
-                póngase en contacto con el personal de enfermería y siga sus
-                recomendaciones. Cuando espere en la parada del bús, manténgase
-                lo más alejado posible de otras personas
-              </p>
+              <h2>{t('tips.title')}</h2>
+              <p>{t('tips.measures')}</p>
               <ul>
-                <li>
-                  Reduzca sus viajes de placer. Si es posible, evite viajar
-                  durante la hora pico.
-                </li>
-                <li>
-                  Manténgase lo más alejado posible de otras personas en el
-                  transporte público y aplique las normas de higiene y las
-                  recomendaciones de comportamiento mencionadas anteriormente.
-                </li>
-                <li>
-                  Si tiene síntomas de enfermedades respiratorias (por ejemplo,
-                  una tos leve), evite utilizar el transporte público si es
-                  posible.
-                </li>
-                <li>
-                  Se utilizan mascarillas para proteger a los trabajadores
-                  sanitarios que tratan los casos sospechosos, así como a las
-                  personas especialmente vulnerables.
-                </li>
+                <li>{t('tips.travel')}</li>
+                <li>{t('tips.distancing')}</li>
+                <li>{t('tips.publicTransportation')}</li>
+                <li>{t('tips.mask')}</li>
               </ul>
             </div>
           </div>

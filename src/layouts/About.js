@@ -1,6 +1,9 @@
 import React from 'react'
+import { useTranslation, Trans } from 'react-i18next'
+import { Link } from 'react-feather'
 
 const Legal = () => {
+  const { t } = useTranslation('about')
   return (
     <>
       <header className="fdb-block">
@@ -8,12 +11,7 @@ const Legal = () => {
           <div className="row justify-content-center">
             <div className="col col-md-8 text-center">
               <img alt="logo" className="fdb-icon mb-4" src="/img/care.svg" />
-              <p className="lead">
-                Este proyecto es un sistema de notificación automática, que
-                permite a cualquier persona acceder a él e informar de sus
-                síntomas y obtener una rápida retroalimentación de los pasos a
-                seguir, además de permitir generar datos sobre la situación.
-              </p>
+              <p className="lead">{t('leadText')}</p>
             </div>
           </div>
         </div>
@@ -33,20 +31,22 @@ const Legal = () => {
                 className="fdb-icon"
                 src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs/icons/github.svg"
               />
-              <h1>Contribuir a CovPy</h1>
+              <h1>{t('contributeTitle')}</h1>
               <p className="lead">
-                CovPy es libre y de código abierto. Puedes encontrar el código
-                en GitHub. Las contribuciones son bienvenidas! También puedes
-                simplemente{' '}
-                <a href="https://www.github.com/penguin-academy/covid-19-py/issues">
-                  informar de un error
-                </a>{' '}
-                o solicitar una característica allí. report a bug or request a
-                feature there.
+                <Trans i18nKey="about:contributeText">
+                  CovPy es libre y de código abierto. Puedes encontrar el código
+                  en GitHub. Las contribuciones son bienvenidas! También puedes
+                  simplemente
+                  <a href="https://www.github.com/penguin-academy/covid-19-py/issues">
+                    informar de un error
+                  </a>
+                  o solicitar una característica allí. report a bug or request a
+                  feature there.
+                </Trans>
               </p>
               <p className="h3 mt-4">
                 <a href="https://www.github.com/penguin-academy/covid-19-py">
-                  Aprende más <i className="fas fa-angle-right" />
+                  {t('learnMore')} <i className="fas fa-angle-right" />
                 </a>
               </p>
             </div>
@@ -64,18 +64,9 @@ const Legal = () => {
         <div className="container">
           <div className="row text-center justify-content-center">
             <div className="col-lg-8">
-              <h2>You are in good company</h2>
-              <p className="lead">
-                Este proyecto fue creado como una iniciativa de Penguin Academy
-                para crear tecnología para suavizar el impacto máximo de la
-                pandemia COVID-19 en el Sistema de Salud de Paraguay.
-              </p>
-              <p className="lead">
-                CovPy es desarrollado y mantenido por Penguin Academy, UCOM, la
-                Facultad Politécnica UNA, the Product Lab, Web Paraguay, Okimo,
-                y otras organizaciones así como muchos otros contribuyentes
-                asombrosos ❤️.
-              </p>
+              <h2>{t('goodCompanyTitle')}</h2>
+              <p className="lead">{t('goodCompanyText1')}</p>
+              <p className="lead">{t('goodCompanyText2')} ❤️.</p>
               <div className="mt-5 justify-content-center">
                 <img
                   alt="penguin academy logo"
