@@ -1,5 +1,6 @@
 {
   "translation": {
+    "yyy": "yyy",
     "selfReportingTitle": "Self-Reporting",
     "beta": "beta",
     "yes": "Yes",
@@ -37,7 +38,7 @@
   },
   "formStart": {
     "Antes de empezar": "Before we begin",
-    "agreeTOSMessage": "By continuing, you agree to our <1>terms of service</1>.",
+    "agreeTOSMessage": "By continuing, you agree to our <1>terms of service</1> .",
     "howDoYouFeel": "Overall, how do you feel at this moment?",
     "good": "Well",
     "bad": "Sick",
