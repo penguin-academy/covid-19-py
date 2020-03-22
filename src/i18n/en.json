@@ -1,5 +1,6 @@
 {
   "translation": {
+    "yyy": "yyy",
     "selfReportingTitle": "Self-Reporting",
     "beta": "beta",
     "yes": "Yes",
@@ -7,7 +8,7 @@
     "warnDisclaimer": "This tool is for informational purposes only, it does not provide medical advice.<br/>The content is not intended to be a substitute for professional medical advice, dignosis, or treatment"
   },
   "home": {
-    "leadTitle": "Coronavirus Self-Reporting in Paraguay. Do you have any symptoms? Tell us about it and we will help you out.",
+    "leadTitle": "Coronavirus Self-Reporting in Paraguay. Do you have any symptoms? Tell us about it and we'll help you out.",
     "leadSecondary": "Do you have a fever? Dry coughing? Breathing problems? Any other symptoms? Fill out the form.",
     "ctaCheckSymptoms": "Check my symptoms",
     "alertTestTitle": "This is a Test",
@@ -37,7 +38,7 @@
   },
   "formStart": {
     "Antes de empezar": "Before we begin",
-    "agreeTOSMessage": "By continuing, you agree to our <1>terms of service</1>.",
+    "agreeTOSMessage": "By continuing, you agree to our <1>terms of service</1> .",
     "howDoYouFeel": "Overall, how do you feel at this moment?",
     "good": "Well",
     "bad": "Sick",
