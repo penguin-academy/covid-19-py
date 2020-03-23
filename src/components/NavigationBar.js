@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { useTranslation } from 'react-i18next'
 
 const NavLink = styled(Link)`
   font-size: 1.2rem;
@@ -19,6 +20,7 @@ const TitleHide = styled.span`
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false)
+  const { t } = useTranslation('navbar')
   return (
     <header>
       <div className="container">
@@ -30,8 +32,8 @@ const NavigationBar = () => {
                 alt="Logo CovPY Auto Reporte"
                 style={{ width: 40, paddingRight: 15 }}
               />
-              CovPY <TitleHide>Auto Reporte</TitleHide>
-              <span className="badge badge-secondary ml-3">beta</span>
+              CovPY <TitleHide>{t('selfReportingTitle')}</TitleHide>
+              <span className="badge badge-secondary ml-3">{t('beta')}</span>
             </NavLink>
           </div>
           <button
@@ -59,7 +61,7 @@ const NavigationBar = () => {
                   to="/"
                   onClick={() => setShow(false)}
                 >
-                  Inicio
+                  {t('home')}
                 </Link>
               </li>
 
@@ -69,7 +71,7 @@ const NavigationBar = () => {
                   to="/report"
                   onClick={() => setShow(false)}
                 >
-                  Autoreporte
+                  {t('selfReporting')}
                 </Link>
               </li>
               <li className="nav-item">
@@ -78,7 +80,7 @@ const NavigationBar = () => {
                   to="/quizz"
                   onClick={() => setShow(false)}
                 >
-                  Trivia
+                  {t('trivia')}
                 </Link>
               </li>
               <li className="nav-item">
@@ -96,7 +98,7 @@ const NavigationBar = () => {
                   to="/about"
                   onClick={() => setShow(false)}
                 >
-                  Quiénes somos
+                  {t('aboutUs')}
                 </Link>
               </li>
             </ul>
