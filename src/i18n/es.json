@@ -7,11 +7,13 @@
     "warnDisclaimer": "Esta herramienta es utilizada meramente con fines informativos.<br/>No provee una asesoría médica.<br/>No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional."
   },
   "home": {
-    "leadTitle": "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas? Decinos cuáles y te ayudamos",
-    "leadSecondary": "¿Fiebre? ¿Tos Seca? ¿Dificultad para respirar? ¿Otro síntoma? Completá el formulario.",
+    "leadTitle": "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas de COVID19?",
+    "leadSecondary": "Ayúdanos a tener datos estadísticos de la situación real del COVID19 en Paraguay llenando este formulario si tenés o tuviste síntomas.",
     "ctaCheckSymptoms": "Revisar mis síntomas",
     "alertTestTitle": "Versión de Prueba",
-    "alertTestMessage": "Esta no es la versión oficial de la app. Esta app se encuentra en <1>modo de prueba</1> para ajustar los últimos detalles. Apenas esté lista, todos los colaboradores lo estaremos lanzando por nuestros canales oficiales. ¡Muchas gracias por ayudar a hacerla mejor!"
+    "alertTestMessage": "Esta no es la versión oficial de la app. Esta app se encuentra en <1>modo de prueba</1> para ajustar los últimos detalles. Apenas esté lista, todos los colaboradores lo estaremos lanzando por nuestros canales oficiales. ¡Muchas gracias por ayudar a hacerla mejor!",
+    "listFirst": "Tu información personal es opcional, ¡no te preocupes!",
+    "listSecond": "Mirá los datos estadísticos que ya juntamos <1>aquí</1>."
   },
   "navbar": {
     "home": "Inicio",
