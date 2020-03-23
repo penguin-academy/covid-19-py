@@ -80,8 +80,20 @@
     "professionalExposure": {
       "question": "Did you have any direct contact with a confirmed case without protective equipment?"
     },
+    "professionalExposureWhileIll": {
+      "question": "Did this contact take place whilst the person was ill of in the 24h prior to them getting ill?"
+    },
     "familyExposure": {
       "question": "In the last 15 days, did you have any contact with a confirmed case in a close environment (family and/or household members)?"
+    },
+    "familyExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
+    },
+    "confirmedExposure": {
+      "question": "Have you had close contact with a laboratory-confirmed case?"
+    },
+    "confirmedExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
     },
     "submit": "Submit",
     "errorSubmitting": "There was an error. Your answers could not be saved. Please, try again or contact us."
