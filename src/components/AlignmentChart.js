@@ -44,7 +44,6 @@ export default class AlignmentChart extends PureComponent {
         // jsonData is parsed json object received from url
         this.setState({ data: jsonData })
         this.setState({ loaded: true })
-        console.log(jsonData)
       })
       .catch(error => {
         // handle your errors here
@@ -81,10 +80,16 @@ export default class AlignmentChart extends PureComponent {
               />
               <YAxis dataKey="y" type="number" />
               <Tooltip />
-              <Legend layout="vertical" align="right" verticalAlign="top" />
+              <Legend
+                layout="vertical"
+                align="right"
+                verticalAlign="top"
+                wrapperStyle={{ marginRight: '-10px' }}
+              />
               {this.state.data.country_data.map((s, i) => (
                 <Line
                   dataKey="y"
+                  dot={false}
                   data={s.data}
                   name={s.name + ' (' + s.offset + ' detrás de Brasil)'}
                   stroke={this.state.colours[i]}
