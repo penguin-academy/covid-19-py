@@ -19,7 +19,8 @@
     "home": "Inicio",
     "selfReporting": "$t(selfReportingTitle)",
     "trivia": "Trivia",
-    "aboutUs": "Quiénes somos"
+    "aboutUs": "Quiénes somos",
+    "stats": "Estadísticas"
   },
   "footer": {
     "followAndContribute": "Seguinos y contribuye",
@@ -98,6 +99,30 @@
       "question": "$t(form:professionalExposureWhileIll:question)"
     }
   },
+  "person": {
+    "title": "Últimas preguntas",
+    "subTitle": "Por favor, leé lo siguiente con atención:",
+    "paragraph": "<0> Te proporcionamos esta herramienta para ayudar a obtener información sobre tus síntomas.</0><1> Al completar este formulario nos estas ayudando a generar datos. Por favor,llená la siguiente sección con cuidado.</1>",
+    "serious": {
+      "question": "¿Contestaste todas las preguntas con tus síntomas verdaderos?",
+      "options": {
+        "report": "Sí. Esos son mis verdaderos síntomas.",
+        "tryout": "No. Sólo estoy probando la aplicación."
+      }
+    },
+    "location": {
+      "title": "¿En qué barrio vivís?",
+      "subTitle": " Por favor, escribí tu ciudad. Si no la encontrás, seleccioná la opción más cercana.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "phone": {
+      "title": "Número de teléfono",
+      "subTitle": "Por favor, use el número de teléfono de la persona para la que rellenó este formulario.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "submit": "$t(form:submit)",
+    "error": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros."
+  },
   "formSuccess": {
     "alarm": {
       "title": "Busque atención médica inmediatamente.",
@@ -149,5 +174,10 @@
     "placeholder": "Seleccionar...",
     "default": "Seleccione",
     "pleaseChoose": "Por favor, seleccione una opción."
+  },
+  "stats": {
+    "title": "$t(navbar:stats)",
+    "subTitle": "Comparación de crecimiento",
+    "alignDescription": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora."
   }
 }

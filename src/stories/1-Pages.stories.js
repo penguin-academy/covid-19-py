@@ -9,6 +9,7 @@ import SuccessTag from '../layouts/Success'
 import LegalTag from '../layouts/Legal'
 import QuizzTag from '../layouts/Quizz'
 import AboutTag from '../layouts/About'
+import StatsTag from '../layouts/Stats'
 
 export default {
   title: 'Pages',
@@ -105,5 +106,6 @@ export const SuccessPage = () => {
 }
 
 export const Legal = () => <LegalTag />
+export const Stats = () => <StatsTag />
 export const About = () => <AboutTag />
 export const Quizz = () => <QuizzTag />
