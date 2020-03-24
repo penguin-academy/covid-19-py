@@ -76,13 +76,15 @@
       "subtitle": "Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
     },
     "healthProfessional": {
-      "question": "¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
+      "question": "¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?",
+      "subtitle": ""
     },
     "professionalExposure": {
       "question": "¿Estuviste expuesto (sin protección) a un caso confirmado por laboratorio de COVID-19 en el transcurso de tu trabajo? "
     },
     "familyExposure": {
-      "question": "¿Hay alguna persona con tos o fiebre en tu entorno inmediato? "
+      "question": "¿Hay alguna persona con tos o fiebre en tu entorno inmediato? ",
+      "subtitle": ""
     },
     "submit": "Enviar",
     "errorSubmitting": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros.",
@@ -90,7 +92,8 @@
       "question": "¿Este contacto tuvo lugar mientras la persona estaba enferma o en las 24 horas previas a que presente síntomas?"
     },
     "confirmedExposure": {
-      "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?"
+      "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?",
+      "subtitle": ""
     },
     "familyExposureWhileIll": {
       "question": "$t(form:professionalExposureWhileIll:question)"
