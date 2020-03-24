@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import AlignmentChart from '../components/AlignmentChart'
+import PyChart from '../components/PyChart'
 
 const Stats = () => {
   return (
@@ -21,8 +22,12 @@ const Stats = () => {
               </a>
               . Los datos se actualizan cada hora.
             </p>
-            <div id="chart">
+            {/*<div id="chart">
               <AlignmentChart></AlignmentChart>
+            </div>*/}
+            <h2>Another Chart</h2>
+            <div id="chart2">
+              <PyChart></PyChart>
             </div>
           </div>
         </div>
