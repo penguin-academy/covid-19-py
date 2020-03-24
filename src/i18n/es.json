@@ -68,7 +68,7 @@
     },
     "alarmSigns": {
       "question": "¿Tenés alguno de estos signos?",
-      "subtitle": "Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
+      "subtitle": "Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas."
     },
     "riskGroup": {
       "question": "¿Pertenecés a un grupo de riesgo?",
@@ -78,18 +78,24 @@
       "question": "¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
     },
     "professionalExposure": {
-      "question": "En el curso de tu trabajo sin equipo de protección, ¿tuviste contacto directo con uno en el caso confirmado?"
+      "question": "¿Estuviste expuesto (sin protección) a un caso confirmado por laboratorio de COVID-19 en el transcurso de tu trabajo? "
     },
     "familyExposure": {
-      "question": "En los últimos 15 días, ¿tuviste contacto con un algún caso confirmado en su entorno cercano (familia o personas del mismo hogar)?"
+      "question": "¿Hay alguna persona con tos o fiebre en tu entorno inmediato? "
     },
     "submit": "Enviar",
-    "errorSubmitting": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros."
+    "errorSubmitting": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros.",
+    "professionalExposureWhileIll": {
+      "question": "¿Este contacto tuvo lugar mientras la persona estaba enferma o en las 24 horas previas a que presente síntomas?"
+    },
+    "confirmedExposure": {
+      "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?"
+    }
   },
   "formSuccess": {
     "alarm": {
       "title": "Busque atención médica inmediatamente.",
-      "message": "Signos de alarma, llame al 911 inmediatamente y pida ayuda. Si está en condiciones vaya al hospital para atención médica inmediata."
+      "message": "Cómo usted esta presentando uno de los signos de alarma (Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas) el Ministerio de Salud recomienda que vaya al hospital de urgencia. "
     },
     "symptoms": {
       "title": "No es necesario que vayas a un puesto de Salud. El auto-aislamiento es obligatorio en tu caso.",

@@ -68,7 +68,7 @@
     },
     "alarmSigns": {
       "question": "Do you have any of these symptoms?",
-      "subtitle": "Severe breathing difficulties, breathlessness, chest pain, constant fever for more than 72 hours, confusion or drowsiness, intense headache, blurry vision."
+      "subtitle": "Severe breathing difficulties, breathlessness, chest pain, constant fever for more than 72 hours."
     },
     "riskGroup": {
       "question": "Are you in a high-risk group?",
@@ -78,13 +78,13 @@
       "question": "Are you a health professional and have be in contact with patients and/or nursing home residents?"
     },
     "professionalExposure": {
-      "question": "Did you have any direct contact with a confirmed case without protective equipment?"
+      "question": "Have you been exposed (without protection) to a Laboratory-confirmed case of COVID-19 in the course of your professional activity?"
     },
     "professionalExposureWhileIll": {
-      "question": "Did this contact take place whilst the person was ill of in the 24h prior to them getting ill?"
+      "question": "Did this contact take place whilst the person was ill or in the 24h prior to them getting ill?"
     },
     "familyExposure": {
-      "question": "In the last 15 days, did you have any contact with a confirmed case in a close environment (family and/or household members)?"
+      "question": "Is there a person with a cough or fever in your immediate environment?"
     },
     "familyExposureWhileIll": {
       "question": "$t(form:professionalExposureWhileIll:question)"
