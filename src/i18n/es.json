@@ -90,6 +90,12 @@
     },
     "confirmedExposure": {
       "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?"
+    },
+    "familyExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
+    },
+    "confirmedExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
     }
   },
   "formSuccess": {
