@@ -81,12 +81,6 @@ const Legal = () => {
                   src="/img/logos/ucom.png"
                 />
                 <img
-                  alt="una logo"
-                  height={30}
-                  className="ml-3 mr-3 mb-2 mt-2"
-                  src="/img/logos/una.png"
-                />
-                <img
                   alt="product lab logo"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
