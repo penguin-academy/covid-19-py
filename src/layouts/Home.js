@@ -27,14 +27,22 @@ const Home = () => {
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
             <h2>{t('leadTitle')}</h2>
-            <p className="lead">{t('leadSecondary')}</p>
+            <p>{t('leadSecondary')}</p>
+            <ul style={{ color: '#8892a0' }}>
+              <li>{t('listFirst')}</li>
+              <li>
+                <Trans i18nKey="home:listSecond">
+                  Mirá los datos estadísticos que ya juntamos&nbsp;
+                  <Link to="/stats">aquí</Link>.
+                </Trans>
+              </li>
+            </ul>
             <p className="mt-4">
               <CTALink className="btn btn-secondary" to="/report">
                 {t('ctaCheckSymptoms')}
                 <i className="fas fa-arrow-right ml-1"></i>
               </CTALink>
             </p>
-
             <div className="alert alert-danger" role="alert">
               <h4 className="alert-heading">{t('alertTestTitle')}</h4>
               <p>
