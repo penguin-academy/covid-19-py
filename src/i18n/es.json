@@ -35,7 +35,7 @@
     "learnMore": "Aprende más",
     "goodCompanyTitle": "You are in good company",
     "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología para suavizar el impacto máximo de la pandemia COVID-19 en el Sistema de Salud de Paraguay.",
-    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, la Facultad Politécnica UNA, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
+    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
   },
   "formStart": {
     "Antes de empezar": "Antes de empezar",
@@ -95,7 +95,7 @@
   "formSuccess": {
     "alarm": {
       "title": "Busque atención médica inmediatamente.",
-      "message": "Signos de alarma, llame al 911 inmediatamente y pida ayuda. Si está en condiciones vaya al hospital para atención médica inmediata."
+      "message": "Cómo usted esta presentando uno de los signos de alarma (Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas) el Ministerio de Salud recomienda que vaya al hospital de urgencia. "
     },
     "symptoms": {
       "title": "No es necesario que vayas a un puesto de Salud. El auto-aislamiento es obligatorio en tu caso.",
