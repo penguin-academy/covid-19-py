@@ -98,40 +98,7 @@
     "submit": "Submit",
     "errorSubmitting": "There was an error. Your answers could not be saved. Please, try again or contact us."
   },
-  "formSuccess": {
-    "alarm": {
-      "title": "Busque atención médica inmediatamente.",
-      "message": "Signos de alarma, llame al 911 inmediatamente y pida ayuda. Si está en condiciones vaya al hospital para atención médica inmediata."
-    },
-    "symptoms": {
-      "title": "",
-      "message": "¿Fiebre y Dificultades Respiratorias? Usted tiene síntomas y puede ser contagioso. Aislate e informa a tu entorno para que tomen las precauciones necesarias. Por favor llama al 154 para informar que cuentas con estos síntomas."
-    },
-    "exposure": {
-      "title": "",
-      "message": "Estuviste expuesto/a o tuviste contacto con un caso confirmado de COVID19, el protocolo recomendado es que te aisles por 7 a 14 días."
-    },
-    "noSymptoms": {
-      "title": "",
-      "message": "Sin síntomas. En este momento no muestras síntomas de COVID19, sin embargo, existen casos asintomáticos. Lo ideal es que mantengas tus contactos al mínimo y tengas todas las precauciones durante esta etapa de emergencia sanitaria."
-    },
-    "medical": {
-      "title": "",
-      "message": "Una mascarilla quirúrgica (tipo II o IIR) está indicada para el personal médico: Examinar a un paciente con tos o fiebre si el cuidador experimenta síntomas respiratorios o generales como fatiga, dolor muscular o dolores de cabeza. Una mascarilla de ultrafiltración (FFP2 3) sólo se requiere para el personal hospitalario expuesto a actividades de alto riesgo."
-    },
-    "evaluationResult": {
-      "title": "Los resultados de tu evaluación"
-    },
-    "workAdvice": "Consejos para su práctica profesional",
-    "tips": {
-      "title": "Consejos generales a seguir en todo momento",
-      "measures": "Respetar las medidas de higiene. Limitar las visitas a conocidos en el hospital o que residan en residencias de ancianos/cuidados tanto como sea posible. Si no se puede evitar esta visita, póngase en contacto con el personal de enfermería y siga sus recomendaciones. Cuando espere en la parada del bús, manténgase lo más alejado posible de otras personas",
-      "travel": "Reduzca sus viajes de placer. Si es posible, evite viajar durante la hora pico.",
-      "distancing": "Manténgase lo más alejado posible de otras personas en el transporte público y aplique las normas de higiene y las recomendaciones de comportamiento mencionadas anteriormente.",
-      "publicTransportation": "Si tiene síntomas de enfermedades respiratorias (por ejemplo, una tos leve), evite utilizar el transporte público si es posible.",
-      "mask": "Se utilizan mascarillas para proteger a los trabajadores sanitarios que tratan los casos sospechosos, así como a las personas especialmente vulnerables."
-    }
-  },
+  "formSuccess": {},
   "SelectQuestion": {
     "placeholder": "Select...",
     "default": "Select",

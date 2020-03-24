@@ -39,14 +39,12 @@ const Form = ({ filledState = {}, setFormState, form }) => {
       ...filledState
     }
   )
-  console.log(status)
 
   const [errors, setErrors] = useState(createDefaultStates(sequence, false))
 
   const nextQuestion = (q, ...hide) => {
     const defaultState = { show: false, answer: '' }
     const i = sequence.indexOf(q)
-    console.log(i)
     const valuesToReset = createDefaultStates(sequence.slice(i), defaultState)
 
     // if present: hide conditional question

@@ -24,9 +24,9 @@ const filledState = {
   professionalExposure: { show: true, answer: 'yes' },
   professionalExposureWhileIll: { show: true, answer: 'yes' },
   familyExposure: { show: true, answer: 'no' },
-  familyExposureWhileIll: { show: false, answer: '' }
-  // confirmedExposure: { show: true, answer: '' },
-  // confirmedExposureWhileIll: { show: false, answer: '' }
+  familyExposureWhileIll: { show: false, answer: '' },
+  confirmedExposure: { show: true, answer: 'no' },
+  confirmedExposureWhileIll: { show: false, answer: '' }
 }
 
 export const Start = () => <StartTag setFormState={console.log} />
