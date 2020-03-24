@@ -92,32 +92,45 @@
       "message": "Signos de alarma, llame al 911 inmediatamente y pida ayuda. Si está en condiciones vaya al hospital para atención médica inmediata."
     },
     "symptoms": {
-      "title": "",
-      "message": "¿Fiebre y Dificultades Respiratorias? Usted tiene síntomas y puede ser contagioso. Aislate e informa a tu entorno para que tomen las precauciones necesarias. Por favor llama al 154 para informar que cuentas con estos síntomas."
-    },
-    "exposure": {
-      "title": "",
-      "message": "Estuviste expuesto/a o tuviste contacto con un caso confirmado de COVID19, el protocolo recomendado es que te aisles por 7 a 14 días."
+      "title": "No es necesario que vayas a un puesto de Salud. El auto-aislamiento es obligatorio en tu caso.",
+      "message": "<0>Tus síntomas podrían deberse al nuevo coronavirus, ya que el virus está presente actualmente en Paraguay.</0><1>Informá a tus contactos más cercanos (que vivan en el mismo hogar) que es necesaria una medida de autocuarentena de 10 días si estuvieron en contacto contigo mientras estabas enfermo o en las 24 horas anteriores a la aparición de tus síntomas. Deberán llevar un tapabocas y seguir una estricta higiene de manos.</1><2>En tu caso será necesario el auto-aislamiento que puede terminar 48 horas después de que los síntomas se hayan acabado, siempre y cuando hayan pasado al menos 10 días desde la aparición de los síntomas</2>",
+      "risk": "Cómo formás parte de un grupo con riesgo de complicaciones, te recomendamos ponerte en contacto, primero por teléfono, al 154 y reportar tus síntomas.",
+      "noRisk": "Para no sobrecargar el sistema de salud, contactá -primero por teléfono- con tu médico o centro de salud SOLAMENTE si requerís atención médica aguda (es decir, si tenés dificultades respiratorias graves o si tus síntomas empeoran)",
+      "pregnant": "El hecho de estar embarazada probablemente no te pone en un riesgo particular de complicaciones. Sin embargo, como precaución, te recomendamos que te pongas en contacto con tu ginecólogo."
     },
     "noSymptoms": {
-      "title": "",
-      "message": "Sin síntomas. En este momento no muestras síntomas de COVID19, sin embargo, existen casos asintomáticos. Lo ideal es que mantengas tus contactos al mínimo y tengas todas las precauciones durante esta etapa de emergencia sanitaria."
+      "title": "No es necesario que vayas a un puesto de Salud. ",
+      "message": "<0>En este momento no mostrás síntomas de Coronavirus, sin embargo, existen casos en los que no aparecen síntomas.</0><1>Vigilá tu condición. La síntomas por el nuevo coronavirus se manifiesta con fiebre, tos o dificultad para respirar (una nariz que gotea no es suficiente). Si aparecen síntomas, repetí tu evaluación en autoreporte.org.</1><2>Como no tenés ningún síntoma, y para no sobrecargar el sistema sanitario, evitá ponerte en contacto con un médico o centro de salud.</2>",
+      "risk": "Sin embargo, llamá al 154 o a tu médico si aparecen síntomas (tos y fiebre).",
+      "exposure": "<0>Como ha tenido contacto con un caso sospechoso o confirmado, la autocuarentena en su caso es obligatoria. Por favor, permanezca en casa durante 10 días, a partir de la fecha de su último contacto con el enfermo.</0><1>Vigilá tu condición. La síntomas por el nuevo coronavirus se manifiesta con fiebre, tos o dificultad para respirar (una nariz que gotea no es suficiente). Si aparecen síntomas, repetí tu evaluación en autoreporte.org.</1><2>Como no tenés ningún síntoma, y para no sobrecargar el sistema sanitario, evitá ponerte en contacto con un médico o centro de salud.</2><3>En este momento no mostrás síntomas de Coronavirus, sin embargo, existen casos en los que no aparecen síntomas.</3>",
+      "pregnant": {
+        "message": "Al estar embarazada, probablemente no corrsa un riesgo especial de complicaciones. Sin embargo, como precaución, te recomendamos evitar el contacto innecesario:",
+        "list1": "Hacé tus compras fuera de las horas pico o pedile a un familiar, amigo, vecino que te las acerque a tu casa.",
+        "list2": "Evitá todo contacto con personas enfermas."
+      }
+    },
+    "risk": {
+      "message": "Como formás parte de un grupo con riesgo de complicaciones, también te recomendamos evitar el contacto innecesario:",
+      "list1": "Hacé tus compras fuera de las horas pico o pedile a un familiar, amigo, vecino que te las acerque a tu casa.",
+      "list2": "Evitá todo contacto con personas enfermas."
     },
     "medical": {
-      "title": "",
-      "message": "Una mascarilla quirúrgica (tipo II o IIR) está indicada para el personal médico: Examinar a un paciente con tos o fiebre si el cuidador experimenta síntomas respiratorios o generales como fatiga, dolor muscular o dolores de cabeza. Una mascarilla de ultrafiltración (FFP2 3) sólo se requiere para el personal hospitalario expuesto a actividades de alto riesgo."
+      "title": "Consejos para tu práctica profesional:",
+      "message": "Una mascarilla quirúrgica (tipo II o IIR) está indicada para el personal médico cuando:",
+      "list1": "Examina a un paciente con tos o fiebre",
+      "list2": "Si experimentas síntomas respiratorios o generales como fatiga, dolor muscular o dolores de cabeza. Una máscara de ultrafiltración (FFP2 / 3, N95) sólo se requiere para el personal hospitalario expuesto a actividades de alto riesgo"
     },
     "evaluationResult": {
       "title": "Los resultados de tu evaluación"
     },
-    "workAdvice": "Consejos para su práctica profesional",
-    "tips": {
-      "title": "Consejos generales a seguir en todo momento",
-      "measures": "Respetar las medidas de higiene. Limitar las visitas a conocidos en el hospital o que residan en residencias de ancianos/cuidados tanto como sea posible. Si no se puede evitar esta visita, póngase en contacto con el personal de enfermería y siga sus recomendaciones. Cuando espere en la parada del bús, manténgase lo más alejado posible de otras personas",
-      "travel": "Reduzca sus viajes de placer. Si es posible, evite viajar durante la hora pico.",
-      "distancing": "Manténgase lo más alejado posible de otras personas en el transporte público y aplique las normas de higiene y las recomendaciones de comportamiento mencionadas anteriormente.",
-      "publicTransportation": "Si tiene síntomas de enfermedades respiratorias (por ejemplo, una tos leve), evite utilizar el transporte público si es posible.",
-      "mask": "Se utilizan mascarillas para proteger a los trabajadores sanitarios que tratan los casos sospechosos, así como a las personas especialmente vulnerables."
+    "general": {
+      "title": "Consejos generales a seguir en todo momento:",
+      "list1": "Quedate en tu casa. ",
+      "list2": "Respetá las medidas de higiene. ",
+      "list3": "Reducí tu viaje a lo estrictamente necesario. Evitá viajar en hora pico.",
+      "list4": "Mantenete lo más alejado posible de otras personas cuando utilices el transporte público o los espacios públicos.",
+      "list5": "Si tenés síntomas de enfermedad respiratoria (por ejemplo, una tos leve), evitá utilizar el transporte público si es posible.",
+      "list6": "Evitá las reuniones personales y laborales no esenciales y, si es posible, trabajá desde tu casa."
     }
   },
   "SelectQuestion": {

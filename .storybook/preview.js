@@ -8,6 +8,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import firebaseConfig from '../src/constants/firebaseConfig'
 import en from '../src/i18n/en.json'
 import es from '../src/i18n/es.json'
+import gn from '../src/i18n/gn.json'
 
 firebase.initializeApp(firebaseConfig)
 
@@ -19,7 +20,8 @@ i18n
     fallbackNS: 'translation',
     resources: {
       en,
-      es
+      es,
+      gn
     },
     // fallbackLng: 'es',
     debug: process.env.NODE_ENV !== 'production',
@@ -34,6 +36,7 @@ addDecorator(
     languages: {
       es: 'Spanish',
       en: 'English',
+      gn: 'Guaraní',
       none: 'No Language'
     }
   })
