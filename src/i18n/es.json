@@ -34,8 +34,8 @@
     "contributeTitle": "Contribuir a CovPy",
     "contributeText": "CovPy es libre y de código abierto. Puedes encontrar el código en GitHub. Las contribuciones son bienvenidas! También puedes simplemente <1>informar de un error</1> o solicitar una característica allí. report a bug or request a feature there.",
     "learnMore": "Aprende más",
-    "goodCompanyTitle": "You are in good company",
-    "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología para suavizar el impacto máximo de la pandemia COVID-19 en el Sistema de Salud de Paraguay.",
+    "goodCompanyTitle": "Estas en buena compañía",
+    "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología que suavice el impacto máximo de la pandemia COVID-19 en el Sistema de Salud Paraguayo.",
     "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
   },
   "formStart": {
@@ -72,19 +72,19 @@
       "subtitle": "Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas."
     },
     "riskGroup": {
-      "question": "¿Pertenecés a un grupo de riesgo?",
-      "subtitle": "Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
+      "question": "¿Formás parte de un grupo de riesgo (sufre de hipertensión*, diabetes, enfermedades cardiovasculares**, enfermedades respiratorias crónicas***, inmunosupresión por enfermedad/tratamiento o sufre de cáncer)?",
+      "subtitle": "*Sólo si no está bajo control a pesar del tratamiento. \n**Historial de ataque cardíaco, accidente cerebrovascular o insuficiencia cardíaca. \n***Excepto en el caso de asma bronquial controlada, sinusitis crónica o rinitis alérgica, apnea del sueño."
     },
     "healthProfessional": {
-      "question": "¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?",
-      "subtitle": ""
+      "question": "¿Trabajas* en estrecho contacto con pacientes?",
+      "subtitle": "* como un profesional de la salud u otro tipo de profesión"
     },
     "professionalExposure": {
       "question": "¿Estuviste expuesto (sin protección) a un caso confirmado por laboratorio de COVID-19 en el transcurso de tu trabajo? "
     },
     "familyExposure": {
       "question": "¿Hay alguna persona con tos o fiebre en tu entorno inmediato? ",
-      "subtitle": ""
+      "subtitle": "*Relaciones íntimas y personas que viven bajo el mismo techo"
     },
     "submit": "Enviar",
     "errorSubmitting": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros.",
@@ -93,7 +93,7 @@
     },
     "confirmedExposure": {
       "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?",
-      "subtitle": ""
+      "subtitle": "*contacto de menos de 2 metros de distancia durante más de 15 minutos"
     },
     "familyExposureWhileIll": {
       "question": "$t(form:professionalExposureWhileIll:question)"
@@ -114,7 +114,7 @@
       }
     },
     "location": {
-      "title": "¿En qué barrio vivís?",
+      "title": "¿En qué ciudad vivís?",
       "subTitle": " Por favor, escribí tu ciudad. Si no la encontrás, seleccioná la opción más cercana.",
       "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
     },
@@ -129,12 +129,12 @@
   "formSuccess": {
     "alarm": {
       "title": "Busque atención médica inmediatamente.",
-      "message": "Cómo usted esta presentando uno de los signos de alarma (Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas) el Ministerio de Salud recomienda que vaya al hospital de urgencia. "
+      "message": "Cómo estás presentando uno de los signos de alarma (Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas) el Ministerio de Salud recomienda que vayas al hospital de urgencia. "
     },
     "symptoms": {
       "title": "No es necesario que vayas a un puesto de Salud. El auto-aislamiento es obligatorio en tu caso.",
       "message": "<0>Tus síntomas podrían deberse al nuevo coronavirus, ya que el virus está presente actualmente en Paraguay.</0><1>Informá a tus contactos más cercanos (que vivan en el mismo hogar) que es necesaria una medida de autocuarentena de 10 días si estuvieron en contacto contigo mientras estabas enfermo o en las 24 horas anteriores a la aparición de tus síntomas. Deberán llevar un tapabocas y seguir una estricta higiene de manos.</1><2>En tu caso será necesario el auto-aislamiento que puede terminar 48 horas después de que los síntomas se hayan acabado, siempre y cuando hayan pasado al menos 10 días desde la aparición de los síntomas</2>",
-      "risk": "Cómo formás parte de un grupo con riesgo de complicaciones, te recomendamos ponerte en contacto, primero por teléfono, al 154 y reportar tus síntomas.",
+      "risk": "Cómo formás parte de un grupo con riesgo de complicaciones, te recomendamos ponerte en contacto, con tu médico y que luego llames al 154 y reportes tus síntomas.",
       "noRisk": "Para no sobrecargar el sistema de salud, contactá -primero por teléfono- con tu médico o centro de salud SOLAMENTE si requerís atención médica aguda (es decir, si tenés dificultades respiratorias graves o si tus síntomas empeoran)",
       "pregnant": "El hecho de estar embarazada probablemente no te pone en un riesgo particular de complicaciones. Sin embargo, como precaución, te recomendamos que te pongas en contacto con tu ginecólogo."
     },
@@ -144,13 +144,13 @@
       "risk": "Sin embargo, llamá al 154 o a tu médico si aparecen síntomas (tos y fiebre).",
       "exposure": "<0>Como ha tenido contacto con un caso sospechoso o confirmado, la autocuarentena en su caso es obligatoria. Por favor, permanezca en casa durante 10 días, a partir de la fecha de su último contacto con el enfermo.</0><1>Vigilá tu condición. La síntomas por el nuevo coronavirus se manifiesta con fiebre, tos o dificultad para respirar (una nariz que gotea no es suficiente). Si aparecen síntomas, repetí tu evaluación en autoreporte.org.</1><2>Como no tenés ningún síntoma, y para no sobrecargar el sistema sanitario, evitá ponerte en contacto con un médico o centro de salud.</2><3>En este momento no mostrás síntomas de Coronavirus, sin embargo, existen casos en los que no aparecen síntomas.</3>",
       "pregnant": {
-        "message": "Al estar embarazada, probablemente no corrsa un riesgo especial de complicaciones. Sin embargo, como precaución, te recomendamos evitar el contacto innecesario:",
+        "message": "Al estar embarazada, probablemente no corrés un riesgo especial de complicaciones. Sin embargo, como precaución, te recomendamos evitar el contacto innecesario:",
         "list1": "Hacé tus compras fuera de las horas pico o pedile a un familiar, amigo, vecino que te las acerque a tu casa.",
         "list2": "Evitá todo contacto con personas enfermas."
       }
     },
     "risk": {
-      "message": "Como formás parte de un grupo con riesgo de complicaciones, también te recomendamos evitar el contacto innecesario:",
+      "message": "Debido a que presentasriesgo de complicaciones, también te recomendamos evitar el contacto innecesario:",
       "list1": "Hacé tus compras fuera de las horas pico o pedile a un familiar, amigo, vecino que te las acerque a tu casa.",
       "list2": "Evitá todo contacto con personas enfermas."
     },
