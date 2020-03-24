@@ -19,7 +19,8 @@
     "home": "Inicio",
     "selfReporting": "$t(selfReportingTitle)",
     "trivia": "Trivia",
-    "aboutUs": "Quiénes somos"
+    "aboutUs": "Quiénes somos",
+    "stats": "Estadísticas"
   },
   "footer": {
     "followAndContribute": "Seguinos y contribuye",
@@ -35,7 +36,7 @@
     "learnMore": "Aprende más",
     "goodCompanyTitle": "You are in good company",
     "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología para suavizar el impacto máximo de la pandemia COVID-19 en el Sistema de Salud de Paraguay.",
-    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, la Facultad Politécnica UNA, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
+    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
   },
   "formStart": {
     "Antes de empezar": "Antes de empezar",
@@ -90,12 +91,42 @@
     },
     "confirmedExposure": {
       "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?"
+    },
+    "familyExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
+    },
+    "confirmedExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
     }
+  },
+  "person": {
+    "title": "Últimas preguntas",
+    "subTitle": "Por favor, leé lo siguiente con atención:",
+    "paragraph": "<0> Te proporcionamos esta herramienta para ayudar a obtener información sobre tus síntomas.</0><1> Al completar este formulario nos estas ayudando a generar datos. Por favor,llená la siguiente sección con cuidado.</1>",
+    "serious": {
+      "question": "¿Contestaste todas las preguntas con tus síntomas verdaderos?",
+      "options": {
+        "report": "Sí. Esos son mis verdaderos síntomas.",
+        "tryout": "No. Sólo estoy probando la aplicación."
+      }
+    },
+    "location": {
+      "title": "¿En qué barrio vivís?",
+      "subTitle": " Por favor, escribí tu ciudad. Si no la encontrás, seleccioná la opción más cercana.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "phone": {
+      "title": "Número de teléfono",
+      "subTitle": "Por favor, use el número de teléfono de la persona para la que rellenó este formulario.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "submit": "$t(form:submit)",
+    "error": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros."
   },
   "formSuccess": {
     "alarm": {
       "title": "Busque atención médica inmediatamente.",
-      "message": "Signos de alarma, llame al 911 inmediatamente y pida ayuda. Si está en condiciones vaya al hospital para atención médica inmediata."
+      "message": "Cómo usted esta presentando uno de los signos de alarma (Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas) el Ministerio de Salud recomienda que vaya al hospital de urgencia. "
     },
     "symptoms": {
       "title": "No es necesario que vayas a un puesto de Salud. El auto-aislamiento es obligatorio en tu caso.",
@@ -143,5 +174,10 @@
     "placeholder": "Seleccionar...",
     "default": "Seleccione",
     "pleaseChoose": "Por favor, seleccione una opción."
+  },
+  "stats": {
+    "title": "$t(navbar:stats)",
+    "subTitle": "Comparación de crecimiento",
+    "alignDescription": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora."
   }
 }

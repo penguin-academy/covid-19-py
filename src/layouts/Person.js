@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react'
+import { useTranslation, Trans } from 'react-i18next'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
@@ -115,35 +116,33 @@ const Person = ({ setFormState, filledState = {}, form }) => {
     return errorPresent
   }
 
+  const { t } = useTranslation('person')
+
   return (
     <FormBox>
       <form onSubmit={handleSubmit}>
         <div className="row justify-content-center">
           <div className="col-12 col-md-8 text-center">
-            <h1>Últimas preguntas</h1>
-            <p className="lead">Por favor, leé lo siguiente con atención:</p>
-            <p>
-              Te proporcionamos esta herramienta para ayudar a
-              obtener información sobre tus síntomas.
-            </p>
-            <p>
-              Al completar este formulario nos estas ayudando a generar datos. Por favor,llená la siguiente sección con cuidado.
-              
-            </p>
+            <h1>{t('title')}</h1>
+            <p className="lead">{t('subTitle')}</p>
+            <Trans i18nKey="person:paragraph">
+              <p></p>
+              <p></p>
+            </Trans>
             <hr className="mb-5 mt-5" />
           </div>
         </div>
 
         <Question
-          title="¿Contestaste todas las preguntas con tus síntomas verdaderos?"
+          title={t('serious.question')}
           options={[
             {
               value: 'report',
-              label: 'Sí. Esos son mis verdaderos síntomas.'
+              label: t('serious.options.report')
             },
             {
               value: 'tryout',
-              label: 'No. Sólo estoy probando la aplicación.'
+              label: t('serious.options.tryout')
             }
           ]}
           onChange={({ value }) => {
@@ -158,11 +157,8 @@ const Person = ({ setFormState, filledState = {}, form }) => {
             <hr className="mb-5 mt-5" />
             <div className="row justify-content-center align-items-center">
               <div className="col-12 col-lg-6">
-                <p className="lead m-lg-0">¿En qué barrio vivís?</p>
-                <p className="m-lg-0">
-                  Por favor, escribí tu ciudad. Si no la encontrás, seleccioná la
-                  opción más cercana.
-                </p>
+                <p className="lead m-lg-0">{t('location.title')}</p>
+                <p className="m-lg-0">{t('location.subTitle')}</p>
               </div>
               <div className="col-12 col-lg-5">
                 <SelectPlace
@@ -178,7 +174,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
                     className="invalid-feedback"
                     style={{ display: 'block' }}
                   >
-                    Por favor, seleccioná una opción.
+                    {t('location.pleaseChoose')}
                   </div>
                 )}
               </div>
@@ -190,11 +186,8 @@ const Person = ({ setFormState, filledState = {}, form }) => {
             <hr className="mb-5 mt-5" />
             <div className="row justify-content-center align-items-center">
               <div className="col-12 col-lg-6">
-                <p className="lead m-lg-0">Número de teléfono</p>
-                <p className="m-lg-0">
-                  Por favor, use el número de teléfono de la persona para la que
-                  rellenó este formulario.
-                </p>
+                <p className="lead m-lg-0">{t('phone.title')}</p>
+                <p className="m-lg-0">{t('phone.subTitle')}</p>
               </div>
               <div className="col-12 col-lg-5">
                 <input
@@ -212,7 +205,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
                     className="invalid-feedback"
                     style={{ display: 'block' }}
                   >
-                    Debes ingresar un numero de telefono.
+                    {t('phone.pleaseChoose')}
                   </div>
                 )}
               </div>
@@ -226,13 +219,10 @@ const Person = ({ setFormState, filledState = {}, form }) => {
           disabled={disabledButton}
         >
           {disabledButton && <i className="fas fa-spinner fa-pulse mr-3"></i>}
-          Enviar
+          {t('submit')}
         </button>
         {submitError && (
-          <p style={{ color: 'red', padding: 5 }}>
-            Se ha producido un error. Sus entradas no se han guardado. Por
-            favor, inténtelo de nuevo o póngase en contacto con nosotros.
-          </p>
+          <p style={{ color: 'red', padding: 5 }}>{t('error')}</p>
         )}
       </form>
     </FormBox>

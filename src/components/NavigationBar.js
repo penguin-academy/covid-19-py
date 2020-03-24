@@ -89,7 +89,7 @@ const NavigationBar = () => {
                   to="/stats"
                   onClick={() => setShow(false)}
                 >
-                  Estadísticas
+                  {t('stats')}
                 </Link>
               </li>
               <li className="nav-item">
