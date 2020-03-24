@@ -19,7 +19,8 @@
     "home": "Inicio",
     "selfReporting": "$t(selfReportingTitle)",
     "trivia": "Trivia",
-    "aboutUs": "Quiénes somos"
+    "aboutUs": "Quiénes somos",
+    "stats": "Estadísticas"
   },
   "footer": {
     "followAndContribute": "Seguinos y contribuye",
@@ -75,13 +76,15 @@
       "subtitle": "Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
     },
     "healthProfessional": {
-      "question": "¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
+      "question": "¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?",
+      "subtitle": ""
     },
     "professionalExposure": {
       "question": "¿Estuviste expuesto (sin protección) a un caso confirmado por laboratorio de COVID-19 en el transcurso de tu trabajo? "
     },
     "familyExposure": {
-      "question": "¿Hay alguna persona con tos o fiebre en tu entorno inmediato? "
+      "question": "¿Hay alguna persona con tos o fiebre en tu entorno inmediato? ",
+      "subtitle": ""
     },
     "submit": "Enviar",
     "errorSubmitting": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros.",
@@ -89,8 +92,39 @@
       "question": "¿Este contacto tuvo lugar mientras la persona estaba enferma o en las 24 horas previas a que presente síntomas?"
     },
     "confirmedExposure": {
-      "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?"
+      "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?",
+      "subtitle": ""
+    },
+    "familyExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
+    },
+    "confirmedExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
     }
+  },
+  "person": {
+    "title": "Últimas preguntas",
+    "subTitle": "Por favor, leé lo siguiente con atención:",
+    "paragraph": "<0> Te proporcionamos esta herramienta para ayudar a obtener información sobre tus síntomas.</0><1> Al completar este formulario nos estas ayudando a generar datos. Por favor,llená la siguiente sección con cuidado.</1>",
+    "serious": {
+      "question": "¿Contestaste todas las preguntas con tus síntomas verdaderos?",
+      "options": {
+        "report": "Sí. Esos son mis verdaderos síntomas.",
+        "tryout": "No. Sólo estoy probando la aplicación."
+      }
+    },
+    "location": {
+      "title": "¿En qué barrio vivís?",
+      "subTitle": " Por favor, escribí tu ciudad. Si no la encontrás, seleccioná la opción más cercana.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "phone": {
+      "title": "Número de teléfono",
+      "subTitle": "Por favor, use el número de teléfono de la persona para la que rellenó este formulario.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "submit": "$t(form:submit)",
+    "error": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros."
   },
   "formSuccess": {
     "alarm": {
@@ -143,5 +177,10 @@
     "placeholder": "Seleccionar...",
     "default": "Seleccione",
     "pleaseChoose": "Por favor, seleccione una opción."
+  },
+  "stats": {
+    "title": "$t(navbar:stats)",
+    "subTitle": "Comparación de crecimiento",
+    "alignDescription": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora."
   }
 }
