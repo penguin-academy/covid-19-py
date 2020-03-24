@@ -224,6 +224,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
             <hr className="mb-5 mt-5" />
             <Question
               title={t('healthProfessional.question')}
+              subTitle={t('healthProfessional.subtitle')}
               options={[
                 { value: 'yes', label: t('yes') },
                 { value: 'no', label: t('no') }
@@ -295,6 +296,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
             <hr className="mb-5 mt-5" />
             <Question
               title={t('familyExposure.question')}
+              subTitle={t('familyExposure.subtitle')}
               options={[
                 { value: 'yes', label: t('yes') },
                 { value: 'no', label: t('no') }
@@ -337,6 +339,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
             <hr className="mb-5 mt-5" />
             <Question
               title={t('confirmedExposure.question')}
+              subTitle={t('confirmedExposure.subtitle')}
               options={[
                 { value: 'yes', label: t('yes') },
                 { value: 'no', label: t('no') }
