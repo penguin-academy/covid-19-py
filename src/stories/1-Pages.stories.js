@@ -1,6 +1,6 @@
 import React from 'react'
 import StoryRouter from 'storybook-react-router'
-import { withKnobs, select } from '@storybook/addon-knobs'
+import { withKnobs, select, number } from '@storybook/addon-knobs'
 
 import HomeTag from '../layouts/Home'
 import NavigationBarTag from '../components/NavigationBar'
@@ -34,7 +34,7 @@ export const Success = () => {
       show: true
     },
     pregnant: { answer: select('Pregnant', ['yes', 'no'], 'no'), show: true },
-    age: { answer: 1, show: true },
+    age: { answer: number('age'), show: true },
     breath: { answer: select('Breath', ['yes', 'no'], 'no'), show: true },
     fever: { answer: select('Fever', ['yes', 'no'], 'no'), show: true },
     alarmSigns: {

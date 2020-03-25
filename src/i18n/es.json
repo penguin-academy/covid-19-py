@@ -70,7 +70,8 @@
       "subtitle": "Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas."
     },
     "riskGroup": {
-      "question": "¿Formás parte de un grupo de riesgo (sufre de hipertensión*, diabetes, enfermedades cardiovasculares**, enfermedades respiratorias crónicas***, inmunosupresión por enfermedad/tratamiento o sufre de cáncer)?",
+      "question": "¿Tenés alguna de estas enfermedades?",
+      "list": "Hipertensión*, Diabetes, Enfermedades cardiovasculares**, Enfermedades respiratorias crónicas***, iInmunosupresión por enfermedad/tratamiento, Cáncer",
       "subtitle": "*Sólo si no está bajo control a pesar del tratamiento. \n**Historial de ataque cardíaco, accidente cerebrovascular o insuficiencia cardíaca. \n***Excepto en el caso de asma bronquial controlada, sinusitis crónica o rinitis alérgica, apnea del sueño."
     },
     "healthProfessional": {
@@ -131,6 +132,7 @@
     },
     "symptoms": {
       "title": "No es necesario que vayas a un puesto de Salud. El auto-aislamiento es obligatorio en tu caso.",
+      "title60": "Llamá a tu médico. El auto-aislamiento es obligatorio en tu caso.",
       "message": "<0>Tus síntomas podrían deberse al nuevo coronavirus, ya que el virus está presente actualmente en Paraguay.</0><1>Informá a tus contactos más cercanos (que vivan en el mismo hogar) que es necesaria una medida de autocuarentena de 10 días si estuvieron en contacto contigo mientras estabas enfermo o en las 24 horas anteriores a la aparición de tus síntomas. Deberán llevar un tapabocas y seguir una estricta higiene de manos.</1><2>En tu caso será necesario el auto-aislamiento que puede terminar 48 horas después de que los síntomas se hayan acabado, siempre y cuando hayan pasado al menos 10 días desde la aparición de los síntomas</2>",
       "risk": "Cómo formás parte de un grupo con riesgo de complicaciones, te recomendamos ponerte en contacto, con tu médico y que luego llames al 154 y reportes tus síntomas.",
       "noRisk": "Para no sobrecargar el sistema de salud, contactá -primero por teléfono- con tu médico o centro de salud SOLAMENTE si requerís atención médica aguda (es decir, si tenés dificultades respiratorias graves o si tus síntomas empeoran)",
@@ -148,7 +150,7 @@
       }
     },
     "risk": {
-      "message": "Debido a que presentasriesgo de complicaciones, también te recomendamos evitar el contacto innecesario:",
+      "message": "Debido a que presentas riesgo de complicaciones, también te recomendamos evitar el contacto innecesario:",
       "list1": "Hacé tus compras fuera de las horas pico o pedile a un familiar, amigo, vecino que te las acerque a tu casa.",
       "list2": "Evitá todo contacto con personas enfermas."
     },

@@ -206,6 +206,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
             <hr className="mb-5 mt-5" />
             <Question
               title={t('riskGroup.question')}
+              titleList={t('riskGroup.list').split(',')}
               subTitle={t('riskGroup.subtitle')}
               options={[
                 { value: 'yes', label: t('yes') },

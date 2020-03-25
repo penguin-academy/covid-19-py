@@ -2,7 +2,15 @@ import React from 'react'
 import Select from 'react-select'
 import { useTranslation } from 'react-i18next'
 
-const Component = ({ title, subTitle, options, onChange, value, error }) => {
+const Component = ({
+  title,
+  titleList = [],
+  subTitle,
+  options,
+  onChange,
+  value,
+  error
+}) => {
   let selectedValue = options.find(option => option.value === value)
   if (!selectedValue) selectedValue = null
   const { t } = useTranslation('SelectQuestion')
@@ -25,7 +33,19 @@ const Component = ({ title, subTitle, options, onChange, value, error }) => {
     <div className="row justify-content-center align-items-center">
       <div className="col-12 col-lg-6">
         <p className="lead m-lg-0">{title}</p>
-        <p className="m-lg-0">{subTitle}</p>
+        {titleList.length ? (
+          <>
+            <ul>
+              {titleList.map(e => (
+                <li>{e}</li>
+              ))}
+            </ul>
+
+            <small className="m-lg-0">{subTitle}</small>
+          </>
+        ) : (
+          <p className="m-lg-0">{subTitle}</p>
+        )}
       </div>
       <div className="col-12 col-lg-5">
         <Select

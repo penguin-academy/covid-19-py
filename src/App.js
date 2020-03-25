@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Redirect,
-  useHistory
-} from 'react-router-dom'
+import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
 
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
@@ -22,6 +16,8 @@ import About from './layouts/About'
 import Quizz from './layouts/Quizz'
 import Person from './layouts/Person'
 import Stats from './layouts/Stats'
+
+import './App.css'
 
 // import en from './i18n/en.json'
 import es from './i18n/es.json'
