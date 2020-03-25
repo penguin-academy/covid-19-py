@@ -78,7 +78,8 @@ const Success = ({ form }) => {
     msg.result = 'formSuccess:alarm:message'
     msg.bar = 90
   } else if (symptoms) {
-    msg.title = t('symptoms.title')
+    if (form.age.answer > 59) msg.title = t('symptoms.title60')
+    else msg.title = t('symptoms.title')
     msg.result = 'formSuccess:symptoms:message'
     msg.bar = 65
     if (risk) msg.others.push(<strong>{t('symptoms.risk')}</strong>)
@@ -149,11 +150,11 @@ const Success = ({ form }) => {
                   ))}
                 </div>
               </div>
-              <div className="row mt-5">
+              <div className="row">
                 <div className="col-12">
                   {risk && (
                     <>
-                      <p>{t('risk.message')}</p>
+                      <p className="mb-0">{t('risk.message')}</p>
                       <ul>
                         <li>{t('risk.list1')}</li>
                         <li>{t('risk.list2')}</li>
@@ -165,7 +166,7 @@ const Success = ({ form }) => {
                   )}
                   {isYes('pregnant') && !symptoms && (
                     <>
-                      <p>{t('noSymptoms.pregnant.message')}</p>
+                      <p className="mb-0">{t('noSymptoms.pregnant.message')}</p>
                       <ul>
                         <li>{t('noSymptoms.pregnant.list1')}</li>
                         <li>{t('noSymptoms.pregnant.list2')}</li>
@@ -174,12 +175,12 @@ const Success = ({ form }) => {
                   )}
                 </div>
               </div>
-              <div className="row mt-5">
+              <div className="row">
                 <div className="col text-left">
                   {msg.medical && (
                     <>
                       <h2>{t('medical.title')}</h2>
-                      <p>{t('medical.message')}</p>
+                      <p className="mb-0">{t('medical.message')}</p>
 
                       <ul>
                         <li>{t('medical.list1')}</li>
