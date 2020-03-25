@@ -70,7 +70,8 @@
       "subtitle": "Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas."
     },
     "riskGroup": {
-      "question": "¿Formás parte de un grupo de riesgo (sufre de hipertensión*, diabetes, enfermedades cardiovasculares**, enfermedades respiratorias crónicas***, inmunosupresión por enfermedad/tratamiento o sufre de cáncer)?",
+      "question": "¿Formás parte de un grupo de riesgo?",
+      "list": "sufre de hipertensión*, diabetes, enfermedades cardiovasculares**, enfermedades respiratorias crónicas***, inmunosupresión por enfermedad/tratamiento o sufre de cáncer",
       "subtitle": "*Sólo si no está bajo control a pesar del tratamiento. \n**Historial de ataque cardíaco, accidente cerebrovascular o insuficiencia cardíaca. \n***Excepto en el caso de asma bronquial controlada, sinusitis crónica o rinitis alérgica, apnea del sueño."
     },
     "healthProfessional": {
