@@ -5,17 +5,17 @@ import { Link } from 'react-feather'
 const Legal = () => {
   const { t } = useTranslation('about')
   return (
-    <>
-      <header className="fdb-block">
+    <main>
+      <section className="fdb-block">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col col-md-8 text-center">
-              <img alt="logo" className="fdb-icon mb-4" src="/img/care.svg" />
+              <img alt="" className="fdb-icon mb-4" src="/img/care.svg" />
               <p className="lead">{t('leadText')}</p>
             </div>
           </div>
         </div>
-      </header>
+      </section>
       <section
         className="fdb-block"
         style={{
@@ -46,13 +46,13 @@ const Legal = () => {
               </p>
               <p className="h3 mt-4">
                 <a href="https://www.github.com/penguin-academy/covid-19-py">
-                  {t('learnMore')} <i className="fas fa-angle-right" />
+                  {t('learnMore')} <i className="fas fa-angle-right" aria-hidden="true" />
                 </a>
               </p>
             </div>
             <div className="col-10 col-sm-6 m-auto col-md-4 pt-4 pt-md-0">
               <img
-                alt="chat"
+                alt=""
                 className="img-fluid rounded-0"
                 src="/img/chat.svg"
               />
@@ -69,13 +69,13 @@ const Legal = () => {
               <p className="lead">{t('goodCompanyText2')} ❤️.</p>
               <div className="mt-5 justify-content-center">
                 <img
-                  alt="penguin academy logo"
+                  alt="Penguin Academy"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/penguin.png"
                 />
                 <img
-                  alt="ucom logo"
+                  alt="Universidad Comunera"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/ucom.png"
@@ -87,13 +87,13 @@ const Legal = () => {
                   src="/img/logos/productlab.png"
                 />
                 <img
-                  alt="web paraguay logo"
+                  alt="Web Paraguay"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/webparaguay.png"
                 />
                 <img
-                  alt="okimo logo"
+                  alt="Okimo"
                   height={20}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/okimo.png"
@@ -103,7 +103,7 @@ const Legal = () => {
           </div>
         </div>
       </section>
-    </>
+    </main>
   )
 }
 

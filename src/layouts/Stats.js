@@ -6,7 +6,7 @@ import AlignmentChart from '../components/AlignmentChart'
 const Stats = () => {
   const { t } = useTranslation('stats')
   return (
-    <section className="fdb-block">
+    <main className="fdb-block">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-12 col-xl-12">
@@ -29,7 +29,7 @@ const Stats = () => {
           </div>
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 

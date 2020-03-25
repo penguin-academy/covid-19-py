@@ -22,7 +22,7 @@ const Home = () => {
   const { t } = useTranslation('home')
 
   return (
-    <header className="fdb-block">
+    <main className="fdb-block">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
@@ -45,11 +45,11 @@ const Home = () => {
             </p>
           </div>
           <div className="col-12 col-md-8 col-lg-6 m-auto mr-lg-0 ml-lg-auto pt-5 pt-lg-0 d-lg-block d-none">
-            <img alt="Hero Graphic" className="img-fluid" src="/img/hero.png" />
+          <img alt="" className="img-fluid" src="/img/hero.png" />
           </div>
         </div>
       </div>
-    </header>
+    </main>
   )
 }
 

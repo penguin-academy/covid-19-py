@@ -55,7 +55,8 @@ const Component = ({
           value={selectedValue}
           styles={customStyles}
           error={error}
-          placeholder={t('placeholder')}
+          placeholder="Seleccionar ..."
+          aria-label={title}
         />
         {error && (
           <div className="invalid-feedback" style={{ display: 'block' }}>

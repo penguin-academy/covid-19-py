@@ -23,13 +23,14 @@ const NavigationBar = () => {
   const { t } = useTranslation('navbar')
   return (
     <header>
+      <h1 className="sr-only">CovPY Auto Reporte</h1>
       <div className="container">
         <nav className="navbar navbar-expand-lg no-gutters">
           <div className="col-3 text-left">
             <NavLink className="navbar-brand text-primary" to="/">
               <img
                 src="/img/care.svg"
-                alt="Logo CovPY Auto Reporte"
+                alt="CovPY Auto Reporte"
                 style={{ width: 40, paddingRight: 15 }}
               />
               CovPY <TitleHide>{t('selfReportingTitle')}</TitleHide>
