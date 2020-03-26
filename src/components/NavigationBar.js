@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
+import SkipNavigation from './SkipNavigation'
 
 const NavLogoLink = styled(Link)`
   font-size: 1.2rem;
@@ -30,6 +31,7 @@ const NavigationBar = () => {
   return (
     <header>
       <h1 className="sr-only">CovPY Auto Reporte</h1>
+      <SkipNavigation target="#main" />
       <div className="container">
         <nav className="navbar navbar-expand-lg no-gutters">
           <div className="col-3 text-left">

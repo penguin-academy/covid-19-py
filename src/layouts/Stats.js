@@ -6,7 +6,7 @@ import ColoredA from '../components/ColoredA'
 const Stats = () => {
   const { t } = useTranslation('stats')
   return (
-    <main className="fdb-block">
+    <main className="fdb-block" tabIndex="-1">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-12 col-xl-12">

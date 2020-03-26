@@ -10,7 +10,7 @@ color: #6a7889;
 const Legal = () => {
   const { t } = useTranslation('about')
   return (
-    <main>
+    <main tabIndex="-1">
       <section className="fdb-block">
         <div className="container">
           <div className="row justify-content-center">

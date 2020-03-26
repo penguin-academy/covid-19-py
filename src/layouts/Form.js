@@ -89,7 +89,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
 
   return (
     <FormBox>
-      <main>
+      <main tabIndex="-1">
       <form onSubmit={handleSubmit}>
         <>
           <Question

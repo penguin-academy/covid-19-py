@@ -19,7 +19,8 @@
     "selfReporting": "$t(selfReportingTitle)",
     "trivia": "Trivia",
     "aboutUs": "Quiénes somos",
-    "stats": "Estadísticas"
+    "stats": "Estadísticas",
+    "skipNavigation": "Saltar navegación"
   },
   "footer": {
     "followAndContribute": "Seguinos y contribuye",

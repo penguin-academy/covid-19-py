@@ -34,7 +34,7 @@ const Home = () => {
   const { t } = useTranslation('home')
 
   return (
-    <main className="fdb-block">
+    <main className="fdb-block" tabIndex="-1">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">

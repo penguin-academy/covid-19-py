@@ -4,7 +4,7 @@ import * as checkData from '../lottie/check.json'
 import styled from 'styled-components'
 import { useTranslation, Trans } from 'react-i18next'
 
-const Header = styled.header`
+const Main = styled.main`
   padding: 4.5rem 0px;
   @media (max-width: 991px) {
     padding-top: 1rem;
@@ -100,7 +100,7 @@ const Success = ({ form }) => {
 
   return (
     <>
-      <Header className="fdb-block">
+      <Main className="fdb-block" tabIndex="-1">
         <div className="container">
           <Disclaimer>
             <h2>{t('evaluationResult.title')}</h2>
@@ -203,7 +203,7 @@ const Success = ({ form }) => {
             </div>
           </div>
         </div>
-      </Header>
+      </Main>
 
       <section className="fdb-block pt-0">
         <div className="container"></div>

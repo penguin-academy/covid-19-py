@@ -121,6 +121,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
 
   return (
     <FormBox>
+      <main tabIndex="-1">
       <form onSubmit={handleSubmit}>
         <div className="row justify-content-center">
           <div className="col-12 col-md-8 text-center">
@@ -226,6 +227,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
           <p style={{ color: 'red', padding: 5 }}>{t('error')}</p>
         )}
       </form>
+      </main>
     </FormBox>
   )
 }

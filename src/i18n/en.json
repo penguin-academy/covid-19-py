@@ -18,7 +18,8 @@
     "home": "Home",
     "selfReporting": "$t(selfReportingTitle)",
     "trivia": "Trivia",
-    "aboutUs": "About us"
+    "aboutUs": "About us",
+    "skipNavigation": "Skip navigation"
   },
   "footer": {
     "followAndContribute": "Follow us and contribute",

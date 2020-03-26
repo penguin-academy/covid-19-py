@@ -11,7 +11,7 @@ const Start = ({ setFormState, form }) => {
   const { t } = useTranslation('formStart')
   return (
     <FormBox>
-      <main className="row justify-content-center">
+      <main className="row justify-content-center" tabIndex="-1">
         <div className="col-12 col-md-8 text-center">
           <h2 className="h1">{t('Antes de empezar')}</h2>
           <p className="lead">

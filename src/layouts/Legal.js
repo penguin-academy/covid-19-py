@@ -2,7 +2,7 @@ import React from 'react'
 
 const Legal = () => {
   return (
-    <main className="bg-white py-10">
+    <main className="bg-white py-10" tabIndex="-1">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-10 mt-5">
