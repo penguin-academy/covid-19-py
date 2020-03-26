@@ -3,7 +3,8 @@ import { useTranslation, Trans } from 'react-i18next'
 import AlignmentChart from '../components/AlignmentChart'
 import ColoredA from '../components/ColoredA'
 
-const Stats = () => {
+const Stats = ({location}) => {
+  console.log(location)
   const { t } = useTranslation('stats')
   return (
     <main className="fdb-block" tabIndex="-1">
