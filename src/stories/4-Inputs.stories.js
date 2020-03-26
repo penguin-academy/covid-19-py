@@ -9,7 +9,7 @@ export default {
 
 export const Toggle = () => (
   <div style={{ maxWidth: 250, margin: 15 }}>
-    <ToggleTag />
+    <ToggleTag>Symptom</ToggleTag>
   </div>
 )
 

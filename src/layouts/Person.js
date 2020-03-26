@@ -8,7 +8,7 @@ import Question from '../components/SelectQuestion'
 import SelectPlace from '../components/SelectPlace'
 
 const Person = ({ setFormState, filledState = {}, form }) => {
-  const sequence = ['serious', 'location', 'phone']
+  const sequence = ['serious', 'location']
   // takes an array of keys returns an object with keys and defaultStates
   const createDefaultStates = (list, defaultState) =>
     list.reduce((obj, item) => {
@@ -106,10 +106,11 @@ const Person = ({ setFormState, filledState = {}, form }) => {
       errorPresent = true
     } else newErrors.location = false
 
-    if (!(status.phone.answer === '' || status.phone.answer.length > 8)) {
-      newErrors.phone = true
-      errorPresent = true
-    } else newErrors.phone = false
+    // if (!(status.phone.answer === '' || status.phone.answer.length > 8)) {
+    //   newErrors.phone = true
+    //   errorPresent = true
+    // } else
+    newErrors.phone = false
 
     setErrors({ ...errors, newErrors })
 
@@ -164,7 +165,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
                 <SelectPlace
                   onChange={value => {
                     handleCoords('loading or null')
-                    handleQuestion('location', value, 'phone')
+                    handleQuestion('location', value)
                   }}
                   onCoords={handleCoords}
                   value={status.location.answer}
@@ -181,7 +182,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
             </div>
           </>
         )}
-        {status['phone'].show && (
+        {/* {status['phone'].show && (
           <>
             <hr className="mb-5 mt-5" />
             <div className="row justify-content-center align-items-center">
@@ -211,7 +212,7 @@ const Person = ({ setFormState, filledState = {}, form }) => {
               </div>
             </div>
           </>
-        )}
+        )} */}
         <hr className="mb-5 mt-5" />
         <button
           className="btn btn-primary"
