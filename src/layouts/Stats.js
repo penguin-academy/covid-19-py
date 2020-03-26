@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useTranslation, Trans } from 'react-i18next'
-
 import AlignmentChart from '../components/AlignmentChart'
+import ColoredA from '../components/ColoredA'
 
 const Stats = () => {
   const { t } = useTranslation('stats')
@@ -18,9 +18,9 @@ const Stats = () => {
               del país con más infecciones (Brasil) se encuentran los demás
               países de la región. Para detalles de cómo se alinean estas curvas
               se utiliza&nbsp
-              <a href="https://github.com/torresmateo/covid19/blob/master/update_and_process_data.py#L101">
+              <ColoredA href="https://github.com/torresmateo/covid19/blob/master/update_and_process_data.py#L101" rel="noopener noreferrer" alt={t('repo')}>
                 este método
-              </a>
+              </ColoredA>
               . Los datos se actualizan cada hora.
             </Trans>
             <div id="chart">

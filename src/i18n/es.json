@@ -35,7 +35,8 @@
     "learnMore": "Aprende más",
     "goodCompanyTitle": "Estas en buena compañía",
     "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología que suavice el impacto máximo de la pandemia COVID-19 en el Sistema de Salud Paraguayo.",
-    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
+    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos",
+    "repo": "Repositorio en GitHub"
   },
   "formStart": {
     "Antes de empezar": "Antes de empezar",
@@ -182,6 +183,7 @@
   "stats": {
     "title": "$t(navbar:stats)",
     "subTitle": "Comparación de crecimiento",
-    "alignDescription": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora."
+    "alignDescription": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora.",
+    "repo": "Método de alineación de curvas de estimación"
   }
 }
