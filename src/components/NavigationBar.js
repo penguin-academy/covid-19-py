@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
 
-const NavLink = styled(Link)`
+const NavLogoLink = styled(Link)`
   font-size: 1.2rem;
   font-weight: bold;
   color: #bf215b !important;
   &.text-primary:hover {
     color: #9c1b4a !important;
   }
+`
+
+const NavLink = styled(Link)`
+header .navbar-nav &.nav-link {
+  color: #555555;
+}
 `
 
 const TitleHide = styled.span`
@@ -27,14 +33,14 @@ const NavigationBar = () => {
       <div className="container">
         <nav className="navbar navbar-expand-lg no-gutters">
           <div className="col-3 text-left">
-            <NavLink className="navbar-brand text-primary" to="/">
+            <NavLogoLink className="navbar-brand text-primary" to="/">
               <img
                 src="/img/care.svg"
-                alt="CovPY Auto Reporte"
+                alt=""
                 style={{ width: 40, paddingRight: 15 }}
               />
               CovPY <TitleHide>{t('selfReportingTitle')}</TitleHide>
-            </NavLink>
+            </NavLogoLink>
           </div>
           <button
             className="navbar-toggler"
@@ -56,50 +62,50 @@ const NavigationBar = () => {
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link
+                <NavLink
                   className="nav-link"
                   to="/"
                   onClick={() => setShow(false)}
                 >
                   {t('home')}
-                </Link>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <Link
+                <NavLink
                   className="nav-link"
                   to="/report"
                   onClick={() => setShow(false)}
                 >
                   {t('selfReporting')}
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link
+                <NavLink
                   className="nav-link"
                   to="/quizz"
                   onClick={() => setShow(false)}
                 >
                   {t('trivia')}
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link
+                <NavLink
                   className="nav-link"
                   to="/stats"
                   onClick={() => setShow(false)}
                 >
                   {t('stats')}
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link
+                <NavLink
                   className="nav-link"
                   to="/about"
                   onClick={() => setShow(false)}
                 >
                   {t('aboutUs')}
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useTranslation, Trans } from 'react-i18next'
-import { Link } from 'react-feather'
 
 const Legal = () => {
   const { t } = useTranslation('about')
@@ -66,7 +65,7 @@ const Legal = () => {
             <div className="col-lg-8">
               <h2>{t('goodCompanyTitle')}</h2>
               <p className="lead">{t('goodCompanyText1')}</p>
-              <p className="lead">{t('goodCompanyText2')} ❤️.</p>
+              <p className="lead">{t('goodCompanyText2')} <span aria-hidden="true">❤️</span>.</p>
               <div className="mt-5 justify-content-center">
                 <img
                   alt="Penguin Academy"

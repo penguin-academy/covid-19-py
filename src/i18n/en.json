@@ -11,7 +11,8 @@
     "leadSecondary": "Help us to have statistical data of the real situation of the COVID19 in Paraguay by filling this form if you have or had symptoms.",
     "ctaCheckSymptoms": "Check my symptoms",
     "listFirst": "Your personal information is optional, don't worry!",
-    "listSecond": "Look at the statistics we've already gathered <1>here</1>."
+    "listSecond": "Look at the statistics we've already gathered <1>here</1>.",
+    "stats": "Statistics"
   },
   "navbar": {
     "home": "Home",

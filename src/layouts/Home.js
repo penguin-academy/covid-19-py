@@ -18,6 +18,18 @@ const CTALink = styled(Link)`
   border-color: #bf215b;
 `
 
+const Paragraph = styled.p`
+  color: #4F5763;
+`
+
+const ListItem = styled.li`
+  color: #4F5763;
+`
+
+const ColoredLink = styled(Link)`
+  color: #007bc7;
+`
+
 const Home = () => {
   const { t } = useTranslation('home')
 
@@ -27,22 +39,22 @@ const Home = () => {
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
             <h2>{t('leadTitle')}</h2>
-            <p>{t('leadSecondary')}</p>
+            <Paragraph>{t('leadSecondary')}</Paragraph>
             <ul style={{ color: '#8892a0' }}>
-              <li>{t('listFirst')}</li>
-              <li>
+              <ListItem>{t('listFirst')}</ListItem>
+              <ListItem>
                 <Trans i18nKey="home:listSecond">
                   Mirá los datos estadísticos que ya juntamos&nbsp;
-                  <Link to="/stats">aquí</Link>.
+                  <ColoredLink to="/stats" aria-label={t('stats')}>aquí</ColoredLink>.
                 </Trans>
-              </li>
+              </ListItem>
             </ul>
-            <p className="mt-4">
+            <Paragraph className="mt-4">
               <CTALink className="btn btn-secondary" to="/report">
                 {t('ctaCheckSymptoms')}
                 <i className="fas fa-arrow-right ml-1"></i>
               </CTALink>
-            </p>
+            </Paragraph>
           </div>
           <div className="col-12 col-md-8 col-lg-6 m-auto mr-lg-0 ml-lg-auto pt-5 pt-lg-0 d-lg-block d-none">
           <img alt="" className="img-fluid" src="/img/hero.png" />

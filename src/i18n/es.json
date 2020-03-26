@@ -11,7 +11,8 @@
     "leadSecondary": "Ayúdanos a tener datos estadísticos de la situación real del COVID19 en Paraguay llenando este formulario si tenés o tuviste síntomas.",
     "ctaCheckSymptoms": "Revisar mis síntomas",
     "listFirst": "Tu información personal es opcional, ¡no te preocupes!",
-    "listSecond": "Mirá los datos estadísticos que ya juntamos <1>aquí</1>."
+    "listSecond": "Mirá los datos estadísticos que ya juntamos <1>aquí</1>.",
+    "stats": "Datos estadísticos"
   },
   "navbar": {
     "home": "Inicio",

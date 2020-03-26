@@ -1,9 +1,13 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Trans } from 'react-i18next'
+import styled from 'styled-components'
 
 const Footer = () => {
   const { t } = useTranslation('footer')
+  const Paragraph = styled.p`
+    color: #9aa3af;
+  `
   return (
     <footer className="fdb-block footer-large bg-dark">
       <div className="container">
@@ -12,7 +16,7 @@ const Footer = () => {
             <h2 className="h3">
               <strong>{t('followAndContribute')}</strong>
             </h2>
-            <p>{t('shareText')}</p>
+            <Paragraph>{t('shareText')}</Paragraph>
             <p className="lead">
               <a
                 href="https://twitter.com/penguinstribe"
@@ -48,7 +52,7 @@ const Footer = () => {
             <h2 className="h3">
               <strong>{t('aboutUs')}</strong>
             </h2>
-            <p>{t('aboutUsText')}</p>
+            <Paragraph>{t('aboutUsText')}</Paragraph>
             <img
               src="/img/hippa.png"
               alt="Hippa Conform"
