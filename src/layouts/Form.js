@@ -15,7 +15,11 @@ const Form = ({ filledState = {}, setFormState, form }) => {
     'riskGroup',
     'healthProfessional',
     'professionalExposure',
-    'familyExposure'
+    'professionalExposureWhileIll', // NEW
+    'familyExposure',
+    'familyExposureWhileIll', // NEW
+    'confirmedExposure', // NEW
+    'confirmedExposureWhileIll' // NEW
   ]
 
   // takes an array of keys returns an object with keys and defaultStates
@@ -38,13 +42,13 @@ const Form = ({ filledState = {}, setFormState, form }) => {
 
   const [errors, setErrors] = useState(createDefaultStates(sequence, false))
 
-  const nextQuestion = (q, hide) => {
+  const nextQuestion = (q, ...hide) => {
     const defaultState = { show: false, answer: '' }
     const i = sequence.indexOf(q)
     const valuesToReset = createDefaultStates(sequence.slice(i), defaultState)
 
     // if present: hide conditional question
-    if (hide) valuesToReset[hide] = defaultState
+    hide.map(key => (valuesToReset[key] = defaultState))
 
     setStatus({
       ...valuesToReset,
@@ -202,6 +206,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
             <hr className="mb-5 mt-5" />
             <Question
               title={t('riskGroup.question')}
+              titleList={t('riskGroup.list').split(',')}
               subTitle={t('riskGroup.subtitle')}
               options={[
                 { value: 'yes', label: t('yes') },
@@ -220,6 +225,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
             <hr className="mb-5 mt-5" />
             <Question
               title={t('healthProfessional.question')}
+              subTitle={t('healthProfessional.subtitle')}
               options={[
                 { value: 'yes', label: t('yes') },
                 { value: 'no', label: t('no') }
@@ -227,7 +233,12 @@ const Form = ({ filledState = {}, setFormState, form }) => {
               onChange={({ value }) => {
                 handleQuestion('healthProfessional', value, () => {
                   if (value === 'yes') nextQuestion('professionalExposure')
-                  else nextQuestion('familyExposure', 'professionalExposure')
+                  else
+                    nextQuestion(
+                      'familyExposure',
+                      'professionalExposure',
+                      'professionalExposureWhileIll'
+                    )
                 })
               }}
               value={status.healthProfessional.answer}
@@ -245,10 +256,39 @@ const Form = ({ filledState = {}, setFormState, form }) => {
                 { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
-                handleQuestion('professionalExposure', value, 'familyExposure')
+                handleQuestion('professionalExposure', value, () => {
+                  if (value === 'yes')
+                    nextQuestion('professionalExposureWhileIll')
+                  else
+                    nextQuestion(
+                      'familyExposure',
+                      'professionalExposureWhileIll'
+                    )
+                })
               }}
               value={status.professionalExposure.answer}
               error={errors.professionalExposure}
+            />
+          </>
+        )}
+        {status['professionalExposureWhileIll'].show && (
+          <>
+            <hr className="mb-5 mt-5" />
+            <Question
+              title={t('professionalExposureWhileIll.question')}
+              options={[
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
+              ]}
+              onChange={({ value }) => {
+                handleQuestion(
+                  'professionalExposureWhileIll',
+                  value,
+                  'familyExposure'
+                )
+              }}
+              value={status.professionalExposureWhileIll.answer}
+              error={errors.professionalExposureWhileIll}
             />
           </>
         )}
@@ -257,15 +297,82 @@ const Form = ({ filledState = {}, setFormState, form }) => {
             <hr className="mb-5 mt-5" />
             <Question
               title={t('familyExposure.question')}
+              subTitle={t('familyExposure.subtitle')}
               options={[
                 { value: 'yes', label: t('yes') },
                 { value: 'no', label: t('no') }
               ]}
               onChange={({ value }) => {
-                handleQuestion('familyExposure', value)
+                handleQuestion('familyExposure', value, () => {
+                  if (value === 'yes') nextQuestion('familyExposureWhileIll')
+                  else
+                    nextQuestion('confirmedExposure', 'familyExposureWhileIll')
+                })
               }}
               value={status.familyExposure.answer}
               error={errors.familyExposure}
+            />
+          </>
+        )}
+        {status['familyExposureWhileIll'].show && (
+          <>
+            <hr className="mb-5 mt-5" />
+            <Question
+              title={t('familyExposureWhileIll.question')}
+              options={[
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
+              ]}
+              onChange={({ value }) => {
+                handleQuestion(
+                  'familyExposureWhileIll',
+                  value,
+                  'confirmedExposure'
+                )
+              }}
+              value={status.familyExposureWhileIll.answer}
+              error={errors.familyExposureWhileIll}
+            />
+          </>
+        )}
+        {status['confirmedExposure'].show && (
+          <>
+            <hr className="mb-5 mt-5" />
+            <Question
+              title={t('confirmedExposure.question')}
+              subTitle={t('confirmedExposure.subtitle')}
+              options={[
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
+              ]}
+              onChange={({ value }) => {
+                handleQuestion('confirmedExposure', value, () => {
+                  if (value === 'yes') nextQuestion('confirmedExposureWhileIll')
+                  else
+                    setStatus({
+                      confirmedExposureWhileIll: { show: false, answer: '' }
+                    })
+                })
+              }}
+              value={status.confirmedExposure.answer}
+              error={errors.confirmedExposure}
+            />
+          </>
+        )}
+        {status['confirmedExposureWhileIll'].show && (
+          <>
+            <hr className="mb-5 mt-5" />
+            <Question
+              title={t('confirmedExposureWhileIll.question')}
+              options={[
+                { value: 'yes', label: t('yes') },
+                { value: 'no', label: t('no') }
+              ]}
+              onChange={({ value }) => {
+                handleQuestion('confirmedExposureWhileIll', value)
+              }}
+              value={status.confirmedExposureWhileIll.answer}
+              error={errors.confirmedExposureWhileIll}
             />
           </>
         )}

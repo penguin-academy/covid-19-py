@@ -7,17 +7,18 @@
     "warnDisclaimer": "Esta herramienta es utilizada meramente con fines informativos.<br/>No provee una asesoría médica.<br/>No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional."
   },
   "home": {
-    "leadTitle": "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas? Decinos cuáles y te ayudamos",
-    "leadSecondary": "¿Fiebre? ¿Tos Seca? ¿Dificultad para respirar? ¿Otro síntoma? Completá el formulario.",
+    "leadTitle": "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas de COVID19?",
+    "leadSecondary": "Ayúdanos a tener datos estadísticos de la situación real del COVID19 en Paraguay llenando este formulario si tenés o tuviste síntomas.",
     "ctaCheckSymptoms": "Revisar mis síntomas",
-    "alertTestTitle": "Versión de Prueba",
-    "alertTestMessage": "Esta no es la versión oficial de la app. Esta app se encuentra en <1>modo de prueba</1> para ajustar los últimos detalles. Apenas esté lista, todos los colaboradores lo estaremos lanzando por nuestros canales oficiales. ¡Muchas gracias por ayudar a hacerla mejor!"
+    "listFirst": "Tu información personal es opcional, ¡no te preocupes!",
+    "listSecond": "Mirá los datos estadísticos que ya juntamos <1>aquí</1>."
   },
   "navbar": {
     "home": "Inicio",
     "selfReporting": "$t(selfReportingTitle)",
     "trivia": "Trivia",
-    "aboutUs": "Quiénes somos"
+    "aboutUs": "Quiénes somos",
+    "stats": "Estadísticas"
   },
   "footer": {
     "followAndContribute": "Seguinos y contribuye",
@@ -31,9 +32,9 @@
     "contributeTitle": "Contribuir a CovPy",
     "contributeText": "CovPy es libre y de código abierto. Puedes encontrar el código en GitHub. Las contribuciones son bienvenidas! También puedes simplemente <1>informar de un error</1> o solicitar una característica allí. report a bug or request a feature there.",
     "learnMore": "Aprende más",
-    "goodCompanyTitle": "You are in good company",
-    "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología para suavizar el impacto máximo de la pandemia COVID-19 en el Sistema de Salud de Paraguay.",
-    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, la Facultad Politécnica UNA, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
+    "goodCompanyTitle": "Estas en buena compañía",
+    "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología que suavice el impacto máximo de la pandemia COVID-19 en el Sistema de Salud Paraguayo.",
+    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
   },
   "formStart": {
     "Antes de empezar": "Antes de empezar",
@@ -66,61 +67,120 @@
     },
     "alarmSigns": {
       "question": "¿Tenés alguno de estos signos?",
-      "subtitle": "Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas, confusión o somnolencia, dolor de cabeza intenso, visión borrosa."
+      "subtitle": "Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas."
     },
     "riskGroup": {
-      "question": "¿Pertenecés a un grupo de riesgo?",
-      "subtitle": "Mayores de 65 años, diabetes, hipertensión, obesidad mórbida, cáncer, diálisis, asma, problemas pulmonares crónicos, problemas del corazón, uso prolongado de corticoides."
+      "question": "¿Tenés alguna de estas enfermedades?",
+      "list": "Hipertensión*, Diabetes, Enfermedades cardiovasculares**, Enfermedades respiratorias crónicas***, iInmunosupresión por enfermedad/tratamiento, Cáncer",
+      "subtitle": "*Sólo si no está bajo control a pesar del tratamiento. \n**Historial de ataque cardíaco, accidente cerebrovascular o insuficiencia cardíaca. \n***Excepto en el caso de asma bronquial controlada, sinusitis crónica o rinitis alérgica, apnea del sueño."
     },
     "healthProfessional": {
-      "question": "¿Sos un profesional de la salud y tenés contacto con pacientes o residentes de asilos?"
+      "question": "¿Trabajas* en estrecho contacto con pacientes?",
+      "subtitle": "* como un profesional de la salud u otro tipo de profesión"
     },
     "professionalExposure": {
-      "question": "En el curso de tu trabajo sin equipo de protección, ¿tuviste contacto directo con uno en el caso confirmado?"
+      "question": "¿Estuviste expuesto (sin protección) a un caso confirmado por laboratorio de COVID-19 en el transcurso de tu trabajo? "
     },
     "familyExposure": {
-      "question": "En los últimos 15 días, ¿tuviste contacto con un algún caso confirmado en su entorno cercano (familia o personas del mismo hogar)?"
+      "question": "¿Hay alguna persona con tos o fiebre en tu entorno inmediato? ",
+      "subtitle": "*Relaciones íntimas y personas que viven bajo el mismo techo"
     },
     "submit": "Enviar",
-    "errorSubmitting": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros."
+    "errorSubmitting": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros.",
+    "professionalExposureWhileIll": {
+      "question": "¿Este contacto tuvo lugar mientras la persona estaba enferma o en las 24 horas previas a que presente síntomas?"
+    },
+    "confirmedExposure": {
+      "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?",
+      "subtitle": "*contacto de menos de 2 metros de distancia durante más de 15 minutos"
+    },
+    "familyExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
+    },
+    "confirmedExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
+    }
+  },
+  "person": {
+    "title": "Últimas preguntas",
+    "subTitle": "Por favor, leé lo siguiente con atención:",
+    "paragraph": "<0> Te proporcionamos esta herramienta para ayudar a obtener información sobre tus síntomas.</0><1> Al completar este formulario nos estas ayudando a generar datos. Por favor,llená la siguiente sección con cuidado.</1>",
+    "serious": {
+      "question": "¿Contestaste todas las preguntas con tus síntomas verdaderos?",
+      "options": {
+        "report": "Sí. Esos son mis verdaderos síntomas.",
+        "tryout": "No. Sólo estoy probando la aplicación."
+      }
+    },
+    "location": {
+      "title": "¿En qué ciudad vivís?",
+      "subTitle": " Por favor, escribí tu ciudad. Si no la encontrás, seleccioná la opción más cercana.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "phone": {
+      "title": "Número de teléfono",
+      "subTitle": "Por favor, use el número de teléfono de la persona para la que rellenó este formulario.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "submit": "$t(form:submit)",
+    "error": "Se ha producido un error. Sus entradas no se han guardado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros."
   },
   "formSuccess": {
     "alarm": {
       "title": "Busque atención médica inmediatamente.",
-      "message": "Signos de alarma, llame al 911 inmediatamente y pida ayuda. Si está en condiciones vaya al hospital para atención médica inmediata."
+      "message": "Cómo estás presentando uno de los signos de alarma (Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas) el Ministerio de Salud recomienda que vayas al hospital de urgencia. "
     },
     "symptoms": {
-      "title": "",
-      "message": "¿Fiebre y Dificultades Respiratorias? Usted tiene síntomas y puede ser contagioso. Aislate e informa a tu entorno para que tomen las precauciones necesarias. Por favor llama al 154 para informar que cuentas con estos síntomas."
-    },
-    "exposure": {
-      "title": "",
-      "message": "Estuviste expuesto/a o tuviste contacto con un caso confirmado de COVID19, el protocolo recomendado es que te aisles por 7 a 14 días."
+      "title": "No es necesario que vayas a un puesto de Salud. El auto-aislamiento es obligatorio en tu caso.",
+      "title60": "Llamá a tu médico. El auto-aislamiento es obligatorio en tu caso.",
+      "message": "<0>Tus síntomas podrían deberse al nuevo coronavirus, ya que el virus está presente actualmente en Paraguay.</0><1>Informá a tus contactos más cercanos (que vivan en el mismo hogar) que es necesaria una medida de autocuarentena de 10 días si estuvieron en contacto contigo mientras estabas enfermo o en las 24 horas anteriores a la aparición de tus síntomas. Deberán llevar un tapabocas y seguir una estricta higiene de manos.</1><2>En tu caso será necesario el auto-aislamiento que puede terminar 48 horas después de que los síntomas se hayan acabado, siempre y cuando hayan pasado al menos 10 días desde la aparición de los síntomas</2>",
+      "risk": "Cómo formás parte de un grupo con riesgo de complicaciones, te recomendamos ponerte en contacto, con tu médico y que luego llames al 154 y reportes tus síntomas.",
+      "noRisk": "Para no sobrecargar el sistema de salud, contactá -primero por teléfono- con tu médico o centro de salud SOLAMENTE si requerís atención médica aguda (es decir, si tenés dificultades respiratorias graves o si tus síntomas empeoran)",
+      "pregnant": "El hecho de estar embarazada probablemente no te pone en un riesgo particular de complicaciones. Sin embargo, como precaución, te recomendamos que te pongas en contacto con tu ginecólogo."
     },
     "noSymptoms": {
-      "title": "",
-      "message": "Sin síntomas. En este momento no muestras síntomas de COVID19, sin embargo, existen casos asintomáticos. Lo ideal es que mantengas tus contactos al mínimo y tengas todas las precauciones durante esta etapa de emergencia sanitaria."
+      "title": "No es necesario que vayas a un puesto de Salud. ",
+      "message": "<0>En este momento no mostrás síntomas de Coronavirus, sin embargo, existen casos en los que no aparecen síntomas.</0><1>Vigilá tu condición. La síntomas por el nuevo coronavirus se manifiesta con fiebre, tos o dificultad para respirar (una nariz que gotea no es suficiente). Si aparecen síntomas, repetí tu evaluación en autoreporte.org.</1><2>Como no tenés ningún síntoma, y para no sobrecargar el sistema sanitario, evitá ponerte en contacto con un médico o centro de salud.</2>",
+      "risk": "Sin embargo, llamá al 154 o a tu médico si aparecen síntomas (tos y fiebre).",
+      "exposure": "<0>Como ha tenido contacto con un caso sospechoso o confirmado, la autocuarentena en su caso es obligatoria. Por favor, permanezca en casa durante 10 días, a partir de la fecha de su último contacto con el enfermo.</0><1>Vigilá tu condición. La síntomas por el nuevo coronavirus se manifiesta con fiebre, tos o dificultad para respirar (una nariz que gotea no es suficiente). Si aparecen síntomas, repetí tu evaluación en autoreporte.org.</1><2>Como no tenés ningún síntoma, y para no sobrecargar el sistema sanitario, evitá ponerte en contacto con un médico o centro de salud.</2><3>En este momento no mostrás síntomas de Coronavirus, sin embargo, existen casos en los que no aparecen síntomas.</3>",
+      "pregnant": {
+        "message": "Al estar embarazada, probablemente no corrés un riesgo especial de complicaciones. Sin embargo, como precaución, te recomendamos evitar el contacto innecesario:",
+        "list1": "Hacé tus compras fuera de las horas pico o pedile a un familiar, amigo, vecino que te las acerque a tu casa.",
+        "list2": "Evitá todo contacto con personas enfermas."
+      }
+    },
+    "risk": {
+      "message": "Debido a que presentas riesgo de complicaciones, también te recomendamos evitar el contacto innecesario:",
+      "list1": "Hacé tus compras fuera de las horas pico o pedile a un familiar, amigo, vecino que te las acerque a tu casa.",
+      "list2": "Evitá todo contacto con personas enfermas."
     },
     "medical": {
-      "title": "",
-      "message": "Una mascarilla quirúrgica (tipo II o IIR) está indicada para el personal médico: Examinar a un paciente con tos o fiebre si el cuidador experimenta síntomas respiratorios o generales como fatiga, dolor muscular o dolores de cabeza. Una mascarilla de ultrafiltración (FFP2 3) sólo se requiere para el personal hospitalario expuesto a actividades de alto riesgo."
+      "title": "Consejos para tu práctica profesional:",
+      "message": "Una mascarilla quirúrgica (tipo II o IIR) está indicada para el personal médico cuando:",
+      "list1": "Examina a un paciente con tos o fiebre",
+      "list2": "Si experimentas síntomas respiratorios o generales como fatiga, dolor muscular o dolores de cabeza. Una máscara de ultrafiltración (FFP2 / 3, N95) sólo se requiere para el personal hospitalario expuesto a actividades de alto riesgo"
     },
     "evaluationResult": {
       "title": "Los resultados de tu evaluación"
     },
-    "workAdvice": "Consejos para su práctica profesional",
-    "tips": {
-      "title": "Consejos generales a seguir en todo momento",
-      "measures": "Respetar las medidas de higiene. Limitar las visitas a conocidos en el hospital o que residan en residencias de ancianos/cuidados tanto como sea posible. Si no se puede evitar esta visita, póngase en contacto con el personal de enfermería y siga sus recomendaciones. Cuando espere en la parada del bús, manténgase lo más alejado posible de otras personas",
-      "travel": "Reduzca sus viajes de placer. Si es posible, evite viajar durante la hora pico.",
-      "distancing": "Manténgase lo más alejado posible de otras personas en el transporte público y aplique las normas de higiene y las recomendaciones de comportamiento mencionadas anteriormente.",
-      "publicTransportation": "Si tiene síntomas de enfermedades respiratorias (por ejemplo, una tos leve), evite utilizar el transporte público si es posible.",
-      "mask": "Se utilizan mascarillas para proteger a los trabajadores sanitarios que tratan los casos sospechosos, así como a las personas especialmente vulnerables."
+    "general": {
+      "title": "Consejos generales a seguir en todo momento:",
+      "list1": "Quedate en tu casa. ",
+      "list2": "Respetá las medidas de higiene. ",
+      "list3": "Reducí tu viaje a lo estrictamente necesario. Evitá viajar en hora pico.",
+      "list4": "Mantenete lo más alejado posible de otras personas cuando utilices el transporte público o los espacios públicos.",
+      "list5": "Si tenés síntomas de enfermedad respiratoria (por ejemplo, una tos leve), evitá utilizar el transporte público si es posible.",
+      "list6": "Evitá las reuniones personales y laborales no esenciales y, si es posible, trabajá desde tu casa."
     }
   },
   "SelectQuestion": {
     "placeholder": "Seleccionar...",
     "default": "Seleccione",
     "pleaseChoose": "Por favor, seleccione una opción."
+  },
+  "stats": {
+    "title": "$t(navbar:stats)",
+    "subTitle": "Comparación de crecimiento",
+    "alignDescription": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora."
   }
 }

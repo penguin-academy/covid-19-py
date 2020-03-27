@@ -40,12 +40,10 @@ const Success = ({ form }) => {
   }
 
   //
-  // THE ANSWER IS CALCULATED HERE
-  //
-  let msg = {}
-
-  //
-  // Protect the success route if form is empty
+  // Calculate the different states
+  // 1. symptoms
+  // 2. risk
+  // 4. exposure (contact)
   //
 
   const isYes = key => {
@@ -56,28 +54,49 @@ const Success = ({ form }) => {
     }
   }
 
-  let exposure = false
-  if (isYes('professionalExposure') || isYes('familyExposure')) exposure = true
-
   let symptoms = false
-  if (isYes('breath') && isYes('fever')) symptoms = true
+  if (isYes('breath') || isYes('fever')) symptoms = true
+
+  let risk = false
+  if (isYes('riskGroup') || form.age.answer > 59) risk = true
+
+  let exposure = false
+  if (
+    isYes('professionalExposureWhileIll') ||
+    isYes('familyExposureWhileIll') ||
+    isYes('confirmedExposureWhileIll')
+  )
+    exposure = true
+
+  //
+  // THE ANSWER IS CALCULATED HERE
+  //
+  let msg = { others: [] }
 
   if (isYes('alarmSigns')) {
-    msg.result = text.alarm
-    msg.title = text.alarmTitle
+    msg.title = t('alarm.title')
+    msg.result = 'formSuccess:alarm:message'
     msg.bar = 90
   } else if (symptoms) {
-    msg.result = text.symptoms
-    msg.bar = 60
-  } else if (exposure) {
-    msg.result = text.exposure
-    msg.bar = 40
+    if (form.age.answer > 59) msg.title = t('symptoms.title60')
+    else msg.title = t('symptoms.title')
+    msg.result = 'formSuccess:symptoms:message'
+    msg.bar = 65
+    if (risk) msg.others.push(<strong>{t('symptoms.risk')}</strong>)
+    else msg.others.push(t('symptoms.noRisk'))
   } else {
-    msg.result = text.noSymptoms
+    msg.title = t('noSymptoms.title')
+    if (exposure) {
+      msg.result = 'formSuccess:noSymptoms:exposure'
+    } else {
+      msg.result = 'formSuccess:noSymptoms:message'
+    }
     msg.bar = 30
+    if (risk) msg.others.push(<strong>{t('noSymptoms.risk')}</strong>)
   }
 
-  if (isYes('healthProfessional')) msg.medical = text.medical
+  if (isYes('healthProfessional')) msg.medical = true
+  if (risk) msg.risk = true
 
   return (
     <>
@@ -89,7 +108,7 @@ const Success = ({ form }) => {
               <Trans i18nKey="warnDisclaimer" />
             </p>
           </Disclaimer>
-          <div className="row text-left align-items-center">
+          <div className="row text-left">
             <div className="col-10 col-sm-6 m-auto m-lg-0 col-lg-2">
               <Lottie
                 width={'15rem'}
@@ -104,34 +123,82 @@ const Success = ({ form }) => {
             </div>
             <div className="col-12 col-lg-8 offset-lg-1">
               <div className="row">
-                <div className="col-12 col-sm-8 offset-sm-2">
+                <div className="col-12">
                   <h2>
                     <strong>{msg.title}</strong>
                   </h2>
                   <Justify>
-                    <div>
+                    <div className="pb-3">
                       <Progress
                         value={msg.bar}
                         style={msg.bar > 30 ? 'danger' : 'warning'}
                       />
                     </div>
-                    <p className="lead">{msg.result}</p>
+                    <div>
+                      <Trans i18nKey={msg.result}>
+                        <p className="lead"></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                      </Trans>
+                    </div>
+                    {/* <p className="lead">{msg.result}</p> */}
                   </Justify>
+
+                  {msg.others.map(m => (
+                    <p>{m}</p>
+                  ))}
                 </div>
-                {/* <div className="col-12 col-sm-6 pt-3 pt-sm-0">
-                  <h3>
-                    <strong>
-                      Como usted es parte de un grupo con riesgo de
-                      complicaciones
-                    </strong>
-                  </h3>
-                  <Progress value={60} style="danger" />
-                  <p className="lead">
-                    Le recomendamos que se ponga en contacto, primero por
-                    teléfono, con su médico o un centro de salud y considere el
-                    auto-aislamiento.
-                  </p>
-                </div> */}
+              </div>
+              <div className="row">
+                <div className="col-12">
+                  {risk && (
+                    <>
+                      <p className="mb-0">{t('risk.message')}</p>
+                      <ul>
+                        <li>{t('risk.list1')}</li>
+                        <li>{t('risk.list2')}</li>
+                      </ul>
+                    </>
+                  )}
+                  {isYes('pregnant') && symptoms && (
+                    <p>{t('symptoms.pregnant')}</p>
+                  )}
+                  {isYes('pregnant') && !symptoms && (
+                    <>
+                      <p className="mb-0">{t('noSymptoms.pregnant.message')}</p>
+                      <ul>
+                        <li>{t('noSymptoms.pregnant.list1')}</li>
+                        <li>{t('noSymptoms.pregnant.list2')}</li>
+                      </ul>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div className="row">
+                <div className="col text-left">
+                  {msg.medical && (
+                    <>
+                      <h2>{t('medical.title')}</h2>
+                      <p className="mb-0">{t('medical.message')}</p>
+
+                      <ul>
+                        <li>{t('medical.list1')}</li>
+                        <li>{t('medical.list2')}</li>
+                      </ul>
+                      <p>{msg.medical}</p>
+                    </>
+                  )}
+                  <h2>{t('general.title')}</h2>
+                  <ul>
+                    <li>{t('general.list1')}</li>
+                    <li>{t('general.list2')}</li>
+                    <li>{t('general.list3')}</li>
+                    <li>{t('general.list4')}</li>
+                    <li>{t('general.list5')}</li>
+                    <li>{t('general.list6')}</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -139,26 +206,7 @@ const Success = ({ form }) => {
       </Header>
 
       <section className="fdb-block pt-0">
-        <div className="container">
-          <div className="row">
-            <div className="col text-left">
-              {msg.medical && (
-                <>
-                  <h2>{t('workAdvice')}:</h2>
-                  <p>{msg.medical}</p>
-                </>
-              )}
-              <h2>{t('tips.title')}</h2>
-              <p>{t('tips.measures')}</p>
-              <ul>
-                <li>{t('tips.travel')}</li>
-                <li>{t('tips.distancing')}</li>
-                <li>{t('tips.publicTransportation')}</li>
-                <li>{t('tips.mask')}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div className="container"></div>
       </section>
     </>
   )

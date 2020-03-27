@@ -1,6 +1,6 @@
 import React from 'react'
 import StoryRouter from 'storybook-react-router'
-import { withKnobs, select } from '@storybook/addon-knobs'
+import { withKnobs, select, number } from '@storybook/addon-knobs'
 
 import HomeTag from '../layouts/Home'
 import NavigationBarTag from '../components/NavigationBar'
@@ -9,6 +9,7 @@ import SuccessTag from '../layouts/Success'
 import LegalTag from '../layouts/Legal'
 import QuizzTag from '../layouts/Quizz'
 import AboutTag from '../layouts/About'
+import StatsTag from '../layouts/Stats'
 
 export default {
   title: 'Pages',
@@ -27,13 +28,13 @@ export const Home_Page = () => (
 )
 export const Success = () => {
   const defaultValue = {
-    generalHealth: { show: true, answer: 'good' },
+    generalHealth: 'good',
     gender: {
       answer: select('Gender', ['male', 'female'], 'male'),
       show: true
     },
     pregnant: { answer: select('Pregnant', ['yes', 'no'], 'no'), show: true },
-    age: { answer: 1, show: true },
+    age: { answer: number('age'), show: true },
     breath: { answer: select('Breath', ['yes', 'no'], 'no'), show: true },
     fever: { answer: select('Fever', ['yes', 'no'], 'no'), show: true },
     alarmSigns: {
@@ -52,9 +53,25 @@ export const Success = () => {
       answer: select('Prof Exposure', ['yes', 'no'], 'no'),
       show: true
     },
+    professionalExposureWhileIll: {
+      show: true,
+      answer: select('Prof Exposure While Ill', ['yes', 'no'], 'no')
+    },
     familyExposure: {
       answer: select('Fam Exposure', ['yes', 'no'], 'no'),
       show: true
+    },
+    familyExposureWhileIll: {
+      show: false,
+      answer: select('Fam Exposure While Ill', ['yes', 'no'], 'no')
+    },
+    confirmedExposure: {
+      show: true,
+      answer: select('Confirmed Exposure', ['yes', 'no'], 'no')
+    },
+    confirmedExposureWhileIll: {
+      show: false,
+      answer: select('Confirmed Exposure While Ill', ['yes', 'no'], 'no')
     }
   }
   return <SuccessTag form={defaultValue} />
@@ -62,17 +79,21 @@ export const Success = () => {
 
 export const SuccessPage = () => {
   const defaultValue = {
-    generalHealth: { show: true, answer: 'good' },
-    gender: { answer: 'female', show: true },
-    pregnant: { answer: 'yes', show: true },
-    age: { answer: 1, show: true },
-    breath: { answer: 'yes', show: true },
-    fever: { answer: 'yes', show: true },
-    alarmSigns: { answer: 'no', show: true },
-    riskGroup: { answer: 'yes', show: true },
-    healthProfessional: { answer: 'yes', show: true },
-    professionalExposure: { answer: 'yes', show: true },
-    familyExposure: { answer: 'yes', show: true }
+    generalHealth: 'good',
+    gender: { show: true, answer: 'male' },
+    pregnant: { show: false, answer: '' },
+    age: { show: true, answer: 0 },
+    breath: { show: true, answer: 'no' },
+    fever: { show: true, answer: 'no' },
+    alarmSigns: { show: false, answer: '' },
+    riskGroup: { show: true, answer: 'no' },
+    healthProfessional: { show: true, answer: 'yes' },
+    professionalExposure: { show: true, answer: 'yes' },
+    professionalExposureWhileIll: { show: true, answer: 'yes' },
+    familyExposure: { show: true, answer: 'no' },
+    familyExposureWhileIll: { show: false, answer: '' },
+    confirmedExposure: { show: true, answer: 'no' },
+    confirmedExposureWhileIll: { show: false, answer: '' }
   }
 
   return (
@@ -85,5 +106,6 @@ export const SuccessPage = () => {
 }
 
 export const Legal = () => <LegalTag />
+export const Stats = () => <StatsTag />
 export const About = () => <AboutTag />
 export const Quizz = () => <QuizzTag />

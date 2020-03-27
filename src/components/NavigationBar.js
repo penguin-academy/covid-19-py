@@ -33,7 +33,6 @@ const NavigationBar = () => {
                 style={{ width: 40, paddingRight: 15 }}
               />
               CovPY <TitleHide>{t('selfReportingTitle')}</TitleHide>
-              <span className="badge badge-secondary ml-3">{t('beta')}</span>
             </NavLink>
           </div>
           <button
@@ -89,7 +88,7 @@ const NavigationBar = () => {
                   to="/stats"
                   onClick={() => setShow(false)}
                 >
-                  Estadísticas
+                  {t('stats')}
                 </Link>
               </li>
               <li className="nav-item">

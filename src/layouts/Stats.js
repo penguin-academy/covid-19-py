@@ -1,29 +1,31 @@
 import React, { Component } from 'react'
+import { useTranslation, Trans } from 'react-i18next'
 
 import AlignmentChart from '../components/AlignmentChart'
 import PyChart from '../components/PyChart'
 
 const Stats = () => {
+  const { t } = useTranslation('stats')
   return (
     <section className="fdb-block">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-12 col-xl-12">
-            <h1>Estadísticas</h1>
 
-            {/*<h2>Comparación de crecimiento</h2>
-            <p>
+            <h1>{t('title')}</h1>
+            {/*<h2>{t('subTitle')}</h2>
+            <Trans i18nKey="stats:alignDescription">
               El siguiente gráfico muestra una estimación de cuántos días atrȧs
               del país con más infecciones (Brasil) se encuentran los demás
               países de la región. Para detalles de cómo se alinean estas curvas
-              se utiliza{' '}
+              se utiliza&nbsp
               <a href="https://github.com/torresmateo/covid19/blob/master/update_and_process_data.py#L101">
                 este método
               </a>
               . Los datos se actualizan cada hora.
-            </p>
+            </Trans>
             <div id="chart">
-              <AlignmentChart></AlignmentChart>
+              <AlignmentChart />
             </div>*/}
             <h2>Modelo Predictivo</h2>
             <p>
@@ -34,7 +36,7 @@ const Stats = () => {
               </a>
             </p>
             <div id="chart2">
-              <PyChart></PyChart>
+              <PyChart/>
             </div>
           </div>
         </div>

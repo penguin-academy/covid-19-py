@@ -15,14 +15,18 @@ const filledState = {
   generalHealth: 'good',
   gender: { show: true, answer: 'male' },
   pregnant: { show: false, answer: '' },
-  age: { show: true, answer: 1 },
-  breath: { show: true, answer: 'yes' },
-  fever: { show: true, answer: 'yes' },
-  alarmSigns: { show: true, answer: 'yes' },
-  riskGroup: { show: true, answer: 'yes' },
+  age: { show: true, answer: 0 },
+  breath: { show: true, answer: 'no' },
+  fever: { show: true, answer: 'no' },
+  alarmSigns: { show: false, answer: '' },
+  riskGroup: { show: true, answer: 'no' },
   healthProfessional: { show: true, answer: 'yes' },
-  professionalExposure: { show: true, answer: 'no' },
-  familyExposure: { show: true, answer: 'no' }
+  professionalExposure: { show: true, answer: 'yes' },
+  professionalExposureWhileIll: { show: true, answer: 'yes' },
+  familyExposure: { show: true, answer: 'no' },
+  familyExposureWhileIll: { show: false, answer: '' },
+  confirmedExposure: { show: true, answer: 'no' },
+  confirmedExposureWhileIll: { show: false, answer: '' }
 }
 
 export const Start = () => <StartTag setFormState={console.log} />
