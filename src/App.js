@@ -25,6 +25,7 @@ import './App.css'
 
 // import en from './i18n/en.json'
 import es from './i18n/es.json'
+import gn from './i18n/gn.json'
 
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
@@ -39,7 +40,8 @@ i18n
     fallbackNS: 'translation',
     resources: {
       // en,
-      es
+      es,
+      gn
     },
     fallbackLng: 'es',
     debug: process.env.NODE_ENV !== 'production',
