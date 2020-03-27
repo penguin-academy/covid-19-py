@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Legal = ({location}) => {
-  console.log(location)
+const Legal = () => {
   return (
     <main className="bg-white py-10" tabIndex="-1">
       <div className="container">
