@@ -55,7 +55,7 @@ const Component = ({
           value={selectedValue}
           styles={customStyles}
           error={error}
-          placeholder="Seleccionar ..."
+          placeholder={t('placeholder')}
           aria-label={title}
         />
         {error && (
