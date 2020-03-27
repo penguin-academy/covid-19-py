@@ -18,7 +18,8 @@
     "selfReporting": "$t(selfReportingTitle)",
     "trivia": "Trivia",
     "aboutUs": "Quiénes somos",
-    "stats": "Estadísticas"
+    "stats": "Estadísticas",
+    "language": "Idoma"
   },
   "footer": {
     "followAndContribute": "Seguinos y contribuye",

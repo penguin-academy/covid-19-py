@@ -1,6 +1,6 @@
 {
   "translation": {
-    "selfReportingTitle": "Ejapo peteĩ autoreporte",
+    "selfReportingTitle": "autoreporte",
     "beta": "beta",
     "yes": "Hee",
     "no": "Nahániri",
@@ -14,10 +14,9 @@
     "listSecond": "Ejesareko datos estadísticos oĩmava."
   },
   "navbar": {
-    "home": "Ñepyrumby.",
+    "home": "Ñepyrumby",
     "trivia": "Trivia",
-    "aboutUs": "Mbavapa ore",
-    "stats": "Mbavapa ore"
+    "aboutUs": "Mbavapa ore"
   },
   "footer": {
     "followAndContribute": "Ikatupa oreseguí ha oreípytyvõ",
@@ -36,7 +35,7 @@
   },
   "formStart": {
     "Antes de empezar": "Eñepyrũmboyve.",
-    "agreeTOSMessage": "Rehohag̃ua hese, reimepa de acuerdo ore términos de servicio-re.",
+    "agreeTOSMessage": "Rehohag̃ua hese, reimepa de acuerdo ore <1>términos de servicio-re</1>.",
     "howDoYouFeel": "¿Mbaʼéichapa eñeñandu koãga?",
     "good": "Aĩporã",
     "bad": "Aĩvai.",
