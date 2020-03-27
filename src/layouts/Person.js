@@ -122,111 +122,111 @@ const Person = ({ setFormState, filledState = {}, form }) => {
   return (
     <FormBox>
       <main tabIndex="-1">
-      <form onSubmit={handleSubmit}>
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-8 text-center">
-            <h1>{t('title')}</h1>
-            <p className="lead">{t('subTitle')}</p>
-            <Trans i18nKey="person:paragraph">
-              <p></p>
-              <p></p>
-            </Trans>
-            <hr className="mb-5 mt-5" />
+        <form onSubmit={handleSubmit}>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-8 text-center">
+              <h1>{t('title')}</h1>
+              <p className="lead">{t('subTitle')}</p>
+              <Trans i18nKey="person:paragraph">
+                <p></p>
+                <p></p>
+              </Trans>
+              <hr className="mb-5 mt-5" />
+            </div>
           </div>
-        </div>
 
-        <Question
-          title={t('serious.question')}
-          options={[
-            {
-              value: 'report',
-              label: t('serious.options.report')
-            },
-            {
-              value: 'tryout',
-              label: t('serious.options.tryout')
-            }
-          ]}
-          onChange={({ value }) => {
-            handleQuestion('serious', value, 'location')
-          }}
-          value={status.serious.answer}
-          error={errors.serious}
-        />
+          <Question
+            title={t('serious.question')}
+            options={[
+              {
+                value: 'report',
+                label: t('serious.options.report')
+              },
+              {
+                value: 'tryout',
+                label: t('serious.options.tryout')
+              }
+            ]}
+            onChange={({ value }) => {
+              handleQuestion('serious', value, 'location')
+            }}
+            value={status.serious.answer}
+            error={errors.serious}
+          />
 
-        {status['location'].show && (
-          <>
-            <hr className="mb-5 mt-5" />
-            <div className="row justify-content-center align-items-center">
-              <div className="col-12 col-lg-6">
-                <p className="lead m-lg-0">{t('location.title')}</p>
-                <p className="m-lg-0">{t('location.subTitle')}</p>
+          {status['location'].show && (
+            <>
+              <hr className="mb-5 mt-5" />
+              <div className="row justify-content-center align-items-center">
+                <div className="col-12 col-lg-6">
+                  <p className="lead m-lg-0">{t('location.title')}</p>
+                  <p className="m-lg-0">{t('location.subTitle')}</p>
+                </div>
+                <div className="col-12 col-lg-5">
+                  <SelectPlace
+                    onChange={value => {
+                      handleCoords('loading or null')
+                      handleQuestion('location', value)
+                    }}
+                    onCoords={handleCoords}
+                    value={status.location.answer}
+                  />
+                  {errors.location && (
+                    <div
+                      className="invalid-feedback"
+                      style={{ display: 'block' }}
+                    >
+                      {t('location.pleaseChoose')}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="col-12 col-lg-5">
-                <SelectPlace
-                  onChange={value => {
-                    handleCoords('loading or null')
-                    handleQuestion('location', value)
-                  }}
-                  onCoords={handleCoords}
-                  value={status.location.answer}
-                />
-                {errors.location && (
-                  <div
-                    className="invalid-feedback"
-                    style={{ display: 'block' }}
-                  >
-                    {t('location.pleaseChoose')}
-                  </div>
-                )}
+            </>
+          )}
+          {/* {status['phone'].show && (
+            <>
+              <hr className="mb-5 mt-5" />
+              <div className="row justify-content-center align-items-center">
+                <div className="col-12 col-lg-6">
+                  <p className="lead m-lg-0">{t('phone.title')}</p>
+                  <p className="m-lg-0">{t('phone.subTitle')}</p>
+                </div>
+                <div className="col-12 col-lg-5">
+                  <input
+                    className="form-control"
+                    type="number"
+                    placeholder="09xxxxxxxx"
+                    value={status.phone.answer}
+                    onChange={({ target }) => {
+                      handleQuestion('phone', target.value)
+                    }}
+                    value={status.phone.answer}
+                  />
+                  {errors.phone && (
+                    <div
+                      className="invalid-feedback"
+                      style={{ display: 'block' }}
+                    >
+                      {t('phone.pleaseChoose')}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          </>
-        )}
-        {/* {status['phone'].show && (
-          <>
-            <hr className="mb-5 mt-5" />
-            <div className="row justify-content-center align-items-center">
-              <div className="col-12 col-lg-6">
-                <p className="lead m-lg-0">{t('phone.title')}</p>
-                <p className="m-lg-0">{t('phone.subTitle')}</p>
-              </div>
-              <div className="col-12 col-lg-5">
-                <input
-                  className="form-control"
-                  type="number"
-                  placeholder="09xxxxxxxx"
-                  value={status.phone.answer}
-                  onChange={({ target }) => {
-                    handleQuestion('phone', target.value)
-                  }}
-                  value={status.phone.answer}
-                />
-                {errors.phone && (
-                  <div
-                    className="invalid-feedback"
-                    style={{ display: 'block' }}
-                  >
-                    {t('phone.pleaseChoose')}
-                  </div>
-                )}
-              </div>
-            </div>
-          </>
-        )} */}
-        <hr className="mb-5 mt-5" />
-        <button
-          className="btn btn-primary"
-          type="submit"
-          disabled={disabledButton}
-        >
-          {disabledButton && <i className="fas fa-spinner fa-pulse mr-3"></i>}
-          {t('submit')}
-        </button>
-        {submitError && (
-          <p style={{ color: 'red', padding: 5 }}>{t('error')}</p>
-        )}
-      </form>
+            </>
+          )} */}
+          <hr className="mb-5 mt-5" />
+          <button
+            className="btn btn-primary"
+            type="submit"
+            disabled={disabledButton}
+          >
+            {disabledButton && <i className="fas fa-spinner fa-pulse mr-3"></i>}
+            {t('submit')}
+          </button>
+          {submitError && (
+            <p style={{ color: 'red', padding: 5 }}>{t('error')}</p>
+          )}
+        </form>
       </main>
     </FormBox>
   )
