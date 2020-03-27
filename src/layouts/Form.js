@@ -72,7 +72,7 @@ const Form = ({ filledState = {}, setFormState, form }) => {
 
     const newErrors = errors
     let errorPresent = false
-    Object.entries(status).map(([key, value]) => {
+    Object.entries(status).forEach(([key, value]) => {
       if (value.show === true && value.answer === '') {
         newErrors[key] = true
         errorPresent = true
