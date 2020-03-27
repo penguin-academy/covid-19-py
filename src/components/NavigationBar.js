@@ -20,7 +20,8 @@ const TitleHide = styled.span`
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false)
-  const { t } = useTranslation('navbar')
+  const [showLangSwitch, setShowLangSwitch] = useState(false)
+  const { t, i18n } = useTranslation('navbar')
   return (
     <header>
       <div className="container">
@@ -101,6 +102,34 @@ const NavigationBar = () => {
                 </Link>
               </li>
             </ul>
+            <div class="dropdown">
+              <button
+                class="btn btn-outline-primary ml-md-3 dropdown-toggle btn-sm"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                onClick={() => setShowLangSwitch(!showLangSwitch)}
+              >
+                {t('language')}
+              </button>
+              <div
+                class={`dropdown-menu ${showLangSwitch ? 'show' : ''}`}
+                aria-labelledby="dropdownMenuButton"
+              >
+                <button
+                  class="dropdown-item"
+                  onClick={() => i18n.changeLanguage('gn')}
+                >
+                  Guaraní
+                </button>
+                <button
+                  class="dropdown-item"
+                  onClick={() => i18n.changeLanguage('es')}
+                >
+                  Español
+                </button>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
