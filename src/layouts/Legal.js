@@ -663,7 +663,7 @@ const Legal = () => {
         </div>
       </div>
     </main>
-  );
-};
+  )
+}
 
 export default Legal
