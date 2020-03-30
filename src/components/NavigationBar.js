@@ -102,9 +102,9 @@ const NavigationBar = () => {
                 </Link>
               </li>
             </ul>
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-outline-primary ml-md-3 dropdown-toggle btn-sm"
+                className="btn btn-outline-primary ml-md-3 dropdown-toggle btn-sm"
                 type="button"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -113,17 +113,17 @@ const NavigationBar = () => {
                 {t('language')}
               </button>
               <div
-                class={`dropdown-menu ${showLangSwitch ? 'show' : ''}`}
+                className={`dropdown-menu ${showLangSwitch ? 'show' : ''}`}
                 aria-labelledby="dropdownMenuButton"
               >
                 <button
-                  class="dropdown-item"
+                  className="dropdown-item"
                   onClick={() => i18n.changeLanguage('gn')}
                 >
                   Guaraní
                 </button>
                 <button
-                  class="dropdown-item"
+                  className="dropdown-item"
                   onClick={() => i18n.changeLanguage('es')}
                 >
                   Español
