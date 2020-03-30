@@ -1,3 +1,5 @@
+// @ts-check
+
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
 
@@ -21,6 +23,7 @@ import './App.css'
 
 // import en from './i18n/en.json'
 import es from './i18n/es.json'
+import gn from './i18n/gn.json'
 
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
@@ -35,7 +38,8 @@ i18n
     fallbackNS: 'translation',
     resources: {
       // en,
-      es
+      es,
+      gn
     },
     fallbackLng: 'es',
     debug: process.env.NODE_ENV !== 'production',
@@ -46,19 +50,10 @@ i18n
 
 function App() {
   const [form, setForm] = useState({ progress: 0 })
-  const [formerProgress, setformerProgress] = useState(form.progress)
 
   useEffect(() => {
-    if (form.progress !== formerProgress) {
-      setformerProgress(form.progress)
-      window.scrollTo(0, 0)
-    }
+    window.scrollTo(0, 0)
   }, [form.progress])
-
-  const isEmpty = obj => {
-    if (!obj) return true
-    else return Object.keys(obj).length === 0 && obj.constructor === Object
-  }
 
   return (
     <div className="App">
@@ -94,7 +89,8 @@ function App() {
   )
 }
 
-function ScrollToTop({ children, formReset }) {
+/** @type {React.FC<{ formReset(param: { progress: 0 }): void }>} */
+const ScrollToTop = ({ children, formReset }) => {
   const history = useHistory()
   useEffect(() => {
     const unlisten = history.listen(() => {
@@ -102,12 +98,14 @@ function ScrollToTop({ children, formReset }) {
       window.scrollTo(0, 0)
     })
     return () => unlisten()
-  }, [])
+  }, [history, formReset])
 
   return <>{children}</>
 }
 
 export default App
 
-const Protected = ({ level, current, children }) =>
-  level === current ? children : ''
+/** @type {React.FC<{ level: number; current: number }>} */
+const Protected = ({ level, current, children }) => (
+  <>{level === current ? children : ''}</>
+)
