@@ -8,6 +8,7 @@ export default class PyChart extends React.Component {
     componentDidMount() {
         // D3 Code to create the chart
         // using this._rootNode as container
+        //console.log('width', this._rootNode.node().getBoundingClientRect().width);
         var margin = {
               top: 20,
               right: 20,
@@ -22,8 +23,7 @@ export default class PyChart extends React.Component {
         var colours = ['lightsteelblue', 'rgb(249, 93, 11)', '#BF215B'],
             colScale = d3.scaleOrdinal().range(colours);
         var svg = d3.select(this._rootNode).append('svg')
-          .attr('width', width + margin.left + margin.right)
-          .attr('height', height + margin.top + margin.bottom)
+          .attr("viewBox", `0 0 ${width_all} ${height_all}`)
           .attr('id', 'svg-viz')
           .append("g")
           .attr("transform", 
@@ -36,8 +36,49 @@ export default class PyChart extends React.Component {
         var y = d3.scaleLinear()
           .rangeRound([height, 0]);
 
+        var loading = true;
+        var spinner_width = 200;
+        var spinner_group = svg.append('g')
+          .attr('transform', 'translate('+(width_all/2 - spinner_width/2)+','+height_all/2+')')
+          .attr('font-size',10);
+
+        var spinner = spinner_group.append('rect')
+          .attr('x',0)
+          .attr('y',0)
+          .attr('width',0)
+          .attr('height',10)
+          .style('fill','red');
+
+        spinner_group
+          .append('text')
+          .style('fill', 'white')
+          .attr("dy", "1em")
+          .text('Loading');
+
+        var repeat = () => {
+          console.log('loading', loading);
+          spinner.attr('width',0)
+          .transition()
+          .duration(1000)
+          .attr('width',spinner_width)
+          .transition()
+          .duration(1000)
+          .attr('width',0)
+          .on('end',() => {
+            if(loading){
+              repeat();
+            }else{
+              console.log('loaded');
+            }
+          });
+        };
+
+        repeat();
+
         d3.json('https://covidpy-rest.herokuapp.com/logistic')
           .then((data)=>{
+            spinner_group.style('opacity',0);
+            loading = false;
             x.domain(data.dates);
             y.domain([0, d3.max(data.estimate)]);
             

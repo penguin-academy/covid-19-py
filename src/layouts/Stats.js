@@ -13,7 +13,7 @@ const Stats = () => {
           <div className="col-12 col-lg-12 col-xl-12">
 
             <h1>{t('title')}</h1>
-            {/*<h2>{t('subTitle')}</h2>
+            <h2>{t('subTitle')}</h2>
             <Trans i18nKey="stats:alignDescription">
               El siguiente gráfico muestra una estimación de cuántos días atrȧs
               del país con más infecciones (Brasil) se encuentran los demás
@@ -24,9 +24,9 @@ const Stats = () => {
               </a>
               . Los datos se actualizan cada hora.
             </Trans>
-            <div id="chart">
+            <div id="chart" className="col-12 col-lg-8 col-xl-8">
               <AlignmentChart />
-            </div>*/}
+            </div>
             <h2>Modelo Predictivo</h2>
             <p>
               El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los 
@@ -35,8 +35,10 @@ const Stats = () => {
                 aquí
               </a>
             </p>
-            <div id="chart2">
-              <PyChart/>
+            <div className="row align-items-center">
+              <div id="chart2" className="col-12 col-lg-8 col-xl-8">
+                <PyChart/>
+              </div>
             </div>
           </div>
         </div>
