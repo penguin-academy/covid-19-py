@@ -4,7 +4,8 @@
     "beta": "beta",
     "yes": "Sí",
     "no": "No",
-    "warnDisclaimer": "Esta herramienta es utilizada meramente con fines informativos.<br/>No provee una asesoría médica.<br/>No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional."
+    "warnDisclaimer": "Esta herramienta es utilizada meramente con fines informativos.<br/>No provee una asesoría médica.<br/>No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional.",
+    "loading": "Loading ..."
   },
   "home": {
     "leadTitle": "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas de COVID19?",
@@ -184,8 +185,15 @@
   },
   "stats": {
     "title": "$t(navbar:stats)",
-    "subTitle": "Comparación de crecimiento",
-    "alignDescription": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora.",
-    "repo": "Método de alineación de curvas de estimación"
+    "align": {
+      "subTitle": "Comparación de crecimiento",
+      "description": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora.",
+      "repo": "Método de alineación de curvas de estimación"
+    },
+    "predictiveModel": {
+      "subTitle": "Modelo Predictivo",
+      "description": "El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los siguientes dos días usando un modelo logístico. Detalles del modelo pueden estudiarse <1>aquí</1>",
+      "repo": "Modelo logístico predictivo"
+    }
   }
 }
