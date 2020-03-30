@@ -24,7 +24,6 @@ const SkipNavigation = () => {
   const clickHandler = (e) => {
     e.preventDefault()
     const main = document.querySelector("main")
-    console.log('will focus: ', main)
     main.focus()
   }
 

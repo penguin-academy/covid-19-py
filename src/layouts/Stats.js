@@ -2,8 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import PyChart from '../components/PyChart'
 
-const Stats = ({location}) => {
-  console.log(location)
+const Stats = () => {
   const { t } = useTranslation('stats')
   return (
     <main className="fdb-block" tabIndex="-1">
