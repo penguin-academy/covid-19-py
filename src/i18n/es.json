@@ -181,7 +181,13 @@
   },
   "stats": {
     "title": "$t(navbar:stats)",
-    "subTitle": "Comparación de crecimiento",
-    "alignDescription": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora."
+    "align": {
+      "subTitle": "Comparación de crecimiento",
+      "description": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora."
+    },
+    "predictiveModel": {
+      "subTitle": "Modelo Predictivo",
+      "description": "El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los siguientes dos días usando un modelo logístico. Detalles del modelo pueden estudiarse <1>aquí</1>"
+    }
   }
 }

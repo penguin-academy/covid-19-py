@@ -11,7 +11,7 @@
     "leadSecondary": "Oreipytyvõ jarekohag̃ua datos estadísticos Covid-19rehegua Paraguaípe ikatuhag̃uaicha jahecha mbaʼéicha oñemonguʼe ñanderetáme, embohovai koa porandu eguerekóramo síntomas.",
     "ctaCheckSymptoms": "Mbaʼéichapa añeñandu",
     "listFirst": "Nde datoskuéra emoiséramonte, emoi. ¡Ani rejepyápy!",
-    "listSecond": "Ejesareko datos <1>estadísticos oĩmava.<1>"
+    "listSecond": "Ejesareko datos <1>estadísticos oĩmava.</1>"
   },
   "navbar": {
     "home": "Ñepyrumby",
@@ -179,8 +179,10 @@
     "pleaseChoose": "Ikatu eiporavo peteĩva"
   },
   "stats": {
-    "subTitle": "Mba’echa okakua ohovõ",
-    "alignDescription": "Ko ta’anga ojechauka mba’eichapa oĩ ko mba’asy ambue tetãme, ojeipuru ko método. Koa datos oñembopyahu peteĩ aravópe",
-    "title": "$t(navbar:stats)"
+    "title": "$t(navbar:stats)",
+    "align": {
+      "subTitle": "Mba’echa okakua ohovõ",
+      "description": "Ko ta’anga ojechauka mba’eichapa oĩ ko mba’asy ambue tetãme, <1>ojeipuru ko método</1>. Koa datos oñembopyahu peteĩ aravópe"
+    }
   }
 }
