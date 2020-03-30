@@ -1,7 +1,6 @@
 import React from 'react'
 import { useTranslation, Trans } from 'react-i18next'
 import styled from "styled-components"
-import ColoredA from '../components/ColoredA'
 
 const LeadParagraph = styled.p`
 color: #6a7889;
@@ -10,7 +9,7 @@ color: #6a7889;
 const Legal = () => {
   const { t } = useTranslation('about')
   return (
-    <main tabIndex="-1">
+    <main tabIndex="-1" className="sep-border">
       <section className="fdb-block">
         <div className="container">
           <div className="row justify-content-center">
@@ -42,17 +41,17 @@ const Legal = () => {
                   CovPy es libre y de código abierto. Puedes encontrar el código
                   en GitHub. Las contribuciones son bienvenidas! También puedes
                   simplemente
-                  <ColoredA href="https://www.github.com/penguin-academy/covid-19-py/issues" rel="noopener noreferrer">
+                  <a href="https://www.github.com/penguin-academy/covid-19-py/issues" rel="noopener noreferrer">
                     informar de un error
-                  </ColoredA>
+                  </a>
                   o solicitar una característica allí. report a bug or request a
                   feature there.
                 </Trans>
               </LeadParagraph>
               <p className="h3 mt-4">
-                <ColoredA href="https://www.github.com/penguin-academy/covid-19-py" rel="noopener noreferrer" alt={t("repo")}>
+                <a href="https://www.github.com/penguin-academy/covid-19-py" rel="noopener noreferrer" alt={t("repo")}>
                   {t('learnMore')} <i className="fas fa-angle-right" aria-hidden="true" />
-                </ColoredA>
+                </a>
               </p>
             </div>
             <div className="col-10 col-sm-6 m-auto col-md-4 pt-4 pt-md-0">

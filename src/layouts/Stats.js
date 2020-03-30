@@ -1,7 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import PyChart from '../components/PyChart'
-import ColoredA from '../components/ColoredA'
 
 const Stats = ({location}) => {
   console.log(location)
@@ -19,9 +18,9 @@ const Stats = ({location}) => {
               del país con más infecciones (Brasil) se encuentran los demás
               países de la región. Para detalles de cómo se alinean estas curvas
               se utiliza&nbsp
-              <ColoredA href="https://github.com/torresmateo/covid19/blob/master/update_and_process_data.py#L101" rel="noopener noreferrer" alt={t('repo')}>
+              <a href="https://github.com/torresmateo/covid19/blob/master/update_and_process_data.py#L101" rel="noopener noreferrer" alt={t('repo')}>
                 este método
-              </ColoredA>
+              </a>
               . Los datos se actualizan cada hora.
             </Trans>
             <div id="chart">
@@ -31,9 +30,9 @@ const Stats = ({location}) => {
             <p>
               El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los 
               siguientes dos días usando un modelo logístico.
-              Detalles del modelo pueden estudiarse <ColoredA href="https://github.com/torresmateo/covidpy-rest/blob/4b6fc38811708a6762fd0c8d21357c23ad244ad6/app.py#L63" rel="noopener noreferrer" alt={t('repo')}>
+              Detalles del modelo pueden estudiarse <a href="https://github.com/torresmateo/covidpy-rest/blob/4b6fc38811708a6762fd0c8d21357c23ad244ad6/app.py#L63" rel="noopener noreferrer" alt={t('repo')}>
                 aquí
-              </ColoredA>
+              </a>
             </p>
             <div id="chart2">
               <PyChart/>

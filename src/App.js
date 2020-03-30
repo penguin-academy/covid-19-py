@@ -51,7 +51,7 @@ i18n
   })
 
 const history = createBrowserHistory()
-wrapHistory(history)
+wrapHistory(history, {primaryFocusTarget: "main h2"})
 
 function App() {
   const [form, setForm] = useState({ progress: 0 })

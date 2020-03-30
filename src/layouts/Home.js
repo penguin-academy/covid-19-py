@@ -26,15 +26,11 @@ const ListItem = styled.li`
   color: #4F5763;
 `
 
-const ColoredLink = styled(Link)`
-  color: #007bc7;
-`
-
 const Home = () => {
   const { t } = useTranslation('home')
 
   return (
-    <main className="fdb-block" tabIndex="-1">
+    <main className="fdb-block sep-border" tabIndex="-1">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 col-xl-5">
@@ -45,7 +41,7 @@ const Home = () => {
               <ListItem>
                 <Trans i18nKey="home:listSecond">
                   Mirá los datos estadísticos que ya juntamos&nbsp;
-                  <ColoredLink to="/stats" aria-label={t('stats')}>aquí</ColoredLink>.
+                  <Link to="/stats" aria-label={t('stats')}>aquí</Link>.
                 </Trans>
               </ListItem>
             </ul>

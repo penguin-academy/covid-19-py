@@ -4,19 +4,13 @@ import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import SkipNavigation from './SkipNavigation'
 
-const NavLogoLink = styled(Link)`
+const NavLink = styled(Link)`
   font-size: 1.2rem;
   font-weight: bold;
   color: #bf215b !important;
   &.text-primary:hover {
     color: #9c1b4a !important;
   }
-`
-
-const NavLink = styled(Link)`
-header .navbar-nav &.nav-link {
-  color: #555555;
-}
 `
 
 const TitleHide = styled.span`
@@ -36,14 +30,14 @@ const NavigationBar = () => {
       <div className="container">
         <nav className="navbar navbar-expand-lg no-gutters">
           <div className="col-3 text-left">
-            <NavLogoLink className="navbar-brand text-primary" to="/">
+            <NavLink className="navbar-brand text-primary" to="/">
               <img
                 src="/img/care.svg"
                 alt=""
                 style={{ width: 40, paddingRight: 15 }}
               />
               CovPY <TitleHide>{t('selfReportingTitle')}</TitleHide>
-            </NavLogoLink>
+            </NavLink>
           </div>
           <button
             className="navbar-toggler"
@@ -65,55 +59,55 @@ const NavigationBar = () => {
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink
+                <Link
                   className="nav-link"
                   to="/"
                   onClick={() => setShow(false)}
                 >
                   {t('home')}
-                </NavLink>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <NavLink
+                <Link
                   className="nav-link"
                   to="/report"
                   onClick={() => setShow(false)}
                 >
                   {t('selfReporting')}
-                </NavLink>
+                </Link>
               </li>
               <li className="nav-item">
-                <NavLink
+                <Link
                   className="nav-link"
                   to="/quizz"
                   onClick={() => setShow(false)}
                 >
                   {t('trivia')}
-                </NavLink>
+                </Link>
               </li>
               <li className="nav-item">
-                <NavLink
+                <Link
                   className="nav-link"
                   to="/stats"
                   onClick={() => setShow(false)}
                 >
                   {t('stats')}
-                </NavLink>
+                </Link>
               </li>
               <li className="nav-item">
-                <NavLink
+                <Link
                   className="nav-link"
                   to="/about"
                   onClick={() => setShow(false)}
                 >
                   {t('aboutUs')}
-                </NavLink>
+                </Link>
               </li>
             </ul>
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-outline-primary ml-md-3 dropdown-toggle btn-sm"
+                className="btn btn-outline-primary ml-md-3 dropdown-toggle btn-sm"
                 type="button"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -122,17 +116,17 @@ const NavigationBar = () => {
                 {t('language')}
               </button>
               <div
-                class={`dropdown-menu ${showLangSwitch ? 'show' : ''}`}
+                className={`dropdown-menu ${showLangSwitch ? 'show' : ''}`}
                 aria-labelledby="dropdownMenuButton"
               >
                 <button
-                  class="dropdown-item"
+                  className="dropdown-item"
                   onClick={() => i18n.changeLanguage('gn')}
                 >
                   Guaraní
                 </button>
                 <button
-                  class="dropdown-item"
+                  className="dropdown-item"
                   onClick={() => i18n.changeLanguage('es')}
                 >
                   Español

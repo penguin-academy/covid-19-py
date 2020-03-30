@@ -100,7 +100,7 @@ const Success = ({ form }) => {
 
   return (
     <>
-      <Main className="fdb-block" tabIndex="-1">
+      <Main className="fdb-block sep-border" tabIndex="-1">
         <div className="container">
           <Disclaimer>
             <h2>{t('evaluationResult.title')}</h2>
