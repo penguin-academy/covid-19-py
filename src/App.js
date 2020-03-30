@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
 
 import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import { initReactI18next, useTranslation } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
 import Home from './layouts/Home'
@@ -56,12 +56,20 @@ function App() {
     window.scrollTo(0, 0)
   }, [form.progress])
 
+  const { t } = useTranslation()
+
   return (
     <div className="App">
       <BrowserRouter>
         <ScrollToTop formReset={setForm}>
           <NavigationBar />
-          <React.Suspense fallback={<div />}>
+          <React.Suspense
+            fallback={
+              <div style={{ margin: '100px auto', textAlign: 'center' }}>
+                {t('loading')}
+              </div>
+            }
+          >
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/report" exact>
