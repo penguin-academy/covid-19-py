@@ -4,7 +4,8 @@
     "beta": "beta",
     "yes": "Sí",
     "no": "No",
-    "warnDisclaimer": "Esta herramienta es utilizada meramente con fines informativos.<br/>No provee una asesoría médica.<br/>No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional."
+    "warnDisclaimer": "Esta herramienta es utilizada meramente con fines informativos.<br/>No provee una asesoría médica.<br/>No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional.",
+    "loading": "Loading ..."
   },
   "home": {
     "leadTitle": "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas de COVID19?",

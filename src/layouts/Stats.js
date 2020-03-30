@@ -1,8 +1,9 @@
 import React from 'react'
+
 import { useTranslation, Trans } from 'react-i18next'
 
-import AlignmentChart from '../components/AlignmentChart'
 import PyChart from '../components/PyChart'
+import AlignmentChart from '../components/AlignmentChart'
 
 const Stats = () => {
   const { t } = useTranslation('stats')

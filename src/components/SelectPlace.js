@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react'
 import AsyncSelect from 'react-select/async'
-import { debounce } from 'lodash'
+import debounce  from 'lodash.debounce'
 
 const Component = ({ onChange, value, onCoords }) => {
   const autocomplete = useRef()
