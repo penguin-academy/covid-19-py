@@ -2,30 +2,34 @@
 
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+import { wrapHistory } from 'oaf-react-router'
 
 import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import { initReactI18next, useTranslation } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
 import Home from './layouts/Home'
 import NavigationBar from './components/NavigationBar'
 import Footer from './components/Footer'
 import Start from './layouts/Start'
-import Form from './layouts/Form'
-import Success from './layouts/Success'
 import Legal from './layouts/Legal'
 import About from './layouts/About'
-import Quizz from './layouts/Quizz'
-import Person from './layouts/Person'
-import Stats from './layouts/Stats'
 
 import './App.css'
 
 // import en from './i18n/en.json'
 import es from './i18n/es.json'
+import gn from './i18n/gn.json'
 
 import firebase from 'firebase/app'
 import firebaseConfig from '../src/constants/firebaseConfig'
+
+const Success = React.lazy(() => import('./layouts/Success'))
+const Stats = React.lazy(() => import('./layouts/Stats'))
+const Form = React.lazy(() => import('./layouts/Form'))
+const Person = React.lazy(() => import('./layouts/Person'))
+const Quizz = React.lazy(() => import('./layouts/Quizz'))
 
 firebase.initializeApp(firebaseConfig)
 
@@ -37,7 +41,8 @@ i18n
     fallbackNS: 'translation',
     resources: {
       // en,
-      es
+      es,
+      gn
     },
     fallbackLng: 'es',
     debug: process.env.NODE_ENV !== 'production',
@@ -46,6 +51,9 @@ i18n
     }
   })
 
+const history = createBrowserHistory()
+wrapHistory(history, {primaryFocusTarget: "main h2"})
+
 function App() {
   const [form, setForm] = useState({ progress: 0 })
 
@@ -53,33 +61,43 @@ function App() {
     window.scrollTo(0, 0)
   }, [form.progress])
 
+  const { t } = useTranslation()
+
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter history={history}>
         <ScrollToTop formReset={setForm}>
           <NavigationBar />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/report" exact>
-              <Protected level={0} current={form.progress}>
-                <Start form={form} setFormState={setForm} />
-              </Protected>
-              <Protected level={1} current={form.progress}>
-                <Form form={form} setFormState={setForm} />
-              </Protected>
-              <Protected level={2} current={form.progress}>
-                <Person form={form} setFormState={setForm} />
-              </Protected>
-              <Protected level={3} current={form.progress}>
-                <Success form={form} />
-              </Protected>
-            </Route>
+          <React.Suspense
+            fallback={
+              <div style={{ margin: '100px auto', textAlign: 'center' }}>
+                {t('loading')}
+              </div>
+            }
+          >
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/report" exact>
+                <Protected level={0} current={form.progress}>
+                  <Start form={form} setFormState={setForm} />
+                </Protected>
+                <Protected level={1} current={form.progress}>
+                  <Form form={form} setFormState={setForm} />
+                </Protected>
+                <Protected level={2} current={form.progress}>
+                  <Person form={form} setFormState={setForm} />
+                </Protected>
+                <Protected level={3} current={form.progress}>
+                  <Success form={form} />
+                </Protected>
+              </Route>
 
-            <Route path="/legal" exact component={Legal} />
-            <Route path="/about" exact component={About} />
-            <Route path="/quizz" exact component={Quizz} />
-            <Route path="/stats" exact component={Stats} />
-          </Switch>
+              <Route path="/legal" exact component={Legal} />
+              <Route path="/about" exact component={About} />
+              <Route path="/quizz" exact component={Quizz} />
+              <Route path="/stats" exact component={Stats} />
+            </Switch>
+          </React.Suspense>
           <Footer />
         </ScrollToTop>
       </BrowserRouter>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
+import SkipNavigation from './SkipNavigation'
 
 const NavLink = styled(Link)`
   font-size: 1.2rem;
@@ -20,16 +21,19 @@ const TitleHide = styled.span`
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false)
-  const { t } = useTranslation('navbar')
+  const [showLangSwitch, setShowLangSwitch] = useState(false)
+  const { t, i18n } = useTranslation('navbar')
   return (
     <header>
+      <h1 className="sr-only">CovPY Auto Reporte</h1>
+      <SkipNavigation target="#main" />
       <div className="container">
         <nav className="navbar navbar-expand-lg no-gutters">
           <div className="col-3 text-left">
             <NavLink className="navbar-brand text-primary" to="/">
               <img
                 src="/img/care.svg"
-                alt="Logo CovPY Auto Reporte"
+                alt=""
                 style={{ width: 40, paddingRight: 15 }}
               />
               CovPY <TitleHide>{t('selfReportingTitle')}</TitleHide>
@@ -101,6 +105,34 @@ const NavigationBar = () => {
                 </Link>
               </li>
             </ul>
+            <div className="dropdown">
+              <button
+                className="btn btn-outline-primary ml-md-3 dropdown-toggle btn-sm"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                onClick={() => setShowLangSwitch(!showLangSwitch)}
+              >
+                {t('language')}
+              </button>
+              <div
+                className={`dropdown-menu ${showLangSwitch ? 'show' : ''}`}
+                aria-labelledby="dropdownMenuButton"
+              >
+                <button
+                  className="dropdown-item"
+                  onClick={() => i18n.changeLanguage('gn')}
+                >
+                  Guaraní
+                </button>
+                <button
+                  className="dropdown-item"
+                  onClick={() => i18n.changeLanguage('es')}
+                >
+                  Español
+                </button>
+              </div>
+            </div>
           </div>
         </nav>
       </div>

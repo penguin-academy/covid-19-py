@@ -1,24 +1,29 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Trans } from 'react-i18next'
+import styled from 'styled-components'
 
 const Footer = () => {
   const { t } = useTranslation('footer')
+  const Paragraph = styled.p`
+    color: #9aa3af;
+  `
   return (
     <footer className="fdb-block footer-large bg-dark">
       <div className="container">
         <div className="row align-items-top text-center text-md-left">
           <div className="col-12 col-md-4 mt-4 mt-md-0 text-lg-left">
-            <h3>
+            <h2 className="h3">
               <strong>{t('followAndContribute')}</strong>
-            </h3>
-            <p>{t('shareText')}</p>
+            </h2>
+            <Paragraph>{t('shareText')}</Paragraph>
             <p className="lead">
               <a
                 href="https://twitter.com/penguinstribe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-2"
+                aria-label="Twitter"
               >
                 <i className="fab fa-twitter" aria-hidden="true" />
               </a>
@@ -27,6 +32,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-2"
+                aria-label="GitHub"
               >
                 <i className="fab fa-github" aria-hidden="true" />
               </a>
@@ -35,6 +41,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-2"
+                aria-label="E-mail"
               >
                 <i className="fas fa-envelope" aria-hidden="true" />
               </a>
@@ -42,18 +49,18 @@ const Footer = () => {
           </div>
 
           <div className="col-12 col-md-5 offset-md-2 mt-5 mt-md-0 text-lg-left">
-            <h3>
+            <h2 className="h3">
               <strong>{t('aboutUs')}</strong>
-            </h3>
-            <p>{t('aboutUsText')}</p>
+            </h2>
+            <Paragraph>{t('aboutUsText')}</Paragraph>
             <img
               src="/img/hippa.png"
-              alt="Hippa Conform Logo"
+              alt="Hippa Conform"
               style={{ maxHeight: 80 }}
             />
             <img
               src="/img/privacyshield.png"
-              alt="Privacy Shield Logo"
+              alt="Privacy Shield"
               style={{ maxHeight: 60, paddingLeft: 20 }}
             />
           </div>
@@ -63,11 +70,12 @@ const Footer = () => {
             © CovPY 2020 -{' '}
             <Trans i18nKey="footer:madeWithLove">
               Hecho con amor
-              <img
+              <TranslatedImg
                 src="/img/heart.svg"
                 alt="Heart"
                 style={{ padding: '0 10px', maxWidth: 45 }}
-              />
+              >
+              amor</TranslatedImg>
               en Paraguay
             </Trans>
           </div>
@@ -99,5 +107,14 @@ export const FooterSmall = () => {
     </footer>
   )
 }
+
+// Simple wrapper over an image element to ease
+// the Trans component interpolation for the
+// "alt" attribute
+const TranslatedImg = ({children, ...props}) => {
+  return (
+  <img {...props} alt={children} />
+)}
+
 
 export default Footer

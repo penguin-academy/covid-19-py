@@ -1,42 +1,44 @@
 {
   "translation": {
-    "selfReportingTitle": "Ejapo peteĩ autoreporte",
+    "selfReportingTitle": "autoreporte",
     "beta": "beta",
     "yes": "Hee",
     "no": "Nahániri",
-    "warnDisclaimer": "Ko tembiapo ojeipuru momarandurãnte. Ndomeʼéi  asesoría médica. Ani repuruti  econsultáramo térã diagnóstico térã tratamientoicha doctorkuérandive."
+    "warnDisclaimer": "Ko tembiapo ojeipuru momarandurãnte. <br/>Ndomeʼéi  asesoría médica.<br/>Ani repuruti  econsultáramo térã diagnóstico térã tratamientoicha doctorkuérandive."
   },
   "home": {
     "leadTitle": "Ejapo peteĩ autoreporte Coronavirusrehegua Paraguaípe. ¿Reguerekópa síntomas Covid- 19rehegua?",
     "leadSecondary": "Oreipytyvõ jarekohag̃ua datos estadísticos Covid-19rehegua Paraguaípe ikatuhag̃uaicha jahecha mbaʼéicha oñemonguʼe ñanderetáme, embohovai koa porandu eguerekóramo síntomas.",
     "ctaCheckSymptoms": "Mbaʼéichapa añeñandu",
     "listFirst": "Nde datoskuéra emoiséramonte, emoi. ¡Ani rejepyápy!",
-    "listSecond": "Ejesareko datos estadísticos oĩmava."
+    "listSecond": "Ejesareko datos <1>estadísticos oĩmava.</1>"
   },
   "navbar": {
-    "home": "Ñepyrumby.",
+    "home": "Ñepyrumby",
     "trivia": "Trivia",
     "aboutUs": "Mbavapa ore",
-    "stats": "Mbavapa ore"
+    "selfReporting": "$t(selfReportingTitle)",
+    "stats": "Estadísticas",
+    "language": "Idioma"
   },
   "footer": {
     "followAndContribute": "Ikatupa oreseguí ha oreípytyvõ",
     "shareText": "Orembovyʼata rohendúramo nde opinión.  Ani edudati erehag̃ua oreve mbaʼéichapa ikatu rojapo porãve ko tembiapo.",
     "aboutUs": "Ore rehegua.",
     "aboutUsText": "Koa haʼe peteĩ atyguasu ha ipype oĩ avei empresas, omombaretea Paraguaí ojapohape tecnología ikatuhag̃uaicha saʼímie ko mbaʼasy vai, oafecta ñande Sistema de Salud Paraguayo.",
-    "madeWithLove": "Ojejapo Paraguaípe"
+    "madeWithLove": "Ojejapo<1></1>Paraguaípe"
   },
   "about": {
     "leadText": "Ko tembiapo haʼe peteĩ Sistema de Notificación Automática ha ikatu opavave oike ha omoĩ mbaʼe síntomapa oguereko, avei eguerekota mbohovai pyʼe umi mbaʼe ejapóvaʼera ha péicha ñambyatyta hetave datos hesegua.",
     "contributeTitle": "Ñepytyvõ CovPy-pe",
-    "contributeText": "CovPy haʼe peteĩ código abierto. Ikatu ejuhu pe código GitHub-pe. Ndeñepytyvõ ojehecha porãta. Avei ikatu oremomarandu ehecharamo oĩ vaiva ipype.",
+    "contributeText": "CovPy haʼe peteĩ código abierto. Ikatu ejuhu pe código GitHub-pe. Ndeñepytyvõ ojehecha porãta. Avei ikatu <1>oremomarandu ehecharamo oĩ vaiva</1> ipype.",
     "learnMore": "Eikuaave hag̃ua.",
     "goodCompanyTitle": "Eñemoirũ porãta orendive.",
     "goodCompanyText2": "Ko tembiapo ojapo Penguin Academy oipytyvõhag̃ua ko tecnología rupive ivevyivéhag̃ua pe impacto ko mbaʼasy Covid-19 ohejatava ñande Sistema de Salud Paraguayo-pe."
   },
   "formStart": {
     "Antes de empezar": "Eñepyrũmboyve.",
-    "agreeTOSMessage": "Rehohag̃ua hese, reimepa de acuerdo ore términos de servicio-re.",
+    "agreeTOSMessage": "Rehohag̃ua hese, reimepa de acuerdo ore <1>términos de servicio-re</1>.",
     "howDoYouFeel": "¿Mbaʼéichapa eñeñandu koãga?",
     "good": "Aĩporã",
     "bad": "Aĩvai.",
@@ -61,7 +63,7 @@
       "subtitle": "Nde tĩsyryramonte, ehai NAHANIRI"
     },
     "fever": {
-      "question": "Ko 24aravopepa, ¿Eguereko akanombu ohasava 38°C?"
+      "question": "Ko 24 aravopepa, ¿Eguereko akanombu ohasava 38°C?"
     },
     "alarmSigns": {
       "question": "¿Eguereko koa signo?",
@@ -73,7 +75,7 @@
       "subtitle": "*Eñepohano ni upevere nereiporãi.\n**Eguerekopa ataque cardíaco, accidente cerebrovascular o insuficiencia cardíaca.\n***Ndahaéirõ asma bronquial, sinusitis crónica o rinitis alérgica, apnea del sueño."
     },
     "healthProfessional": {
-      "question": "¿Embaʼapopa oĩhape hasýva?",
+      "question": "¿Embaʼapopa* oĩhape hasýva?",
       "subtitle": "*Haʼepa Profesional de la Salud térã ambue Profesional"
     },
     "professionalExposure": {
@@ -91,12 +93,18 @@
     "confirmedExposure": {
       "question": "¿Eĩ en contacto nde tapicha oguerekova ko mbaʼasy oñecorfirmavaekue laboratoriorupive?",
       "subtitle": "*Oĩ aguĩ ndehegui mbykyve 2 metrosgui, ohasapa 15 minutos."
+    },
+    "familyExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
+    },
+    "confirmedExposureWhileIll": {
+      "question": "$t(form:professionalExposureWhileIll:question)"
     }
   },
   "person": {
     "title": "Porandu pajakuéra",
     "subTitle": "Emoñe’ẽ porã koa porandu",
-    "paragraph": "Ko tembiapo ndepytyvõta ikatuhag̃ua hasakãve ndeve nesíntomakuera. Embohovaipáramo koa porandú oreipytỹvota ojejapohag̃ua datos-kuera.",
+    "paragraph": "<0> Ko tembiapo ndepytyvõta ikatuhag̃ua hasakãve ndeve nesíntomakuera.</0><1>Embohovaipáramo koa porandú oreipytỹvota ojejapohag̃ua datos-kuera.</1>",
     "serious": {
       "question": "¿Nandejapui embohovaihápe porandukuéra nde síntomarehegua?",
       "options": {
@@ -106,13 +114,16 @@
     },
     "location": {
       "title": "¿Mbaʼe távape reiko?",
-      "subTitle": "Ehai nde táva ha nderetopaíramo emoĩ táva aguĩvéva"
+      "subTitle": "Ehai nde táva ha nderetopaíramo emoĩ táva aguĩvéva",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
     },
     "phone": {
       "title": "Emoĩ nde celular papy",
-      "subTitle": "Oĩmerõ rejapo ambue tapichápe, emoĩvaeka icelular papy."
+      "subTitle": "Oĩmerõ rejapo ambue tapichápe, emoĩvaeka icelular papy.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
     },
-    "error": "Ndaikatui emondo. Ndoñeñongatui nde tembiapo. Ejapojey térã eñeʼẽ oreve."
+    "error": "Ndaikatui emondo. Ndoñeñongatui nde tembiapo. Ejapojey térã eñeʼẽ oreve.",
+    "submit": "$t(form:submit)"
   },
   "formSuccess": {
     "alarm": {
@@ -122,16 +133,16 @@
     "symptoms": {
       "title": "Natekotevéi reho hospital-pe. Epytavaerã nde rógape.",
       "title60": "Ehenói nde doctor-pe. Epytavaerã nde rógape.",
-      "message": "Nde síntomakuera ikatu ha’e Coronavirus, ko mba’asy oĩma ñaneretãme. Emomarandu tapichakuéra oĩva nde ypýpe (oikova nde rógape), umi tapicha opytavaerã ñembotypýpe 10 ára orekohaguere contacto nendive nde hasýramoguare térã  orekomboyve umi síntomas. Oipuruvaerã tapaboca ha ejepohéi porã ipo. Nde katu reimevaerã ndeaño, koa ikatu opa 2 árahaguépe opárire nde síntoma-kuera, ha ohasarire 10 ára oñepyrũhague koa síntoma.",
+      "message": "<0>Nde síntomakuera ikatu ha’e Coronavirus, ko mba’asy oĩma ñaneretãme.</0><1> Emomarandu tapichakuéra oĩva nde ypýpe (oikova nde rógape), umi tapicha opytavaerã ñembotypýpe 10 ára orekohaguere contacto nendive nde hasýramoguare térã  orekomboyve umi síntomas. Oipuruvaerã tapaboca ha ejepohéi porã ipo.</1><2> Nde katu reimevaerã ndeaño, koa ikatu opa 2 árahaguépe opárire nde síntoma-kuera, ha ohasarire 10 ára oñepyrũhague koa síntoma.</2>",
       "risk": "Nde reime atýpe oguerekova riesgo de complicaciones, upévare rehenoivaérã nde doctor-pe ha avei ehenoivaérã 154pe ha emombe’u mba’e mba’epa umi síntomas reguerekóva.",
       "noRisk": "Anihag̃ua jasobrecarga ñande sistema de salud-pe, ehenói raẽ nde doctor-pe térã nde centro de salud-pe EIKOTEVERÕ atención medica pya’e (koa he’ise erekóramo dificultades respiratorias graves térã nde síntomakuera ivaiverõ) ",
       "pregnant": "Nderyeguasúramo ikatu ndereguerekói riesgo particular de complicaciones. Eñangarekoháramo nde rehe emombe’uvaerã nde ginocólogo-pe"
     },
     "noSymptoms": {
       "title": "Natekotevei eho Hospital-pe",
-      "message": "Koága ndereguerekoi síntomas de Coronavirus, sapy’ante ikatu reguereko ko mba’asy ha ndereguerekoi umi sintomakuéra. Ejepy’apýke ndejehe. Umi síntomakuéra ikatu ha’e akanondu, hu’u  térã juku’a (tĩsyry ndaha’éi). Reñandúramo reguerekoha koa síntomakuera, rejapo jey vaerã ko evaluación autoreporte.org-pe. Ndereguerekoi rupi síntomakuera, ha anihag̃ua jasobrecarga ñande sistema sanitario-pe, ani ehenói nde doctor-pe térã nde centro de salud¬-pe.",
+      "message": "<0>Koága ndereguerekoi síntomas de Coronavirus, sapy’ante ikatu reguereko ko mba’asy ha ndereguerekoi umi sintomakuéra.</0><1> Ejepy’apýke ndejehe. Umi síntomakuéra ikatu ha’e akanondu, hu’u  térã juku’a (tĩsyry ndaha’éi). Reñandúramo reguerekoha koa síntomakuera, rejapo jey vaerã ko evaluación autoreporte.org -pe.</1><2> Ndereguerekoi rupi síntomakuera, ha anihag̃ua jasobrecarga ñande sistema sanitario-pe, ani ehenói nde doctor-pe térã nde centro de salud-pe.</2>",
       "risk": "Reguerekórõ hu’u ha akanondu, rehenóivaerã 154 térã nde doctor-pe",
-      "exposure": "Eguerekórupi jehe’a umi casos sospechosos térã oñeconfirmapyre, epytavaerã katuete nde rógape. Reimevaerã 10 ára repijahaguéguive reimehague hasyva ypýpe. Ejepy’apýke ndejehe. Umi síntomakuéra ikatu ha’e akanondu, hu’u  térã juku’a (tĩsyry ndaha’éi). Reñandúramo reguerekoha koa síntomakuera, rejapo jey vaerã ko evaluación autoreporte.org-pe. Ndereguerekoi rupi síntomakuera, ha anihag̃ua jasobrecarga ñande sistema sanitario-pe, ani ehenói nde doctor-pe térã nde centro de salud-pe. Koága ndereguerekoi síntomas de Coronavirus, sapy’ante ikatu reguereko ko mba’asy ha ndereguerekoi umi sintomakuéra.",
+      "exposure": "<0>Eguerekórupi jehe’a umi casos sospechosos térã oñeconfirmapyre, epytavaerã katuete nde rógape. Reimevaerã 10 ára repijahaguéguive reimehague hasyva ypýpe.</0><1> Ejepy’apýke ndejehe. Umi síntomakuéra ikatu ha’e akanondu, hu’u  térã juku’a (tĩsyry ndaha’éi). Reñandúramo reguerekoha koa síntomakuera, rejapo jey vaerã ko evaluación autoreporte.org -pe.</1><2> Ndereguerekoi rupi síntomakuera, ha anihag̃ua jasobrecarga ñande sistema sanitario-pe, ani ehenói nde doctor-pe térã nde centro de salud-pe.</2><3>Koága ndereguerekoi síntomas de Coronavirus, sapy’ante ikatu reguereko ko mba’asy ha ndereguerekoi umi sintomakuéra.</3>",
       "pregnant": {
         "message": "Nderyeguasúrõ ikatu ndereguerekói riesgo especial de complicaciones. Eñangarekoháramo nde rehe eñeha’a ani reime oĩhame hasyva.",
         "list1": "Rejoguátarõ nde rembi’urã térã ambue mba’e, eñeha’a eho sa’ivejave gente oĩhape, avei ikatu ejerure nde rogayguape, nde rapichape térã nde vecino-pe omoguahehag̃ua ndeve umi mba’e nde rógape.",
@@ -168,7 +179,10 @@
     "pleaseChoose": "Ikatu eiporavo peteĩva"
   },
   "stats": {
-    "subTitle": "Mba’echa okakua ohovõ",
-    "alignDescription": "Ko ta’anga ojechauka mba’eichapa oĩ ko mba’asy ambue tetãme, ojeipuru ko método. Koa datos oñembopyahu peteĩ aravópe"
+    "title": "$t(navbar:stats)",
+    "align": {
+      "subTitle": "Mba’echa okakua ohovõ",
+      "description": "Ko ta’anga ojechauka mba’eichapa oĩ ko mba’asy ambue tetãme, <1>ojeipuru ko método</1>. Koa datos oñembopyahu peteĩ aravópe"
+    }
   }
 }

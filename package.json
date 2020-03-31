@@ -12,9 +12,12 @@
     "d3": "^5.15.0",
     "firebase": "^7.10.0",
     "formik": "^2.1.4",
+    "history": "^4.10.1",
     "i18next": "^19.3.3",
     "i18next-browser-languagedetector": "^4.0.2",
+    "lodash.debounce": "^4.0.8",
     "node-sass": "^4.13.1",
+    "oaf-react-router": "^2.1.1",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-dom": "^16.13.0",
@@ -31,14 +34,21 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev": "BROWSER=none concurrently -s first -k \"react-scripts start\" \"cypress open\"",
+    "test:integration": "BROWSER=none concurrently -s first -k \"react-scripts start\" \"cypress run\"",
     "build": "react-scripts build",
     "test": "tsc -b src && react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public -c .storybook -o build"
+    "build-storybook": "build-storybook -s public -c .storybook -o build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "globals": {
+      "cy": true,
+      "Cypress": true
+    }
   },
   "browserslist": {
     "production": [
@@ -61,6 +71,9 @@
     "@storybook/preset-create-react-app": "^2.0.0",
     "@storybook/react": "^5.3.17",
     "@types/react-router-dom": "^5.1.3",
+    "concurrently": "^5.1.0",
+    "cypress": "^4.2.0",
+    "source-map-explorer": "^2.4.1",
     "storybook-addon-i18next": "^1.3.0",
     "storybook-react-router": "^1.0.8",
     "typescript": "^3.8.3"

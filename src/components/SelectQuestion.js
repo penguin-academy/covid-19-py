@@ -56,6 +56,7 @@ const Component = ({
           styles={customStyles}
           error={error}
           placeholder={t('placeholder')}
+          aria-label={title}
         />
         {error && (
           <div className="invalid-feedback" style={{ display: 'block' }}>
