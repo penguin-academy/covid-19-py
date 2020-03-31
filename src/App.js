@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+import { wrapHistory } from 'oaf-react-router'
 
 import i18n from 'i18next'
 import { initReactI18next, useTranslation } from 'react-i18next'
@@ -49,6 +51,9 @@ i18n
     }
   })
 
+const history = createBrowserHistory()
+wrapHistory(history, {primaryFocusTarget: "main h2"})
+
 function App() {
   const [form, setForm] = useState({ progress: 0 })
 
@@ -60,7 +65,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter history={history}>
         <ScrollToTop formReset={setForm}>
           <NavigationBar />
           <React.Suspense

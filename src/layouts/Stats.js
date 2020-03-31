@@ -8,19 +8,19 @@ import AlignmentChart from '../components/AlignmentChart'
 const Stats = () => {
   const { t } = useTranslation('stats')
   return (
-    <section className="fdb-block">
+    <main className="fdb-block" tabIndex="-1">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-12 col-xl-12">
-            <h1>{t('title')}</h1>
-            <h2>{t('align.subTitle')}</h2>
+            <h2 className="h1">{t('title')}</h2>
+            <h3 className="h2">{t('align.subTitle')}</h3>
             <p>
               <Trans i18nKey="stats:align:description">
                 El siguiente gráfico muestra una estimación de cuántos días
                 atrȧs del país con más infecciones (Brasil) se encuentran los
                 demás países de la región. Para detalles de cómo se alinean
                 estas curvas se utiliza&nbsp;
-                <a href="https://github.com/torresmateo/covid19/blob/master/update_and_process_data.py#L101">
+                <a href="https://github.com/torresmateo/covid19/blob/master/update_and_process_data.py#L101" rel="noopener noreferrer" alt={t('align.repo')}>
                   este método
                 </a>
                 . Los datos se actualizan cada hora.
@@ -31,13 +31,13 @@ const Stats = () => {
                 <AlignmentChart />
               </div>
             </div>
-            <h2>{t('predictiveModel.subTitle')}</h2>
+            <h3 className="h2">{t('predictiveModel.subTitle')}</h3>
             <p>
               <Trans i18nKey="stats:predictiveModel:description">
                 El siguiente gráfico muestra una estimación de los casos
                 confirmados (acumulados) para los siguientes dos días usando un
                 modelo logístico. Detalles del modelo pueden estudiarse&nbsp;
-                <a href="https://github.com/torresmateo/covidpy-rest/blob/4b6fc38811708a6762fd0c8d21357c23ad244ad6/app.py#L63">
+                <a href="https://github.com/torresmateo/covidpy-rest/blob/4b6fc38811708a6762fd0c8d21357c23ad244ad6/app.py#L63" rel="noopener noreferrer" alt={t('predictiveModel.repo')}>
                   aquí
                 </a>
               </Trans>
@@ -50,7 +50,7 @@ const Stats = () => {
           </div>
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 

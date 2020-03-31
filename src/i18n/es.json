@@ -12,7 +12,8 @@
     "leadSecondary": "Ayúdanos a tener datos estadísticos de la situación real del COVID19 en Paraguay llenando este formulario si tenés o tuviste síntomas.",
     "ctaCheckSymptoms": "Revisar mis síntomas",
     "listFirst": "Tu información personal es opcional, ¡no te preocupes!",
-    "listSecond": "Mirá los datos estadísticos que ya juntamos <1>aquí</1>."
+    "listSecond": "Mirá los datos estadísticos que ya juntamos <1>aquí</1>.",
+    "stats": "Datos estadísticos"
   },
   "navbar": {
     "home": "Inicio",
@@ -20,6 +21,7 @@
     "trivia": "Trivia",
     "aboutUs": "Quiénes somos",
     "stats": "Estadísticas",
+    "skipNavigation": "Saltar navegación",
     "language": "Idioma"
   },
   "footer": {
@@ -27,7 +29,7 @@
     "shareText": "Nos encantaría escuchar su opinión. Por favor, no duden en compartir con nosotros, lo que podemos mejorar",
     "aboutUs": "Sobre nosotros",
     "aboutUsText": "Somos un grupo de personas y empresas comprometidas con el Paraguay construyendo tecnología para suavizar el impacto máximo de la pandemia en el sistema de salud paraguayo.",
-    "madeWithLove": "Hecho con<1></1>en Paraguay"
+    "madeWithLove": "Hecho con<1>amor</1>en Paraguay"
   },
   "about": {
     "leadText": "Este proyecto es un sistema de notificación automática, que permite a cualquier persona acceder a él e informar de sus síntomas y obtener una rápida retroalimentación de los pasos a seguir, además de permitir generar datos sobre la situación.",
@@ -36,7 +38,8 @@
     "learnMore": "Aprende más",
     "goodCompanyTitle": "Estas en buena compañía",
     "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología que suavice el impacto máximo de la pandemia COVID-19 en el Sistema de Salud Paraguayo.",
-    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos"
+    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos",
+    "repo": "Repositorio en GitHub"
   },
   "formStart": {
     "Antes de empezar": "Antes de empezar",
@@ -184,11 +187,13 @@
     "title": "$t(navbar:stats)",
     "align": {
       "subTitle": "Comparación de crecimiento",
-      "description": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora."
+      "description": "El siguiente gráfico muestra una estimación de cuántos días atrȧs del país con más infecciones (Brasil) se encuentran los demás países de la región. Para detalles de cómo se alinean estas curvas se utiliza <1>este método</1>. Los datos se actualizan cada hora.",
+      "repo": "Método de alineación de curvas de estimación"
     },
     "predictiveModel": {
       "subTitle": "Modelo Predictivo",
-      "description": "El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los siguientes dos días usando un modelo logístico. Detalles del modelo pueden estudiarse <1>aquí</1>"
+      "description": "El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los siguientes dos días usando un modelo logístico. Detalles del modelo pueden estudiarse <1>aquí</1>",
+      "repo": "Modelo logístico predictivo"
     }
   }
 }
