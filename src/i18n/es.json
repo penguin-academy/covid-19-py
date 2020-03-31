@@ -5,7 +5,7 @@
     "yes": "Sí",
     "no": "No",
     "warnDisclaimer": "Esta herramienta es utilizada meramente con fines informativos.<br/>No provee una asesoría médica.<br/>No la uses para reemplazar a una consulta, diagnóstico o tratamiento con un profesional.",
-    "loading": "Loading ..."
+    "loading": "Cargando ..."
   },
   "home": {
     "leadTitle": "Autoreporte de Coronavirus en Paraguay ¿Tenés síntomas de COVID19?",
@@ -38,7 +38,7 @@
     "learnMore": "Aprende más",
     "goodCompanyTitle": "Estas en buena compañía",
     "goodCompanyText1": "Este proyecto fue creado como una iniciativa de Penguin Academy para crear tecnología que suavice el impacto máximo de la pandemia COVID-19 en el Sistema de Salud Paraguayo.",
-    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos",
+    "goodCompanyText2": "CovPy es desarrollado y mantenido por Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, y otras organizaciones así como muchos otros contribuyentes asombrosos.",
     "repo": "Repositorio en GitHub"
   },
   "formStart": {
@@ -80,8 +80,8 @@
       "subtitle": "*Sólo si no está bajo control a pesar del tratamiento. \n**Historial de infarto, accidente cerebrovascular o insuficiencia cardíaca. \n***Excepto en el caso de asma bronquial controlada, sinusitis crónica o rinitis alérgica, apnea del sueño."
     },
     "healthProfessional": {
-      "question": "¿Trabajas* en estrecho contacto con pacientes?",
-      "subtitle": "*como un profesional de la salud u otro tipo de profesión"
+      "question": "¿Trabajas* en estrecho contacto con pacientes en centros de salud (clínicas, hospitales, consultorios) o con residencias de ancianos?",
+      "subtitle": "*como un profesional de la salud u otro tipo de profesión."
     },
     "professionalExposure": {
       "question": "¿Estuviste expuesto (sin protección) a un caso confirmado por laboratorio de COVID-19 en el transcurso de tu trabajo? "
@@ -97,7 +97,7 @@
     },
     "confirmedExposure": {
       "question": "¿Tuviste contacto cercano con un caso confirmado por laboratorio?",
-      "subtitle": "*contacto de menos de 2 metros de distancia durante más de 15 minutos"
+      "subtitle": "*contacto de menos de 2 metros de distancia durante más de 15 minutos."
     },
     "familyExposureWhileIll": {
       "question": "$t(form:professionalExposureWhileIll:question)"
@@ -124,7 +124,7 @@
     },
     "phone": {
       "title": "Número de teléfono",
-      "subTitle": "Por favor, use el número de teléfono de la persona para la que rellenó este formulario.",
+      "subTitle": "Por favor, usá el número de teléfono de la persona que rellenó este formulario.",
       "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
     },
     "submit": "$t(form:submit)",
@@ -133,14 +133,14 @@
   "formSuccess": {
     "alarm": {
       "title": "Busque atención médica inmediatamente.",
-      "message": "Cómo estás presentando uno de los signos de alarma (Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente mas de 72 horas) el Ministerio de Salud recomienda que vayas al hospital de urgencia. "
+      "message": "Cómo estás presentando uno de los signos de alarma (Grave dificultad respiratoria, sensación de ahogo, dolor de pecho, fiebre persistente más de 72 horas) el Ministerio de Salud recomienda que vayas al hospital de urgencia. "
     },
     "symptoms": {
       "title": "No es necesario que vayas a un puesto de Salud. El auto-aislamiento es obligatorio en tu caso.",
       "title60": "Llamá a tu médico. El auto-aislamiento es obligatorio en tu caso.",
       "message": "<0>Tus síntomas podrían deberse al nuevo coronavirus, ya que el virus está presente actualmente en Paraguay.</0><1>Informá a tus contactos más cercanos (que vivan en el mismo hogar) que es necesaria una medida de autocuarentena de 10 días si estuvieron en contacto contigo mientras estabas enfermo o en las 24 horas anteriores a la aparición de tus síntomas. Deberán llevar un tapabocas y seguir una estricta higiene de manos.</1><2>En tu caso será necesario el auto-aislamiento que puede terminar 48 horas después de que los síntomas se hayan acabado, siempre y cuando hayan pasado al menos 10 días desde la aparición de los síntomas.</2>",
       "risk": "Cómo formás parte de un grupo con riesgo de complicaciones, te recomendamos ponerte en contacto, con tu médico y que luego llames al 154 y reportes tus síntomas.",
-      "noRisk": "Para no sobrecargar el sistema de salud, contactá -primero por teléfono- con tu médico o centro de salud SOLAMENTE si requerís atención médica aguda (es decir, si tenés dificultades respiratorias graves o si tus síntomas empeoran)",
+      "noRisk": "Para no sobrecargar el sistema de salud, contactá -primero por teléfono- con tu médico o centro de salud SOLAMENTE si requerís atención médica aguda (es decir, si tenés dificultades respiratorias graves o si tus síntomas empeoran).",
       "pregnant": "El hecho de estar embarazada probablemente no te pone en un riesgo particular de complicaciones. Sin embargo, como precaución, te recomendamos que te pongas en contacto con tu ginecólogo."
     },
     "noSymptoms": {
@@ -192,7 +192,7 @@
     },
     "predictiveModel": {
       "subTitle": "Modelo Predictivo",
-      "description": "El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los siguientes dos días usando un modelo logístico. Detalles del modelo pueden estudiarse <1>aquí</1>",
+      "description": "El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los siguientes dos días usando un modelo logístico. Detalles del modelo pueden estudiarse <1>aquí</1>.",
       "repo": "Modelo logístico predictivo"
     }
   }

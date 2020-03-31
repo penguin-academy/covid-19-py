@@ -4,7 +4,8 @@
     "beta": "beta",
     "yes": "Yes",
     "no": "No",
-    "warnDisclaimer": "This tool is for informational purposes only, it does not provide medical advice.<br/>The content is not intended to be a substitute for professional medical advice, dignosis, or treatment"
+    "warnDisclaimer": "This tool is for informational purposes only, it does not provide medical advice.<br/>The content is not intended to be a substitute for professional medical advice, dignosis, or treatment",
+    "loading": "Loading ..."
   },
   "home": {
     "leadTitle": "Coronavirus Self-Reporting in Paraguay. Do you have symptoms of COVID19?",
@@ -19,7 +20,9 @@
     "selfReporting": "$t(selfReportingTitle)",
     "trivia": "Trivia",
     "aboutUs": "About us",
-    "skipNavigation": "Skip navigation"
+    "skipNavigation": "Skip navigation",
+    "stats": "Statistics",
+    "language": "Language\n\n"
   },
   "footer": {
     "followAndContribute": "Follow us and contribute",
@@ -30,12 +33,13 @@
   },
   "about": {
     "leadText": "This proyect is an automated notification system, that allows individuals to report their symptoms and obtain recommendations on how to proceed, while also generating data from the situation.",
-    "contributeTitle": "Contribute to CovPy",
+    "contributeTitle": "For Developers: Contribute to CovPy ",
     "contributeText": "CovPy is free and open-source. You can find the source code in Github. Contributions are welcomed! You can also simply <1>report a bug</1> or request a feature there.",
     "learnMore": "Learn more",
     "goodCompanyTitle": "You are in good company",
     "goodCompanyText1": "This proyect is a Penguin Academy initiative that aims to soften blow to Paraguay's Healthcare System caused by the COVID-19 pandemic.",
-    "goodCompanyText2": "CovPy is developed and maintained by Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, and many other organizations as well as other amazing contributors"
+    "goodCompanyText2": "CovPy is developed and maintained by Penguin Academy, UCOM, the Product Lab, Web Paraguay, Okimo, and many other organizations as well as other amazing contributors.",
+    "repo": "GitHub Repository"
   },
   "formStart": {
     "Antes de empezar": "Before we begin",
@@ -71,11 +75,13 @@
       "subtitle": "Severe breathing difficulties, breathlessness, chest pain, constant fever for more than 72 hours."
     },
     "riskGroup": {
-      "question": "Are you in a high-risk group?",
-      "subtitle": "65 years or older, diabetes, hypertension, morbid obesity, cancer, dialyzis, asthma, chronic pulmonary difficulties, heart problems, prolonged use of corticosteroids."
+      "question": "Do you have any of these diseases?",
+      "subtitle": "*Only if not under control despite treatment \n** A history of heart attack, stroke or heart failure \n***EXCEPT for controlled bronchial asthma, chronic sinusitis or allergic rhinitis (hay fever), sleep apnea",
+      "list": "Hypertension*, Diabetes, Cardiovascular disease**, Chronic respiratory disease***, Low defenses due to disease/treatment, Cancer"
     },
     "healthProfessional": {
-      "question": "Are you a health professional and have be in contact with patients and/or nursing home residents?"
+      "question": "Do you work* in close contact with patients in healthcare facilities (clinics, hospitals, GP surgeries) or residents of nursing homes?",
+      "subtitle": "* as a healthcare professional or any other type of profession."
     },
     "professionalExposure": {
       "question": "Have you been exposed (without protection) to a Laboratory-confirmed case of COVID-19 in the course of your professional activity?"
@@ -84,13 +90,15 @@
       "question": "Did this contact take place whilst the person was ill or in the 24h prior to them getting ill?"
     },
     "familyExposure": {
-      "question": "Is there a person with a cough or fever in your immediate environment?"
+      "question": "Is there a person with a cough or fever in your immediate environment?",
+      "subtitle": "*intimate relationships and persons living under the same roof"
     },
     "familyExposureWhileIll": {
       "question": "$t(form:professionalExposureWhileIll:question)"
     },
     "confirmedExposure": {
-      "question": "Have you had close contact with a laboratory-confirmed case?"
+      "question": "Have you had close contact with a laboratory-confirmed case?",
+      "subtitle": "*contact of less than 2 meters for more than 15mins."
     },
     "confirmedExposureWhileIll": {
       "question": "$t(form:professionalExposureWhileIll:question)"
@@ -98,10 +106,94 @@
     "submit": "Submit",
     "errorSubmitting": "There was an error. Your answers could not be saved. Please, try again or contact us."
   },
-  "formSuccess": {},
+  "formSuccess": {
+    "alarm": {
+      "title": "Seek medical attention immediately.",
+      "message": "Because you are showing one of the warning signs (severe shortness of breath, choking sensation, chest pain, fever persisting for more than 72 hours) the Ministry of Health recommends that you go to the emergency hospital. "
+    },
+    "symptoms": {
+      "title": "You don't have to go to a health post. Self-isolation is mandatory in your case.",
+      "title60": "Call your doctor. Self-isolation is mandatory in your case.",
+      "message": "<Your symptoms could be due to the new coronavirus, as the virus is currently present in Paraguay. Inform your closest contacts (living in the same household) that a 10-day self-quarantine measure is necessary if they were in contact with you while you were sick or in the 24 hours prior to the onset of your symptoms. They should wear a mask and follow strict hand hygiene.</1>>2>In your case, self-isolation is necessary and can end 48 hours after the symptoms have ended, provided that at least 10 days have passed since the onset of symptoms.</2>",
+      "risk": "Since you are part of a group at risk for complications, we recommend that you contact your doctor and then call 154 and report your symptoms.",
+      "noRisk": "To avoid overloading the health system, contact - first by phone - your doctor or health centre ONLY if you require acute medical attention (i.e. if you have severe breathing difficulties or if your symptoms worsen).",
+      "pregnant": "Being pregnant probably doesn't put you at particular risk for complications. However, as a precaution, we recommend that you contact your gynecologist."
+    },
+    "noSymptoms": {
+      "title": "You don't have to go to a health post. ",
+      "message": "<At this moment you do not show symptoms of Coronavirus, however, there are cases in which no symptoms appear.</0><1>Monitor your condition. The symptoms of the new coronavirus are fever, cough or difficulty in breathing (a runny nose is not enough). If symptoms appear, repeat your assessment at autoreporte.org.</1>>2>As you do not have any symptoms, and in order not to overload the health system, avoid contacting a doctor or health center.</2>",
+      "risk": "However, call 154 or your doctor if symptoms (cough and fever) appear.",
+      "exposure": "<0>As you have had contact with a suspected or confirmed case, self-quarantine in your case is mandatory. Please stay at home for 10 days from the date of your last contact with the patient. The symptoms of the new coronavirus are fever, cough or difficulty in breathing (a runny nose is not enough). If symptoms appear, repeat your evaluation in autoreporte.org.</1>>2>As you do not have any symptoms, and in order not to overload the health system, avoid contacting a doctor or health center.</2>>At this time you do not show symptoms of Coronavirus, however, there are cases in which no symptoms appear.</3>",
+      "pregnant": {
+        "message": "Being pregnant probably doesn't put you at particular risk for complications. However, as a precaution, we recommend that you avoid unnecessary contact:",
+        "list1": "Do your shopping during off-peak hours or ask a family member, friend, neighbor to bring it to your house.",
+        "list2": "Avoid all contact with sick people."
+      }
+    },
+    "risk": {
+      "message": "Because you present a risk of complications, we also recommend that you avoid unnecessary contact:",
+      "list1": "Do your shopping during off-peak hours or ask a family member, friend, neighbor to bring it to your house.",
+      "list2": "Avoid all contact with sick people."
+    },
+    "medical": {
+      "title": "Tips for your professional practice:",
+      "message": "A surgical mask (type II or IIR) is indicated for medical personnel when:",
+      "list1": "Examines a patient with a cough or fever",
+      "list2": "If you experience respiratory or general symptoms such as fatigue, muscle pain or headaches. An ultrafiltration mask (FFP2/3, N95) is only required for hospital personnel exposed to high-risk activities"
+    },
+    "evaluationResult": {
+      "title": "Results of your evaluation"
+    },
+    "general": {
+      "title": "General advice to be followed at all times:",
+      "list1": "Stay home",
+      "list2": "Respect hygiene measures. ",
+      "list3": "Reduce your travel to what is strictly necessary. Avoid traveling during rush hour.",
+      "list4": "Stay as far away as possible from other people while on public transport or in public spaces.",
+      "list5": "If you have symptoms of respiratory illness (for example a mild cough), avoid using public transport if possible.",
+      "list6": "Avoid non-essential personal and workplace meetings and if possible, rather work remotely from home."
+    }
+  },
   "SelectQuestion": {
     "placeholder": "Select...",
     "default": "Select",
     "pleaseChoose": "Please select an option."
+  },
+  "person": {
+    "title": "Last questions",
+    "subTitle": "Please read the following carefully:",
+    "paragraph": "<0>We provide you with this tool to help you obtain information about your symptoms.</0><1> By completing this form you are helping us to generate data. Please fill out the following section carefully. </1>",
+    "serious": {
+      "question": "Did you answer all the questions with your real symptoms?",
+      "options": {
+        "report": "Yes. Those are my real symptoms.",
+        "tryout": "No. I'm just testing the app."
+      }
+    },
+    "location": {
+      "title": "In which city do you live?",
+      "subTitle": "Please write down your city. If you can't find it, select the nearest option.",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)"
+    },
+    "phone": {
+      "title": "Phone number",
+      "pleaseChoose": "$t(SelectQuestion:pleaseChoose)",
+      "subTitle": "Please use the phone number of the person who filled out this form."
+    },
+    "submit": "$t(form:submit)",
+    "error": "There was an error. Your answers could not be saved. Please, try again or contact us."
+  },
+  "stats": {
+    "title": "$t(navbar:stats)",
+    "align": {
+      "subTitle": "Growth comparison",
+      "description": "The following graph shows an estimate of how many days behind the country with the most infections (Brazil) are the other countries in the region. For details on how these curves are aligned, <1> this method</1> is used. The data is updated every hour.",
+      "repo": "Estimation curve alignment method"
+    },
+    "predictiveModel": {
+      "subTitle": "Predictive Model",
+      "description": "The following graph shows an estimate of confirmed (cumulative) cases for the next two days using a logistic model. Details of the model can be studied <1>here</1>.",
+      "repo": "Predictive logistics model"
+    }
   }
 }
