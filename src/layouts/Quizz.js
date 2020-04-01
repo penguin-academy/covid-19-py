@@ -3,12 +3,13 @@ import { ReactTypeformEmbed } from 'react-typeform-embed'
 
 const Quizz = () => {
   return (
-    <section
+    <main
       className="fdb-block"
       style={{
         backgroundImage: 'url(/img/1.svg)',
         paddingTop: '4.5rem'
       }}
+      tabIndex="-1"
     >
       <div className="container">
         <div className="row justify-content-end">
@@ -22,7 +23,7 @@ const Quizz = () => {
           </div>
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 

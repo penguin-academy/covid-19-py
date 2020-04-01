@@ -1,21 +1,25 @@
 import React from 'react'
 import { useTranslation, Trans } from 'react-i18next'
-import { Link } from 'react-feather'
+import styled from "styled-components"
+
+const LeadParagraph = styled.p`
+color: #6a7889;
+`
 
 const Legal = () => {
   const { t } = useTranslation('about')
   return (
-    <>
-      <header className="fdb-block">
+    <main tabIndex="-1" className="sep-border">
+      <section className="fdb-block">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col col-md-8 text-center">
-              <img alt="logo" className="fdb-icon mb-4" src="/img/care.svg" />
-              <p className="lead">{t('leadText')}</p>
+              <img alt="" className="fdb-icon mb-4" src="/img/care.svg" />
+              <LeadParagraph className="lead">{t('leadText')}</LeadParagraph>
             </div>
           </div>
         </div>
-      </header>
+      </section>
       <section
         className="fdb-block"
         style={{
@@ -31,28 +35,28 @@ const Legal = () => {
                 className="fdb-icon"
                 src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs/icons/github.svg"
               />
-              <h1>{t('contributeTitle')}</h1>
-              <p className="lead">
+              <h2 className="h1">{t('contributeTitle')}</h2>
+              <LeadParagraph className="lead">
                 <Trans i18nKey="about:contributeText">
                   CovPy es libre y de código abierto. Puedes encontrar el código
                   en GitHub. Las contribuciones son bienvenidas! También puedes
                   simplemente
-                  <a href="https://www.github.com/penguin-academy/covid-19-py/issues">
+                  <a href="https://www.github.com/penguin-academy/covid-19-py/issues" rel="noopener noreferrer">
                     informar de un error
                   </a>
                   o solicitar una característica allí. report a bug or request a
                   feature there.
                 </Trans>
-              </p>
+              </LeadParagraph>
               <p className="h3 mt-4">
-                <a href="https://www.github.com/penguin-academy/covid-19-py">
-                  {t('learnMore')} <i className="fas fa-angle-right" />
+                <a href="https://www.github.com/penguin-academy/covid-19-py" rel="noopener noreferrer" alt={t("repo")}>
+                  {t('learnMore')} <i className="fas fa-angle-right" aria-hidden="true" />
                 </a>
               </p>
             </div>
             <div className="col-10 col-sm-6 m-auto col-md-4 pt-4 pt-md-0">
               <img
-                alt="chat"
+                alt=""
                 className="img-fluid rounded-0"
                 src="/img/chat.svg"
               />
@@ -64,18 +68,18 @@ const Legal = () => {
         <div className="container">
           <div className="row text-center justify-content-center">
             <div className="col-lg-8">
-              <h2>{t('goodCompanyTitle')}</h2>
-              <p className="lead">{t('goodCompanyText1')}</p>
-              <p className="lead">{t('goodCompanyText2')} ❤️.</p>
+              <h3 className="h2">{t('goodCompanyTitle')}</h3>
+              <LeadParagraph className="lead">{t('goodCompanyText1')}</LeadParagraph>
+              <LeadParagraph className="lead">{t('goodCompanyText2')} <span aria-hidden="true">❤️</span>.</LeadParagraph>
               <div className="mt-5 justify-content-center">
                 <img
-                  alt="penguin academy logo"
+                  alt="Penguin Academy"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/penguin.png"
                 />
                 <img
-                  alt="ucom logo"
+                  alt="Universidad Comunera"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/ucom.png"
@@ -87,13 +91,13 @@ const Legal = () => {
                   src="/img/logos/productlab.png"
                 />
                 <img
-                  alt="web paraguay logo"
+                  alt="Web Paraguay"
                   height={30}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/webparaguay.png"
                 />
                 <img
-                  alt="okimo logo"
+                  alt="Okimo"
                   height={20}
                   className="ml-3 mr-3 mb-2 mt-2"
                   src="/img/logos/okimo.png"
@@ -103,7 +107,7 @@ const Legal = () => {
           </div>
         </div>
       </section>
-    </>
+    </main>
   )
 }
 
