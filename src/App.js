@@ -18,7 +18,7 @@ import About from './layouts/About'
 
 import './App.css'
 
-// import en from './i18n/en.json'
+import en from './i18n/en.json'
 import es from './i18n/es.json'
 import gn from './i18n/gn.json'
 
@@ -40,7 +40,7 @@ i18n
     defaultNS: 'translation',
     fallbackNS: 'translation',
     resources: {
-      // en,
+      en,
       es,
       gn
     },
@@ -52,7 +52,7 @@ i18n
   })
 
 const history = createBrowserHistory()
-wrapHistory(history, {primaryFocusTarget: "main h2"})
+wrapHistory(history, { primaryFocusTarget: 'main h2' })
 
 function App() {
   const [form, setForm] = useState({ progress: 0 })

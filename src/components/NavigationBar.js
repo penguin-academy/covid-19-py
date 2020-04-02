@@ -19,10 +19,20 @@ const TitleHide = styled.span`
   }
 `
 
+const LangButton = styled.button`
+  cursor: pointer;
+  outline: none;
+`
+
 const NavigationBar = () => {
   const [show, setShow] = useState(false)
   const [showLangSwitch, setShowLangSwitch] = useState(false)
   const { t, i18n } = useTranslation('navbar')
+
+  const handleLanguageChange = lang => {
+    i18n.changeLanguage(lang)
+    setShowLangSwitch(false)
+  }
   return (
     <header>
       <h1 className="sr-only">CovPY Auto Reporte</h1>
@@ -119,18 +129,24 @@ const NavigationBar = () => {
                 className={`dropdown-menu ${showLangSwitch ? 'show' : ''}`}
                 aria-labelledby="dropdownMenuButton"
               >
-                <button
+                <LangButton
                   className="dropdown-item"
-                  onClick={() => i18n.changeLanguage('gn')}
+                  onClick={() => handleLanguageChange('gn')}
                 >
                   Guaraní
-                </button>
-                <button
+                </LangButton>
+                <LangButton
                   className="dropdown-item"
-                  onClick={() => i18n.changeLanguage('es')}
+                  onClick={() => handleLanguageChange('es')}
                 >
                   Español
-                </button>
+                </LangButton>
+                <LangButton
+                  className="dropdown-item"
+                  onClick={() => handleLanguageChange('en')}
+                >
+                  English
+                </LangButton>
               </div>
             </div>
           </div>
