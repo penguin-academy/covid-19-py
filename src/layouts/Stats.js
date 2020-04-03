@@ -34,12 +34,7 @@ const Stats = () => {
             <h3 className="h2">{t('predictiveModel.subTitle')}</h3>
             <p>
               <Trans i18nKey="stats:predictiveModel:description">
-                El siguiente gráfico muestra una estimación de los casos
-                confirmados (acumulados) para los siguientes dos días usando un
-                modelo logístico. Detalles del modelo pueden estudiarse&nbsp;
-                <a href="https://github.com/torresmateo/covidpy-rest/blob/4b6fc38811708a6762fd0c8d21357c23ad244ad6/app.py#L63" rel="noopener noreferrer" alt={t('predictiveModel.repo')}>
-                  aquí
-                </a>
+                El siguiente gráfico muestra los casos confirmados.
               </Trans>
             </p>
             <div className="row justify-content-center">

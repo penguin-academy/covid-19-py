@@ -191,9 +191,9 @@
       "repo": "Método de alineación de curvas de estimación"
     },
     "predictiveModel": {
-      "subTitle": "Modelo Predictivo",
-      "description": "El siguiente gráfico muestra una estimación de los casos confirmados (acumulados) para los siguientes dos días usando un modelo logístico. Detalles del modelo pueden estudiarse <1>aquí</1>.",
-      "repo": "Modelo logístico predictivo"
+      "subTitle": "Casos acummulados",
+      "description": "El siguiente gráfico muestra los casos confirmados.",
+      "repo": "Casos Acumulados"
     }
   }
 }

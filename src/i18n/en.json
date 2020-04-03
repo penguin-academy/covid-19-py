@@ -191,9 +191,9 @@
       "repo": "Estimation curve alignment method"
     },
     "predictiveModel": {
-      "subTitle": "Predictive Model",
-      "description": "The following graph shows an estimate of confirmed (cumulative) cases for the next two days using a logistic model. Details of the model can be studied <1>here</1>.",
-      "repo": "Predictive logistics model"
+      "subTitle": "Confirmed Cases",
+      "description": "The following graph shows the confirmed cases (cumulative)",
+      "repo": "Confirmed Cases"
     }
   }
 }

@@ -82,8 +82,8 @@ export default class PyChart extends React.Component {
     d3.json('https://covidpy-rest.herokuapp.com/logistic').then(data => {
       spinner_group.style('opacity', 0)
       loading = false
-      x.domain(data.dates)
-      y.domain([0, d3.max(data.estimate)])
+      x.domain(data.dates.slice(0, -2))
+      y.domain([0, d3.max(data.confirmed)])
 
       svg
         .append('g')
@@ -125,37 +125,37 @@ export default class PyChart extends React.Component {
           d3.select('#confirmed-' + i).style('opacity', 0)
         )
 
-      svg
-        .selectAll('.bar')
-        .data(data.projected)
-        .enter()
-        .append('rect')
-        .attr('class', 'projected')
-        .attr('x', (d, i) => x(data.dates[i]))
-        .attr('y', d => y(d))
-        .attr('width', x.bandwidth())
-        .attr('height', d => height - y(d))
-        .style('fill', colours['1'])
-        .on('mouseover', (d, i) =>
-          d3.select('#projected-' + i).style('opacity', 1)
-        )
-        .on('mouseout', (d, i) =>
-          d3.select('#projected-' + i).style('opacity', 0)
-        )
+      // svg
+      //   .selectAll('.bar')
+      //   .data(data.projected)
+      //   .enter()
+      //   .append('rect')
+      //   .attr('class', 'projected')
+      //   .attr('x', (d, i) => x(data.dates[i]))
+      //   .attr('y', d => y(d))
+      //   .attr('width', x.bandwidth())
+      //   .attr('height', d => height - y(d))
+      //   .style('fill', colours['1'])
+      //   .on('mouseover', (d, i) =>
+      //     d3.select('#projected-' + i).style('opacity', 1)
+      //   )
+      //   .on('mouseout', (d, i) =>
+      //     d3.select('#projected-' + i).style('opacity', 0)
+      //   )
 
-      svg
-        .append('path')
-        .datum(data.estimate)
-        .attr('fill', 'none')
-        .attr('stroke', colours[2])
-        .attr('stroke-width', 2.5)
-        .attr(
-          'd',
-          d3
-            .line()
-            .x((d, i) => x(data.dates[i]) + x.bandwidth() / 2)
-            .y(d => y(d))
-        )
+      // svg
+      //   .append('path')
+      //   .datum(data.estimate)
+      //   .attr('fill', 'none')
+      //   .attr('stroke', colours[2])
+      //   .attr('stroke-width', 2.5)
+      //   .attr(
+      //     'd',
+      //     d3
+      //       .line()
+      //       .x((d, i) => x(data.dates[i]) + x.bandwidth() / 2)
+      //       .y(d => y(d))
+      //   )
 
       svg
         .selectAll('.text')
@@ -176,7 +176,8 @@ export default class PyChart extends React.Component {
         .attr('font-size', 15)
         //.attr("text-anchor", "end")
         .selectAll('g')
-        .data(['Casos Confirmados', 'Predicción', 'Modelo Logístico'])
+        //.data(['Casos Confirmados', 'Predicción', 'Modelo Logístico'])
+        .data(['Casos Confirmados'])
         .enter()
         .append('g')
         .attr(
